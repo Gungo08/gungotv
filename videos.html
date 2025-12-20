@@ -1,0 +1,126 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" 
+      content="default-src 'self' *; 
+               img-src 'self' https: data: blob:; 
+               style-src 'self' 'unsafe-inline' https:; 
+               script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; 
+               font-src 'self' https: data:;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos Virales • GUNGO</title>
+    <link rel="icon" type="image/png" href="logo-gungo3.png">
+    <meta name="description" content="Los videos más virales de farándula y escándalos que están rompiendo las redes.">
+    
+    <meta property="og:title" content="Videos Virales • GUNGO">
+    <meta property="og:description" content="El portal #1 de farándula, chismes y escándalos. ¡Aquí arde todo!">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1974">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="gungo.css">
+
+</head>
+<body>
+
+<header>
+    <div class="navbar" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        <div class="logo-container">
+            <a href="index.html" class="logo-link">
+                <img src="logo-gungo.png" alt="GUNGO">
+            </a>
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            
+            <a href="#" onclick="toggleSearch()" class="search-trigger">
+                <i class="fas fa-search"></i>
+            </a>
+        </div>
+    </div>
+</header>
+
+<section class="hero" style="background: linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=2074') center/cover;">
+    <div class="hero-content">
+        <h1>VIDEOS VIRALES</h1>
+        <p>Los clips que están rompiendo internet hoy. Escándalos, reacciones y momentos que nadie se puede perder.</p>
+        <button class="btn-primary" onclick="document.querySelector('.videos-section').scrollIntoView({behavior: 'smooth'})">Ver Videos Ahora</button>
+    </div>
+</section>
+
+<div class="breaking-news-bar">
+    <div class="breaking-label">VIRAL DEL MOMENTO</div>
+    <div class="breaking-text-container">
+        <div class="breaking-text">
+            Los videos que todo el mundo está compartiendo ahora mismo...
+        </div>
+    </div>
+</div>
+<div class="ad-container ad-leaderboard" style="margin-top: 20px;">
+    Publicidad Principal
+</div>
+
+<section class="videos-section" style="max-width:1400px; margin:60px auto; padding:0 20px;">
+    <div id="video-reel-container" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(360px,1fr)); gap:30px;">
+
+    </div>
+</section>
+<div class="ad-container ad-leaderboard" style="margin: 40px auto;">
+    Publicidad Pie de Página
+</div>
+
+<footer>
+    <div class="footer-content">
+        <div>
+             <h2 style="font-size:3rem; font-weight:800; position:relative; color:transparent;">
+              <span style="position:absolute; top:0; left:0; background:linear-gradient(45deg,#E50914,#FF6B00,#FFB800); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;"></span>
+            </h2>
+            <div style="margin-bottom: 20px;">
+    <a href="#" onclick="window.scrollTo(0,0)" style="display: inline-block;">
+        <img src="logo-gungo.png" alt="GUNGO" style="height: 100px; width: auto; filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));">
+    </a>
+    </div>
+            <p>Tu dosis diaria de farándula sin filtro.</p>
+        </div>
+        <div>
+            <h3>Síguenos</h3>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/gungotv/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@gungo_6/" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://x.com/@gungotv/" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div>
+            <p>© 2025 GUNGO • Todos los derechos reservados</p>
+        </div>
+    </div>
+</footer>
+
+<div id="newsModal" class="modal-overlay">
+    <div class="modal-content">
+        <button class="close-modal">&times;</button>
+        <img id="modalImg" src="" alt="">
+        <div class="modal-text">
+            <span id="modalCat" class="category-tag"></span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDesc"></p>
+        </div>
+    </div>
+</div>
+
+<div id="searchOverlay" class="search-overlay">
+    <button class="close-search" onclick="toggleSearch()">&times;</button>
+    <input type="text" placeholder="¿A quién buscas? (ej. Shakira)..." id="searchInput">
+    <p style="margin-top: 20px; color: #666;">Presiona ENTER para buscar</p>
+</div>
+
+<div id="toast-container" class="toast-container"></div>
+
+<div class="news-grid" style="display: none;"></div>
+
+<script src="gungo.js"></script>
+</body>
+</html>
