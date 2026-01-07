@@ -84,21 +84,21 @@
       "views": "3.5M"
     },
     {
-      "id": "vid_mx992",
-      "sourceId": "VIDEO_BAD_BUNNY_MX",
-      "title": "Susto en México: Bad Bunny resbala",
-      "description": "Ángulo inédito de la caída del Conejo Malo en su concierto del Estadio Azteca.",
-      "category": "ESCÁNDALO",
-      "views": "3.1M"
+      "id": "vid_dani_alofoke_envueltos",
+      "sourceId": "Us5xcLfNWdM",
+      "title": "Dani Barranco x Alofoke Music - Envueltos Unplugged",
+      "description": "¡Romántico pero picante! Dani Barranco y JLexis se unen a Alofoke en este unplugged que está tocando fibras. Un tema de 'corta venas' que ya se está pegando.",
+      "category": "VIRAL",
+      "views": "986K"
     },
     {
-      "id": "vid_alf01",
-      "sourceId": "VIDEO_ALOFOKE_COBRA",
-      "title": "Alofoke rompe el silencio sobre 'Cobra'",
-      "description": "Santiago Matías habla sin censura sobre los implicados en la Operación Cobra.",
-      "category": "EXCLUSIVA",
-      "views": "1.8M"
-    }
+  "id": "vid_beele_top_diesel",
+  "sourceId": "8H61_9M6IUs",
+  "title": "Beéle - top diesel (Performance/Lyrics)",
+  "description": "El tema que tiene a todos bailando. Beéle lanza este hit romántico y adictivo con ritmo caribeño sobre no enamorarse, ¡viral en TikTok con millones de reproducciones y trending mundial!",
+  "category": "VIRAL",
+  "views": "188.2M"
+  }
   ],
   "newsArticles": [
     {
@@ -324,6 +324,7 @@
     }
   ]
    } 
+
 
 
 
