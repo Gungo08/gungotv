@@ -51,18 +51,14 @@
     "footerText": "Más de 15k votos hoy."
   },
   "viralVideos": [
-  {
-  "id": "vid-20260105-bulin47",
-  "title": "Bulin 47 rompe la calle con 'Morbo'",
-  "category": "VIDEO VIRAL",
-  "date": "2026-01-05",
-  "description": "¡Última hora! Bulin 47 suelta su nuevo bombazo 'Morbo'. Un tema cargado de calle y polémica que ya está encendiendo las redes. ¿Ya lo escuchaste? Entra y mira el video oficial que está dando de qué hablar.",
-  "thumbnail": "https://img.youtube.com/vi/aMLK8A6B1_8/maxresdefault.jpg",
-  "videoType": "youtube",
-  "videoId": "aMLK8A6B1_8",
-  "views": "528,147+",
-  "url": "https://www.youtube.com/watch?v=aMLK8A6B1_8"
-},
+     {
+      "id": "vid_bulin_morbo",
+      "sourceId": "aMLK8A6B1_8",
+      "title": "Bulin 47 - Morbo (Video Oficial)",
+      "description": "¡Última hora! Bulin 47 suelta su nuevo bombazo 'Morbo'. Un tema cargado de calle y polémica que ya está encendiendo las redes.",
+      "category": "VIRAL",
+      "views": "528K"
+    },
     {
       "id": "vid_yailin_creta",
       "sourceId": "Bq-fZJbYqLc",
@@ -328,6 +324,7 @@
     }
   ]
    } 
+
 
 
 
