@@ -1,5 +1,5 @@
  /* =========================================
-   GUNGO 2025 - HOJA DE ESTILOS MAESTRA (FINAL)
+   GUNGO 2025 - HOJA DE ESTILOS MAESTRA (YELLOW EDITION 2.0)
    ========================================= */
 
 /* --- RESET BÁSICO --- */
@@ -31,7 +31,8 @@ header {
 
 header.scrolled { 
     background: rgba(0, 0, 0, 0.95); 
-    box-shadow: 0 5px 20px rgba(229, 9, 20, 0.2); 
+    /* CAMBIO: Sombra Nuevo Amarillo RGBA(255, 235, 59) */
+    box-shadow: 0 5px 20px rgba(255, 235, 59, 0.2); 
     height: 80px;
 }
 
@@ -66,12 +67,13 @@ header.scrolled .logo-link img { height: 60px; }
 
 .nav-links a::after {
     content: ""; position: absolute; bottom: -6px; left: 0; width: 0; height: 3px;
-    background: linear-gradient(90deg, #E50914, #FF6B00); transition: .3s;
+    /* CAMBIO: Gradiente con Nuevo Amarillo */
+    background: linear-gradient(90deg, #FFEB3B, #FF6B00); transition: .3s;
 }
 .nav-links a:hover::after { width: 100%; }
 
 .search-trigger { cursor: pointer; font-size: 1.4rem; transition: 0.3s; }
-.search-trigger:hover { color: #FF6B00; transform: scale(1.2); }
+.search-trigger:hover { color: #FFEB3B; transform: scale(1.2); }
 
 /* =========================================
    2. HERO SECTION (PORTADA)
@@ -89,10 +91,11 @@ header.scrolled .logo-link img { height: 60px; }
 .hero-content h1 {
     font-size: 5rem; 
     font-weight: 800; margin: 0;
-    background: linear-gradient(90deg, #E50914, #FF6B00, #FFB800);
+    /* CAMBIO: Texto Gradiente Nuevo Amarillo */
+    background: linear-gradient(90deg, #FFEB3B, #FF6B00, #FFB800);
     -webkit-background-clip: text; background-clip: text;
     -webkit-text-fill-color: transparent; color: transparent;
-    text-shadow: 0 10px 40px rgba(229, 9, 20, 0.3);
+    text-shadow: 0 10px 40px rgba(255, 235, 59, 0.3);
     line-height: 1.1;
     position: relative; z-index: 2;
 }
@@ -101,16 +104,17 @@ header.scrolled .logo-link img { height: 60px; }
 
 .btn-primary {
     padding: 15px 45px; 
-    background: linear-gradient(90deg, #E50914, #FF6B00); 
-    color: #fff; border: none; border-radius: 50px;
+    /* CAMBIO: Fondo Nuevo Amarillo, Texto Negro */
+    background: linear-gradient(90deg, #FFEB3B, #FF6B00); 
+    color: #000; border: none; border-radius: 50px;
     font-size: 1.2rem; font-weight: 700; cursor: pointer; transition: .4s;
-    box-shadow: 0 10px 30px rgba(229, 9, 20, 0.4);
+    box-shadow: 0 10px 30px rgba(255, 235, 59, 0.4);
     text-transform: uppercase;
 }
 .btn-primary:hover { 
-    background: linear-gradient(90deg, #FF6B00, #E50914); 
+    background: linear-gradient(90deg, #FF6B00, #FFEB3B); 
     transform: translateY(-5px); 
-    box-shadow: 0 15px 40px rgba(255, 107, 0, 0.5);
+    box-shadow: 0 15px 40px rgba(255, 235, 59, 0.5);
 }
 
 /* =========================================
@@ -126,7 +130,8 @@ header.scrolled .logo-link img { height: 60px; }
 .stories-wrapper { display: flex; gap: 25px; min-width: max-content; padding-bottom: 10px; }
 .story-circle {
     width: 90px; height: 90px; border-radius: 50%; padding: 3px; 
-    background: linear-gradient(45deg, #E50914, #FF6B00, #FFB800);
+    /* CAMBIO: Borde Nuevo Amarillo */
+    background: linear-gradient(45deg, #FFEB3B, #FF6B00, #FFB800);
     cursor: pointer; position: relative; transition: transform 0.3s;
 }
 .story-circle:hover { transform: scale(1.1) rotate(5deg); }
@@ -145,7 +150,8 @@ header.scrolled .logo-link img { height: 60px; }
 .section-title::before {
     content: "Noticias que Arde";
     position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-    background: linear-gradient(45deg, #E50914, #FF6B00, #FFB800);
+    /* CAMBIO: Título Nuevo Amarillo */
+    background: linear-gradient(45deg, #FFEB3B, #FF6B00, #FFB800);
     -webkit-background-clip: text; background-clip: text;
     -webkit-text-fill-color: transparent; color: transparent;
 }
@@ -156,10 +162,11 @@ header.scrolled .logo-link img { height: 60px; }
     border: 1px solid #333; border-radius: 50px; font-size: 1rem;
     font-weight: 600; cursor: pointer; transition: 0.3s; text-transform: uppercase;
 }
-.filter-btn:hover { background: #222; border-color: #FF6B00; color: #FF6B00; }
+.filter-btn:hover { background: #222; border-color: #FFEB3B; color: #FFEB3B; }
 .filter-btn.active {
-    background: #E50914; border-color: #E50914; color: white;
-    box-shadow: 0 5px 15px rgba(229, 9, 20, 0.4);
+    /* CAMBIO: Botón activo Nuevo Amarillo con texto Negro */
+    background: #FFEB3B; border-color: #FFEB3B; color: #000;
+    box-shadow: 0 5px 15px rgba(255, 235, 59, 0.4);
 }
 
 .news-grid {
@@ -176,8 +183,8 @@ header.scrolled .logo-link img { height: 60px; }
 .news-card.hidden { display: none; }
 .news-card:hover { 
     transform: translateY(-15px); 
-    box-shadow: 0 25px 50px rgba(255, 107, 0, 0.15);
-    border-color: #E50914; 
+    box-shadow: 0 25px 50px rgba(255, 235, 59, 0.15);
+    border-color: #FFEB3B; 
 }
 
 .news-card img { width: 100%; height: 200px; object-fit: cover; transition: transform 0.5s; }
@@ -185,13 +192,14 @@ header.scrolled .logo-link img { height: 60px; }
 
 .category-tag {
     position: absolute; top: 15px; left: 15px; 
-    background: linear-gradient(90deg, #E50914, #FF6B00);
-    color: #fff;
+    /* CAMBIO: Etiqueta Nuevo Amarillo con texto Negro */
+    background: linear-gradient(90deg, #FFEB3B, #FF6B00);
+    color: #000;
     padding: 6px 15px; border-radius: 30px; font-size: 0.8rem; font-weight: 800; 
     z-index: 2; text-transform: uppercase; letter-spacing: 1px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
-.category-tag.exclusiva { background: linear-gradient(90deg, #E50914, #800000); }
+.category-tag.exclusiva { background: linear-gradient(90deg, #FFEB3B, #B3A300); }
 
 .card-content { padding: 25px; position: relative; }
 .card-content h3 { font-size: 1.3rem; margin: 10px 0; line-height: 1.3; }
@@ -201,7 +209,7 @@ header.scrolled .logo-link img { height: 60px; }
     display: inline-block; font-size: 0.75rem; color: #888; margin-bottom: 8px;
     text-transform: uppercase; letter-spacing: 0.5px;
 }
-.reading-time i { margin-right: 5px; color: #FF6B00; }
+.reading-time i { margin-right: 5px; color: #FFEB3B; }
 
 .reaction-bar { display: flex; gap: 10px; padding-top: 15px; border-top: 1px solid #222; }
 .reaction-btn {
@@ -210,7 +218,7 @@ header.scrolled .logo-link img { height: 60px; }
     display: flex; align-items: center; gap: 6px; font-size: 0.85rem; transition: 0.2s;
 }
 .reaction-btn:hover { background: rgba(255,255,255,0.15); transform: translateY(-2px); }
-.reaction-btn.active { color: #FF6B00; border-color: #FF6B00; background: rgba(255, 107, 0, 0.1); }
+.reaction-btn.active { color: #FFEB3B; border-color: #FFEB3B; background: rgba(255, 235, 59, 0.1); }
 
 .share-btn-card {
     background: transparent; border: 1px solid #444; color: #aaa;
@@ -221,7 +229,7 @@ header.scrolled .logo-link img { height: 60px; }
 .share-btn-card:hover { background: #fff; color: #000; }
 
 /* =========================================
-   4. MODAL (ARREGLO PC)
+   4. MODAL (ARREGLO PC - IMAGEN MÁS ELEGANTE)
    ========================================= */
 .modal-overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -233,43 +241,43 @@ header.scrolled .logo-link img { height: 60px; }
 
 .modal-content {
     background: #111; 
-    max-width: 850px; width: 90%; 
-    display: grid; grid-template-columns: 1fr 1fr;
+    max-width: 900px; width: 90%; 
+    /* Estructura fija - PC */
+    display: grid; grid-template-columns: 350px 1fr;
     border-radius: 20px; overflow: hidden; position: relative; 
     transform: translateY(50px); transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 0 50px rgba(229, 9, 20, 0.3); border: 1px solid #333;
-    max-height: 90vh; /* Límite de altura en PC */
+    /* CAMBIO: Sombra Nuevo Amarillo */
+    box-shadow: 0 0 50px rgba(255, 235, 59, 0.3); border: 1px solid #333;
+    max-height: 80vh; 
 }
 .modal-overlay.open .modal-content { transform: translateY(0); }
 
 .modal-content img { 
     width: 100%; height: 100%; object-fit: cover; 
-    min-height: 300px; 
 }
 
-/* IMPORTANTE: El scroll está aquí en PC */
 .modal-text { 
     padding: 35px; 
-    display: flex; flex-direction: column; justify-content: center; 
+    display: flex; flex-direction: column; 
     position: relative; overflow-y: auto; 
 }
 
 .close-modal {
-    position: absolute; top: 20px; right: 25px; background: none; border: none;
+    position: absolute; top: 15px; right: 20px; background: none; border: none;
     color: #fff; font-size: 2.5rem; cursor: pointer; z-index: 10;
     transition: 0.3s;
 }
-.close-modal:hover { color: #E50914; transform: rotate(90deg); }
+.close-modal:hover { color: #FFEB3B; transform: rotate(90deg); }
 
 .modal-buttons { display: flex; gap: 10px; margin-top: 30px; }
 .modal-buttons button { padding: 10px 20px; border-radius: 50px; border:none; cursor: pointer; font-weight: bold; }
-.modal-buttons .btn-primary { background: linear-gradient(90deg, #E50914, #FF6B00); color: white; }
-.modal-buttons .btn-secondary { background: transparent; border: 1px solid #FF6B00; color: #FF6B00; }
+/* CAMBIO: Botón Modal Nuevo Amarillo */
+.modal-buttons .btn-primary { background: linear-gradient(90deg, #FFEB3B, #FF6B00); color: #000; }
+.modal-buttons .btn-secondary { background: transparent; border: 1px solid #FFEB3B; color: #FFEB3B; }
 
 /* =========================================
    5. EXTRAS (PUBLICIDAD, TOAST, ENCUESTAS)
    ========================================= */
-/* Publicidad (El estilo base que debe verse siempre) */
 .ad-container {
     display: flex; justify-content: center; align-items: center; margin: 30px auto;
     background: #080808; border: 1px dashed #333; color: #444;
@@ -279,37 +287,37 @@ header.scrolled .logo-link img { height: 60px; }
 .ad-leaderboard { width: 100%; max-width: 728px; height: 90px; }
 .ad-square { width: 100%; max-width: 300px; height: 250px; }
 
-/* REGLA BLINDADA PARA LA PUBLICIDAD EN EL MODAL */
 .modal-text .ad-container {
-    display: flex !important; /* Fuerza a que se muestre */
+    display: flex !important; 
     opacity: 1 !important;
     visibility: visible !important;
     width: 100% !important;
     max-width: 300px !important;
     height: 250px !important;
-    margin: 25px auto !important; /* Centrado */
+    margin: 25px auto !important; 
     background: #080808;
     border: 1px dashed #333;
-    flex-shrink: 0 !important; /* Evita que se aplaste si falta espacio */
+    flex-shrink: 0 !important; 
 }
 
-/* Resto de extras */
 .load-more-container { text-align: center; margin: 80px 0; }
 .btn-secondary {
-    padding: 15px 40px; background: transparent; border: 2px solid #FF6B00;
-    color: #FF6B00; border-radius: 50px; font-weight: 700; cursor: pointer;
+    padding: 15px 40px; background: transparent; border: 2px solid #FFEB3B;
+    color: #FFEB3B; border-radius: 50px; font-weight: 700; cursor: pointer;
     transition: 0.3s; font-size: 1rem; display: inline-flex; align-items: center; gap: 10px;
 }
-.btn-secondary:hover { background: #FF6B00; color: #fff; transform: scale(1.05); }
+.btn-secondary:hover { background: #FFEB3B; color: #000; transform: scale(1.05); }
 
 .breaking-news-bar {
     position: fixed; bottom: 0; left: 0; width: 100%; height: 45px;
-    background: #E50914; color: white; display: flex; align-items: center; 
+    /* CAMBIO: Barra Nuevo Amarillo y Texto Negro */
+    background: #FFEB3B; color: #000; 
+    display: flex; align-items: center; 
     z-index: 1500; font-size: 0.95rem; border-top: 3px solid #FF6B00;
 }
 .breaking-label {
     background: #000; padding: 0 25px; height: 100%; display: flex; align-items: center;
-    font-weight: 800; font-style: italic; z-index: 2; flex-shrink: 0; color: #FFB800; 
+    font-weight: 800; font-style: italic; z-index: 2; flex-shrink: 0; color: #FFEB3B; 
 }
 .breaking-text-container { flex: 1; overflow: hidden; white-space: nowrap; height: 100%; display: flex; align-items: center;}
 .breaking-text {
@@ -320,7 +328,7 @@ header.scrolled .logo-link img { height: 60px; }
 
 /* Polls */
 .poll-section { max-width: 800px; margin: 80px auto; padding: 0 5%; text-align: center; }
-.poll-title { font-size: 2.5rem; margin-bottom: 30px; color: #FF6B00; font-weight: 800; }
+.poll-title { font-size: 2.5rem; margin-bottom: 30px; color: #FFEB3B; font-weight: 800; }
 .poll-container {
     background: #111; padding: 40px; border-radius: 20px; border: 1px solid #333;
     box-shadow: 0 10px 40px rgba(0,0,0,0.5);
@@ -331,11 +339,11 @@ header.scrolled .logo-link img { height: 60px; }
     cursor: pointer; overflow: hidden; border: 1px solid #444; transition: 0.2s;
     text-align: left;
 }
-.poll-option:hover { border-color: #FF6B00; transform: scale(1.02); }
+.poll-option:hover { border-color: #FFEB3B; transform: scale(1.02); }
 .poll-text { position: relative; z-index: 2; font-weight: 700; font-size: 1.1rem; }
 .poll-bar {
     position: absolute; top: 0; left: 0; height: 100%; width: 0%;
-    background: linear-gradient(90deg, #E50914, #FF6B00);
+    background: linear-gradient(90deg, #FFEB3B, #FF6B00);
     z-index: 1; transition: width 1s ease-out; opacity: 0.5;
 }
 .poll-percent {
@@ -349,7 +357,7 @@ header.scrolled .logo-link img { height: 60px; }
     display: flex; flex-direction: column; gap: 10px; pointer-events: none;
 }
 .toast-msg {
-    background: rgba(10, 10, 10, 0.95); border-left: 5px solid #FF6B00;
+    background: rgba(10, 10, 10, 0.95); border-left: 5px solid #FFEB3B;
     padding: 15px 20px; border-radius: 8px; color: #fff;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5); width: 320px;
     transform: translateX(120%); opacity: 0; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -357,7 +365,7 @@ header.scrolled .logo-link img { height: 60px; }
 }
 .toast-msg.show { transform: translateX(0); opacity: 1; }
 .toast-header { 
-    font-size: 0.75rem; color: #FF6B00; font-weight: 800; margin-bottom: 5px; 
+    font-size: 0.75rem; color: #FFEB3B; font-weight: 800; margin-bottom: 5px; 
     text-transform: uppercase; letter-spacing: 1px;
 }
 .toast-body { font-size: 0.95rem; line-height: 1.4; }
@@ -378,7 +386,7 @@ header.scrolled .logo-link img { height: 60px; }
     position: absolute; top: 30px; right: 30px; font-size: 3rem;
     background: none; border: none; color: #fff; cursor: pointer; transition: 0.3s;
 }
-.close-search:hover { transform: rotate(90deg); color: #E50914; }
+.close-search:hover { transform: rotate(90deg); color: #FFEB3B; }
 
 /* Footer */
 footer { background: #050505; padding: 80px 5% 50px; margin-top: 100px; border-top: 1px solid #222; }
@@ -387,7 +395,7 @@ footer { background: #050505; padding: 80px 5% 50px; margin-top: 100px; border-t
     display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px;
 }
 .social-icons a { color: #fff; font-size: 2rem; margin: 0 15px; transition: .3s; }
-.social-icons a:hover { color: #FF6B00; transform: scale(1.3); }
+.social-icons a:hover { color: #FFEB3B; transform: scale(1.3); }
 
 
 /* =========================================
@@ -395,7 +403,7 @@ footer { background: #050505; padding: 80px 5% 50px; margin-top: 100px; border-t
    ========================================= */
 @media only screen and (max-width: 768px) {
 
-    /* HEADER Y MENÚ (Menú Visible) */
+    /* HEADER Y MENÚ */
     header { height: 70px !important; padding: 0 15px !important; }
     header.scrolled { height: 60px !important; }
     .logo-link img { height: 50px !important; }
@@ -403,7 +411,7 @@ footer { background: #050505; padding: 80px 5% 50px; margin-top: 100px; border-t
     .nav-links { gap: 10px !important; }
     .nav-links a { font-size: 0.8rem !important; margin: 0 5px !important; }
 
-    /* HERO: Texto Arreglado */
+    /* HERO */
     .hero { margin-top: 70px !important; min-height: 400px !important; }
     .hero-content h1 { 
         font-size: 2.5rem !important;
@@ -415,13 +423,12 @@ footer { background: #050505; padding: 80px 5% 50px; margin-top: 100px; border-t
     /* TÍTULOS */
     .section-title { font-size: 2rem !important; margin: 30px 0 !important; }
 
-    /* MODAL (NOTICIA) EN MÓVIL */
+    /* MODAL MÓVIL */
     .modal-content {
         display: flex !important; 
         flex-direction: column !important;
         width: 95% !important; margin: 10px auto !important;
         height: auto !important; max-height: 85vh !important;
-        /* ARREGLO CLAVE: Permitir scroll en el contenedor principal si todo se desborda */
         overflow-y: auto !important; 
     }
     
@@ -429,20 +436,17 @@ footer { background: #050505; padding: 80px 5% 50px; margin-top: 100px; border-t
         height: 200px !important; 
         min-height: 0 !important; 
         width: 100% !important;
-        flex-shrink: 0 !important; /* Evita que la imagen se aplaste */
+        flex-shrink: 0 !important; 
     }
     
     .modal-text {
         padding: 20px !important;
         display: block !important;
-        /* En móvil, el scroll lo maneja el modal-content, así que quitamos este si es necesario, 
-           pero para seguridad lo dejamos auto por si acaso el contenido es interno */
         overflow: visible !important; 
     }
     
     .modal-text h2 { font-size: 1.4rem !important; margin-bottom: 10px !important; }
     
-    /* REGLA DE PUBLICIDAD MÓVIL (Asegurar que se vea) */
     .modal-text .ad-container {
         margin: 20px auto !important;
         width: 100% !important;
