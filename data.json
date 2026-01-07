@@ -37,7 +37,7 @@
     { "id": "s2", "name": "Bad Bunny", "img": "logo-gungo8.png", "hasNew": true },
     { "id": "s3", "name": "Yailin", "img": "logo-gungo9.png", "hasNew": true },
     { "id": "s4", "name": "El Alfa", "img": "logo-gungo6.png", "hasNew": false },
-    { "id": "s5", "name": "Tekashi", "img": "logo-gungo10.png", "hasNew": true },
+    { "id": "s5", "name": "Anuel AA", "img": "logo-gungo10.png", "hasNew": true },
     { "id": "s6", "name": "Feid", "img": "logo-gungo3.png", "hasNew": true }
   ],
   "pollData": {
@@ -328,6 +328,7 @@
     }
   ]
    } 
+
 
 
 
