@@ -52,17 +52,17 @@
   },
   "viralVideos": [
   {
-    "id": "video_01_maduro_reaction",
-    "titulo": "“¿Inmunidad?”: La respuesta del Juez a la defensa de Maduro (Video Exclusivo)",
-    "categoria": "Polítándula",
-    "tipo": "video",
-    "fecha": "2026-01-07",
-    "duracion": "02:15",
-    "video_src": "assets/videos/2026/maduro_juez_reply.mp4",
-    "thumbnail": "assets/img/maduro_court_sketch.jpg",
-    "resumen": "Imágenes recreadas de la corte: El momento tenso donde el juez Hellerstein desestima el argumento de 'Presidente en ejercicio'.",
-    "seo_tags": ["Nicolas Maduro", "Nueva York", "Juicio", "Politica", "Viral"]
-  },
+  "id": "vid-20260105-bulin47",
+  "title": "Bulin 47 rompe la calle con 'Morbo'",
+  "category": "VIDEO VIRAL",
+  "date": "2026-01-05",
+  "description": "¡Última hora! Bulin 47 suelta su nuevo bombazo 'Morbo'. Un tema cargado de calle y polémica que ya está encendiendo las redes. ¿Ya lo escuchaste? Entra y mira el video oficial que está dando de qué hablar.",
+  "thumbnail": "https://img.youtube.com/vi/aMLK8A6B1_8/maxresdefault.jpg",
+  "videoType": "youtube",
+  "videoId": "aMLK8A6B1_8",
+  "views": "528,147+",
+  "url": "https://www.youtube.com/watch?v=aMLK8A6B1_8"
+},
     {
       "id": "vid_yailin_creta",
       "sourceId": "Bq-fZJbYqLc",
@@ -328,6 +328,7 @@
     }
   ]
    } 
+
 
 
 
