@@ -51,25 +51,53 @@
     "footerText": "Más de 15k votos hoy."
   },
   "viralVideos": [
+  {
+    "id": "video_01_maduro_reaction",
+    "titulo": "“¿Inmunidad?”: La respuesta del Juez a la defensa de Maduro (Video Exclusivo)",
+    "categoria": "Polítándula",
+    "tipo": "video",
+    "fecha": "2026-01-07",
+    "duracion": "02:15",
+    "video_src": "assets/videos/2026/maduro_juez_reply.mp4",
+    "thumbnail": "assets/img/maduro_court_sketch.jpg",
+    "resumen": "Imágenes recreadas de la corte: El momento tenso donde el juez Hellerstein desestima el argumento de 'Presidente en ejercicio'.",
+    "seo_tags": ["Nicolas Maduro", "Nueva York", "Juicio", "Politica", "Viral"]
+  },
     {
-      "id": "zE1MnA5MuAk",
-      "sourceId": "_PJvpq8uOZM",
-      "title": "Karol G: El momento exacto del corte viral",
-      "description": "El video que rompió internet: La Bichota usando tijeras de cocina para su cambio de look.",
-      "category": "CALIENTES",
-      "views": "5.2M"
+      "id": "vid_yailin_creta",
+      "sourceId": "Bq-fZJbYqLc",
+      "title": "Yailin La Más Viral - CRETA SECA (Video Oficial)",
+      "description": "El tema que tiene a todos hablando. Yailin responde a las críticas con este dembow agresivo que ya es tendencia #1.",
+      "category": "VIRAL",
+      "views": "10.2M"
     },
     {
-      "id": "vid_yailin_jaime",
-      "sourceId": "zE1MnA5MuAk",
+      "id": "vid_alofoke_entrevista",
+      "sourceId": "TxACDZOOMIw",
+      "title": "Alofoke Rompe el Silencio: La Entrevista Prohibida",
+      "description": "Santiago Matías suelta todo sobre la polémica de 'La Casa'. Exclusiva que nadie se esperaba.",
+      "category": "ENTREVISTA",
+      "views": "2.1M"
+    },
+    {
+      "id": "vid_lidom_perreo",
+      "sourceId": "HF2RWOrwu4w",
+      "title": "¡SE VACIARON LAS BANCAS! Perreo y Pelea en LIDOM",
+      "description": "El momento exacto donde se armó la trifulca en el estadio tras un perreo monumental. Julio Rodríguez no aguantó la presión.",
+      "category": "DEPORTES",
+      "views": "3.5M"
+    },
+    {
+      "id": "vid_mx992",
+      "sourceId": "VIDEO_BAD_BUNNY_MX",
       "title": "Susto en México: Bad Bunny resbala",
       "description": "Ángulo inédito de la caída del Conejo Malo en su concierto del Estadio Azteca.",
       "category": "ESCÁNDALO",
       "views": "3.1M"
     },
     {
-      "id": "vid_don miguelo_miky maus",
-      "sourceId": "yd7gydDUmr8",
+      "id": "vid_alf01",
+      "sourceId": "VIDEO_ALOFOKE_COBRA",
       "title": "Alofoke rompe el silencio sobre 'Cobra'",
       "description": "Santiago Matías habla sin censura sobre los implicados en la Operación Cobra.",
       "category": "EXCLUSIVA",
@@ -209,8 +237,52 @@
       "author": { "name": "Vogue", "role": "Música" },
       "metrics": { "views": "2.2M", "likes": 180000, "shares": 60000 },
       "tags": ["Tokischa", "Madonna", "Beso", "CALIENTES"]
+    },
+    {
+      "id": 405,
+      "slug": "licey-eliminado-gigantes-2025",
+      "category": "EN PELOTA",
+      "badge": "OFICIAL 🚫",
+      "publishedAt": "2025-12-22T23:00:00Z",
+      "title": "¡Batacazo Invernal! Licey queda ELIMINADO tras caer ante Gigantes",
+      "summary": "El Glorioso se despide de la temporada en el Julián Javier (5-3).",
+      "longDescription": "Noche triste para la fanaticada azul. Los Gigantes del Cibao vencieron 5-3 a los Tigres del Licey, dejándolos matemáticamente fuera del Round Robin 2025-2026. Marco Hernández fue el verdugo con 3 remolcadas que sepultaron las esperanzas del bicampeón. Es la primera vez en años que el Licey queda en el sótano.",
+      "image": "https://i.ytimg.com/vi/FsFKVbMjEUs/maxresdefault.jpg",
+      "altText": "Jugadores de Gigantes celebrando mientras Licey sale cabizbajo",
+      "author": { "name": "LIDOM Press", "role": "Deportes" },
+      "metrics": { "views": "2.8M", "likes": 120000, "shares": 45000 },
+      "tags": ["Licey", "Eliminado", "LIDOM", "Gigantes"]
+    },
+    {
+      "id": 402,
+      "slug": "tatis-jr-estrellas-debut",
+      "category": "EN PELOTA",
+      "publishedAt": "2025-12-19T18:00:00Z",
+      "title": "Fernando Tatis Jr. confirma que jugará en Enero",
+      "summary": "El Niño encenderá el Tetelo Vargas en el Round Robin.",
+      "longDescription": "¡Confirmado! Tatis Jr. recibió el permiso de San Diego. 'Vengo a darle la corona a San Pedro', declaró en su llegada al aeropuerto AILA. Se espera que debute el 2 de enero.",
+      "image": "https://cdn.com.do/wp-content/uploads/2021/01/Fernando-Tatis-Jr-Estrellas.jpg",
+      "altText": "Fernando Tatis Jr con uniforme de Estrellas Orientales",
+      "author": { "name": "Pio Deportes", "role": "Exclusiva" },
+      "metrics": { "views": "900K", "likes": 80000, "shares": 15000 },
+      "tags": ["Tatis Jr", "Estrellas", "MLB", "EN PELOTA"]
+    },
+    {
+      "id": 403,
+      "slug": "escogido-cambio-manager",
+      "category": "EN PELOTA",
+      "publishedAt": "2025-12-18T10:00:00Z",
+      "title": "El Escogido despide a su manager en plena racha perdedora",
+      "summary": "La directiva escarlata busca reacción inmediata.",
+      "longDescription": "Tras perder 5 juegos en línea, los Leones del Escogido anunciaron cambio de mando. Los fanáticos en redes sociales pedían 'cabezas' y la gerencia respondió rápido para intentar salvar la clasificación.",
+      "image": "https://noticiassin.com/wp-content/uploads/2022/10/Escogido.jpg",
+      "altText": "Dugout del Escogido con caras preocupadas",
+      "author": { "name": "Listín Deportes", "role": "Noticias" },
+      "metrics": { "views": "400K", "likes": 5000, "shares": 800 },
+      "tags": ["Escogido", "LIDOM", "Despido", "EN PELOTA"]
     }
   ],
+  
   "loadMoreData": [
     {
       "id": 307,
@@ -255,8 +327,8 @@
       "tags": ["Shakira", "Piqué", "Miami", "ESCÁNDALO"]
     }
   ]
+   } 
 
-}
 
 
 
