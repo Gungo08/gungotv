@@ -102,15 +102,21 @@
   ],
   "newsArticles": [
      {
-    "id": "news_brianna_confesion_01",
-    "titulo": "CONFESIÓN SIN CUERPO: Familiares admiten crimen de Brianna, pero sus restos no aparecen",
-    "categoria": "Sucesos & Justicia",
-    "tipo": "articulo",
-    "fecha": "2026-01-08",
-    "img_src": "caso-brianna-rio-busqueda.jpg",
-    "resumen": "IMBERT, PUERTO PLATA.— La tragedia de la niña Brianna Genao (3 años) entra en fase crítica. Aunque dos familiares admitieron su responsabilidad en la muerte, las autoridades no logran localizar los restos en el punto señalado del Río Pérez. 'No hay crimen sin cuerpo', temen los fiscales, mientras la magistrada Olga Diná ordena ampliar la búsqueda hacia la desembocadura.",
-    "seo_tags": ["Brianna Genao", "Puerto Plata", "Justicia", "Sucesos", "Imbert", "Ultima Hora"]
-  },
+  "id": 405,
+  "slug": "caso-brianna-confesion-sin-cuerpo",
+  "category": "SUCESOS",
+  "badge": "ÚLTIMA HORA 🚨",
+  "publishedAt": "2026-01-08T08:30:00Z",
+  "title": "CONFESIÓN Y MISTERIO: Familiares admiten crimen de Brianna, pero el cuerpo no aparece",
+  "summary": "Giro dramático en Puerto Plata. Dos familiares confiesan, pero los restos no están en el río.",
+  "longDescription": "IMBERT, PUERTO PLATA.— La tragedia de la niña Brianna Genao (3 años) ha entrado en una fase desesperante. Fuentes ligadas a la investigación confirmaron a Gungo que, aunque dos familiares admitieron su responsabilidad en la desaparición y muerte de la menor, las autoridades no han logrado localizar sus restos.\n\nLos detenidos guiaron a las autoridades a un punto específico del Río Pérez donde supuestamente abandonaron el cuerpo tras cometer el abuso. Sin embargo, tras horas de rastreo con buzos y unidades K-9, la búsqueda resultó infructuosa.\n\n'No hay crimen sin cuerpo'. Esta es la frase que temen los fiscales. La magistrada Olga Diná Llaverías ha ordenado ampliar el perímetro de búsqueda hacia la desembocadura, bajo la hipótesis de que la corriente pudo arrastrarla, o que los confesos están jugando al despiste con las autoridades. Mientras no aparezca Brianna, el caso judicial se complica, manteniendo a la comunidad de Barrero en una agonía sin cierre.",
+  "image": "https://img.listindiario.com/files/article_main/uploads/2023/11/20/655bc6f86395b.jpeg",
+  "altText": "Operativo de búsqueda policial y defensa civil en río de Puerto Plata",
+  "author": { "name": "Gungo Redacción", "role": "Investigación" },
+  "media": { "type": "image", "count": 1 },
+  "metrics": { "views": "1.2M", "likes": 45000, "shares": 12000 },
+  "tags": ["Brianna Genao", "Puerto Plata", "Justicia", "ALERTA"]
+},
    
     {
       "id": 301,
@@ -335,6 +341,7 @@
     }
   ]
    } 
+
 
 
 
