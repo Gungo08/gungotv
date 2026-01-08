@@ -457,5 +457,20 @@ footer { background: #050505; padding: 80px 5% 50px; margin-top: 100px; border-t
 
     /* FILTROS */
     .category-filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+ .breaking-news-bar {
+        height: 35px !important; /* Hacemos la barra un poco más fina */
+        font-size: 0.8rem !important; /* Reducimos el tamaño general */
+    }
+
+    .breaking-label {
+        padding: 0 10px !important; /* Menos espacio a los lados */
+        font-size: 0.75rem !important; /* Letra "ÚLTIMA HORA" más pequeña */
+        width: auto !important; /* Que se ajuste al texto */
+    }
+    
+    .breaking-text {
+        font-size: 0.8rem !important; /* Texto de la noticia también más pequeño */
+    }
 }
+
 
