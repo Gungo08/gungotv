@@ -148,7 +148,7 @@ header.scrolled .logo-link img { height: 60px; }
     position: relative; color: transparent;
 }
 .section-title::before {
-    content: "Noticias que Arde";
+    content: "Noticias";
     position: absolute; top: 0; left: 50%; transform: translateX(-50%);
     /* CAMBIO: Título Nuevo Amarillo */
     background: linear-gradient(45deg, #FFEB3B, #FF6B00, #FFB800);
@@ -458,3 +458,4 @@ footer { background: #050505; padding: 80px 5% 50px; margin-top: 100px; border-t
     /* FILTROS */
     .category-filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
 }
+
