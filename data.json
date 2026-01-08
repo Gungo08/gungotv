@@ -149,21 +149,22 @@
       "metrics": { "views": "920K", "likes": 22000, "shares": 15000 },
       "tags": ["Corrupción", "Yeni Berenice", "Urbanos", "EXCLUSIVA"]
     },
-    {
-      "id": 310,
-      "slug": "yailin-netflix-documental",
-      "category": "EXCLUSIVA",
-      "badge": "CONFIRMADO 🎬",
-      "publishedAt": "2025-12-19T18:00:00Z",
-      "title": "¡Es Oficial! Yailin firma con Netflix para su propia docuserie",
-      "summary": "La dominicana contará 'su verdad' sobre Tekashi y Anuel en streaming.",
-      "longDescription": "Documentos filtrados a GUNGO revelan que Jorgina Lulú Guillermo (Yailin) cerró un trato de 3 millones de dólares con el gigante del streaming. La serie, tentativamente titulada 'Resiliencia', comenzará a rodarse en enero de 2026 en Punta Cana y Miami.",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcHXCXWsv1G6Nq0-GkSBgGsnaFw8Frk3ESGg&s",
-      "altText": "Yailin firmando documentos en oficinas de Netflix",
-      "author": { "name": "GUNGO Redacción", "role": "Exclusiva" },
-      "metrics": { "views": "1.2M", "likes": 150000, "shares": 45000 },
-      "tags": ["Yailin", "Netflix", "Serie", "EXCLUSIVA"]
-    },
+   {
+  "id": 407,
+  "slug": "yailin-jaime-record-vistas",
+  "category": "REALEZA URBANA",
+  "badge": "TENDENCIA 🔥",
+  "publishedAt": "2026-01-08T09:00:00Z",
+  "title": "¿Quién es Jaime?: El tema de Yailin que rompe YouTube con 4.5 Millones",
+  "summary": "La Más Viral calla bocas con música. Su nuevo hit supera las expectativas y se pega mundialmente.",
+  "longDescription": "Yailin La Más Viral demuestra una vez más por qué lleva ese nombre. Su más reciente sencillo, 'JAIME', ha superado la barrera de los 4.5 millones de visualizaciones en YouTube, consolidándose como uno de los lanzamientos urbanos más fuertes del inicio de 2026.\n\nLejos de la controversia habitual, esta vez la noticia es su evolución musical. Con un ritmo electrónico fusionado y una letra pegajosa ('Jaime quiero que me mienta'), la dominicana está entrando en listas de reproducción internacionales, demostrando que su maquinaria de facturación sigue intacta.",
+  "image": "https://img.youtube.com/vi/zE1MnA5MuAk/maxresdefault.jpg",
+  "altText": "Yailin La Mas Viral en el video oficial de Jaime",
+  "author": { "name": "Gungo Música", "role": "Farándula" },
+  "media": { "type": "video", "videoId": "zE1MnA5MuAk", "count": 1 },
+  "metrics": { "views": "4.5M", "likes": 97000, "shares": 25000 },
+  "tags": ["Yailin La Mas Viral", "Jaime", "Musica Urbana", "Tendencia"]
+  },
     {
       "id": 303,
       "slug": "anuel-cancela-gira-2025",
@@ -341,6 +342,7 @@
     }
   ]
    } 
+
 
 
 
