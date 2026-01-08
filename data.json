@@ -101,6 +101,17 @@
   }
   ],
   "newsArticles": [
+     {
+    "id": "news_brianna_confesion_01",
+    "titulo": "CONFESIÓN SIN CUERPO: Familiares admiten crimen de Brianna, pero sus restos no aparecen",
+    "categoria": "Sucesos & Justicia",
+    "tipo": "articulo",
+    "fecha": "2026-01-08",
+    "img_src": "gungonoticia1.jpeg",
+    "resumen": "IMBERT, PUERTO PLATA.— La tragedia de la niña Brianna Genao (3 años) entra en fase crítica. Aunque dos familiares admitieron su responsabilidad en la muerte, las autoridades no logran localizar los restos en el punto señalado del Río Pérez. 'No hay crimen sin cuerpo', temen los fiscales, mientras la magistrada Olga Diná ordena ampliar la búsqueda hacia la desembocadura.",
+    "seo_tags": ["Brianna Genao", "Puerto Plata", "Justicia", "Sucesos", "Imbert", "Ultima Hora"]
+  }
+   
     {
       "id": 301,
       "slug": "el-alfa-pierde-apelacion-bubloy",
@@ -324,6 +335,7 @@
     }
   ]
    } 
+
 
 
 
