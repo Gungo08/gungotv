@@ -61,15 +61,20 @@
     },
     {
       "id": "video_live_univision_alofoke_01",
-      "titulo": "¡EN VIVO! Santiago Matías (Alofoke) rompe el silencio en Univision",
-      "categoria": "Exclusiva",
-      "tipo": "video_live",
-      "fecha": "2026-01-11",
-      "duracion": "EN VIVO 🔴",
+      "sourceId": "V4C7VNfRATA",
       "video_src": "https://www.youtube.com/embed/V4C7VNfRATA?autoplay=1",
+      "title": "🔴 EN VIVO: Santiago Matías en Univision - Programa Especial",
+      "titulo": "🔴 EN VIVO: Santiago Matías en Univision - Programa Especial",
+      "description": "Señal oficial en directo. Santiago Matías (Alofoke) rompe el silencio en exclusiva.",
+      "resumen": "Señal oficial en directo. Santiago Matías (Alofoke) rompe el silencio en exclusiva.",
+      "category": "Exclusiva",
+      "categoria": "Exclusiva",
+      "views": "250K (Live)",
+      "tipo": "video_live",
+      "platform": "youtube",
       "thumbnail": "https://i.ytimg.com/vi/V4C7VNfRATA/hqdefault_live.jpg",
-      "resumen": "Señal oficial en directo. Cobertura especial y entrevista exclusiva.",
-      "seo_tags": ["Santiago Matias", "Alofoke", "Univision", "En Vivo"]
+      "img": "https://i.ytimg.com/vi/V4C7VNfRATA/hqdefault_live.jpg",
+      "is_live": true
     },
     {
       "id": "vid_alofoke_entrevista",
@@ -346,6 +351,7 @@
     }
   ]
    } 
+
 
 
 
