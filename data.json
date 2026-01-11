@@ -60,12 +60,16 @@
       "views": "528K"
     },
     {
-      "id": "vid_yailin_creta",
-      "sourceId": "Bq-fZJbYqLc",
-      "title": "Yailin La Más Viral - CRETA SECA (Video Oficial)",
-      "description": "El tema que tiene a todos hablando. Yailin responde a las críticas con este dembow agresivo que ya es tendencia #1.",
-      "category": "VIRAL",
-      "views": "10.2M"
+      "id": "video_live_univision_alofoke_01",
+      "titulo": "¡EN VIVO! Santiago Matías (Alofoke) rompe el silencio en Univision",
+      "categoria": "Exclusiva",
+      "tipo": "video_live",
+      "fecha": "2026-01-11",
+      "duracion": "EN VIVO 🔴",
+      "video_src": "https://www.youtube.com/embed/V4C7VNfRATA?autoplay=1",
+      "thumbnail": "https://i.ytimg.com/vi/V4C7VNfRATA/hqdefault_live.jpg",
+      "resumen": "Señal oficial en directo. Cobertura especial y entrevista exclusiva.",
+      "seo_tags": ["Santiago Matias", "Alofoke", "Univision", "En Vivo"]
     },
     {
       "id": "vid_alofoke_entrevista",
@@ -342,6 +346,7 @@
     }
   ]
    } 
+
 
 
 
