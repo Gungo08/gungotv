@@ -59,23 +59,24 @@
       "category": "VIRAL",
       "views": "528K"
     },
-    {
-      "id": "video_live_univision_alofoke_01",
-      "sourceId": "V4C7VNfRATA",
-      "video_src": "https://www.youtube.com/embed/V4C7VNfRATA?autoplay=1",
-      "title": "🔴 EN VIVO: Santiago Matías en Univision - Programa Especial",
-      "titulo": "🔴 EN VIVO: Santiago Matías en Univision - Programa Especial",
-      "description": "Señal oficial en directo. Santiago Matías (Alofoke) rompe el silencio en exclusiva.",
-      "resumen": "Señal oficial en directo. Santiago Matías (Alofoke) rompe el silencio en exclusiva.",
-      "category": "Exclusiva",
-      "categoria": "Exclusiva",
-      "views": "250K (Live)",
-      "tipo": "video_live",
-      "platform": "youtube",
-      "thumbnail": "https://i.ytimg.com/vi/V4C7VNfRATA/hqdefault_live.jpg",
-      "img": "https://i.ytimg.com/vi/V4C7VNfRATA/hqdefault_live.jpg",
-      "is_live": true
-    },
+   {
+  "id": "vid_alofoke_univision_afterparty",
+  "sourceId": "1mlnAyzs-NM",
+  "video_src": "https://www.youtube.com/embed/1mlnAyzs-NM",
+  "title": "EN VIVO: La Casa de Alofoke - El Afterparty (Reunión Exclusiva)",
+  "titulo": "EN VIVO: La Casa de Alofoke - El Afterparty (Reunión Exclusiva)",
+  "description": "El elenco se reúne en exclusiva por Univision. Todo lo que no se vio en cámaras.",
+  "resumen": "El elenco se reúne en exclusiva por Univision. Todo lo que no se vio en cámaras.",
+  "category": "Exclusiva",
+  "categoria": "Exclusiva",
+  "views": "En Vivo",
+  "tipo": "external_embed",
+  "platform": "youtube",
+  "thumbnail": "https://i.ytimg.com/vi/1mlnAyzs-NM/hqdefault.jpg",
+  "img": "https://i.ytimg.com/vi/1mlnAyzs-NM/hqdefault.jpg",
+  "is_live": true,
+  "seo_tags": ["Alofoke", "Univision", "La Casa", "Reunion", "Viral"]
+},
     {
       "id": "vid_alofoke_entrevista",
       "sourceId": "TxACDZOOMIw",
@@ -351,6 +352,7 @@
     }
   ]
    } 
+
 
 
 
