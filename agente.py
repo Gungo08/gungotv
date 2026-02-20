@@ -2,13 +2,12 @@ import os
 import json
 import time
 from datetime import datetime, timezone
-import google.generativeai as genai
-from google.generativeai.types import HarmCategory, HarmBlockerThreshold
+from google import genai
+from google.genai import types
 
 try:
-    # 1. Configurar la llave
-    genai.configure(api_key=os.environ["GEMINI_API_KEY"])
-    modelo = genai.GenerativeModel('gemini-2.5-pro')
+    # 1. Conectar con la NUEVA versión de Gemini
+    cliente = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
 
     # 2. Instrucciones para GungoTV
     instrucciones = """
@@ -38,25 +37,44 @@ try:
     }
     """
 
-    # 3. Pedir la noticia con los filtros de censura APAGADOS
-    respuesta = modelo.generate_content(
-        instrucciones,
-        generation_config={"response_mime_type": "application/json"},
-        safety_settings={
-            HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockerThreshold.BLOCK_NONE,
-            HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockerThreshold.BLOCK_NONE,
-            HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockerThreshold.BLOCK_NONE,
-            HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockerThreshold.BLOCK_NONE,
-        }
+    # 3. Generar contenido con la nueva sintaxis (Filtros apagados)
+    respuesta = cliente.models.generate_content(
+        model='gemini-2.5-pro',
+        contents=instrucciones,
+        config=types.GenerateContentConfig(
+            response_mime_type="application/json",
+            safety_settings=[
+                types.SafetySetting(
+                    category=types.HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+                    threshold=types.HarmBlockerThreshold.BLOCK_NONE,
+                ),
+                types.SafetySetting(
+                    category=types.HarmCategory.HARM_CATEGORY_HARASSMENT,
+                    threshold=types.HarmBlockerThreshold.BLOCK_NONE,
+                ),
+                types.SafetySetting(
+                    category=types.HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
+                    threshold=types.HarmBlockerThreshold.BLOCK_NONE,
+                ),
+                types.SafetySetting(
+                    category=types.HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
+                    threshold=types.HarmBlockerThreshold.BLOCK_NONE,
+                ),
+            ]
+        )
     )
 
+    texto_limpio = respuesta.text
+    if texto_limpio.startswith("```json"):
+        texto_limpio = texto_limpio.replace("```json\n", "").replace("```", "").strip()
+
     # 4. Preparar la noticia
-    nueva_noticia = json.loads(respuesta.text)
+    nueva_noticia = json.loads(texto_limpio)
     nueva_noticia["id"] = int(time.time())
     nueva_noticia["publishedAt"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
-    # 5. Abrir la base de datos
-    nombre_archivo = 'noticias.json'
+    # 5. Abrir la base de datos (AHORA ES data.json)
+    nombre_archivo = 'data.json' 
     
     if not os.path.exists(nombre_archivo):
         raise FileNotFoundError(f"¡Ojo! El archivo {nombre_archivo} no se encuentra en la carpeta principal.")
@@ -64,12 +82,10 @@ try:
     with open(nombre_archivo, 'r', encoding='utf-8') as archivo:
         datos_completos = json.load(archivo)
 
-    # 6. Inyectar la noticia (Se adapta a cualquier estructura)
+    # 6. Inyectar la noticia
     if isinstance(datos_completos, list):
-        # Si tu archivo sigue siendo una lista vacía []
         datos_completos.insert(0, nueva_noticia)
     else:
-        # Si tu archivo ya es el diccionario completo de GungoTV
         if "newsArticles" not in datos_completos:
             datos_completos["newsArticles"] = []
         datos_completos["newsArticles"].insert(0, nueva_noticia)
@@ -81,7 +97,7 @@ try:
     with open(nombre_archivo, 'w', encoding='utf-8') as archivo:
         json.dump(datos_completos, archivo, indent=2, ensure_ascii=False)
 
-    print("¡Noticia de Gungo generada e inyectada con éxito!")
+    print("¡Noticia de Gungo generada e inyectada con éxito en data.json!")
 
 except Exception as error:
     print(f"ERROR DETECTADO PARA REVISAR: {str(error)}")
