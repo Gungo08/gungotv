@@ -1,7 +1,7 @@
 name: Publicar Noticias GungoTV
 on:
   schedule:
-    - cron: '0 */3 * * *'
+    - cron: '0 */1 * * *'
   workflow_dispatch:
 
 # Esto le da permiso al agente para crear borradores
