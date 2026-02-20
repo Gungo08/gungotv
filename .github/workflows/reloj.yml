@@ -4,6 +4,11 @@ on:
     - cron: '0 */6 * * *'
   workflow_dispatch:
 
+# Esto le da permiso al agente para crear borradores
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   actualizar_web:
     runs-on: ubuntu-latest
@@ -16,9 +21,22 @@ jobs:
       - run: python agente.py
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-      - run: |
+          
+      - name: Crear Borrador para Revisión (Pull Request)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
           git config --global user.name 'Agente Gungo'
           git config --global user.email 'bot@gungo.com'
+          
+          # 1. Crear un "universo paralelo" (una rama nueva) para no tocar tu web en vivo
+          RAMA="borrador-noticia-${{ github.run_id }}"
+          git checkout -b $RAMA
+          
+          # 2. Guardar la noticia ahí
           git add noticias.json
-          git commit -m "Nueva noticia y copys generados por IA"
-          git push
+          git commit -m "Revisión requerida: Nueva noticia generada por IA"
+          git push origin $RAMA
+          
+          # 3. Levantar la mano y pedirte permiso (Crear el Pull Request)
+          gh pr create --title "📝 Revisión requerida: Nueva Noticia" --body "El agente ha redactado una nueva noticia para Gungo. Por favor, verifica la veracidad de los hechos. Si todo es correcto, aprueba este cambio para publicarlo en la web." --base main --head $RAMA
