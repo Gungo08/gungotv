@@ -34,7 +34,7 @@ jobs:
           git checkout -b $RAMA
           
           # 2. Guardar la noticia ahí
-          git add noticias.json
+          git add data.json
           git commit -m "Revisión requerida: Nueva noticia generada por IA"
           git push origin $RAMA
           
