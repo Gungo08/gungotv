@@ -37,7 +37,7 @@ nueva_noticia = json.loads(respuesta.text)
 nueva_noticia["fecha"] = datetime.now().strftime("%Y-%m-%d %H:%M")
 
 # 4. Leer el archivo de tu repositorio
-nombre_archivo = 'noticias.json'
+nombre_archivo = 'data.json'
 
 try:
     with open(nombre_archivo, 'r', encoding='utf-8') as archivo:
@@ -52,5 +52,6 @@ noticias.insert(0, nueva_noticia)
 # 6. Guardar los cambios en el archivo noticias.json
 with open(nombre_archivo, 'w', encoding='utf-8') as archivo:
     json.dump(noticias, archivo, indent=4, ensure_ascii=False)
+
 
 print("¡Noticia de Gungo generada y guardada en el JSON con éxito!")
