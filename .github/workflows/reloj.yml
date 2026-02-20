@@ -1,7 +1,7 @@
 name: Publicar Noticias GungoTV
 on:
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: '0 */1 * * *'
   workflow_dispatch:
 
 permissions:
