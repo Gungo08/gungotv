@@ -60,46 +60,15 @@
       "views": "528K"
     },
    {
-  "id": "vid_alofoke_univision_afterparty",
-  "sourceId": "1mlnAyzs-NM",
-  "video_src": "https://www.youtube.com/embed/1mlnAyzs-NM",
-  "title": "EN VIVO: La Casa de Alofoke - El Afterparty (Reunión Exclusiva)",
-  "titulo": "EN VIVO: La Casa de Alofoke - El Afterparty (Reunión Exclusiva)",
-  "description": "El elenco se reúne en exclusiva por Univision. Todo lo que no se vio en cámaras.",
-  "resumen": "El elenco se reúne en exclusiva por Univision. Todo lo que no se vio en cámaras.",
-  "category": "Exclusiva",
-  "categoria": "Exclusiva",
-  "views": "En Vivo",
-  "tipo": "external_embed",
-  "platform": "youtube",
-  "thumbnail": "https://i.ytimg.com/vi/1mlnAyzs-NM/hqdefault.jpg",
-  "img": "https://i.ytimg.com/vi/1mlnAyzs-NM/hqdefault.jpg",
-  "is_live": true,
-  "seo_tags": ["Alofoke", "Univision", "La Casa", "Reunion", "Viral"]
+  []
 },
-    {
-      "id": "vid_alofoke_entrevista",
-      "sourceId": "TxACDZOOMIw",
-      "title": "Alofoke Rompe el Silencio: La Entrevista Prohibida",
-      "description": "Santiago Matías suelta todo sobre la polémica de 'La Casa'. Exclusiva que nadie se esperaba.",
-      "category": "ENTREVISTA",
-      "views": "2.1M"
+    []
     },
     {
-      "id": "vid_lidom_perreo",
-      "sourceId": "HF2RWOrwu4w",
-      "title": "¡SE VACIARON LAS BANCAS! Perreo y Pelea en LIDOM",
-      "description": "El momento exacto donde se armó la trifulca en el estadio tras un perreo monumental. Julio Rodríguez no aguantó la presión.",
-      "category": "DEPORTES",
-      "views": "3.5M"
+     []
     },
     {
-      "id": "vid_dani_alofoke_envueltos",
-      "sourceId": "Us5xcLfNWdM",
-      "title": "Dani Barranco x Alofoke Music - Envueltos Unplugged",
-      "description": "¡Romántico pero picante! Dani Barranco y JLexis se unen a Alofoke en este unplugged que está tocando fibras. Un tema de 'corta venas' que ya se está pegando.",
-      "category": "VIRAL",
-      "views": "986K"
+      []
     },
     {
   "id": "vid_beele_top_diesel",
@@ -309,18 +278,7 @@
   
   "loadMoreData": [
     {
-      "id": 307,
-      "slug": "yailin-recuperacion-mclaren",
-      "category": "CALIENTES",
-      "publishedAt": "2025-12-17T09:00:00Z",
-      "title": "Yailin reaparece divina en su nuevo Ferrari tras el choque",
-      "summary": "Deja atrás el McLaren y estrena máquina italiana.",
-      "longDescription": "Yailin no llora, Yailin factura. Tras el accidente de octubre, la cantante mostró su nuevo 'juguete': un Ferrari Roma color rosa. 'Para las que sufren', escribió en el caption.",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcHXCXWsv1G6Nq0-GkSBgGsnaFw8Frk3ESGg&s",
-      "altText": "Yailin posando frente a un Ferrari rosa",
-      "author": { "name": "Univision", "role": "Espectáculos" },
-      "metrics": { "views": "700K", "likes": 120000, "shares": 5000 },
-      "tags": ["Yailin", "Ferrari", "Lujos", "CALIENTES"]
+ []
     },
     {
       "id": 308,
@@ -352,6 +310,7 @@
     }
   ]
    } 
+
 
 
 
