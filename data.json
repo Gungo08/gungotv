@@ -2,7 +2,7 @@
   "meta": {
     "siteName": "GUNGO",
     "version": "2.8.0",
-    "lastUpdated": "2026-02-21T16:51:35Z",
+    "lastUpdated": "2026-02-21T17:03:42Z",
     "description": "Noticias confirmadas y actualidad urbana de RD al 20/12/2025."
   },
   "tickerNews": [
@@ -159,6 +159,43 @@
     }
   ],
   "newsArticles": [
+    {
+      "id": 1771693422,
+      "slug": "tension-premio-lo-nuestro-arcangel-anuel-aa",
+      "category": "EXCLUSIVA",
+      "badge": "NUEVO 🔥",
+      "publishedAt": "2026-02-21T17:03:42Z",
+      "title": "¡Tensión Extrema en Premio Lo Nuestro 2026! Arcángel Evita Confrontación con el Círculo de Anuel AA",
+      "summary": "Arcángel fue obligado a usar la salida trasera de Premio Lo Nuestro tras su homenaje, al percatarse de que personas del entorno de Anuel AA lo esperaban en la entrada principal, reavivando su histórica rivalidad.",
+      "longDescription": "La 38ª edición de Premio Lo Nuestro, celebrada este jueves 19 de febrero en el Kaseya Center de Miami, se convirtió en escenario de un emotivo reconocimiento para Arcángel como \"Ícono Urbano\" por sus 20 años de trayectoria. Sin embargo, la noche de celebración tomó un giro tenso cuando, al finalizar el evento, \"La Maravilla\" se encontró en una situación potencialmente conflictiva. Según videos que circulan ampliamente en redes sociales, individuos vinculados al entorno de Anuel AA, incluido su amigo RobGz, habrían estado esperando a Arcángel en la salida principal del recinto.\n\nAnte la inminente confrontación, Arcángel optó por retirarse discretamente por la puerta trasera para evitar el encuentro, lo que ha reavivado una vez más la conocida y prolongada rivalidad entre ambos artistas urbanos. Esta enemistad ha escalado a lo largo de los años, pasando de \"tiraeras\" musicales a intercambios de fuertes acusaciones e incluso menciones a sus familias. Aunque Anuel AA no estuvo presente en la ceremonia, la presencia de sus allegados ha alimentado la especulación sobre un intento de confrontación planificada, manteniendo la llama de esta \"guerra\" urbana más viva que nunca.",
+      "image": "https://cloudfront-us-east-1.images.arcpublishing.com/radiomx/O3H467KSP5FPFO2D33D2D372YI.jpg",
+      "altText": "Arcángel en la alfombra magenta de Premio Lo Nuestro 2026",
+      "author": {
+        "name": "Agente Gungo",
+        "role": "Redacción IA"
+      },
+      "media": {
+        "type": "image",
+        "count": 1
+      },
+      "metrics": {
+        "views": "1K",
+        "likes": 100,
+        "shares": 50
+      },
+      "tags": [
+        "Gungo",
+        "Viral",
+        "Anuel AA",
+        "Arcángel",
+        "Premio Lo Nuestro 2026",
+        "Farándula Urbana Dominicana"
+      ],
+      "seo_vortex_x": "Anuel AA y Arcángel protagonizan tenso momento en Premio Lo Nuestro 2026; la rivalidad escala.",
+      "seo_vortex_ig": "Arcángel esquiva a la gente de Anuel AA en Premio Lo Nuestro tras un homenaje. ¿Regresa la guerra urbana? #PremioLoNuestro #AnuelAA #Arcángel",
+      "seo_vortex_tiktok_text": "Anuel AA vs. Arcángel: ¡Drama en Premio Lo Nuestro! ¿Qué pasó tras bambalinas? #FarándulaRD #Urbanos",
+      "seo_vortex_tiktok_filename": "hack-buscador.mp4"
+    },
     {
       "id": 1771692695,
       "slug": "leury-garcia-gigantes-del-cibao-firma-2026",
