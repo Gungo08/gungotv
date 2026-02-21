@@ -62,7 +62,7 @@ try:
     while intento_actual < max_intentos:
         try:
             respuesta = cliente.models.generate_content(
-                model='gemini-2.5-pro',
+                model='gemini-2.5-flash',
                 contents=instrucciones,
                 config=types.GenerateContentConfig(
                     response_mime_type="application/json",
@@ -126,4 +126,5 @@ try:
 except Exception as error:
     print(f"❌ ERROR GENERAL NO CONTROLADO: {str(error)}")
     sys.exit(1) # Si algo falla, aborta todo y NO crea el borrador
+
 
