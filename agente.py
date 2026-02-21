@@ -6,13 +6,13 @@ from google import genai
 from google.genai import types
 
 try:
-    # 1. Conectar con la NUEVA versión de Gemini
+    # 1. Conectar con Gemini
     cliente = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
 
     # 2. Instrucciones para GungoTV
     instrucciones = """
-    Eres un periodista experto en farándula urbana dominicana, actualidad y béisbol invernal (LIDOM).
-    Escribe una noticia corta, jugosa y de última hora.
+    Busca en internet la noticia más candente de hoy sobre farándula urbana dominicana (ej. Alofoke, Yailin, El Alfa) o béisbol invernal (LIDOM).
+    Escribe una noticia real, jugosa y confirmada.
 
     Debes entregar la respuesta ESTRICTAMENTE en este formato JSON exacto:
     {
@@ -23,9 +23,9 @@ try:
       "publishedAt": "",
       "title": "Titular explosivo de la noticia",
       "summary": "Resumen corto de una línea",
-      "longDescription": "El cuerpo completo de la noticia, al menos dos párrafos bien redactados.",
-      "image": "https://placehold.co/800x500/111/E50914/png?text=Noticia+Gungo",
-      "altText": "Descripción exacta de la imagen",
+      "longDescription": "El cuerpo completo de la noticia, al menos dos párrafos bien redactados basados en hechos reales.",
+      "image": "PEGAR_LINK_AQUI",
+      "altText": "Describe qué tipo de imagen de Google debería buscar para esta noticia",
       "author": { "name": "Agente Gungo", "role": "Redacción IA" },
       "media": { "type": "image", "count": 1 },
       "metrics": { "views": "1K", "likes": 100, "shares": 50 },
@@ -37,29 +37,18 @@ try:
     }
     """
 
-    # 3. Generar contenido con la nueva sintaxis (Filtros apagados)
+    # 3. Generar contenido activando GOOGLE SEARCH y usando TEXTO para los filtros (Solución al error)
     respuesta = cliente.models.generate_content(
         model='gemini-2.5-pro',
         contents=instrucciones,
         config=types.GenerateContentConfig(
             response_mime_type="application/json",
+            tools=[{"google_search": {}}], 
             safety_settings=[
-                types.SafetySetting(
-                    category=types.HarmCategory.HARM_CATEGORY_HATE_SPEECH,
-                    threshold=types.HarmBlockerThreshold.BLOCK_NONE,
-                ),
-                types.SafetySetting(
-                    category=types.HarmCategory.HARM_CATEGORY_HARASSMENT,
-                    threshold=types.HarmBlockerThreshold.BLOCK_NONE,
-                ),
-                types.SafetySetting(
-                    category=types.HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
-                    threshold=types.HarmBlockerThreshold.BLOCK_NONE,
-                ),
-                types.SafetySetting(
-                    category=types.HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
-                    threshold=types.HarmBlockerThreshold.BLOCK_NONE,
-                ),
+                types.SafetySetting(category="HARM_CATEGORY_HATE_SPEECH", threshold="BLOCK_NONE"),
+                types.SafetySetting(category="HARM_CATEGORY_HARASSMENT", threshold="BLOCK_NONE"),
+                types.SafetySetting(category="HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold="BLOCK_NONE"),
+                types.SafetySetting(category="HARM_CATEGORY_DANGEROUS_CONTENT", threshold="BLOCK_NONE"),
             ]
         )
     )
@@ -73,7 +62,7 @@ try:
     nueva_noticia["id"] = int(time.time())
     nueva_noticia["publishedAt"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
-    # 5. Abrir la base de datos (AHORA ES data.json)
+    # 5. Abrir la base de datos de Gungo
     nombre_archivo = 'data.json' 
     
     if not os.path.exists(nombre_archivo):
@@ -89,7 +78,6 @@ try:
         if "newsArticles" not in datos_completos:
             datos_completos["newsArticles"] = []
         datos_completos["newsArticles"].insert(0, nueva_noticia)
-        
         if "meta" in datos_completos:
             datos_completos["meta"]["lastUpdated"] = nueva_noticia["publishedAt"]
 
@@ -97,9 +85,8 @@ try:
     with open(nombre_archivo, 'w', encoding='utf-8') as archivo:
         json.dump(datos_completos, archivo, indent=2, ensure_ascii=False)
 
-    print("¡Noticia de Gungo generada e inyectada con éxito en data.json!")
+    print("¡Noticia real generada e inyectada con éxito!")
 
 except Exception as error:
     print(f"ERROR DETECTADO PARA REVISAR: {str(error)}")
     raise error
-
