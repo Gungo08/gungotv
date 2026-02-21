@@ -2,7 +2,7 @@
   "meta": {
     "siteName": "GUNGO",
     "version": "2.8.0",
-    "lastUpdated": "2026-02-21T18:22:22Z",
+    "lastUpdated": "2026-02-21T18:56:06Z",
     "description": "Noticias confirmadas y actualidad urbana de RD al 20/12/2025."
   },
   "tickerNews": [
@@ -90,6 +90,16 @@
   },
   "viralVideos": [
     {
+      "id": 1771700183,
+      "title": "¡EL RUGIDO SE SIENTE! Leones del Escogido celebran su bicampeonato en medio del delirio",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=1d_ePz4g_5Y",
+      "thumbnail": "https://img.youtube.com/vi/1d_ePz4g_5Y/maxresdefault.jpg",
+      "description": "Este video captura la emocionante celebración de los Leones del Escogido, quienes levantan su segundo trofeo consecutivo tras ganar el campeonato de béisbol en la República Dominicana. El clip se ha vuelto viral, siendo etiquetado como #1entendencia y #1enyoutube, mostrando la euforia de los jugadores y fanáticos.",
+      "publishedAt": "2026-02-21T18:56:23Z",
+      "category": "VIRAL 🚀"
+    },
+    {
       "id": 1771698163,
       "title": "Romeo Santos y Prince Royce - Lokita Por Mi & Dardos | PREMIO LO NUESTRO EN VIVO LIVE",
       "platform": "youtube",
@@ -169,6 +179,43 @@
     }
   ],
   "newsArticles": [
+    {
+      "id": 1771700166,
+      "slug": "caen-abatidos-presuntos-responsables-muerte-amiga-masha",
+      "category": "EXCLUSIVA",
+      "badge": "NUEVO 🔥",
+      "publishedAt": "2026-02-21T18:56:06Z",
+      "title": "¡Justicia Implacable! Caen Abatidos Presuntos Responsables de la Muerte de Amiga de Masha",
+      "summary": "En un giro dramático, las autoridades confirman la neutralización de los individuos vinculados al trágico tiroteo donde falleció Dominique Gómez Cabrera, amiga de la artista urbana Masha.",
+      "longDescription": "Santo Domingo, República Dominicana – En un desarrollo impactante y rápido, la Policía Nacional ha confirmado que los presuntos responsables de la muerte de Dominique Gómez Cabrera, amiga de la controvertida artista urbana Masha (Ashley Mariel Victoriano Sánchez), han sido abatidos. Este suceso ocurre apenas unos días después del trágico tiroteo que conmocionó a la farándula dominicana. Los individuos, identificados previamente como Yamal Anthony Núñez Vargas y 'Julio 3030' o 'Julio Voltio', quienes eran activamente buscados por las autoridades, cayeron durante un enfrentamiento que también dejó a un sargento herido.\n\nLa noticia ha generado un torbellino de reacciones en redes sociales y medios de comunicación, ya que el caso ha mantenido en vilo a la opinión pública desde el incidente ocurrido el pasado 16 de febrero en la intersección de las avenidas 27 de Febrero y Máximo Gómez en el Distrito Nacional. Dominique Gómez Cabrera, de 22 años y quien también incursionaba en el mundo de la música urbana, perdió la vida tras recibir múltiples impactos de bala en el ataque dirigido al vehículo en el que se desplazaba. Este desenlace marca un capítulo decisivo en la búsqueda de justicia por este lamentable hecho.",
+      "image": "https://placehold.co/800x500/111/E50914/png?text=Noticia+Gungo",
+      "altText": "Imagen genérica de noticia de última hora o relacionada con caso policial",
+      "author": {
+        "name": "Agente Gungo",
+        "role": "Redacción IA"
+      },
+      "media": {
+        "type": "image",
+        "count": 1
+      },
+      "metrics": {
+        "views": "1K",
+        "likes": 100,
+        "shares": 50
+      },
+      "tags": [
+        "Gungo",
+        "Viral",
+        "Masha",
+        "Farándula Urbana",
+        "Justicia",
+        "República Dominicana"
+      ],
+      "seo_vortex_x": "Presuntos responsables de la muerte de amiga de Masha son abatidos en un operativo policial de alto impacto hoy, 21 de febrero de 2026.",
+      "seo_vortex_ig": "¡ÚLTIMA HORA! En un giro impactante, la policía dominicana neutraliza a los presuntos asesinos de la amiga de Masha. La justicia llega con fuerza. #Masha #NoticiaUrbana #RD",
+      "seo_vortex_tiktok_text": "🚨 ¡BOMBAZO EN RD! Caen los presuntos responsables de la muerte de la amiga de Masha. La calle está que arde con esta noticia. #FarándulaUrbana #ÚltimaHora #NoticiasRD",
+      "seo_vortex_tiktok_filename": "hack-buscador.mp4"
+    },
     {
       "id": 1771698142,
       "slug": "escandalo-premio-lo-nuestro-2026-tokischa-seno-descubierto",
