@@ -169,25 +169,48 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // --- FUNCIONES DE DIBUJADO (RENDER) ---
-
-   function renderViralVideos(videos) {
+function renderViralVideos(videos) {
         if (!reelContainer) return;
         reelContainer.innerHTML = ''; 
 
         videos.forEach(video => {
             const card = document.createElement('div');
-            // Mantenemos EXACTAMENTE tus mismos estilos de sombra, bordes y fondo para no dañar el diseño móvil
+            // Manteniendo tu diseño exacto
             card.style.cssText = "background:#111; border-radius:12px; overflow:hidden; box-shadow:0 10px 30px rgba(229,9,20,0.3); transition: transform 0.3s;";
             
-            // Usamos la misma proporción 16:9 (56.25%) de tu diseño original para que sea 100% responsive en celulares
+            // --- EL MOTOR DETECTIVE DE VIDEOS ---
+            let url = video.videoUrl || "";
+            let reproductorHTML = "";
+
+            // 1. Si el agente trae un video de YouTube
+            if (url.includes("youtube.com") || url.includes("youtu.be")) {
+                let videoId = "";
+                const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/);
+                if (match && match[1]) videoId = match[1];
+                
+                reproductorHTML = `<iframe style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" src="https://www.youtube.com/embed/${videoId}" title="${video.title}" allowfullscreen></iframe>`;
+            } 
+            // 2. Si el agente trae un video de TikTok
+            else if (url.includes("tiktok.com")) {
+                let videoId = "";
+                const match = url.match(/video\/(\d+)/);
+                if (match && match[1]) videoId = match[1];
+                
+                reproductorHTML = `<iframe style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" src="https://www.tiktok.com/embed/v2/${videoId}" title="${video.title}" allowfullscreen></iframe>`;
+            } 
+            // 3. Respaldo de seguridad (Si es una red que bloquea iframes)
+            else {
+                reproductorHTML = `
+                    <a href="${url}" target="_blank" rel="noopener noreferrer">
+                        <img src="${video.thumbnail}" alt="Portada del video" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; opacity:0.8;">
+                        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); font-size:4rem; color:#E50914; text-shadow: 0 4px 15px rgba(0,0,0,0.8);"><i class="fas fa-play-circle"></i></div>
+                    </a>`;
+            }
+            
+            // --- CONSTRUCCIÓN DE LA TARJETA ---
             card.innerHTML = `
                 <div style="position:relative; padding-bottom:56.25%; height:0; background:#000;">
-                    <a href="${video.videoUrl}" target="_blank" rel="noopener noreferrer">
-                        <img src="${video.thumbnail}" alt="Portada del video" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; opacity:0.8;">
-                        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); font-size:4rem; color:#E50914; text-shadow: 0 4px 15px rgba(0,0,0,0.8);">
-                            <i class="fas fa-play-circle"></i>
-                        </div>
-                    </a>
+                    ${reproductorHTML}
                 </div>
                 <div style="padding:20px; color:white;">
                     <div style="display:flex; justify-content:space-between; margin-bottom:10px; align-items:center;">
@@ -196,9 +219,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             ${video.platform || 'WEB'}
                         </span>
                     </div>
-                    <h3 style="margin:5px 0 10px; color:#E50914; font-size:1.2rem; line-height:1.3;">
-                        <a href="${video.videoUrl}" target="_blank" style="color:inherit; text-decoration:none;">${video.title}</a>
-                    </h3>
+                    <h3 style="margin:5px 0 10px; color:#E50914; font-size:1.2rem; line-height:1.3;">${video.title}</h3>
                     <p style="margin:0; opacity:0.8; font-size:0.9rem; line-height:1.5;">${video.description}</p>
                 </div>
             `;
@@ -421,3 +442,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
