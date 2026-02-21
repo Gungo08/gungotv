@@ -2,7 +2,7 @@
   "meta": {
     "siteName": "GUNGO",
     "version": "2.8.0",
-    "lastUpdated": "2026-02-21T15:20:59Z",
+    "lastUpdated": "2026-02-21T16:51:35Z",
     "description": "Noticias confirmadas y actualidad urbana de RD al 20/12/2025."
   },
   "tickerNews": [
@@ -159,6 +159,43 @@
     }
   ],
   "newsArticles": [
+    {
+      "id": 1771692695,
+      "slug": "leury-garcia-gigantes-del-cibao-firma-2026",
+      "category": "EXCLUSIVA",
+      "badge": "NUEVO 🔥",
+      "publishedAt": "2026-02-21T16:51:35Z",
+      "title": "¡Bombazo en LIDOM! Leury García asegura su permanencia con los Gigantes del Cibao",
+      "summary": "Los Gigantes del Cibao confirman la continuidad de su estelar jugador Leury García para la temporada 2025-2026 de LIDOM, consolidando su ofensiva y liderazgo.",
+      "longDescription": "Los Gigantes del Cibao han dado un golpe en el mercado de la Liga de Béisbol Profesional de la República Dominicana (LIDOM) al anunciar la firma del estelar jugador Leury García, quien acordó un nuevo contrato para continuar con los Potros de cara a la temporada 2025-2026. La noticia, confirmada por el gerente de operaciones Jaylon Pimentel, asegura la presencia de una figura clave que aporta experiencia, liderazgo y una sólida ofensiva al conjunto cibaeño.\n\nGarcía, de 34 años y nativo de Santiago, ha disputado sus 10 temporadas de serie regular en LIDOM exclusivamente con los Gigantes desde que fue seleccionado en el Draft de Novatos de 2009. Su trayectoria incluye 282 imparables, un promedio de bateo de .285 en 260 partidos, 138 carreras anotadas, 13 cuadrangulares y 95 carreras remolcadas. En la más reciente campaña, apodado 'El Picante', participó en 27 encuentros, conectando 22 hits, cuatro dobles, un cuadrangular y anotando 10 carreras. Esta renovación, que lo convierte en el segundo jugador confirmado para la próxima temporada tras Jimmy Cordero, es vista como fundamental por la gerencia para competir por un nuevo campeonato, destacando que 'Leury es un líder dentro y fuera del terreno para nosotros'.",
+      "image": "https://placehold.co/800x500/111/E50914/png?text=Noticia+Gungo",
+      "altText": "Leury García con el uniforme de los Gigantes del Cibao celebrando.",
+      "author": {
+        "name": "Agente Gungo",
+        "role": "Redacción IA"
+      },
+      "media": {
+        "type": "image",
+        "count": 1
+      },
+      "metrics": {
+        "views": "1K",
+        "likes": 100,
+        "shares": 50
+      },
+      "tags": [
+        "Gungo",
+        "Viral",
+        "LIDOM",
+        "Béisbol",
+        "Leury García",
+        "Gigantes del Cibao"
+      ],
+      "seo_vortex_x": "Leury García y Gigantes del Cibao: El \"Picante\" se queda para la temporada 2025-2026 de LIDOM.",
+      "seo_vortex_ig": "¡El \"Picante\" se queda en casa! 🌶️ Leury García y los Gigantes del Cibao llegan a un acuerdo para la próxima temporada, manteniendo la chispa en la ofensiva de LIDOM. #LIDOM #GigantesDelCibao #LeuryGarcia",
+      "seo_vortex_tiktok_text": "Leury García se queda con los Gigantes del Cibao para la temporada 2025-2026. ¡El \"Picante\" sigue en LIDOM! #LeuryGarcia #GigantesDelCibao #LIDOM",
+      "seo_vortex_tiktok_filename": "hack-buscador.mp4"
+    },
     {
       "id": 1771687259,
       "slug": "leyenda-juan-lagares-anuncia-retiro-beisbol-profesional",
