@@ -17,7 +17,6 @@ try:
     if os.path.exists(nombre_archivo):
         with open(nombre_archivo, 'r', encoding='utf-8') as archivo:
             datos_completos = json.load(archivo)
-            # Extraer los últimos 5 titulares para decirle a la IA que NO los repita
             lista = datos_completos if isinstance(datos_completos, list) else datos_completos.get("newsArticles", [])
             titulos_existentes = [noticia.get("title", "") for noticia in lista[:5]]
     else:
@@ -41,20 +40,20 @@ try:
       "title": "Titular explosivo de la noticia",
       "summary": "Resumen corto de una línea",
       "longDescription": "El cuerpo completo de la noticia, al menos dos párrafos.",
-      "image": "PEGAR_LINK_AQUI",
+      "image": "Usa Google Search para encontrar la URL pública de una imagen real sobre esta noticia. Debe empezar con http y terminar en .jpg o .webp. Si no encuentras, usa: https://placehold.co/800x500/111/E50914/png?text=Noticia+Gungo",
       "altText": "Describe qué imagen buscar",
       "author": {{ "name": "Agente Gungo", "role": "Redacción IA" }},
       "media": {{ "type": "image", "count": 1 }},
       "metrics": {{ "views": "1K", "likes": 100, "shares": 50 }},
       "tags": ["Gungo", "Viral"],
-      "seo_vortex_x": "Titular de impacto.",
+      "seo_vortex_x": "Nombres Propios y Acción Principal en la primera línea. Titular de impacto.",
       "seo_vortex_ig": "Storytelling integrando quién, qué, dónde. Máximo 3 hashtags.",
       "seo_vortex_tiktok_text": "Texto SBO exacto.",
       "seo_vortex_tiktok_filename": "hack-buscador.mp4"
     }}
     """
 
-    # 4. Generación con Filtros y Amortiguador de Cuota
+    # 4. Generación (Usando Flash sin bloqueo JSON para permitir Búsqueda Web)
     max_intentos = 3
     intento_actual = 0
     respuesta = None
@@ -82,27 +81,35 @@ try:
                 time.sleep(60)
                 if intento_actual == max_intentos:
                     print("❌ Error crítico: Se agotó la cuota de la API.")
-                    sys.exit(1) # Freno de emergencia
+                    sys.exit(1)
             else:
                 print(f"❌ Error de conexión: {str(e)}")
                 sys.exit(1)
 
-    # 5. VALIDACIÓN ESTRICTA DE DATOS (Lo que pidió Copilot)
-    texto_limpio = respuesta.text
-    if texto_limpio.startswith("```json"):
-        texto_limpio = texto_limpio.replace("```json\n", "").replace("```", "").strip()
+    # 5. EXTRACCIÓN LÁSER DEL JSON (Solución al error)
+    texto_bruto = respuesta.text
+    
+    # Buscar la primera '{' y la última '}'
+    inicio = texto_bruto.find('{')
+    fin = texto_bruto.rfind('}')
+    
+    if inicio != -1 and fin != -1:
+        texto_limpio = texto_bruto[inicio:fin+1]
+    else:
+        print("❌ Error crítico: La IA no devolvió ningún bloque JSON.")
+        sys.exit(1)
 
     try:
         nueva_noticia = json.loads(texto_limpio)
-        # Verificar que la IA no omitió campos vitales
         claves_requeridas = ["slug", "title", "longDescription", "seo_vortex_x"]
         if not all(k in nueva_noticia for k in claves_requeridas):
             print("❌ Error crítico: La IA generó un formato incompleto.")
-            sys.exit(1) # Freno de emergencia
+            sys.exit(1)
             
-    except json.JSONDecodeError:
-        print("❌ Error crítico: La respuesta no es un código JSON válido.")
-        sys.exit(1) # Freno de emergencia
+    except json.JSONDecodeError as e:
+        print(f"❌ Error crítico al leer el JSON: {e}")
+        print(f"Texto recibido por la IA:\n{texto_limpio}")
+        sys.exit(1)
 
     # 6. Inyectar la noticia validada
     nueva_noticia["id"] = int(time.time())
@@ -120,11 +127,11 @@ try:
     with open(nombre_archivo, 'w', encoding='utf-8') as archivo:
         json.dump(datos_completos, archivo, indent=2, ensure_ascii=False)
 
-    print("✅ ¡Éxito! Noticia validada, verificada contra duplicados e inyectada.")
+    print("✅ ¡Éxito! Noticia validada, recortada con láser e inyectada.")
 
 except Exception as error:
     print(f"❌ ERROR GENERAL NO CONTROLADO: {str(error)}")
-    sys.exit(1) # Si algo falla, aborta todo y NO crea el borrador
+    sys.exit(1)
 
 
 
