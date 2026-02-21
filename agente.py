@@ -65,7 +65,6 @@ try:
                 model='gemini-2.5-flash',
                 contents=instrucciones,
                 config=types.GenerateContentConfig(
-                    response_mime_type="application/json",
                     tools=[{"google_search": {}}], 
                     safety_settings=[
                         types.SafetySetting(category="HARM_CATEGORY_HATE_SPEECH", threshold="BLOCK_ONLY_HIGH"),
@@ -126,5 +125,6 @@ try:
 except Exception as error:
     print(f"❌ ERROR GENERAL NO CONTROLADO: {str(error)}")
     sys.exit(1) # Si algo falla, aborta todo y NO crea el borrador
+
 
 
