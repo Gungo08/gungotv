@@ -1,4 +1,4 @@
-name: Publicar Noticias GungoTV
+name: Publicar Noticias y Videos GungoTV
 on:
   schedule:
     - cron: '0 */1 * * *'
@@ -17,7 +17,12 @@ jobs:
         with:
           python-version: '3.11' 
       - run: pip install google-genai 
+      
       - run: python agente.py
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          
+      - run: python agente_videos.py
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           
@@ -28,12 +33,12 @@ jobs:
           git config --global user.name 'Agente Gungo'
           git config --global user.email 'bot@gungo.com'
           
-          RAMA="borrador-noticia-${{ github.run_id }}"
+          RAMA="borrador-contenido-${{ github.run_id }}"
           git checkout -b $RAMA
           
-          # AHORA GUARDA data.json EN LUGAR DE noticias.json
+          # AHORA GUARDA data.json CON NOTICIAS Y VIDEOS
           git add data.json
-          git commit -m "Revisión requerida: Nueva noticia generada por IA"
+          git commit -m "Revisión requerida: Nuevo contenido (Noticia y Video) generado por IA"
           git push origin $RAMA
           
-          gh pr create --title "📝 Revisión requerida: Nueva Noticia" --body "El agente ha redactado una nueva noticia para Gungo. Por favor, verifica la veracidad de los hechos. Si todo es correcto, aprueba este cambio para publicarlo en la web." --base main --head $RAMA
+          gh pr create --title "📝 Revisión requerida: Nueva Noticia y Video Viral" --body "El equipo de agentes ha redactado una nueva noticia y cazado un video viral para GungoTV. Por favor, verifica los hechos y los enlaces. Si todo es correcto, aprueba este cambio para publicarlo en la web." --base main --head $RAMA
