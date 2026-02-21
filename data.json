@@ -2,7 +2,7 @@
   "meta": {
     "siteName": "GUNGO",
     "version": "2.8.0",
-    "lastUpdated": "2026-02-21T17:17:57Z",
+    "lastUpdated": "2026-02-21T17:26:41Z",
     "description": "Noticias confirmadas y actualidad urbana de RD al 20/12/2025."
   },
   "tickerNews": [
@@ -159,6 +159,39 @@
     }
   ],
   "newsArticles": [
+    {
+      "id": 1771694801,
+      "slug": "tokischa-enciende-premio-lo-nuestro-2026-con-atrevido-vestido-que-expuso-su-seno",
+      "category": "EXCLUSIVA",
+      "badge": "NUEVO 🔥",
+      "publishedAt": "2026-02-21T17:26:41Z",
+      "title": "¡Tokischa Enciende Premio Lo Nuestro 2026 con Atrevido Vestido que Expuso su Seno!",
+      "summary": "La controversial cantante urbana dominicana Tokischa generó revuelo y acaparó todas las miradas en la alfombra magenta de Premio Lo Nuestro 2026 con un audaz vestido que no dejó indiferente a nadie.",
+      "longDescription": "La alfombra magenta de Premio Lo Nuestro 2026 se convirtió una vez más en el escenario perfecto para la moda arriesgada y las declaraciones de estilo. Sin embargo, fue la artista urbana dominicana Tokischa quien acaparó la atención de todos al desfilar con un vestido que dejaba uno de sus senos totalmente expuesto. Esta audaz elección de vestuario provocó un inmediato revuelo tanto en las redes sociales como entre los asistentes al evento celebrado en Miami. \n\nFiel a su estilo irreverente y provocador, Tokischa optó por un diseño asimétrico de la casa británica Vivienne Westwood, que cubría solo una parte de su torso. Las imágenes de su atuendo se viralizaron rápidamente, generando un torbellino de reacciones que iban desde elogios por su audacia hasta críticas por considerar el look 'demasiado explícito' para una gala televisada a nivel internacional. La cantante, conocida por romper estereotipos y usar la moda como una herramienta de expresión, reafirmó así su postura sobre la autonomía corporal y el rechazo a las presiones estéticas en la industria.",
+      "image": "https://placehold.co/800x500/111/E50914/png?text=Noticia+Gungo",
+      "altText": "Tokischa en la alfombra magenta de Premio Lo Nuestro 2026 con su controversial vestido",
+      "author": {
+        "name": "Agente Gungo",
+        "role": "Redacción IA"
+      },
+      "media": {
+        "type": "image",
+        "count": 1
+      },
+      "metrics": {
+        "views": "1K",
+        "likes": 100,
+        "shares": 50
+      },
+      "tags": [
+        "Gungo",
+        "Viral"
+      ],
+      "seo_vortex_x": "Tokischa causa furor en Premio Lo Nuestro con atuendo que expone su seno.",
+      "seo_vortex_ig": "Tokischa desafía las convenciones en la alfombra magenta de Premio Lo Nuestro 2026. La artista dominicana capturó todas las miradas con un diseño que no dejó indiferente a nadie, provocando un aluvión de reacciones en redes sociales. #Tokischa #PremioLoNuestro #FarándulaUrbana",
+      "seo_vortex_tiktok_text": "Tokischa en el ojo del huracán por su atrevido look en Premio Lo Nuestro 2026. ¿Demasiado audaz o una declaración de moda?",
+      "seo_vortex_tiktok_filename": "hack-buscador.mp4"
+    },
     {
       "id": 1771694277,
       "slug": "tokischa-incendia-premio-lo-nuestro-2026-con-atrevido-look-de-vivienne-westwood",
