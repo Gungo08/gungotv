@@ -2,7 +2,7 @@
   "meta": {
     "siteName": "GUNGO",
     "version": "2.8.0",
-    "lastUpdated": "2026-02-21T17:14:18Z",
+    "lastUpdated": "2026-02-21T17:17:57Z",
     "description": "Noticias confirmadas y actualidad urbana de RD al 20/12/2025."
   },
   "tickerNews": [
@@ -159,6 +159,44 @@
     }
   ],
   "newsArticles": [
+    {
+      "id": 1771694277,
+      "slug": "tokischa-incendia-premio-lo-nuestro-2026-con-atrevido-look-de-vivienne-westwood",
+      "category": "EXCLUSIVA",
+      "badge": "NUEVO 🔥",
+      "publishedAt": "2026-02-21T17:17:57Z",
+      "title": "¡Tokischa Incendia Premio Lo Nuestro 2026 con Atrevido Look de Vivienne Westwood y Poderoso Mensaje!",
+      "summary": "La artista urbana dominicana Tokischa paralizó la alfombra magenta de Premio Lo Nuestro 2026 al desfilar con un revelador diseño de Vivienne Westwood que dejaba uno de sus senos al descubierto, enviando un mensaje de autonomía corporal.",
+      "longDescription": "La controversial rapera dominicana Tokischa, fiel a su estilo transgresor, se convirtió en el epicentro de todas las miradas durante la alfombra magenta de Premio Lo Nuestro 2026, celebrado en Miami. La artista impactó al presentarse con un vestido blanco de archivo de la icónica diseñadora Vivienne Westwood, una pieza asimétrica que dejó uno de sus senos completamente expuesto, cubierto únicamente por un audaz arete plateado en forma de espada sobre un cubre-pezón. Su arriesgada elección generó un revuelo instantáneo tanto entre los asistentes como en las redes sociales, donde su nombre se volvió tendencia mundial en cuestión de minutos.\n\nMás allá de la estética provocadora, Tokischa aprovechó la plataforma para enviar un poderoso mensaje sobre la autonomía corporal y el rechazo a las presiones estéticas. En declaraciones a los medios en la alfombra, la cantante afirmó con determinación: “No me voy a operar las tetas. Esta teta, que yo tengo aquí, es con la que me voy a quedar, porque tengo mi carrera entera que me dicen 'opérate las tetas', y yo no me voy a operar las tetas, estas tetas me gustan y estas son las tetas que voy a seguir teniendo”. Este acto de autoafirmación resonó profundamente, polarizando opiniones entre quienes aplauden su libertad de expresión y quienes cuestionan los límites de la vestimenta en eventos de alcance internacional. Su presentación en el escenario con éxitos como 'Ridin' y 'Delincuente' también reafirmó su posición como una de las figuras más influyentes y auténticas del dembow caribeño y el género urbano.",
+      "image": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1izW0d.img?w=1920&h=1080&m=6&q=60&o=f&l=f",
+      "altText": "Tokischa en la alfombra magenta de Premio Lo Nuestro 2026 con un vestido blanco asimétrico que deja un seno expuesto.",
+      "author": {
+        "name": "Agente Gungo",
+        "role": "Redacción IA"
+      },
+      "media": {
+        "type": "image",
+        "count": 1
+      },
+      "metrics": {
+        "views": "1K",
+        "likes": 100,
+        "shares": 50
+      },
+      "tags": [
+        "Gungo",
+        "Viral",
+        "Tokischa",
+        "PremioLoNuestro2026",
+        "FarándulaUrbanaDominicana",
+        "Moda",
+        "Controversia"
+      ],
+      "seo_vortex_x": "Tokischa enciende Premio Lo Nuestro 2026 con revelador vestido de Vivienne Westwood y mensaje de autonomía corporal. #Tokischa #PremioLoNuestro #VivienneWestwood",
+      "seo_vortex_ig": "¡BOMBA! 🚨 Tokischa no deja indiferente a nadie en Premio Lo Nuestro 2026. La artista dominicana lució un vestido de Vivienne Westwood que mostraba un seno al descubierto, declarando con fuerza: “No me voy a operar las tetas.” El look y su mensaje viralizan la noche. ¿Qué opinas? #Tokischa #PremioLoNuestro #FarándulaDominicana",
+      "seo_vortex_tiktok_text": "Tokischa rompe el internet en Premio Lo Nuestro 2026 con un look de Vivienne Westwood que dejó a todos sin palabras. Su mensaje sobre la aceptación del cuerpo es viral. ¡Tienes que verlo! #Tokischa #PremioLoNuestro #Moda #Viral",
+      "seo_vortex_tiktok_filename": "tokischa-premio-lo-nuestro-2026-viral.mp4"
+    },
     {
       "id": 1771694058,
       "slug": "bombazo-lidom-esteury-ruiz-regresa-a-los-toros-del-este",
