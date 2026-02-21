@@ -61,7 +61,7 @@ try:
     while intento_actual < max_intentos:
         try:
             respuesta = cliente.models.generate_content(
-                model='gemini-2.5-flash',
+                model='gemini-3.1-pro',
                 contents=instrucciones,
                 config=types.GenerateContentConfig(
                     tools=[{"google_search": {}}], 
@@ -132,6 +132,7 @@ try:
 except Exception as error:
     print(f"❌ ERROR GENERAL NO CONTROLADO: {str(error)}")
     sys.exit(1)
+
 
 
 
