@@ -2,7 +2,7 @@
   "meta": {
     "siteName": "GUNGO",
     "version": "2.8.0",
-    "lastUpdated": "2025-12-20T12:00:00Z",
+    "lastUpdated": "2026-02-21T14:35:17Z",
     "description": "Noticias confirmadas y actualidad urbana de RD al 20/12/2025."
   },
   "tickerNews": [
@@ -33,25 +33,63 @@
     }
   ],
   "storiesData": [
-    { "id": "s1", "name": "Karol G", "img": "logo-gungo7.png", "hasNew": true },
-    { "id": "s2", "name": "Bad Bunny", "img": "logo-gungo8.png", "hasNew": true },
-    { "id": "s3", "name": "Yailin", "img": "logo-gungo9.png", "hasNew": true },
-    { "id": "s4", "name": "El Alfa", "img": "logo-gungo6.png", "hasNew": false },
-    { "id": "s5", "name": "Tekashi", "img": "logo-gungo10.png", "hasNew": true },
-    { "id": "s6", "name": "Feid", "img": "logo-gungo3.png", "hasNew": true }
+    {
+      "id": "s1",
+      "name": "Karol G",
+      "img": "logo-gungo7.png",
+      "hasNew": true
+    },
+    {
+      "id": "s2",
+      "name": "Bad Bunny",
+      "img": "logo-gungo8.png",
+      "hasNew": true
+    },
+    {
+      "id": "s3",
+      "name": "Yailin",
+      "img": "logo-gungo9.png",
+      "hasNew": true
+    },
+    {
+      "id": "s4",
+      "name": "El Alfa",
+      "img": "logo-gungo6.png",
+      "hasNew": false
+    },
+    {
+      "id": "s5",
+      "name": "Tekashi",
+      "img": "logo-gungo10.png",
+      "hasNew": true
+    },
+    {
+      "id": "s6",
+      "name": "Feid",
+      "img": "logo-gungo3.png",
+      "hasNew": true
+    }
   ],
   "pollData": {
     "id": "poll-dec-20-2025",
     "question": "¿Crees que la relación de Feid y Karol G llegue al 2026?",
     "expiresAt": "2025-12-21T23:59:00Z",
     "options": [
-      { "text": "Sí, boda segura 💍", "id": 0, "votes": 4500 },
-      { "text": "No, eso es marketing 📉", "id": 1, "votes": 3200 }
+      {
+        "text": "Sí, boda segura 💍",
+        "id": 0,
+        "votes": 4500
+      },
+      {
+        "text": "No, eso es marketing 📉",
+        "id": 1,
+        "votes": 3200
+      }
     ],
     "footerText": "Más de 15k votos hoy."
   },
   "viralVideos": [
-   {
+    {
       "id": "video_01_maduro_reaction",
       "titulo": "“¿Inmunidad?”: La respuesta del Juez a la defensa de Maduro (Video Exclusivo)",
       "categoria": "Polítándula",
@@ -61,20 +99,32 @@
       "video_src": "assets/videos/2026/maduro_juez_reply.mp4",
       "thumbnail": "assets/img/maduro_court_sketch.jpg",
       "resumen": "Imágenes recreadas de la corte: El momento tenso donde el juez desestima el argumento.",
-      "seo_tags": ["Nicolas Maduro", "Nueva York", "Juicio", "Viral"]
+      "seo_tags": [
+        "Nicolas Maduro",
+        "Nueva York",
+        "Juicio",
+        "Viral"
+      ]
     },
-   {
-    "id": "video_live_univision_alofoke_01",
-    "titulo": "¡EN VIVO! Santiago Matías (Alofoke) rompe el silencio en Univision: Programa Especial",
-    "categoria": "Exclusiva",
-    "tipo": "video_live",
-    "fecha": "2026-01-11",
-    "duracion": "EN VIVO",
-    "video_src": "https://www.youtube.com/embed/V4C7VNfRATA?autoplay=1",
-    "thumbnail": "https://i.ytimg.com/vi/V4C7VNfRATA/hqdefault_live.jpg",
-    "resumen": "Señal oficial en directo desde Univision: Cobertura especial y entrevista exclusiva con Santiago Matías sobre los últimos acontecimientos.",
-    "seo_tags": ["Santiago Matias", "Alofoke", "Univision", "Entrevista", "Nueva York", "En Vivo"]
-  },
+    {
+      "id": "video_live_univision_alofoke_01",
+      "titulo": "¡EN VIVO! Santiago Matías (Alofoke) rompe el silencio en Univision: Programa Especial",
+      "categoria": "Exclusiva",
+      "tipo": "video_live",
+      "fecha": "2026-01-11",
+      "duracion": "EN VIVO",
+      "video_src": "https://www.youtube.com/embed/V4C7VNfRATA?autoplay=1",
+      "thumbnail": "https://i.ytimg.com/vi/V4C7VNfRATA/hqdefault_live.jpg",
+      "resumen": "Señal oficial en directo desde Univision: Cobertura especial y entrevista exclusiva con Santiago Matías sobre los últimos acontecimientos.",
+      "seo_tags": [
+        "Santiago Matias",
+        "Alofoke",
+        "Univision",
+        "Entrevista",
+        "Nueva York",
+        "En Vivo"
+      ]
+    },
     {
       "id": "vid_alofoke_entrevista",
       "sourceId": "TxACDZOOMIw",
@@ -110,6 +160,42 @@
   ],
   "newsArticles": [
     {
+      "id": 1771684517,
+      "slug": "tokischa-seno-expuesto-premio-lo-nuestro-2026",
+      "category": "EXCLUSIVA",
+      "badge": "NUEVO 🔥",
+      "publishedAt": "2026-02-21T14:35:17Z",
+      "title": "¡Escándalo en Premio Lo Nuestro 2026! Tokischa llega con un seno expuesto y paraliza la alfombra magenta",
+      "summary": "La controversial artista urbana dominicana Tokischa dejó a todos boquiabiertos al desfilar por la alfombra magenta de Premio Lo Nuestro 2026 con un audaz vestido que revelaba uno de sus senos, desatando una ola de comentarios y críticas.",
+      "longDescription": "La noche de Premio Lo Nuestro 2026 fue testigo de un momento que rápidamente se volvió viral, cortesía de la cantante dominicana Tokischa. Conocida por su estilo transgresor, la artista no defraudó y acaparó todas las miradas al presentarse con un atuendo que dejaba uno de sus senos totalmente expuesto. Este acto generó una inmediata reacción tanto en la alfombra magenta como en las redes sociales, donde usuarios y presentadores, como un copresentador de 'Hoy día' de Telemundo, cuestionaron la búsqueda de atención por encima del talento.\n\nLa decisión de Tokischa de desafiar las convenciones en un evento de tal magnitud no es nueva en su carrera, marcada por la polémica y la provocación. Mientras algunos aplauden su audacia y libertad de expresión, otros critican lo que consideran una estrategia para generar controversia. Este incidente, que se suma a la lista de momentos inolvidables de la artista, refuerza su imagen como una figura que constantemente empuja los límites en la farándula urbana, manteniendo a la audiencia siempre expectante ante su próxima movida.",
+      "image": "PEGAR_LINK_AQUI",
+      "altText": "Tokischa en Premio Lo Nuestro 2026 con vestido que expone un seno, generando controversia.",
+      "author": {
+        "name": "Agente Gungo",
+        "role": "Redacción IA"
+      },
+      "media": {
+        "type": "image",
+        "count": 1
+      },
+      "metrics": {
+        "views": "1K",
+        "likes": 100,
+        "shares": 50
+      },
+      "tags": [
+        "Gungo",
+        "Viral",
+        "Tokischa",
+        "Premio Lo Nuestro",
+        "Farándula Urbana Dominicana"
+      ],
+      "seo_vortex_x": "Tokischa causa furor en Premio Lo Nuestro 2026: ¿Genialidad o provocación?",
+      "seo_vortex_ig": "Tokischa en Premio Lo Nuestro 2026. 😱 La controversial artista urbana dominicana dejó a todos sin palabras con su audaz look en la alfombra magenta. ¿Qué opinas de su atrevida elección? #Tokischa #PremioLoNuestro #FarándulaDominicana",
+      "seo_vortex_tiktok_text": "Tokischa lo vuelve a hacer en Premio Lo Nuestro 2026. Su look viral está dando de qué hablar. ¿Impacto o escándalo? #Tokischa #PremioLoNuestro #Viral",
+      "seo_vortex_tiktok_filename": "hack-buscador.mp4"
+    },
+    {
       "id": 301,
       "slug": "el-alfa-pierde-apelacion-bubloy",
       "category": "EXCLUSIVA",
@@ -120,10 +206,25 @@
       "longDescription": "Malas noticias para El Alfa. La Corte de Apelación rechazó el recurso de sus abogados, ratificando la sentencia que lo obliga a entregar copias de los contratos con The Orchard a su ex socio Bubloy. De no cumplir, enfrentará una multa acumulativa diaria. Esta es una noticia en desarrollo exclusiva de GUNGO.",
       "image": "https://nuevodiario-assets.s3.us-east-2.amazonaws.com/wp-content/uploads/2023/04/04092224/WhatsApp-Image-2023-04-04-at-1.13.23-PM-e1680628963375.jpeg",
       "altText": "El Alfa saliendo de la corte rodeado de prensa",
-      "author": { "name": "Diario Libre", "role": "Justicia" },
-      "media": { "type": "image", "count": 1 },
-      "metrics": { "views": "850K", "likes": 32000, "shares": 5000 },
-      "tags": ["El Alfa", "Bubloy", "Justicia", "EXCLUSIVA"]
+      "author": {
+        "name": "Diario Libre",
+        "role": "Justicia"
+      },
+      "media": {
+        "type": "image",
+        "count": 1
+      },
+      "metrics": {
+        "views": "850K",
+        "likes": 32000,
+        "shares": 5000
+      },
+      "tags": [
+        "El Alfa",
+        "Bubloy",
+        "Justicia",
+        "EXCLUSIVA"
+      ]
     },
     {
       "id": 305,
@@ -136,9 +237,21 @@
       "longDescription": "La directora de Persecución fue tajante hoy: no habrá trato preferencial. Fuentes exclusivas de GUNGO confirman que dos promotores artísticos están siendo interrogados esta tarde. El caso desfalco millonario mantiene al país en vilo.",
       "image": "https://images.unsplash.com/photo-1589578527966-8171226dd716?q=80&w=2070&auto=format&fit=crop",
       "altText": "Mazo de juez sobre documentos legales",
-      "author": { "name": "Listín Diario", "role": "Política" },
-      "metrics": { "views": "920K", "likes": 22000, "shares": 15000 },
-      "tags": ["Corrupción", "Yeni Berenice", "Urbanos", "EXCLUSIVA"]
+      "author": {
+        "name": "Listín Diario",
+        "role": "Política"
+      },
+      "metrics": {
+        "views": "920K",
+        "likes": 22000,
+        "shares": 15000
+      },
+      "tags": [
+        "Corrupción",
+        "Yeni Berenice",
+        "Urbanos",
+        "EXCLUSIVA"
+      ]
     },
     {
       "id": 310,
@@ -151,9 +264,21 @@
       "longDescription": "Documentos filtrados a GUNGO revelan que Jorgina Lulú Guillermo (Yailin) cerró un trato de 3 millones de dólares con el gigante del streaming. La serie, tentativamente titulada 'Resiliencia', comenzará a rodarse en enero de 2026 en Punta Cana y Miami.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcHXCXWsv1G6Nq0-GkSBgGsnaFw8Frk3ESGg&s",
       "altText": "Yailin firmando documentos en oficinas de Netflix",
-      "author": { "name": "GUNGO Redacción", "role": "Exclusiva" },
-      "metrics": { "views": "1.2M", "likes": 150000, "shares": 45000 },
-      "tags": ["Yailin", "Netflix", "Serie", "EXCLUSIVA"]
+      "author": {
+        "name": "GUNGO Redacción",
+        "role": "Exclusiva"
+      },
+      "metrics": {
+        "views": "1.2M",
+        "likes": 150000,
+        "shares": 45000
+      },
+      "tags": [
+        "Yailin",
+        "Netflix",
+        "Serie",
+        "EXCLUSIVA"
+      ]
     },
     {
       "id": 303,
@@ -166,9 +291,20 @@
       "longDescription": "Lo que parecía un problema logístico ha escalado. Anuel AA publicó un mensaje preocupante en sus historias (que borró a los 5 minutos) diciendo que necesita 'desconectarse del personaje'. Fans temen una recaída emocional tras la boda de Karol G.",
       "image": "https://s3-us-west-1.amazonaws.com/wass-media-library/music_artists/anuel-aa-20250128.jpg",
       "altText": "Anuel AA mirando al suelo preocupado en concierto",
-      "author": { "name": "Europa FM", "role": "Conciertos" },
-      "metrics": { "views": "600K", "likes": 15000, "shares": 2000 },
-      "tags": ["Anuel AA", "Salud Mental", "ESCÁNDALO"]
+      "author": {
+        "name": "Europa FM",
+        "role": "Conciertos"
+      },
+      "metrics": {
+        "views": "600K",
+        "likes": 15000,
+        "shares": 2000
+      },
+      "tags": [
+        "Anuel AA",
+        "Salud Mental",
+        "ESCÁNDALO"
+      ]
     },
     {
       "id": 304,
@@ -180,9 +316,21 @@
       "longDescription": "Tras resbalar en el techo de su escenario en CDMX, fuentes aseguran que Benito tuvo una fuerte discusión en el camerino. '¡Esto pudo matarme!', se escucha en un audio filtrado por un técnico de sonido. La gira podría pausarse por seguridad.",
       "image": "https://elnacional.com.do/wp-content/uploads/2025/09/Bad-Bunny.jpg",
       "altText": "Escenario de Bad Bunny siendo revisado por técnicos",
-      "author": { "name": "Chisme No Like", "role": "Farándula" },
-      "metrics": { "views": "1.5M", "likes": 89000, "shares": 12000 },
-      "tags": ["Bad Bunny", "Pelea", "México", "ESCÁNDALO"]
+      "author": {
+        "name": "Chisme No Like",
+        "role": "Farándula"
+      },
+      "metrics": {
+        "views": "1.5M",
+        "likes": 89000,
+        "shares": 12000
+      },
+      "tags": [
+        "Bad Bunny",
+        "Pelea",
+        "México",
+        "ESCÁNDALO"
+      ]
     },
     {
       "id": 306,
@@ -194,9 +342,21 @@
       "longDescription": "La navidad de Tekashi se complica. Reportes indican un altercado en la prisión federal donde cumple sentencia. Su abogado alega que fue 'provocación' de otros reclusos por su fama. Se le ha negado la fianza nuevamente.",
       "image": "https://m.media-amazon.com/images/I/51rY6e98-LL._AC_UF1000,1000_QL80_.jpg",
       "altText": "Foto de ficha policial de Tekashi 6ix9ine",
-      "author": { "name": "TMZ", "role": "Policial" },
-      "metrics": { "views": "1.1M", "likes": 45000, "shares": 3000 },
-      "tags": ["Tekashi", "Cárcel", "Pelea", "ESCÁNDALO"]
+      "author": {
+        "name": "TMZ",
+        "role": "Policial"
+      },
+      "metrics": {
+        "views": "1.1M",
+        "likes": 45000,
+        "shares": 3000
+      },
+      "tags": [
+        "Tekashi",
+        "Cárcel",
+        "Pelea",
+        "ESCÁNDALO"
+      ]
     },
     {
       "id": 302,
@@ -209,9 +369,21 @@
       "longDescription": "¡Sin miedo al éxito! Karol G encendió las redes al cortarse el cabello estilo 'Bob' frente al espejo en un live de Instagram. Aunque algunos haters la llaman 'Dora la Exploradora', la mayoría ama su valentía para recibir el 2026 renovada.",
       "image": "https://www.musicmundial.com/wp-content/uploads/2025/08/Karol-G-co-ncabello-corto.jpg",
       "altText": "Karol G sonriendo con su nuevo corte de pelo corto",
-      "author": { "name": "Café Negro", "role": "Redes" },
-      "metrics": { "views": "3.1M", "likes": 500000, "shares": 80000 },
-      "tags": ["Karol G", "Viral", "Look", "CALIENTES"]
+      "author": {
+        "name": "Café Negro",
+        "role": "Redes"
+      },
+      "metrics": {
+        "views": "3.1M",
+        "likes": 500000,
+        "shares": 80000
+      },
+      "tags": [
+        "Karol G",
+        "Viral",
+        "Look",
+        "CALIENTES"
+      ]
     },
     {
       "id": 309,
@@ -223,9 +395,21 @@
       "longDescription": "La amistad del año sigue dando de qué hablar. Videos muestran a Lamine Yamal (Barça) y El Alfa cerrando un club exclusivo en Ibiza. Champagne, cadenas de diamantes y mucho dembow fueron los protagonistas de la noche.",
       "image": "https://robertocavada.com/wp-content/uploads/2025/07/el-extraterrestre-mi-nuevo-nombre-lamineyamal-agarra-esta-trompa-de-mike-tys-bdb43696-e1752506219459-770x540.jpg",
       "altText": "El Alfa y Lamine Yamal brindando en discoteca",
-      "author": { "name": "Marca", "role": "Deportes" },
-      "metrics": { "views": "1.8M", "likes": 200000, "shares": 10000 },
-      "tags": ["Lamine Yamal", "Fiesta", "Lujos", "CALIENTES"]
+      "author": {
+        "name": "Marca",
+        "role": "Deportes"
+      },
+      "metrics": {
+        "views": "1.8M",
+        "likes": 200000,
+        "shares": 10000
+      },
+      "tags": [
+        "Lamine Yamal",
+        "Fiesta",
+        "Lujos",
+        "CALIENTES"
+      ]
     },
     {
       "id": 311,
@@ -238,9 +422,21 @@
       "longDescription": "París ardió anoche. Tokischa subió al escenario durante 'Hung Up' y protagonizó otro momento picante con Madonna. Los fans aseguran que la química entre ambas está más viva que nunca.",
       "image": "https://placehold.co/600x400/111/E50914/png?text=Tokischa+Madonna",
       "altText": "Tokischa y Madonna en el escenario de París",
-      "author": { "name": "Vogue", "role": "Música" },
-      "metrics": { "views": "2.2M", "likes": 180000, "shares": 60000 },
-      "tags": ["Tokischa", "Madonna", "Beso", "CALIENTES"]
+      "author": {
+        "name": "Vogue",
+        "role": "Música"
+      },
+      "metrics": {
+        "views": "2.2M",
+        "likes": 180000,
+        "shares": 60000
+      },
+      "tags": [
+        "Tokischa",
+        "Madonna",
+        "Beso",
+        "CALIENTES"
+      ]
     },
     {
       "id": 405,
@@ -253,9 +449,21 @@
       "longDescription": "Noche triste para la fanaticada azul. Los Gigantes del Cibao vencieron 5-3 a los Tigres del Licey, dejándolos matemáticamente fuera del Round Robin 2025-2026. Marco Hernández fue el verdugo con 3 remolcadas que sepultaron las esperanzas del bicampeón. Es la primera vez en años que el Licey queda en el sótano.",
       "image": "https://i.ytimg.com/vi/FsFKVbMjEUs/maxresdefault.jpg",
       "altText": "Jugadores de Gigantes celebrando mientras Licey sale cabizbajo",
-      "author": { "name": "LIDOM Press", "role": "Deportes" },
-      "metrics": { "views": "2.8M", "likes": 120000, "shares": 45000 },
-      "tags": ["Licey", "Eliminado", "LIDOM", "Gigantes"]
+      "author": {
+        "name": "LIDOM Press",
+        "role": "Deportes"
+      },
+      "metrics": {
+        "views": "2.8M",
+        "likes": 120000,
+        "shares": 45000
+      },
+      "tags": [
+        "Licey",
+        "Eliminado",
+        "LIDOM",
+        "Gigantes"
+      ]
     },
     {
       "id": 402,
@@ -267,9 +475,21 @@
       "longDescription": "¡Confirmado! Tatis Jr. recibió el permiso de San Diego. 'Vengo a darle la corona a San Pedro', declaró en su llegada al aeropuerto AILA. Se espera que debute el 2 de enero.",
       "image": "https://cdn.com.do/wp-content/uploads/2021/01/Fernando-Tatis-Jr-Estrellas.jpg",
       "altText": "Fernando Tatis Jr con uniforme de Estrellas Orientales",
-      "author": { "name": "Pio Deportes", "role": "Exclusiva" },
-      "metrics": { "views": "900K", "likes": 80000, "shares": 15000 },
-      "tags": ["Tatis Jr", "Estrellas", "MLB", "EN PELOTA"]
+      "author": {
+        "name": "Pio Deportes",
+        "role": "Exclusiva"
+      },
+      "metrics": {
+        "views": "900K",
+        "likes": 80000,
+        "shares": 15000
+      },
+      "tags": [
+        "Tatis Jr",
+        "Estrellas",
+        "MLB",
+        "EN PELOTA"
+      ]
     },
     {
       "id": 403,
@@ -281,12 +501,23 @@
       "longDescription": "Tras perder 5 juegos en línea, los Leones del Escogido anunciaron cambio de mando. Los fanáticos en redes sociales pedían 'cabezas' y la gerencia respondió rápido para intentar salvar la clasificación.",
       "image": "https://noticiassin.com/wp-content/uploads/2022/10/Escogido.jpg",
       "altText": "Dugout del Escogido con caras preocupadas",
-      "author": { "name": "Listín Deportes", "role": "Noticias" },
-      "metrics": { "views": "400K", "likes": 5000, "shares": 800 },
-      "tags": ["Escogido", "LIDOM", "Despido", "EN PELOTA"]
+      "author": {
+        "name": "Listín Deportes",
+        "role": "Noticias"
+      },
+      "metrics": {
+        "views": "400K",
+        "likes": 5000,
+        "shares": 800
+      },
+      "tags": [
+        "Escogido",
+        "LIDOM",
+        "Despido",
+        "EN PELOTA"
+      ]
     }
   ],
-  
   "loadMoreData": [
     {
       "id": 307,
@@ -298,9 +529,21 @@
       "longDescription": "Yailin no llora, Yailin factura. Tras el accidente de octubre, la cantante mostró su nuevo 'juguete': un Ferrari Roma color rosa. 'Para las que sufren', escribió en el caption.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcHXCXWsv1G6Nq0-GkSBgGsnaFw8Frk3ESGg&s",
       "altText": "Yailin posando frente a un Ferrari rosa",
-      "author": { "name": "Univision", "role": "Espectáculos" },
-      "metrics": { "views": "700K", "likes": 120000, "shares": 5000 },
-      "tags": ["Yailin", "Ferrari", "Lujos", "CALIENTES"]
+      "author": {
+        "name": "Univision",
+        "role": "Espectáculos"
+      },
+      "metrics": {
+        "views": "700K",
+        "likes": 120000,
+        "shares": 5000
+      },
+      "tags": [
+        "Yailin",
+        "Ferrari",
+        "Lujos",
+        "CALIENTES"
+      ]
     },
     {
       "id": 308,
@@ -312,9 +555,21 @@
       "longDescription": "Rochy RD mantiene su libertad bajo fianza cumpliendo religiosamente con sus visitas periódicas. Fuentes cercanas dicen que aprovechó la salida para grabar un ft sorpresa con Ozuna.",
       "image": "https://cdn-images.dzcdn.net/images/artist/9a9bbd9b0a2cb9cec0f8414a538d9479/1900x1900-000000-80-0-0.jpg",
       "altText": "Rochy RD entrando al palacio de justicia",
-      "author": { "name": "De Último Minuto", "role": "Local" },
-      "metrics": { "views": "450K", "likes": 28000, "shares": 1200 },
-      "tags": ["Rochy RD", "Música", "Justicia", "EXCLUSIVA"]
+      "author": {
+        "name": "De Último Minuto",
+        "role": "Local"
+      },
+      "metrics": {
+        "views": "450K",
+        "likes": 28000,
+        "shares": 1200
+      },
+      "tags": [
+        "Rochy RD",
+        "Música",
+        "Justicia",
+        "EXCLUSIVA"
+      ]
     },
     {
       "id": 312,
@@ -326,33 +581,21 @@
       "longDescription": "Las fotos son borrosas pero innegables. Piqué viajó a Miami para ver a sus hijos y terminó compartiendo una cena de 3 horas con Shakira. ¿Tregua navideña o hay algo más?",
       "image": "https://placehold.co/600x400/111/E50914/png?text=Shakira+Pique",
       "altText": "Foto borrosa de Shakira y Piqué en restaurante",
-      "author": { "name": "Hola!", "role": "Paparazzi" },
-      "metrics": { "views": "4.5M", "likes": 300000, "shares": 90000 },
-      "tags": ["Shakira", "Piqué", "Miami", "ESCÁNDALO"]
+      "author": {
+        "name": "Hola!",
+        "role": "Paparazzi"
+      },
+      "metrics": {
+        "views": "4.5M",
+        "likes": 300000,
+        "shares": 90000
+      },
+      "tags": [
+        "Shakira",
+        "Piqué",
+        "Miami",
+        "ESCÁNDALO"
+      ]
     }
   ]
-   } 
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
