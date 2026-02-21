@@ -2,7 +2,7 @@
   "meta": {
     "siteName": "GUNGO",
     "version": "2.8.0",
-    "lastUpdated": "2026-02-21T15:20:59Z",
+    "lastUpdated": "2026-02-21T16:53:01Z",
     "description": "Noticias confirmadas y actualidad urbana de RD al 20/12/2025."
   },
   "tickerNews": [
@@ -159,6 +159,44 @@
     }
   ],
   "newsArticles": [
+    {
+      "id": 1771692781,
+      "slug": "policia-abate-sospechosos-tiroteo-masha",
+      "category": "EXCLUSIVA",
+      "badge": "NUEVO 🔥",
+      "publishedAt": "2026-02-21T16:53:01Z",
+      "title": "¡Justicia en las Calles! Policía abate a dos implicados en tiroteo que afectó a la urbana Masha",
+      "summary": "Dos hombres identificados como los presuntos responsables de la muerte de Dominique Natalia Gómez Cabrera durante el ataque a la urbana Masha, fueron abatidos en Azua tras enfrentarse a la Policía Nacional.",
+      "longDescription": "La Policía Nacional de República Dominicana ha informado hoy, 21 de febrero de 2026, sobre la muerte de dos individuos identificados como Yamal Anthony Núñez Vargas y otro conocido como 'Julio 30-30' o 'Julio Voltio'. Estos hombres eran buscados por su presunta implicación en el ataque a tiros que resultó en la muerte de Dominique Natalia Gómez Cabrera, de 22 años, el pasado 16 de febrero. El incidente ocurrió en el sector La Esperilla del Distrito Nacional y estaba dirigido al vehículo en el que viajaba la artista urbana Masha.\n\nLos supuestos delincuentes cayeron abatidos durante un enfrentamiento con agentes de la Policía Nacional en la zona de Playa Los Negros, provincia de Azua. Durante el operativo, el sargento policial Joel Enmanuel Reynoso Diógenes resultó herido en el antebrazo izquierdo. En la escena, las autoridades incautaron dos revólveres calibre .38 sin numeración legible. La Policía ha vinculado a los fallecidos con otros hechos violentos ocurridos previamente en los sectores de San Carlos y Villa Francisca. El caso ha sido remitido al Ministerio Público para los procedimientos legales correspondientes.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Policia_Nacional_Republica_Dominicana_emblem.jpg",
+      "altText": "Emblema de la Policía Nacional de la República Dominicana.",
+      "author": {
+        "name": "Agente Gungo",
+        "role": "Redacción IA"
+      },
+      "media": {
+        "type": "image",
+        "count": 1
+      },
+      "metrics": {
+        "views": "1K",
+        "likes": 100,
+        "shares": 50
+      },
+      "tags": [
+        "Gungo",
+        "Viral",
+        "Farándula Urbana Dominicana",
+        "Masha",
+        "Policía Nacional",
+        "Tiroteo",
+        "Justicia"
+      ],
+      "seo_vortex_x": "Policía Nacional abate a Yamal Núñez y 'Julio 30-30', implicados en el tiroteo del caso Masha.",
+      "seo_vortex_ig": "ÚLTIMA HORA: La Policía Nacional abatió a los dos presuntos responsables del tiroteo que cobró la vida de Dominique Gómez Cabrera y donde la urbana Masha resultó afectada en Santo Domingo. ¡Se hizo justicia! #Masha #PolicíaRD #FarándulaDominicana",
+      "seo_vortex_tiktok_text": "🚨ÚLTIMA HORA🚨 Policía Nacional RD abate a los responsables del tiroteo de Masha. ¡Justicia en las calles! #Masha #PoliciaNacionalRD #NoticiaViral",
+      "seo_vortex_tiktok_filename": "hack-buscador.mp4"
+    },
     {
       "id": 1771687259,
       "slug": "leyenda-juan-lagares-anuncia-retiro-beisbol-profesional",
