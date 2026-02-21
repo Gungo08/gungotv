@@ -2,7 +2,7 @@
   "meta": {
     "siteName": "GUNGO",
     "version": "2.8.0",
-    "lastUpdated": "2026-02-21T17:17:57Z",
+    "lastUpdated": "2026-02-21T17:25:36Z",
     "description": "Noticias confirmadas y actualidad urbana de RD al 20/12/2025."
   },
   "tickerNews": [
@@ -159,6 +159,39 @@
     }
   ],
   "newsArticles": [
+    {
+      "id": 1771694736,
+      "slug": "choque-de-titanas-yailin-la-mas-viral-y-georgina-duluc-protagonizan-tensa-entrevista-en-premio-lo-nuestro-2026",
+      "category": "EXCLUSIVA",
+      "badge": "NUEVO 🔥",
+      "publishedAt": "2026-02-21T17:25:36Z",
+      "title": "¡CHOQUE DE TITANAS! Yailin 'La Más Viral' y Georgina Duluc Protagonizan Tensa Entrevista en Premio Lo Nuestro 2026",
+      "summary": "La alfombra de Premio Lo Nuestro fue escenario de un inesperado y tenso encuentro entre la exponente urbana y la presentadora dominicana, dejando a todos boquiabiertos.",
+      "longDescription": "La alfombra magenta de Premio Lo Nuestro 2026 fue el epicentro de un explosivo momento que rápidamente se hizo viral, cuando la popular artista urbana Yailin 'La Más Viral' y la reconocida presentadora dominicana Georgina Duluc se vieron envueltas en una tensa entrevista. El comunicador Moisés Salcé, en un intento por unir a las dos figuras en una misma conversación, fue testigo de un choque de personalidades que no pasó desapercibido para nadie. La interacción, que ocurrió hoy 21 de febrero, generó un revuelo inmediato en redes sociales y medios de comunicación.\n\nDurante el encuentro, la tensión escaló cuando Yailin 'La Más Viral' no dudó en señalar a Georgina Duluc, afirmando que a la presentadora \"se le nota el ego alto\", refiriéndose a su primera impresión y a los comentarios que Duluc había estado realizando. La respuesta de Duluc fue contundente y con su característica franqueza, replicó: \"Estoy aquí haciendo la entrevista contigo, no tengo el ego alto, soy muy humilde\". Este intercambio de palabras se ha convertido en la comidilla de la farándula, analizando cada gesto y cada frase que ambas figuras intercambiaron en el prestigioso evento musical. Este incidente subraya una vez más cómo las personalidades dominicanas continúan marcando pauta con su irreverencia y autenticidad en los escenarios internacionales.",
+      "image": "https://placehold.co/800x500/111/E50914/png?text=Noticia+Gungo",
+      "altText": "Yailin La Más Viral y Georgina Duluc en la alfombra de Premio Lo Nuestro 2026",
+      "author": {
+        "name": "Agente Gungo",
+        "role": "Redacción IA"
+      },
+      "media": {
+        "type": "image",
+        "count": 1
+      },
+      "metrics": {
+        "views": "1K",
+        "likes": 100,
+        "shares": 50
+      },
+      "tags": [
+        "Gungo",
+        "Viral"
+      ],
+      "seo_vortex_x": "Yailin 'La Más Viral' y Georgina Duluc enciende la alfombra de Premio Lo Nuestro 2026 con un tenso enfrentamiento verbal.",
+      "seo_vortex_ig": "La alfombra roja de Premio Lo Nuestro 2026 fue testigo de un momento viral cuando Yailin 'La Más Viral' y Georgina Duluc protagonizaron una tensa entrevista sobre el ego. #PremioLoNuestro #FarándulaDominicana #YailinLaMasViral",
+      "seo_vortex_tiktok_text": "Yailin La Más Viral y Georgina Duluc en un clash de egos en Premio Lo Nuestro 2026 🤯 ¿Quién tiene la razón? #Yailin #GeorginaDuluc #PremioLoNuestro #Drama",
+      "seo_vortex_tiktok_filename": "hack-buscador.mp4"
+    },
     {
       "id": 1771694277,
       "slug": "tokischa-incendia-premio-lo-nuestro-2026-con-atrevido-look-de-vivienne-westwood",
