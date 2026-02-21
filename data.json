@@ -2,7 +2,7 @@
   "meta": {
     "siteName": "GUNGO",
     "version": "2.8.0",
-    "lastUpdated": "2026-02-21T17:25:36Z",
+    "lastUpdated": "2026-02-21T18:22:22Z",
     "description": "Noticias confirmadas y actualidad urbana de RD al 20/12/2025."
   },
   "tickerNews": [
@@ -90,6 +90,16 @@
   },
   "viralVideos": [
     {
+      "id": 1771698163,
+      "title": "Romeo Santos y Prince Royce - Lokita Por Mi & Dardos | PREMIO LO NUESTRO EN VIVO LIVE",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=sI91fJ99K5I",
+      "thumbnail": "https://img.youtube.com/vi/sI91fJ99K5I/hqdefault.jpg",
+      "description": "La espectacular presentación de Romeo Santos y Prince Royce en los Premios Lo Nuestro 2026, interpretando \"Lokita Por Mí\" y \"Dardos\", se ha vuelto viral, capturando la atención en la República Dominicana y el mundo. Este dúo de bachata, referentes del género, ofreció una actuación llena de química y sentimiento que ha resonado fuertemente en las redes sociales.",
+      "publishedAt": "2026-02-21T18:22:43Z",
+      "category": "VIRAL 🚀"
+    },
+    {
       "id": "video_01_maduro_reaction",
       "titulo": "“¿Inmunidad?”: La respuesta del Juez a la defensa de Maduro (Video Exclusivo)",
       "categoria": "Polítándula",
@@ -159,6 +169,42 @@
     }
   ],
   "newsArticles": [
+    {
+      "id": 1771698142,
+      "slug": "escandalo-premio-lo-nuestro-2026-tokischa-seno-descubierto",
+      "category": "EXCLUSIVA",
+      "badge": "NUEVO 🔥",
+      "publishedAt": "2026-02-21T18:22:22Z",
+      "title": "¡ESCÁNDALO EN PREMIO LO NUESTRO 2026! Tokischa Desafía la Censura con Seno al Descubierto",
+      "summary": "La controvertida artista urbana dominicana Tokischa acaparó todas las miradas en la alfombra magenta de Premio Lo Nuestro 2026 al desfilar con un revelador atuendo que dejaba uno de sus senos expuesto.",
+      "longDescription": "La alfombra magenta de Premio Lo Nuestro 2026 se convirtió una vez más en el escenario de la controversia, y la protagonista indiscutible fue la artista urbana dominicana Tokischa. Haciendo honor a su estilo irreverente y audaz, la intérprete apareció con un vestido blanco de archivo de la icónica diseñadora Vivienne Westwood, cuyo diseño asimétrico dejaba uno de sus senos totalmente expuesto. Este atrevido 'look' generó un revuelo inmediato tanto entre los asistentes como en las redes sociales, donde su nombre se volvió tendencia en cuestión de minutos.\n\nTokischa, conocida por utilizar la moda como una plataforma de expresión y resistencia, no dudó en defender su elección. Al ser entrevistada en la alfombra, explicó que su atuendo era un mensaje de autonomía corporal y un rechazo a las presiones estéticas que ha enfrentado a lo largo de su carrera. Aunque no obtuvo estatuillas en sus nominaciones, su impactante aparición y su mensaje sin filtros aseguraron que la conversación sobre Premio Lo Nuestro 2026 girara en torno a ella, reafirmando su papel como una de las figuras más disruptivas del pop urbano latino.",
+      "image": "https://placehold.co/800x500/111/E50914/png?text=Noticia+Gungo",
+      "altText": "Tokischa en la alfombra magenta de Premio Lo Nuestro 2026 con un seno expuesto",
+      "author": {
+        "name": "Agente Gungo",
+        "role": "Redacción IA"
+      },
+      "media": {
+        "type": "image",
+        "count": 1
+      },
+      "metrics": {
+        "views": "1K",
+        "likes": 100,
+        "shares": 50
+      },
+      "tags": [
+        "Gungo",
+        "Viral",
+        "Tokischa",
+        "Premio Lo Nuestro",
+        "Farándula Urbana Dominicana"
+      ],
+      "seo_vortex_x": "Tokischa en Premio Lo Nuestro 2026: La artista dominicana generó controversia al lucir un seno descubierto.",
+      "seo_vortex_ig": "Tokischa, la reina de la provocación, lo hizo de nuevo en Premio Lo Nuestro 2026. Su look dejó a todos boquiabiertos y encendió las redes sociales con su mensaje de autonomía corporal. #Tokischa #PremioLoNuestro #FarándulaUrbana",
+      "seo_vortex_tiktok_text": "¡Tokischa en Premio Lo Nuestro 2026! 😱 No vas a creer el look que se puso. Definitivamente no tiene límites. ¿Qué opinas? #tokischa #premioslonuestro #farandula #escandalo",
+      "seo_vortex_tiktok_filename": "hack-buscador.mp4"
+    },
     {
       "id": 1771694736,
       "slug": "choque-de-titanas-yailin-la-mas-viral-y-georgina-duluc-protagonizan-tensa-entrevista-en-premio-lo-nuestro-2026",
