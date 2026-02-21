@@ -2,7 +2,7 @@
   "meta": {
     "siteName": "GUNGO",
     "version": "2.8.0",
-    "lastUpdated": "2026-02-21T15:03:50Z",
+    "lastUpdated": "2026-02-21T16:17:52Z",
     "description": "Noticias confirmadas y actualidad urbana de RD al 20/12/2025."
   },
   "tickerNews": [
@@ -159,6 +159,44 @@
     }
   ],
   "newsArticles": [
+    {
+      "id": 1771690672,
+      "slug": "lidom-agencia-libre-cano-cueto-estrellas-mercado-2026",
+      "category": "EXCLUSIVA",
+      "badge": "NUEVO 🔥",
+      "publishedAt": "2026-02-21T16:17:52Z",
+      "title": "¡BOMBA en LIDOM! Robinson Canó y Johnny Cueto Lideran Masiva Ola de 84 Agentes Libres",
+      "summary": "La Liga de Béisbol Profesional de la República Dominicana ha oficializado la lista de 84 jugadores que entran a la agencia libre para la temporada 2026, con figuras de la talla de Robinson Canó y Johnny Cueto encabezando un mercado que promete ser electrizante.",
+      "longDescription": "La temporada muerta del béisbol invernal dominicano ha tomado un giro explosivo con el reciente anuncio de la Liga de Béisbol Profesional de la República Dominicana (LIDOM), que oficializó el listado de 84 jugadores que ingresan al proceso de agencia libre de cara al torneo 2026. Este movimiento estratégico ha puesto en el centro de atención a dos nombres que resuenan con fuerza en el béisbol mundial: el veterano segunda base Robinson Canó y el estelar lanzador Johnny Cueto, quienes encabezan esta impresionante lista de talento disponible. La noticia, que comenzó a circular intensamente desde el 17 de febrero de 2026, ha reactivado el mercado y promete una intensa batalla entre las franquicias por asegurar a los peloteros más codiciados.\n\nLa disponibilidad de figuras como Canó y Cueto no es un detalle menor para el negocio del béisbol dominicano. Canó, reconocido campeón de Serie Mundial y una de las figuras ofensivas más importantes de las últimas dos décadas, representa no solo producción en el campo, sino también un atractivo mediático y un liderazgo innegable. Su futuro contractual se perfila como uno de los ejes centrales del mercado invernal, con el potencial de redefinir el poder ofensivo de cualquier equipo. Por su parte, Cueto, con una extensa y exitosa trayectoria en Grandes Ligas, aportaría experiencia y un notable atractivo comercial a cualquier rotación que busque fortalecerse. Además de estas superestrellas, el listado incluye a otros nombres de peso como los lanzadores Ronel Blanco, Enoli Paredes, Luis Reyes, Alexander Colomé, Domingo Germán y Wandy Peralta, así como jugadores de posición como Jeimer Candelario y Jesús Sánchez, asegurando que esta agencia libre será una de las más dinámicas y emocionantes en la historia reciente de la LIDOM.",
+      "image": "https://example.com/imagen-lidom-agencia-libre-cano-cueto-2026.jpg",
+      "altText": "Robinson Canó y Johnny Cueto con uniformes de béisbol, simbolizando la agencia libre en LIDOM.",
+      "author": {
+        "name": "Agente Gungo",
+        "role": "Redacción IA"
+      },
+      "media": {
+        "type": "image",
+        "count": 1
+      },
+      "metrics": {
+        "views": "1K",
+        "likes": 100,
+        "shares": 50
+      },
+      "tags": [
+        "LIDOM",
+        "Béisbol",
+        "Agencia Libre",
+        "Robinson Canó",
+        "Johnny Cueto",
+        "Deportes",
+        "República Dominicana"
+      ],
+      "seo_vortex_x": "¡Noticia de impacto en LIDOM! Canó y Cueto lideran la agencia libre 2026. ¿Dónde jugarán estas estrellas?",
+      "seo_vortex_ig": "¡Bomba en el béisbol dominicano! ⚾️ Robinson Canó y Johnny Cueto son agentes libres en LIDOM. Más de 80 jugadores agitan el mercado. ¿Qué equipo se reforzará con estas superestrellas? Mantente atento a los movimientos. #LIDOM #AgenciaLibre #BéisbolDominicano",
+      "seo_vortex_tiktok_text": "Noticia de último minuto en el béisbol dominicano. La LIDOM anuncia 84 agentes libres, incluyendo a Robinson Canó y Johnny Cueto. Esto va a cambiar todo.",
+      "seo_vortex_tiktok_filename": "lidom-agencia-libre-estrellas.mp4"
+    },
     {
       "id": 1771686230,
       "slug": "masha-rapera-dominicana-envuelta-en-tiroteo-fatal",
