@@ -2,7 +2,7 @@
   "meta": {
     "siteName": "GUNGO",
     "version": "2.8.0",
-    "lastUpdated": "2026-02-21T17:03:42Z",
+    "lastUpdated": "2026-02-21T17:14:18Z",
     "description": "Noticias confirmadas y actualidad urbana de RD al 20/12/2025."
   },
   "tickerNews": [
@@ -159,6 +159,43 @@
     }
   ],
   "newsArticles": [
+    {
+      "id": 1771694058,
+      "slug": "bombazo-lidom-esteury-ruiz-regresa-a-los-toros-del-este",
+      "category": "EXCLUSIVA",
+      "badge": "NUEVO 🔥",
+      "publishedAt": "2026-02-21T17:14:18Z",
+      "title": "¡BOMBAZO en LIDOM! Esteury Ruiz Regresa a los Toros del Este en un Movimiento Estelar",
+      "summary": "El veloz jardinero de la MLB, Esteury Ruiz, sacude el béisbol invernal dominicano al firmar un sorpresivo contrato de regreso con los Toros del Este para la temporada 2026-2027.",
+      "longDescription": "Santo Domingo, RD – La Liga de Béisbol Profesional de la República Dominicana (LIDOM) amanece hoy con una noticia que dejará a los fanáticos boquiabiertos. Esteury Ruiz, el destacado jardinero central que recientemente fue adquirido por los Miami Marlins en la MLB a finales de 2025, ha concretado un movimiento estelar en la agencia libre dominicana, confirmando su regreso a la casa que lo vio nacer en el béisbol invernal: los Toros del Este. Fuentes cercanas a la gerencia romanense confirmaron la firma, que se venía gestando en secreto tras el anuncio de los agentes libres de LIDOM a principios de febrero. Este inesperado acuerdo marca un hito en la temporada baja y genera una ola de euforia entre los seguidores de los Toros, quienes celebran la vuelta de uno de los jugadores más dinámicos del béisbol.\n\nEl anuncio es un verdadero 'bombazo' considerando que Ruiz había sido parte de los Tigres del Licey en temporadas anteriores tras un canje en 2024. Su retorno a la casa naranja, donde fue drafteado en 2018, no solo añade una pieza de alto calibre a la alineación de los Toros, sino que también reaviva una rivalidad histórica con los Tigres, quienes pierden a una figura clave. La velocidad de Ruiz en las bases y su capacidad ofensiva lo convierten en un activo invaluable, prometiendo un espectáculo sin igual para la afición dominicana. Este movimiento estratégico posiciona a los Toros del Este como un fuerte contendiente para la próxima contienda, inyectando una dosis de emoción y expectación que pocos anticipaban.",
+      "image": "https://cloudfront-us-east-1.images.arcpublishing.com/diariolibre/L326E67D3VF6HPQ6F26E6H2Y2E.jpeg",
+      "altText": "Esteury Ruiz en uniforme de béisbol, posiblemente de los Toros del Este o Licey, corriendo en el campo.",
+      "author": {
+        "name": "Agente Gungo",
+        "role": "Redacción IA"
+      },
+      "media": {
+        "type": "image",
+        "count": 1
+      },
+      "metrics": {
+        "views": "1K",
+        "likes": 100,
+        "shares": 50
+      },
+      "tags": [
+        "Gungo",
+        "Viral",
+        "LIDOM",
+        "Esteury Ruiz",
+        "Toros del Este",
+        "Béisbol Invernal"
+      ],
+      "seo_vortex_x": "Esteury Ruiz rompe el mercado de LIDOM con su sorpresivo regreso a los Toros del Este.",
+      "seo_vortex_ig": "¡El béisbol invernal dominicano se enciende! Esteury Ruiz, tras su paso por los Marlins, sorprende a todos regresando a los Toros del Este. Una movida que promete una temporada explosiva. #LIDOM #EsteuryRuiz #TorosDelEste",
+      "seo_vortex_tiktok_text": "Esteury Ruiz regresa a los Toros del Este para la LIDOM 2026-2027. ¡La noticia que nadie esperaba!",
+      "seo_vortex_tiktok_filename": "hack-buscador.mp4"
+    },
     {
       "id": 1771693422,
       "slug": "tension-premio-lo-nuestro-arcangel-anuel-aa",
