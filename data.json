@@ -2,7 +2,7 @@
   "meta": {
     "siteName": "GUNGO",
     "version": "2.8.0",
-    "lastUpdated": "2026-02-21T14:55:17Z",
+    "lastUpdated": "2026-02-21T15:03:50Z",
     "description": "Noticias confirmadas y actualidad urbana de RD al 20/12/2025."
   },
   "tickerNews": [
@@ -159,6 +159,43 @@
     }
   ],
   "newsArticles": [
+    {
+      "id": 1771686230,
+      "slug": "masha-rapera-dominicana-envuelta-en-tiroteo-fatal",
+      "category": "EXCLUSIVA",
+      "badge": "NUEVO 🔥",
+      "publishedAt": "2026-02-21T15:03:50Z",
+      "title": "¡Escándalo! La rapera Masha envuelta en tiroteo fatal; su pasado turbio vuelve a la luz",
+      "summary": "La cantante urbana Masha se encuentra nuevamente en el ojo del huracán tras verse implicada en un ataque a tiros que resultó en la muerte de su colega Dominique Gómez.",
+      "longDescription": "La controversial rapera dominicana Masha está de nuevo en el centro de un escándalo que sacude la farándula urbana, tras confirmarse su implicación en un ataque a tiros que cobró la vida de la también urbana Dominique Nathalia Gómez Cabrera. Los hechos, que se reportan el 17 de febrero de 2026, han reavivado las alarmas sobre el círculo de problemas legales que parece perseguir a la joven artista.\n\nSegún los reportes, el vehículo en el que se desplazaba Masha era conducido por Yhakomo Hernández de la Rosa, quien fue apresado y está siendo investigado por las autoridades para esclarecer las circunstancias exactas del incidente. Este suceso trae a colación el historial problemático de Masha, quien en octubre de 2025 fue arrestada junto a Hernández de la Rosa por tráfico de marihuana, aunque ambos quedaron en libertad bajo medidas económicas. La exponente urbana, que apenas cumplió 18 años, ha intentado un giro en su carrera musical hacia géneros más limpios, pero su vida personal sigue marcada por la controversia, incluyendo episodios como su escape de CONANI y la condena de su expareja Dilon Baby por agresión y explotación sexual. Las declaraciones de Masha, donde ha afirmado “Me querían matar a mí” tras la muerte de su amiga, añaden más tensión y drama a esta ya compleja situación.",
+      "image": "https://example.com/masha_tiroteo_fatal_2026.jpg",
+      "altText": "Masha, rapera dominicana, en medio de controversia legal tras tiroteo fatal.",
+      "author": {
+        "name": "Agente Gungo",
+        "role": "Redacción IA"
+      },
+      "media": {
+        "type": "image",
+        "count": 1
+      },
+      "metrics": {
+        "views": "1K",
+        "likes": 100,
+        "shares": 50
+      },
+      "tags": [
+        "Gungo",
+        "Viral",
+        "Masha",
+        "Farándula Urbana",
+        "Dominicana",
+        "Escándalo"
+      ],
+      "seo_vortex_x": "Masha implicada en tiroteo fatal: ¿Otro capítulo de controversia para la rapera dominicana?",
+      "seo_vortex_ig": "La rapera Masha en el ojo del huracán tras tiroteo fatal. Su pasado la persigue. ¿Qué hay detrás de este nuevo escándalo? #Masha #FarándulaDominicana #EscándaloUrbano",
+      "seo_vortex_tiktok_text": "Masha involucrada en tiroteo fatal. ¿Qué está pasando con la rapera dominicana? Toda la verdad aquí. #Masha #FarándulaRD",
+      "seo_vortex_tiktok_filename": "hack-buscador.mp4"
+    },
     {
       "id": 1771685717,
       "slug": "yailin-la-mas-viral-georgina-duluc-choque-egos-premio-lo-nuestro-2026",
