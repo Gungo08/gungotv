@@ -2,7 +2,7 @@
   "meta": {
     "siteName": "GUNGO",
     "version": "2.8.0",
-    "lastUpdated": "2026-02-21T18:56:06Z",
+    "lastUpdated": "2026-02-21T19:13:34Z",
     "description": "Noticias confirmadas y actualidad urbana de RD al 20/12/2025."
   },
   "tickerNews": [
@@ -89,6 +89,16 @@
     "footerText": "Más de 15k votos hoy."
   },
   "viralVideos": [
+    {
+      "id": 1771701237,
+      "title": "DONATY - POR MI CUALTO (VIDEO OFICIAL)",
+      "platform": "youtube",
+      "videoUrl": "https://youtu.be/cRVKu9QExN0",
+      "thumbnail": "https://img.youtube.com/vi/cRVKu9QExN0/hqdefault.jpg",
+      "description": "El video musical oficial de Donaty para su tema 'Por Mi Cualto' ha escalado rápidamente en las tendencias, convirtiéndose en el video de música urbana más viral de hoy en la República Dominicana, generando un gran impacto en las redes.",
+      "publishedAt": "2026-02-21T19:13:57Z",
+      "category": "VIRAL 🚀"
+    },
     {
       "id": 1771700183,
       "title": "¡EL RUGIDO SE SIENTE! Leones del Escogido celebran su bicampeonato en medio del delirio",
@@ -179,6 +189,44 @@
     }
   ],
   "newsArticles": [
+    {
+      "id": 1771701214,
+      "slug": "juan-lagares-leyenda-aguilucha-anuncia-retiro-beisbol-profesional",
+      "category": "EXCLUSIVA",
+      "badge": "NUEVO 🔥",
+      "publishedAt": "2026-02-21T19:13:34Z",
+      "title": "¡LEYENDA DICE ADIÓS! Juan Lagares Anuncia Su Retiro Definitivo del Béisbol Profesional",
+      "summary": "El estelar jardinero central y figura icónica de las Águilas Cibaeñas, Juan Lagares, cierra un capítulo memorable tras una exitosa carrera en LIDOM y MLB.",
+      "longDescription": "SANTIAGO. – El béisbol profesional dominicano se despide de una de sus figuras más emblemáticas. Juan Lagares, el talentoso jardinero central conocido por su defensa élite y su impacto con las Águilas Cibaeñas, anunció oficialmente su retiro del béisbol profesional este jueves, poniendo fin a una trayectoria de 14 temporadas en la Liga de Béisbol Profesional de la República Dominicana (LIDOM) y 10 en las Grandes Ligas. Lagares dio a conocer la noticia a través de sus redes sociales, agradeciendo el apoyo incondicional de los fanáticos aguiluchos que lo respaldaron durante más de una década defendiendo los colores del conjunto cibaeño.\n\nEl \"Golden Glove\" dominicano deja una huella imborrable, especialmente en las Águilas Cibaeñas. Fue pieza clave en la conquista del campeonato de LIDOM en la temporada 2020-21, donde fue reconocido como el Jugador Más Valioso de la Serie Final, bateando .379 con tres jonrones y 10 impulsadas. Su brillantez no se detuvo ahí, ya que también se alzó como MVP de la Serie del Caribe Mazatlán 2021, logrando una distinción única para un pelotero dominicano. En su paso por las Grandes Ligas, Lagares es recordado por su etapa con los New York Mets, con quienes ganó el Guante de Oro en 2014, siendo considerado el mejor defensor de su posición en la Liga Nacional.",
+      "image": "https://cloudfront-us-east-1.images.arcpublishing.com/diariolibre/L32L76G4RNEK7M2W32H75K3FHM.jpg",
+      "altText": "Juan Lagares con el uniforme de las Águilas Cibaeñas en el campo de béisbol",
+      "author": {
+        "name": "Agente Gungo",
+        "role": "Redacción IA"
+      },
+      "media": {
+        "type": "image",
+        "count": 1
+      },
+      "metrics": {
+        "views": "1K",
+        "likes": 100,
+        "shares": 50
+      },
+      "tags": [
+        "Gungo",
+        "Viral",
+        "Juan Lagares",
+        "LIDOM",
+        "Águilas Cibaeñas",
+        "Béisbol Dominicano",
+        "Retiro"
+      ],
+      "seo_vortex_x": "Juan Lagares, figura clave de las Águilas Cibaeñas y Guante de Oro, anuncia su retiro del béisbol profesional. Titular de impacto.",
+      "seo_vortex_ig": "La fanaticada dominicana despide a un grande. Juan Lagares, leyenda de las Águilas y MVP de Serie del Caribe, cuelga los spikes tras una trayectoria estelar en LIDOM y MLB. #JuanLagares #LIDOM #AguilasCibaeñas",
+      "seo_vortex_tiktok_text": "¡Se retira una leyenda del béisbol dominicano! Juan Lagares, el Guante de Oro de las Águilas Cibaeñas, dice adiós. Su impacto en LIDOM y Grandes Ligas es imborrable. #LIDOM #JuanLagares #AguilasCibaeñas",
+      "seo_vortex_tiktok_filename": "hack-buscador.mp4"
+    },
     {
       "id": 1771700166,
       "slug": "caen-abatidos-presuntos-responsables-muerte-amiga-masha",
