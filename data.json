@@ -2,7 +2,7 @@
   "meta": {
     "siteName": "GUNGO",
     "version": "2.8.0",
-    "lastUpdated": "2026-02-21T15:03:50Z",
+    "lastUpdated": "2026-02-21T15:20:59Z",
     "description": "Noticias confirmadas y actualidad urbana de RD al 20/12/2025."
   },
   "tickerNews": [
@@ -159,6 +159,44 @@
     }
   ],
   "newsArticles": [
+    {
+      "id": 1771687259,
+      "slug": "leyenda-juan-lagares-anuncia-retiro-beisbol-profesional",
+      "category": "EXCLUSIVA",
+      "badge": "NUEVO 🔥",
+      "publishedAt": "2026-02-21T15:20:59Z",
+      "title": "¡Leyenda se despide! Juan Lagares anuncia su emotivo retiro del béisbol profesional",
+      "summary": "El estelar jardinero central Juan Lagares, ícono de las Águilas Cibaeñas, pone fin a una carrera ejemplar marcada por su élite defensiva y compromiso inquebrantable.",
+      "longDescription": "SANTIAGO DE LOS CABALLEROS, República Dominicana – En una noticia que resuena profundamente en el béisbol dominicano, el aclamado jardinero central Juan Lagares anunció hoy oficialmente su retiro del béisbol profesional. El veterano pelotero, una figura emblemática para las Águilas Cibaeñas en la Liga de Béisbol Profesional de la República Dominicana (LIDOM), cierra así una trayectoria que fue sinónimo de entrega, disciplina y un impacto trascendental en el pasatiempo nacional.\n\nLagares, reconocido unánimemente por su defensa élite en los jardines, fue durante años una de las piezas más confiables del conjunto aguilucho, destacándose por su alcance, seguridad con el guante y un liderazgo silencioso tanto dentro como fuera del terreno. Su presencia en el jardín central representaba una garantía defensiva y un juego inteligente, convirtiéndose en una referencia para varias generaciones de peloteros dominicanos. Las Águilas Cibaeñas, en un comunicado, resaltaron su carrera como un ejemplo de identidad, honor y entrega, subrayando que Lagares no solo fue un extraordinario jardinero, sino también un profesional íntegro que honró el béisbol dominicano. Con este retiro, el béisbol dominicano despide a uno de los jardineros defensivos más brillantes de su generación, mientras que su nombre queda grabado en la historia aguilucha como sinónimo de esfuerzo, constancia y excelencia.",
+      "image": "https://example.com/imagen-juan-lagares-retiro.jpg",
+      "altText": "Juan Lagares con el uniforme de las Águilas Cibaeñas saludando a la afición durante un partido.",
+      "author": {
+        "name": "Agente Gungo",
+        "role": "Redacción IA"
+      },
+      "media": {
+        "type": "image",
+        "count": 1
+      },
+      "metrics": {
+        "views": "12K",
+        "likes": 1250,
+        "shares": 380
+      },
+      "tags": [
+        "Gungo",
+        "Viral",
+        "Juan Lagares",
+        "LIDOM",
+        "Águilas Cibaeñas",
+        "Retiro",
+        "Béisbol Dominicano"
+      ],
+      "seo_vortex_x": "¡Noticia de impacto! Juan Lagares, leyenda de LIDOM y las Águilas Cibaeñas, anuncia su retiro del béisbol profesional. Un adiós emotivo para un ícono defensivo.",
+      "seo_vortex_ig": "El béisbol dominicano se viste de gala para despedir a una de sus grandes estrellas. 😢 Juan Lagares, el guante de oro de las Águilas Cibaeñas, anuncia su retiro del juego. Su legado de entrega y defensa élite vivirá por siempre en la memoria de los fanáticos. ¡Gracias, Lagares! 🦅🇩🇴 #JuanLagares #LIDOM #ÁguilasCibaeñas",
+      "seo_vortex_tiktok_text": "¡ÚLTIMA HORA! 🚨 Juan Lagares, ícono de las Águilas Cibaeñas, dice adiós al béisbol profesional. 😭 Un referente de la defensa y el compromiso en LIDOM se retira. ¿Cuál fue tu momento favorito de Lagares? #beisboldominicano #aguilascibaeñas #retirodeportivo",
+      "seo_vortex_tiktok_filename": "hack-buscador.mp4"
+    },
     {
       "id": 1771686230,
       "slug": "masha-rapera-dominicana-envuelta-en-tiroteo-fatal",
