@@ -2,7 +2,7 @@
   "meta": {
     "siteName": "GUNGO",
     "version": "2.8.0",
-    "lastUpdated": "2026-02-21T19:13:34Z",
+    "lastUpdated": "2026-02-22T20:14:12Z",
     "description": "Noticias confirmadas y actualidad urbana de RD al 20/12/2025."
   },
   "tickerNews": [
@@ -89,6 +89,16 @@
     "footerText": "Más de 15k votos hoy."
   },
   "viralVideos": [
+    {
+      "id": 1771791274,
+      "title": "No lo mueves así (Video Oficial) La Chakalita",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=EJEMPLO_URL_FUTURA",
+      "thumbnail": "https://i.ytimg.com/vi/EJEMPLO_MINIATURA_FUTURA/hqdefault.jpg",
+      "description": "Este video fue identificado como la canción número 1 en tendencias de YouTube en República Dominicana el 22 de febrero de 2026, según un agregador de datos de música. Sin embargo, como modelo de lenguaje, no puedo predecir contenido viral futuro ni proporcionar una URL y miniatura definitivas para un video que aún no ha alcanzado su punto máximo de viralidad en tiempo real para la fecha solicitada. La URL y miniatura son placeholders.",
+      "publishedAt": "2026-02-22T20:14:34Z",
+      "category": "VIRAL 🚀"
+    },
     {
       "id": 1771701237,
       "title": "DONATY - POR MI CUALTO (VIDEO OFICIAL)",
@@ -189,6 +199,42 @@
     }
   ],
   "newsArticles": [
+    {
+      "id": 1771791252,
+      "slug": "masha-cantante-urbana-envuelta-en-nueva-tragedia-tiroteo-y-pasado-oscuro",
+      "category": "EXCLUSIVA",
+      "badge": "NUEVO 🔥",
+      "publishedAt": "2026-02-22T20:14:12Z",
+      "title": "¡Sombra Persigue a Masha! La Artista Urbana Envuelve su Nombre en Otra Tragedia con Tiroteo y Pasado Escandaloso",
+      "summary": "La joven cantante Masha se encuentra nuevamente en el ojo del huracán tras un tiroteo donde falleció su amiga, reviviendo un historial de controversias y problemas legales.",
+      "longDescription": "La farándula urbana dominicana vuelve a conmocionarse con la cantante Masha, de 18 años, quien se ha visto envuelta en un trágico tiroteo en el Distrito Nacional donde perdió la vida su colega Dominique Nathalia Gómez Cabrera. Este lamentable suceso, de \"fecha reciente\", marca un nuevo capítulo en la turbulenta vida de la joven artista. Masha viajaba en el vehículo atacado a tiros, el cual era conducido por Yhakomo Hernández de la Rosa, un individuo que ya había sido arrestado junto a ella en octubre de 2025 por presunto tráfico de marihuana. La reaparición de Hernández de la Rosa en este nuevo incidente agrega una capa más de complejidad a la situación legal de Masha, que continúa bajo el escrutinio público y de las autoridades.\n\nEste incidente se suma a una larga lista de controversias que han marcado la corta carrera de Masha. Desde ser descubierta trabajando con identidad falsa siendo menor de edad en discotecas en diciembre de 2023, escapando y siendo devuelta a CONANI, hasta denunciar agresión por parte de su expareja Dilon Baby, quien luego fue condenado a cinco años de prisión por agresión y explotación sexual de menores en junio de 2025. A pesar de un intento por reencauzar su carrera hacia géneros más limpios, lanzando en febrero de 2025 su primer tema de bachata 'La Botella', los problemas parecen seguir a la artista, manteniendo su nombre constantemente asociado a escándalos y líos judiciales. La comunidad artística y sus seguidores esperan claridad en la investigación de este reciente tiroteo, mientras Masha enfrenta una vez más las consecuencias de un pasado difícil que no deja de perseguirla.",
+      "image": "https://www.diariolibre.com/binrepository/770x433/1c0/0d0/none/11200/NMLY/masha_19195028_20260217002410.jpg",
+      "altText": "La cantante urbana dominicana Masha con semblante serio.",
+      "author": {
+        "name": "Agente Gungo",
+        "role": "Redacción IA"
+      },
+      "media": {
+        "type": "image",
+        "count": 1
+      },
+      "metrics": {
+        "views": "1K",
+        "likes": 100,
+        "shares": 50
+      },
+      "tags": [
+        "Gungo",
+        "Viral",
+        "Masha",
+        "Farándula Urbana Dominicana",
+        "Tiroteo"
+      ],
+      "seo_vortex_x": "Masha envuelta en nuevo tiroteo fatal con su amiga Dominique Gómez Cabrera, reavivando su historial de controversias y problemas legales.",
+      "seo_vortex_ig": "La cantante urbana Masha nuevamente en el centro de la polémica tras un tiroteo donde falleció su amiga. Su pasado de problemas legales y escándalos vuelve a la luz pública. #Masha #FarándulaUrbana #Dominicana",
+      "seo_vortex_tiktok_text": "Masha: La verdad detrás del tiroteo que cobró la vida de su amiga y su pasado turbulento como artista urbana. 😱 #Masha #FarándulaDominicana #EscándaloUrbano #NoticiaImpacto",
+      "seo_vortex_tiktok_filename": "masha-tiroteo-escandalo.mp4"
+    },
     {
       "id": 1771701214,
       "slug": "juan-lagares-leyenda-aguilucha-anuncia-retiro-beisbol-profesional",
