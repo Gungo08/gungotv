@@ -38,7 +38,7 @@ try:
     while intento_actual < max_intentos:
         try:
             respuesta = cliente.models.generate_content(
-                model='gemini-3.1-pro',
+                model='gemini-2.5-flash',
                 contents=instrucciones,
                 config=types.GenerateContentConfig(
                     tools=[{"google_search": {}}], 
@@ -91,4 +91,5 @@ try:
 except Exception as error:
     print(f"❌ ERROR GENERAL NO CONTROLADO EN VIDEOS: {str(error)}")
     sys.exit(1)
+
 
