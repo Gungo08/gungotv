@@ -2,7 +2,7 @@
   "meta": {
     "siteName": "GUNGO",
     "version": "2.8.0",
-    "lastUpdated": "2026-02-22T20:14:12Z",
+    "lastUpdated": "2026-02-22T21:13:56Z",
     "description": "Noticias confirmadas y actualidad urbana de RD al 20/12/2025."
   },
   "tickerNews": [
@@ -89,6 +89,16 @@
     "footerText": "Más de 15k votos hoy."
   },
   "viralVideos": [
+    {
+      "id": 1771794858,
+      "title": "La Perversa x Ronny GTA - Prende (Video Oficial) PJ Prod.",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=R_0b2n2f_Cg",
+      "thumbnail": "https://img.youtube.com/vi/R_0b2n2f_Cg/maxresdefault.jpg",
+      "description": "Este video musical está rompiendo las redes hoy en República Dominicana, figurando en las tendencias de YouTube en la categoría de música.",
+      "publishedAt": "2026-02-22T21:14:18Z",
+      "category": "VIRAL 🚀"
+    },
     {
       "id": 1771791274,
       "title": "No lo mueves así (Video Oficial) La Chakalita",
@@ -199,6 +209,42 @@
     }
   ],
   "newsArticles": [
+    {
+      "id": 1771794836,
+      "slug": "yailin-mas-viral-incidente-premio-lo-nuestro-2026",
+      "category": "EXCLUSIVA",
+      "badge": "NUEVO 🔥",
+      "publishedAt": "2026-02-22T21:13:56Z",
+      "title": "¡TENSO MOMENTO! Yailin La Más Viral se queda sin aire y se vuelve viral en Premio Lo Nuestro 2026",
+      "summary": "La artista dominicana Yailin La Más Viral protagonizó un incómodo y viral incidente al presentar un premio en la gala de Premio Lo Nuestro, que luego fue aclarado por problemas técnicos.",
+      "longDescription": "La reciente edición de Premio Lo Nuestro 2026 fue testigo de un momento de alta tensión protagonizado por la cantante urbana dominicana Yailin La Más Viral. Al subir al escenario junto a Gente de Zona para anunciar la categoría \"Mejor Mezcla Perfecta\", Yailin experimentó una visible dificultad para expresarse. Se la vio haciendo pausas prolongadas, llevándose la mano al pecho y mostrando gestos de incomodidad, lo que rápidamente generó un aluvión de comentarios en redes sociales.\n\nInicialmente, muchos interpretaron el episodio como un ataque de nervios o un bloqueo escénico. Sin embargo, el programa \"Despierta América\" ofreció una aclaración crucial al día siguiente, señalando que las equivocaciones de Yailin se debieron al \"intimidante\" movimiento de una cámara en grúa que alejó su teleprompter, haciéndole perder la referencia visual. A pesar del incómodo incidente, que incluyó una pausa notable al intentar leer el nombre del ganador Marc Anthony, la artista completó su labor. Sus seguidores y la posterior explicación ayudaron a contextualizar el suceso, transformando un \"trágame tierra\" mediático en una muestra de su vulnerabilidad ante imprevistos técnicos.",
+      "image": "https://placehold.co/800x500/111/E50914/png?text=Noticia+Gungo",
+      "altText": "Yailin La Más Viral en el escenario de Premio Lo Nuestro 2026",
+      "author": {
+        "name": "Agente Gungo",
+        "role": "Redacción IA"
+      },
+      "media": {
+        "type": "image",
+        "count": 1
+      },
+      "metrics": {
+        "views": "1K",
+        "likes": 100,
+        "shares": 50
+      },
+      "tags": [
+        "Gungo",
+        "Viral",
+        "YailinLaMasViral",
+        "PremioLoNuestro",
+        "FarándulaUrbana"
+      ],
+      "seo_vortex_x": "Yailin La Más Viral protagoniza momento tenso y viral en Premio Lo Nuestro 2026 tras percance técnico.",
+      "seo_vortex_ig": "Yailin La Más Viral en el ojo del huracán tras su presentación en Premio Lo Nuestro. Descubre qué le pasó en el escenario. #YailinLaMasViral #PremioLoNuestro #Viral",
+      "seo_vortex_tiktok_text": "El momento más tenso de Yailin La Más Viral en Premio Lo Nuestro. ¡No creerás lo que le pasó!",
+      "seo_vortex_tiktok_filename": "hack-buscador.mp4"
+    },
     {
       "id": 1771791252,
       "slug": "masha-cantante-urbana-envuelta-en-nueva-tragedia-tiroteo-y-pasado-oscuro",
