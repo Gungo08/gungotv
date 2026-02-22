@@ -2,7 +2,7 @@
   "meta": {
     "siteName": "GUNGO",
     "version": "2.8.0",
-    "lastUpdated": "2026-02-22T21:13:56Z",
+    "lastUpdated": "2026-02-22T22:13:15Z",
     "description": "Noticias confirmadas y actualidad urbana de RD al 20/12/2025."
   },
   "tickerNews": [
@@ -89,6 +89,16 @@
     "footerText": "Más de 15k votos hoy."
   },
   "viralVideos": [
+    {
+      "id": 1771798408,
+      "title": "No lo mueves así (Video Oficial) La Chakalita",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=Fj-yL-4k-u8",
+      "thumbnail": "https://img.youtube.com/vi/Fj-yL-4k-u8/hqdefault.jpg",
+      "description": "El video musical 'No lo mueves así' de La Chakalita se ha vuelto viral en la República Dominicana hoy, destacándose como una 'tiradera' (canción de ataque) dirigida a Angi Fire. La letra de la canción incluye referencias al popular juego Free Fire y comentarios sobre bailar y la apariencia física, lo que ha generado gran controversia y atención en las redes.",
+      "publishedAt": "2026-02-22T22:13:28Z",
+      "category": "VIRAL 🚀"
+    },
     {
       "id": 1771794858,
       "title": "La Perversa x Ronny GTA - Prende (Video Oficial) PJ Prod.",
@@ -209,6 +219,39 @@
     }
   ],
   "newsArticles": [
+    {
+      "id": 1771798395,
+      "slug": "bomba-lidom-agencia-libre-cano-cueto-84-jugadores",
+      "category": "EXCLUSIVA",
+      "badge": "NUEVO 🔥",
+      "publishedAt": "2026-02-22T22:13:15Z",
+      "title": "¡BOMBA EN LIDOM! Robinson Canó, Johnny Cueto y 84 Estrellas Entran a la Agencia Libre 2026",
+      "summary": "La Liga de Béisbol Profesional de la República Dominicana oficializa un listado masivo de 86 peloteros, incluyendo a las luminarias Robinson Canó y Johnny Cueto, que ahora son agentes libres para la temporada 2026.",
+      "longDescription": "La Liga de Béisbol Profesional de la República Dominicana (LIDOM) ha encendido el mercado de la temporada muerta al oficializar un listado de 84 jugadores que ingresan al proceso de agencia libre de cara al torneo 2026. Entre los nombres que más revuelo causan se encuentran las superestrellas Robinson Canó y Johnny Cueto, cuya disponibilidad promete reconfigurar significativamente el panorama competitivo de la liga. Este movimiento masivo de peloteros, que incluye 50 lanzadores, 20 jugadores del cuadro interior, 10 jardineros y 4 receptores, marca una de las agencias libres más activas de los últimos años en el béisbol invernal dominicano.\n\nLa entrada de figuras de la talla de Canó, un veterano infielder de las Estrellas Orientales con un impresionante recorrido en Grandes Ligas y ganador de Serie Mundial, no solo representa una inyección de talento, sino también un factor crucial en la taquilla, el liderazgo y la presencia mediática de cualquier equipo que lo adquiera. Aunque las Estrellas ya aseguraron a Miguel Sanó, Jorge Mateo y Raimel Tapia, el futuro contractual de Canó será uno de los ejes estratégicos del mercado invernal. Por su parte, el reconocido lanzador Johnny Cueto, quien previamente ha militado en equipos como los Leones del Escogido, también se suma a la lista de talentos disponibles, añadiendo profundidad al pitcheo de los agentes libres. La agencia libre en LIDOM va más allá de los movimientos deportivos; impacta directamente en las estructuras salariales, el valor de marca de los equipos, la asistencia al estadio y los acuerdos comerciales, reactivando el mercado con la disponibilidad de figuras con experiencia en Grandes Ligas.",
+      "image": "https://placehold.co/800x500/111/E50914/png?text=Noticia+Gungo",
+      "altText": "Robinson Canó y Johnny Cueto en la agencia libre de LIDOM",
+      "author": {
+        "name": "Agente Gungo",
+        "role": "Redacción IA"
+      },
+      "media": {
+        "type": "image",
+        "count": 1
+      },
+      "metrics": {
+        "views": "1K",
+        "likes": 100,
+        "shares": 50
+      },
+      "tags": [
+        "Gungo",
+        "Viral"
+      ],
+      "seo_vortex_x": "Robinson Canó y Johnny Cueto sacuden la LIDOM al entrar a la agencia libre 2026.",
+      "seo_vortex_ig": "La temporada muerta de LIDOM se enciende con la entrada de 86 peloteros, incluyendo a Robinson Canó y Johnny Cueto, al mercado de agentes libres. ¿Qué equipos se llevarán a estas estrellas? #LIDOM #AgenciaLibre #BéisbolDominicano",
+      "seo_vortex_tiktok_text": "🚨 ¡ÚLTIMA HORA EN LIDOM! 🚨 Robinson Canó y Johnny Cueto, junto a 84 jugadores más, son AGENTES LIBRES para la temporada 2026. ¿Quién los firmará? ¡Esto se pone bueno! ⚾️ #LIDOM #AgenciaLibre #Béisbol",
+      "seo_vortex_tiktok_filename": "lidom-agencia-libre-cano-cueto.mp4"
+    },
     {
       "id": 1771794836,
       "slug": "yailin-mas-viral-incidente-premio-lo-nuestro-2026",
