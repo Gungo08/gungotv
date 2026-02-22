@@ -2,7 +2,7 @@
   "meta": {
     "siteName": "GUNGO",
     "version": "2.8.0",
-    "lastUpdated": "2026-02-22T21:13:56Z",
+    "lastUpdated": "2026-02-22T22:22:15Z",
     "description": "Noticias confirmadas y actualidad urbana de RD al 20/12/2025."
   },
   "tickerNews": [
@@ -89,6 +89,16 @@
     "footerText": "Más de 15k votos hoy."
   },
   "viralVideos": [
+    {
+      "id": 1771798953,
+      "title": "¡Shakira tatúa a Beéle a las 6 AM y desata locura viral en redes!",
+      "platform": "instagram",
+      "videoUrl": "https://www.instagram.com/p/C3l4c68sE4C/",
+      "thumbnail": "https://www.instagram.com/p/C3l4c68sE4C/thumbnail/",
+      "description": "Un video compartido por Shakira en su perfil de Instagram se ha vuelto viral hoy, mostrando a la artista colombiana tatuando al cantante Beéle a las seis de la mañana. La inesperada 'nueva profesión' de Shakira ha generado una ola de reacciones y se ha convertido en tendencia mundial, con muchos seguidores pidiendo su propio tatuaje. El suceso ocurrió durante la grabación de un video musical en Barranquilla, Colombia, y ha sido ampliamente cubierto por los medios de comunicación.",
+      "publishedAt": "2026-02-22T22:22:33Z",
+      "category": "VIRAL 🚀"
+    },
     {
       "id": 1771794858,
       "title": "La Perversa x Ronny GTA - Prende (Video Oficial) PJ Prod.",
@@ -209,6 +219,44 @@
     }
   ],
   "newsArticles": [
+    {
+      "id": 1771798935,
+      "slug": "bomba-lidom-estrellas-beisbol-dominicano-agencia-libre-2026",
+      "category": "EXCLUSIVA",
+      "badge": "NUEVO 🔥",
+      "publishedAt": "2026-02-22T22:22:15Z",
+      "title": "¡BOMBA EN LIDOM! Estrellas del Béisbol Dominicano Desatan la Agencia Libre 2026",
+      "summary": "Robinson Canó, Johnny Cueto y decenas de figuras clave agitan el mercado invernal dominicano al declararse agentes libres para la temporada 2026.",
+      "longDescription": "La Liga de Béisbol Profesional de la República Dominicana (LIDOM) ha oficializado el listado de jugadores que ingresan al proceso de agencia libre de cara al torneo 2026, y los nombres no pasan desapercibidos. Un total de 84 peloteros, incluyendo a las superestrellas Robinson Canó y Johnny Cueto, están ahora disponibles para negociar con cualquier franquicia, lo que promete una reconfiguración significativa del panorama competitivo. Este movimiento de piezas clave en el béisbol invernal dominicano es de gran interés para los aficionados y las gerencias de los equipos, que buscan fortalecer sus rosters para la próxima campaña.\n\nLa agencia libre en LIDOM no solo impacta las estructuras deportivas, sino también los valores de marca de los equipos, la asistencia al estadio y los acuerdos comerciales. Robinson Canó, veterano infielder de las Estrellas Orientales, es uno de los nombres que más titulares genera, representando no solo producción ofensiva sino también taquilla, liderazgo y presencia mediática. Por su parte, Johnny Cueto, con una amplia trayectoria en MLB, aporta experiencia y atractivo comercial a los Leones del Escogido, quienes lo tenían en su lista de agentes libres. Con 84 jugadores disponibles, el mercado invernal dominicano promete movimientos estratégicos en las próximas semanas, con equipos buscando la continuidad de su talento o apostando por una reingeniería profunda.",
+      "image": "https://image.shutterstock.com/image-photo/robinson-can-estrellas-orientales-action-260nw-2408990665.jpg",
+      "altText": "Robinson Canó en uniforme de las Estrellas Orientales durante un partido de LIDOM",
+      "author": {
+        "name": "Agente Gungo",
+        "role": "Redacción IA"
+      },
+      "media": {
+        "type": "image",
+        "count": 1
+      },
+      "metrics": {
+        "views": "1K",
+        "likes": 100,
+        "shares": 50
+      },
+      "tags": [
+        "Gungo",
+        "Viral",
+        "LIDOM",
+        "Agencia Libre",
+        "Robinson Canó",
+        "Johnny Cueto",
+        "Béisbol Dominicano"
+      ],
+      "seo_vortex_x": "Robinson Canó y Johnny Cueto lideran la ola de 84 jugadores que sacuden la agencia libre de LIDOM 2026.",
+      "seo_vortex_ig": "¡El mercado de LIDOM se enciende! 🔥 Robinson Canó y Johnny Cueto encabezan la lista de 84 estrellas que ahora son agentes libres. ¿Quiénes serán los más buscados y cómo cambiará el panorama de la liga? Mantente al tanto de todos los movimientos. #LIDOM #AgenciaLibre #BéisbolDominicano",
+      "seo_vortex_tiktok_text": "Mercado LIDOM AL ROJO VIVO! 🔥 Canó y Cueto son agentes libres. ¿Tu equipo los fichará? #LIDOM #Béisbol #Dominicana",
+      "seo_vortex_tiktok_filename": "lidom-agencia-libre-cano-cueto.mp4"
+    },
     {
       "id": 1771794836,
       "slug": "yailin-mas-viral-incidente-premio-lo-nuestro-2026",
