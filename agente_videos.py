@@ -12,7 +12,6 @@ try:
 
     nombre_archivo = 'data.json'
 
-    # Cargar datos existentes
     with open(nombre_archivo, 'r', encoding='utf-8') as archivo:
         datos_completos = json.load(archivo)
 
@@ -21,14 +20,15 @@ try:
 
     system_instruction = """
     Eres un extractor profesional de contenido viral en República Dominicana.
-    Siempre responde **EXCLUSIVAMENTE** con un JSON válido, sin texto adicional, sin ```json, sin explicaciones.
+    SIEMPRE responde **EXCLUSIVAMENTE** con un JSON válido y nada más.
+    Sin explicaciones, sin ```json, sin texto adicional.
     """
 
     user_prompt = f"""
     Busca en internet el video MÁS VIRAL de HOY ({fecha_hoy}) en República Dominicana 
     sobre música, entretenimiento, béisbol o farándula (YouTube, TikTok o Instagram).
 
-    Devuelve ESTRICTAMENTE este formato JSON:
+    Devuelve ESTRICTAMENTE este formato JSON exacto:
 
     {{
       "id": 0,
@@ -42,16 +42,16 @@ try:
     }}
     """
 
-    # ====================== CONFIGURACIÓN SEGURA ======================
+    # ====================== CONFIGURACIÓN (CORREGIDA) ======================
     config = types.GenerateContentConfig(
-        tools=[types.Tool(google_search=types.GoogleSearch())],  # ← CORREGIDO
+        tools=[types.Tool(google_search=types.GoogleSearch())],
         safety_settings=[
             types.SafetySetting(category="HARM_CATEGORY_HATE_SPEECH", threshold="BLOCK_NONE"),
             types.SafetySetting(category="HARM_CATEGORY_HARASSMENT", threshold="BLOCK_NONE"),
             types.SafetySetting(category="HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold="BLOCK_NONE"),
             types.SafetySetting(category="HARM_CATEGORY_DANGEROUS_CONTENT", threshold="BLOCK_NONE"),
         ],
-        response_mime_type="application/json",   # ← FUERZA JSON PURO
+        # ←←← ESTA LÍNEA FUE ELIMINADA (era la que causaba el error 400)
         system_instruction=system_instruction
     )
 
@@ -79,26 +79,31 @@ try:
                 sys.exit(1)
 
     if not respuesta or not respuesta.text:
-        print("⚠️ Gemini no devolvió texto. Posible bloqueo. Saliendo limpiamente.")
+        print("⚠️ Gemini no devolvió texto. Saliendo limpiamente.")
         sys.exit(0)
 
-    # ====================== PROCESAR JSON (AHORA SEGURO) ======================
+    # ====================== PROCESAR JSON ======================
     try:
-        nuevo_video = json.loads(respuesta.text.strip())
+        texto_limpio = respuesta.text.strip()
+        if texto_limpio.startswith("```json"):
+            texto_limpio = texto_limpio[7:-3].strip()
+        elif texto_limpio.startswith("```"):
+            texto_limpio = texto_limpio[3:-3].strip()
+        nuevo_video = json.loads(texto_limpio)
     except json.JSONDecodeError as e:
         print(f"❌ Gemini devolvió JSON inválido: {e}")
-        print("Texto crudo:", respuesta.text[:500])
+        print("Texto crudo recibido:", respuesta.text[:500])
         sys.exit(1)
 
     # Completar campos automáticos
     nuevo_video["id"] = int(time.time())
     nuevo_video["publishedAt"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
-    # ====================== GUARDAR EN data.json ======================
+    # ====================== GUARDAR ======================
     if "viralVideos" not in datos_completos:
         datos_completos["viralVideos"] = []
 
-    datos_completos["viralVideos"].insert(0, nuevo_video)  # Nuevo primero
+    datos_completos["viralVideos"].insert(0, nuevo_video)
 
     with open(nombre_archivo, 'w', encoding='utf-8') as archivo:
         json.dump(datos_completos, archivo, indent=2, ensure_ascii=False)
