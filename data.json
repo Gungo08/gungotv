@@ -2,7 +2,7 @@
   "meta": {
     "siteName": "GUNGO",
     "version": "2.8.0",
-    "lastUpdated": "2026-02-22T22:13:15Z",
+    "lastUpdated": "2026-02-23T01:05:42Z",
     "description": "Noticias confirmadas y actualidad urbana de RD al 20/12/2025."
   },
   "tickerNews": [
@@ -89,6 +89,16 @@
     "footerText": "Más de 15k votos hoy."
   },
   "viralVideos": [
+    {
+      "id": 1771808760,
+      "title": "Joe Veras - Por Pensar En Ti (Video Oficial) Rompe las Redes en República Dominicana",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=KzS0Nl1Y07c",
+      "thumbnail": "https://img.youtube.com/vi/KzS0Nl1Y07c/maxresdefault.jpg",
+      "description": "El bachatero dominicano Joe Veras está causando sensación con su nuevo tema 'Por Pensar En Ti', que ha acaparado la radio nacional y los principales centros de diversión del país. La canción, lanzada el 9 de enero de 2026, ha logrado posicionarse en el Top 10 de la música latina en República Dominicana y acumula miles de reproducciones en plataformas digitales y redes sociales, reafirmando la vigencia del artista en la industria musical. El video oficial de 'Por Pensar En Ti' explora los sentimientos de amor y soledad, mostrando cómo pensar en un ser amado puede ser una bendición y a la vez un castigo.",
+      "publishedAt": "2026-02-23T01:06:00Z",
+      "category": "VIRAL 🚀"
+    },
     {
       "id": 1771798408,
       "title": "No lo mueves así (Video Oficial) La Chakalita",
@@ -219,6 +229,42 @@
     }
   ],
   "newsArticles": [
+    {
+      "id": 1771808742,
+      "slug": "tokischa-incendia-premio-lo-nuestro-2026-con-polemico-vestido",
+      "category": "EXCLUSIVA",
+      "badge": "NUEVO 🔥",
+      "publishedAt": "2026-02-23T01:05:42Z",
+      "title": "¡Escándalo en Miami! Tokischa Incendia Premio Lo Nuestro 2026 con Vestido que Desafía la Censura",
+      "summary": "La artista urbana dominicana Tokischa acaparó todas las miradas y desató una ola de comentarios en Premio Lo Nuestro 2026 al lucir un atrevido vestido que dejaba uno de sus senos al descubierto.",
+      "longDescription": "La controversial artista dominicana Tokischa se convirtió en el epicentro del debate y las redes sociales estallaron tras su impactante aparición en la alfombra magenta de Premio Lo Nuestro 2026 en Miami. La rapera, conocida por su estilo irreverente y su defensa de la libertad de expresión, optó por un audaz vestido blanco de archivo de la icónica diseñadora Vivienne Westwood, que presentaba un corte asimétrico que dejaba uno de sus senos totalmente expuesto. El atrevido look fue complementado con un peculiar arete plateado en forma de espada sobre un cubre-pezón, consolidando una declaración de moda que rompió con los códigos tradicionales de la premiación.\n\nLa elección de vestuario de Tokischa no solo generó furor por su impacto visual, sino que también venía cargada de un poderoso mensaje. La propia artista explicó en la alfombra que su atuendo era una respuesta a las constantes presiones para someterse a cirugías estéticas. «No me voy a operar las tetas. Esta teta, que yo tengo aquí, es con la que me voy a quedar, porque tengo mi carrera entera que me dicen 'opérate las tetas', y yo no me voy a operar las tetas, estas tetas me gustan y estas son las tetas que voy a seguir teniendo», afirmó, reafirmando su postura sobre la autonomía corporal y la autoaceptación. El hecho ha sido uno de los más comentados del evento, demostrando una vez más que Tokischa sabe cómo posicionarse en el centro de la conversación mediática.",
+      "image": "https://placehold.co/800x500/111/E50914/png?text=Noticia+Gungo",
+      "altText": "Tokischa en la alfombra magenta de Premio Lo Nuestro 2026 con su vestido blanco revelador.",
+      "author": {
+        "name": "Agente Gungo",
+        "role": "Redacción IA"
+      },
+      "media": {
+        "type": "image",
+        "count": 1
+      },
+      "metrics": {
+        "views": "1K",
+        "likes": 100,
+        "shares": 50
+      },
+      "tags": [
+        "Gungo",
+        "Viral",
+        "Tokischa",
+        "Premio Lo Nuestro",
+        "Farándula Urbana Dominicana"
+      ],
+      "seo_vortex_x": "Tokischa en Premio Lo Nuestro 2026, vestido escandaloso y mensaje sobre libertad corporal.",
+      "seo_vortex_ig": "Tokischa revoluciona Premio Lo Nuestro con un look de impacto y un mensaje de empoderamiento femenino. ¡El estilo irreverente que paralizó la alfombra! #Tokischa #PremioLoNuestro #FarándulaRD",
+      "seo_vortex_tiktok_text": "Tokischa desata la polémica en Premio Lo Nuestro 2026. Su vestido y su mensaje te dejarán sin palabras. 😱 ¿Qué opinas de su atrevido look? #Tokischa #PremioLoNuestro #FashionControversy",
+      "seo_vortex_tiktok_filename": "tokischa-premio-lo-nuestro.mp4"
+    },
     {
       "id": 1771798395,
       "slug": "bomba-lidom-agencia-libre-cano-cueto-84-jugadores",
