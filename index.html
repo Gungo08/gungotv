@@ -11,10 +11,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GUNGO • Farándula y Espectáculos</title>
     <link rel="icon" type="image/png" href="logo-gungo3.png">
-    <meta name="description" content="Las últimas noticias de farándula, entretenimiento y escándalos.">
+    <meta name="description" content="Las últimas noticias de farándula, chismes y escándalos.">
     
-    <meta property="og:title" content="GUNGO • Noticias">
-    <meta property="og:description" content="El portal #1 de farándula, entretenimiento y noticia.">
+    <meta property="og:title" content="GUNGO • Noticias que Arde">
+    <meta property="og:description" content="El portal #1 de chismes y escándalos mundiales.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1974">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -63,15 +63,17 @@
 </div>
 
 <section>
-    <h2 class="section-title">Noticias </h2>
+    <h2 class="section-title">Noticias</h2>
     
-    <div class="category-filters">
-        <button class="filter-btn active" data-filter="all">Todas las Exclusivas</button>
-        <button class="filter-btn" data-filter="EXCLUSIVA">Exclusiva</button>
-        <button class="filter-btn" data-filter="ESCÁNDALO">Escándalo</button>
-        <button class="filter-btn" data-filter="CALIENTES">Calientes</button>
-        <button class="filter-btn" data-filter="EN PELOTA">⚾ En Pelota</button>
-    </div>
+   <div class="category-filters">
+    <button class="filter-btn active" onclick="filtrarNoticias('todo')">INICIO</button>
+
+    <button class="filter-btn cat-noticia" onclick="filtrarNoticias('Noticia')">NOTICIAS</button>
+
+    <button class="filter-btn cat-entretenimiento" onclick="filtrarNoticias('Entretenimiento')">ENTRETENIMIENTO</button>
+
+    <button class="filter-btn cat-farandula" onclick="filtrarNoticias('Farándula')">FARÁNDULA</button>
+  </div>
 
     <div class="news-grid"></div>
 </section>
@@ -108,10 +110,9 @@
         <div>
             <h3>Síguenos</h3>
             <div class="social-icons">
-             <a href="https://www.instagram.com/gungo.tv/" target="_blank"><i class="fab fa-instagram"></i></a>
-             <a href="https://www.tiktok.com/@gungo.tv" target="_blank"><i class="fab fa-tiktok"></i></a>
+             <a href="https://www.instagram.com/gungotv/" target="_blank"><i class="fab fa-instagram"></i></a>
+             <a href="https://www.tiktok.com/@gungo_6" target="_blank"><i class="fab fa-tiktok"></i></a>
              <a href="https://x.com/@gungotv" target="_blank"><i class="fab fa-twitter"></i></a>
-             <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
             </divo>
         </div>
         <div>
@@ -149,10 +150,65 @@
 
 <script src="gungo.js"></script>
 
+<div class="sticky-share-bar">
+    <span class="share-text">¿Te gustó el chisme? 👉</span>
+    <button onclick="window.shareNative('Gungo TV', '¡Mira esto!')" class="share-btn-sticky whatsapp">
+        <i class="fab fa-whatsapp"></i>
+    </button>
+    <button onclick="window.shareNative('Gungo TV', '¡Noticia Bomba!')" class="share-btn-sticky twitter">
+        <i class="fab fa-twitter"></i> </button>
+    <button onclick="navigator.clipboard.writeText(window.location.href); showToast('Link Copiado')" class="share-btn-sticky copy">
+        <i class="fas fa-link"></i>
+    </button>
+</div>
+
+<a href="https://wa.me/18290000000?text=Hola%20Gungo,%20tengo%20una%20noticia..." 
+   target="_blank" 
+   class="gungo-whatsapp-btn"
+   aria-label="Contactar por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<style>
+    .gungo-whatsapp-btn {
+        position: fixed; /* Fijo en la pantalla */
+        bottom: 60px;    /* Distancia desde abajo */
+        right: 20px;     /* Distancia desde la derecha */
+        width: 65px;
+        height: 65px;
+        background-color: #25D366; /* Verde WhatsApp */
+        color: white;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 38px;
+        line-height: 65px; /* Centra el icono verticalmente */
+        box-shadow: 0px 4px 20px rgba(0,0,0,0.6); /* Sombra fuerte */
+        z-index: 999999 !important; /* ¡OBLIGATORIO ENCIMA DE TODO! */
+        transition: transform 0.3s ease;
+        text-decoration: none;
+        border: 2px solid white; /* Borde para resaltar */
+        display: block; /* Asegura que se comporte como bloque */
+    }
+
+    .gungo-whatsapp-btn:hover {
+        transform: scale(1.1) rotate(10deg); /* Efecto al pasar el mouse */
+        background-color: #128C7E;
+    }
+
+    /* Ajuste para móviles para que no tape contenido */
+    @media (max-width: 768px) {
+        .gungo-whatsapp-btn {
+            bottom: 80px; /* Lo sube un poco si hay barra inferior */
+            width: 55px;
+            height: 55px;
+            font-size: 30px;
+            line-height: 55px;
+        }
+    }
+</style>
+
 </body>
-
 </html>
-
 
 
 
