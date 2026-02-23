@@ -24,7 +24,7 @@ try:
 
     # 3. Instrucciones Inteligentes para GungoTV
     instrucciones = f"""
-    Busca en internet la noticia más candente de hoy sobre farándula urbana dominicana o béisbol invernal (LIDOM).
+    Busca en internet la noticia más candente de hoy sobre farándula urbana dominicana.
     Escribe una noticia real, jugosa y confirmada.
 
     ⚠️ REGLA DE ORO - NO REPITAS ESTAS NOTICIAS QUE YA PUBLICAMOS:
@@ -47,9 +47,7 @@ try:
       "metrics": {{ "views": "1K", "likes": 100, "shares": 50 }},
       "tags": ["Gungo", "Viral"],
       "seo_vortex_x": "Nombres Propios y Acción Principal en la primera línea. Titular de impacto.",
-      "seo_vortex_ig": "Storytelling integrando quién, qué, dónde. Máximo 3 hashtags.",
       "seo_vortex_tiktok_text": "Texto SBO exacto.",
-      "seo_vortex_tiktok_filename": "hack-buscador.mp4"
     }}
     """
 
@@ -125,6 +123,7 @@ try:
 except Exception as error:
     print(f"❌ ERROR GENERAL NO CONTROLADO: {str(error)}")
     sys.exit(1)
+
 
 
 
