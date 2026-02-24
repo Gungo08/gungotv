@@ -31,12 +31,13 @@
             </a>
         </div>
             
-    <div class="nav-links">
-        <a href="#">Inicio</a>
-        <a href="videos.html">Videos Virales</a>
-        <a href="#" onclick="toggleSearch()" class="search-trigger"><i class="fas fa-search"></i></a>
+        <div class="nav-links">
+            <a href="#">Inicio</a>
+            <a href="videos.html">Videos Virales</a>
+            <a href="#" onclick="toggleSearch()" class="search-trigger"><i class="fas fa-search"></i></a>
+        </div>
     </div>
-</div></header>
+</header>
 
 <section class="hero">
     <div class="hero-content">
@@ -66,14 +67,13 @@
     
    <div class="category-filters">
     <button class="filter-btn active" onclick="filtrarNoticias('todo')">INICIO</button>
+    <button class="filter-btn cat-noticia" onclick="filtrarNoticias('Noticias')">NOTICIAS</button>
+    <button class="filter-btn cat-entretenimiento" onclick="filtrarNoticias('Entretenimiento')">ENTRETENIMIENTO</button>
+    <button class="filter-btn cat-farandula" onclick="filtrarNoticias('Farándula')">FARÁNDULA</button>
+  </div>
 
-<button class="filter-btn cat-noticia" onclick="filtrarNoticias('Noticia')">NOTICIAS</button>
-
-<button class="filter-btn cat-entretenimiento" onclick="filtrarNoticias('Entretenimiento')">ENTRETENIMIENTO</button>
-
-<button class="filter-btn cat-farandula" onclick="filtrarNoticias('Farándula')">FARÁNDULA</button>  </div>
-
-<div class="news-grid"></div></section>
+    <div class="news-grid"></div>
+</section>
 
 <div class="ad-container ad-leaderboard">
     Publicidad Secundaria
@@ -95,27 +95,28 @@
              <h2 style="font-size:3rem; font-weight:800; position:relative; color:transparent;">
               <span style="position:absolute; top:0; left:0; background:linear-gradient(45deg,#E50914,#FF6B00,#FFB800); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent;">
                 
-          </span>
-        </h2>
-        <div style="margin-bottom: 20px;">
-<a href="#" onclick="window.scrollTo(0,0)" style="display: inline-block;">
-    <img src="logo-gungo.png" alt="GUNGO" style="height: 100px; width: auto; filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));">
-</a>
-</div>
-        <p>Tu dosis diaria de farándula sin filtro.</p>
+              </span>
+            </h2>
+            <div style="margin-bottom: 20px;">
+    <a href="#" onclick="window.scrollTo(0,0)" style="display: inline-block;">
+        <img src="logo-gungo.png" alt="GUNGO" style="height: 100px; width: auto; filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));">
+    </a>
     </div>
-    <div>
-        <h3>Síguenos</h3>
-        <div class="social-icons">
-         <a href="https://www.instagram.com/gungotv/" target="_blank"><i class="fab fa-instagram"></i></a>
-         <a href="https://www.tiktok.com/@gungo_6" target="_blank"><i class="fab fa-tiktok"></i></a>
-         <a href="https://x.com/@gungotv" target="_blank"><i class="fab fa-twitter"></i></a>
+            <p>Tu dosis diaria de farándula sin filtro.</p>
+        </div>
+        <div>
+            <h3>Síguenos</h3>
+            <div class="social-icons">
+             <a href="https://www.instagram.com/gungotv/" target="_blank"><i class="fab fa-instagram"></i></a>
+             <a href="https://www.tiktok.com/@gungo_6" target="_blank"><i class="fab fa-tiktok"></i></a>
+             <a href="https://x.com/@gungotv" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div>
+            <p>© 2025 GUNGO • Todos los derechos reservados</p>
         </div>
     </div>
-    <div>
-        <p>© 2025 GUNGO • Todos los derechos reservados</p>
-    </div>
-</div></footer>
+</footer>
 
 <div id="newsModal" class="modal-overlay">
     <div class="modal-content">
@@ -147,7 +148,7 @@
 <script src="gungo.js"></script>
 
 <div class="sticky-share-bar">
-    <span class="share-text">¿Te gustó el chisme? </span>
+    <span class="share-text">¿Te gustó el chisme? 👉</span>
     <button onclick="window.shareNative('Gungo TV', '¡Mira esto!')" class="share-btn-sticky whatsapp">
         <i class="fab fa-whatsapp"></i>
     </button>
