@@ -1,0 +1,45 @@
+name: Automatización de Agentes
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout del repositorio
+      uses: actions/checkout@v3
+
+    - name: Configurar Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Actualizar pip
+      run: pip install --upgrade pip setuptools wheel
+
+    - name: Instalar dependencias
+      run: pip install -r requirements.txt
+
+    - name: Ejecutar agente de noticias
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: python agente.py
+
+    - name: Ejecutar agente de videos virales
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: python agente_videos.py
+
+    - name: Commit y push de cambios si los hay
+      run: |
+        git config --global user.name "Agente Gungo"
+        git config --global user.email "actions@github.com"
+        git add .
+        git diff --cached --quiet || git commit -m "Actualización automática de contenido"
+        git push origin HEAD || true
