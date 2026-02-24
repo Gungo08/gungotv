@@ -55,7 +55,7 @@ def generar_noticia(cliente, instrucciones):
         try:
             logging.info(f"Generando noticia con Gemini (intento {intento_actual})...")
             respuesta = cliente.models.generate_content(
-                model='gemini-2.5-pro',
+                model='gemini-2.5-flash-lite',
                 contents=instrucciones,
                 config=types.GenerateContentConfig(
                     response_mime_type="application/json",
@@ -157,6 +157,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
