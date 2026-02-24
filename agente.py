@@ -1,5 +1,7 @@
 import json
-from google.generativeai import client
+import google.generativeai as genai
+genai.configure(api_key="TU_API_KEY")
+
 
 def generar_noticia():
     # Prompt: instruimos a Gemini para que responda en JSON
@@ -40,6 +42,7 @@ if __name__ == "__main__":
     noticia = generar_noticia()
     print("Noticia generada:")
     print(json.dumps(noticia, indent=2, ensure_ascii=False))
+
 
 
 
