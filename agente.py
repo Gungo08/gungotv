@@ -1,5 +1,9 @@
-import json
-import google.generativeai as genai
+import google.generativeai as genai   # Cliente oficial de Gemini
+import requests                       # Para hacer peticiones HTTP
+import jsonschema                     # Para validar estructuras JSON
+from dotenv import load_dotenv        # Para cargar variables de entorno desde .env
+import os                             # Para leer la API key desde el entorno
+import json                           # Para manejar JSON en Python
 genai.configure(api_key="TU_API_KEY")
 
 
@@ -42,6 +46,7 @@ if __name__ == "__main__":
     noticia = generar_noticia()
     print("Noticia generada:")
     print(json.dumps(noticia, indent=2, ensure_ascii=False))
+
 
 
 
