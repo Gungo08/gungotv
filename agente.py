@@ -29,8 +29,8 @@ def generar_noticia():
     }
     """
 
-    # Crear modelo y generar contenido
-    model = genai.GenerativeModel("gemini-2.5-flash-lite")
+    # Crear modelo y generar contenido (CORREGIDO AL MODELO ACTUAL)
+    model = genai.GenerativeModel("gemini-2.0-flash")
     response = model.generate_content(prompt)
 
     # Obtener texto plano
@@ -67,9 +67,6 @@ if __name__ == "__main__":
     noticia = generar_noticia()
     print("Noticia generada:")
     print(json.dumps(noticia, indent=2, ensure_ascii=False))
-
-
-
 
 
 
