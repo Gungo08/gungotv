@@ -131,51 +131,51 @@
     }
   ],
   "newsArticles": [
-     {
-  "id": 308,
-  "slug": "ejercito-abate-el-mencho-desata-violencia-mexico",
-  "category": "NOTICIAS FORMALES",
-  "publishedAt": "2026-02-24T09:00:00Z",
-  "title": "Ejército de México abate a 'El Mencho' y desata ola de violencia en varios estados",
-  "summary": "El líder del Cartel Jalisco Nueva Generación muere en operativo militar en Jalisco, provocando bloqueos, incendios de vehículos y enfrentamientos que dejan decenas de muertos.",
-  "longDescription": "El Ejército mexicano abatió este domingo a Nemesio Oseguera Cervantes, alias 'El Mencho', de 59 años, líder del poderoso Cártel Jalisco Nueva Generación (CJNG), en un operativo en Tapalpa, Jalisco. Durante la acción murieron otros seis miembros del cartel y se incautaron armas y vehículos blindados. La muerte del capo más buscado por México y EE.UU. desató represalias inmediatas: más de 250 bloqueos carreteros, quema de autobuses y autos en al menos ocho estados (Jalisco, Michoacán, Guanajuato, Tamaulipas, entre otros), pánico en Guadalajara y Puerto Vallarta, y al menos 25 guardias nacionales fallecidos. La presidenta Claudia Sheinbaum informó que la situación se estabiliza, pero persiste el temor y se cancelaron eventos deportivos en la sede del Mundial 2026. EE.UU. colaboró con inteligencia en el operativo.",
-  "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Nemesio_Oseguera_Cervantes.jpg/440px-Nemesio_Oseguera_Cervantes.jpg",
-  "altText": "Nemesio Oseguera Cervantes 'El Mencho', líder del CJNG abatido en Jalisco",
-  "author": {
-    "name": "Agente Gungo",
-    "role": "Redacción IA"
-  }
-},
-{
-  "id": 309,
-  "slug": "violencia-guadalajara-amenaza-sede-mundial-2026",
-  "category": "ENTRETENIMIENTO",
-  "publishedAt": "2026-02-24T10:30:00Z",
-  "title": "Violencia en Guadalajara pone en alerta la sede del Mundial 2026 tras muerte de 'El Mencho'",
-  "summary": "La ciudad mexicana que albergará partidos de la Copa del Mundo enfrenta caos y bloqueos a menos de 100 días del torneo.",
-  "longDescription": "Guadalajara, una de las tres sedes mexicanas de la Copa Mundial de la FIFA 2026, vive horas de tensión tras la ola de violencia desatada por el abatimiento de 'El Mencho'. Escuelas cerradas, calles vacías, turistas en pánico y reportes de bloqueos cerca del estadio Akron han activado alertas de seguridad. La FIFA y organizadores del Mundial monitorean la situación de cerca. Autoridades locales aseguran que los eventos deportivos programados se mantienen, pero residentes y expertos advierten que la pugna por el control del CJNG podría escalar. Cancún, Puerto Vallarta y otras zonas turísticas también emiten advertencias de viaje.",
-  "image": "https://www.jornada.com.mx/noticia/2026/02/24/deportes/guadalajara-violencia-mundial.jpg",
-  "altText": "Calles bloqueadas y vehículos incendiados en Guadalajara por violencia post-operativo contra El Mencho",
-  "author": {
-    "name": "Agente Gungo",
-    "role": "Redacción IA"
-  }
-},
-{
-  "id": 310,
-  "slug": "fallece-willie-colon-leyenda-salsa-75-anos",
-  "category": "FARANDULA",
-  "publishedAt": "2026-02-24T11:00:00Z",
-  "title": "Muere Willie Colón, leyenda de la salsa, a los 75 años",
-  "summary": "El icónico trombonista, cantante y productor puertorriqueño deja un legado imborrable en la música latina.",
-  "longDescription": "Willie Colón, conocido como 'El Malo' y una de las grandes figuras de la salsa con la Fania Records, falleció este fin de semana a los 75 años en Nueva York tras complicaciones médicas y respiratorias. Rodeado de su familia, el artista que revolucionó la salsa con éxitos como 'Idilio', 'Gitana' y colaboraciones históricas con Rubén Blades y Héctor Lavoe, deja un vacío en la música latina. Su carrera de más de 50 años marcó generaciones con fusiones de salsa, bolero y ritmos urbanos. Familiares y colegas como Marc Anthony y Rubén Blades expresaron su dolor en redes sociales. El mundo de la farándula latina llora a uno de sus grandes.",
-  "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Willie_Colon.jpg/440px-Willie_Colon.jpg",
-  "altText": "Willie Colón, leyenda de la salsa, en una de sus últimas apariciones",
-  "author": {
-    "name": "Agente Gungo",
-    "role": "Redacción IA"
-    }
- },
+    {
+      "id": 308,
+      "slug": "ejercito-abate-el-mencho-desata-violencia-mexico",
+      "category": "Política",
+      "publishedAt": "2026-02-24T09:00:00Z",
+      "title": "Ejército de México abate a 'El Mencho' y desata ola de violencia en varios estados",
+      "summary": "El líder del Cartel Jalisco Nueva Generación muere en operativo militar en Jalisco, provocando bloqueos, incendios de vehículos y enfrentamientos que dejan decenas de muertos.",
+      "longDescription": "El Ejército mexicano abatió este domingo a Nemesio Oseguera Cervantes, alias 'El Mencho', de 59 años, líder del poderoso Cártel Jalisco Nueva Generación (CJNG), en un operativo en Tapalpa, Jalisco. Durante la acción murieron otros seis miembros del cartel y se incautaron armas y vehículos blindados. La muerte del capo más buscado por México y EE.UU. desató represalias inmediatas: más de 250 bloqueos carreteros, quema de autobuses y autos en al menos ocho estados (Jalisco, Michoacán, Guanajuato, Tamaulipas, entre otros), pánico en Guadalajara y Puerto Vallarta, y al menos 25 guardias nacionales fallecidos. La presidenta Claudia Sheinbaum informó que la situación se estabiliza, pero persiste el temor y se cancelaron eventos deportivos en la sede del Mundial 2026. EE.UU. colaboró con inteligencia en el operativo.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Nemesio_Oseguera_Cervantes.jpg/440px-Nemesio_Oseguera_Cervantes.jpg",
+      "altText": "Nemesio Oseguera Cervantes 'El Mencho', líder del CJNG abatido en Jalisco",
+      "author": {
+        "name": "Agente Gungo",
+        "role": "Redacción IA"
+      }
+    },
+    {
+      "id": 309,
+      "slug": "violencia-guadalajara-amenaza-sede-mundial-2026",
+      "category": "Entretenimiento",
+      "publishedAt": "2026-02-24T10:30:00Z",
+      "title": "Violencia en Guadalajara pone en alerta la sede del Mundial 2026 tras muerte de 'El Mencho'",
+      "summary": "La ciudad mexicana que albergará partidos de la Copa del Mundo enfrenta caos y bloqueos a menos de 100 días del torneo.",
+      "longDescription": "Guadalajara, una de las tres sedes mexicanas de la Copa Mundial de la FIFA 2026, vive horas de tensión tras la ola de violencia desatada por el abatimiento de 'El Mencho'. Escuelas cerradas, calles vacías, turistas en pánico y reportes de bloqueos cerca del estadio Akron han activado alertas de seguridad. La FIFA y organizadores del Mundial monitorean la situación de cerca. Autoridades locales aseguran que los eventos deportivos programados se mantienen, pero residentes y expertos advierten que la pugna por el control del CJNG podría escalar. Cancún, Puerto Vallarta y otras zonas turísticas también emiten advertencias de viaje.",
+      "image": "https://www.jornada.com.mx/noticia/2026/02/24/deportes/guadalajara-violencia-mundial.jpg",
+      "altText": "Calles bloqueadas y vehículos incendiados en Guadalajara por violencia post-operativo contra El Mencho",
+      "author": {
+        "name": "Agente Gungo",
+        "role": "Redacción IA"
+      }
+    },
+    {
+      "id": 310,
+      "slug": "fallece-willie-colon-leyenda-salsa-75-anos",
+      "category": "Farándula",
+      "publishedAt": "2026-02-24T11:00:00Z",
+      "title": "Muere Willie Colón, leyenda de la salsa, a los 75 años",
+      "summary": "El icónico trombonista, cantante y productor puertorriqueño deja un legado imborrable en la música latina.",
+      "longDescription": "Willie Colón, conocido como 'El Malo' y una de las grandes figuras de la salsa con la Fania Records, falleció este fin de semana a los 75 años en Nueva York tras complicaciones médicas y respiratorias. Rodeado de su familia, el artista que revolucionó la salsa con éxitos como 'Idilio', 'Gitana' y colaboraciones históricas con Rubén Blades y Héctor Lavoe, deja un vacío en la música latina. Su carrera de más de 50 años marcó generaciones con fusiones de salsa, bolero y ritmos urbanos. Familiares y colegas como Marc Anthony y Rubén Blades expresaron su dolor en redes sociales. El mundo de la farándula latina llora a uno de sus grandes.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Willie_Colon.jpg/440px-Willie_Colon.jpg",
+      "altText": "Willie Colón, leyenda de la salsa, en una de sus últimas apariciones",
+      "author": {
+        "name": "Agente Gungo",
+        "role": "Redacción IA"
+      }
+    },
     {
       "id": 1771809002,
       "slug": "zion-arrestado-conducir-ebrio",
@@ -214,7 +214,7 @@
     {
       "id": 1771808742,
       "slug": "tokischa-incendia-premio-lo-nuestro-2026-con-polemico-vestido",
-      "category": "EXCLUSIVA",
+      "category": "Farándula",
       "badge": "NUEVO 🔥",
       "publishedAt": "2026-02-23T01:05:42Z",
       "title": "¡Escándalo en Miami! Tokischa Incendia Premio Lo Nuestro 2026 con Vestido que Desafía la Censura",
@@ -249,7 +249,7 @@
     {
       "id": 1771694058,
       "slug": "bombazo-lidom-esteury-ruiz-regresa-a-los-toros-del-este",
-      "category": "EN PELOTA",
+      "category": "Entretenimiento",
       "badge": "CONFIRMADO ⚾",
       "publishedAt": "2026-02-21T17:14:18Z",
       "title": "¡BOMBAZO en LIDOM! Esteury Ruiz Regresa a los Toros del Este en un Movimiento Estelar",
@@ -286,7 +286,7 @@
     {
       "id": 307,
       "slug": "yailin-recuperacion-ferrari",
-      "category": "CALIENTES",
+      "category": "Farándula",
       "publishedAt": "2026-02-15T09:00:00Z",
       "title": "Yailin reaparece divina en su nuevo Ferrari tras el choque",
       "summary": "Deja atrás el McLaren y estrena máquina italiana en las calles de Miami.",
@@ -311,7 +311,7 @@
     {
       "id": 308,
       "slug": "rochy-rd-chequeos-medicos",
-      "category": "EXCLUSIVA",
+      "category": "Farándula",
       "publishedAt": "2026-02-10T11:00:00Z",
       "title": "Rochy RD cumple con la justicia y prepara nuevo álbum",
       "summary": "El Wa visitó el juzgado y el estudio de grabación el mismo día.",
