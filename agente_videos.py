@@ -60,7 +60,7 @@ def generar_con_gemini(cliente: genai.Client, prompt: str, max_intentos: int = 4
         try:
             logging.info(f"Solicitando generación a Gemini (intento {intento}/{max_intentos})...")
             respuesta = cliente.models.generate_content(
-                model="gemini-2.5-flash",
+                model="gemini-2.5-flash-lite",
                 contents=prompt,
                 config=types.GenerateContentConfig(
                     response_mime_type="application/json",
@@ -220,6 +220,7 @@ Sin texto adicional, sin explicaciones, sin bloques de código.
 
 if __name__ == "__main__":
     main()
+
 
 
 
