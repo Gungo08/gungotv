@@ -7,14 +7,15 @@
                img-src 'self' https: data: blob:; 
                style-src 'self' 'unsafe-inline' https:; 
                script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; 
-               font-src 'self' https: data:;"> 
+               font-src 'self' https: data:;
+               frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com;">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GUNGO • Farándula y Espectáculos</title>
+    <title>GUNGO • Noticias, Entretenimiento y Farandula</title>
     <link rel="icon" type="image/png" href="logo-gungo3.png">
-    <meta name="description" content="Las últimas noticias de farándula, chismes y escándalos.">
+    <meta name="description" content="Las últimas noticias de Politica, Entretenimiento y Farandula.">
     
     <meta property="og:title" content="GUNGO • Noticias que Arde">
-    <meta property="og:description" content="El portal #1 de chismes y escándalos mundiales.">
+    <meta property="og:description" content="El portal #1 de Noticias, Entretenimiento y Farandula .">
     <meta property="og:image" content="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1974">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -30,18 +31,12 @@
                 <img src="logo-gungo.png" alt="GUNGO">
             </a>
         </div>
-            
-        <div class="nav-links">
-            <a href="#">Inicio</a>
-            <a href="videos.html">Videos Virales</a>
-            <a href="#" onclick="toggleSearch()" class="search-trigger"><i class="fas fa-search"></i></a>
-        </div>
     </div>
 </header>
 
 <section class="hero">
     <div class="hero-content">
-        <h1>Lo que Arde</h1> <p>El portal #1 de farándula, chismes y escándalos. ¡Aquí arde todo!</p>
+        <h1>Lo que Arde</h1> <p>El portal #1 de Noticias, Entretenimiento y Farandula. Aquí te informas siempre.</p>
         <button class="btn-primary" onclick="document.querySelector('.stories-container').scrollIntoView({behavior: 'smooth'})">Entrar a la noticia</button>
     </div>
 </section>
@@ -67,11 +62,10 @@
     
    <div class="category-filters">
     <button class="filter-btn active" onclick="filtrarNoticias('todo')">INICIO</button>
-    <button class="filter-btn cat-noticia" onclick="filtrarNoticias('Noticias')">NOTICIAS</button>
+    <button class="filter-btn cat-noticias" onclick="filtrarNoticias('Noticias')">NOTICIAS</button>
     <button class="filter-btn cat-entretenimiento" onclick="filtrarNoticias('Entretenimiento')">ENTRETENIMIENTO</button>
-    <button class="filter-btn cat-farandula" onclick="filtrarNoticias('Farándula')">FARÁNDULA</button>
-  </div>
-
+    <button class="filter-btn cat-farandula" onclick="filtrarNoticias('Farandula')">FARANDULA</button>
+</div>
     <div class="news-grid"></div>
 </section>
 
@@ -102,7 +96,7 @@
         <img src="logo-gungo.png" alt="GUNGO" style="height: 100px; width: auto; filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));">
     </a>
     </div>
-            <p>Tu dosis diaria de farándula sin filtro.</p>
+            <p>Tu dosis diaria de Noticias, Entretenimiento y Farandula.</p>
         </div>
         <div>
             <h3>Síguenos</h3>
@@ -206,6 +200,8 @@
 
 </body>
 </html>
+
+
 
 
 
