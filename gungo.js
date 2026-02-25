@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // --- MODAL Y FACEBOOK (CORREGIDO) ---
+    // --- MODAL Y FACEBOOK (CORREGIDO Y BLINDADO) ---
     function openModal(article) {
         const modal = document.getElementById('newsModal');
         if (!modal) return;
@@ -185,12 +185,27 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById('modalCat').innerText = article.category;
         document.getElementById('modalDesc').innerText = article.longDescription || article.summary;
         
-        // BLOQUE FACEBOOK: Activación al abrir el modal
-        const fbBox = document.getElementById('fb-comment-box');
-        if (fbBox) {
-            fbBox.setAttribute('data-href', 'https://gungotv.vercel.app/noticia/' + article.id);
+        // 1. BLOQUE FACEBOOK DINÁMICO
+        const fbContainer = document.getElementById('fb-comment-box')?.parentNode;
+        if (fbContainer) {
+            // Destruimos el cuadro anterior si existe
+            const oldFbBox = document.getElementById('fb-comment-box');
+            if (oldFbBox) oldFbBox.remove();
+            
+            // Creamos uno nuevo con la URL de la noticia actual
+            const newFbBox = document.createElement('div');
+            newFbBox.className = 'fb-comments';
+            newFbBox.id = 'fb-comment-box';
+            newFbBox.setAttribute('data-href', 'https://gungotv.vercel.app/noticia/' + article.id);
+            newFbBox.setAttribute('data-width', '100%');
+            newFbBox.setAttribute('data-numposts', '5');
+            newFbBox.setAttribute('data-colorscheme', 'dark');
+            
+            fbContainer.appendChild(newFbBox);
+            
+            // Obligamos a Facebook a escanear e inyectar el nuevo cuadro
             if (typeof FB !== 'undefined') {
-                FB.XFBML.parse(); 
+                FB.XFBML.parse(fbContainer); 
             }
         }
 
@@ -198,21 +213,31 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.style.overflow = 'hidden';
     }
 
+    // --- CIERRE DE MODAL Y PARADA DE VOZ (CORREGIDO) ---
     const closeModalBtn = document.querySelector('.close-modal');
     if (closeModalBtn) {
-            if (window.speechSynthesis) window.speechSynthesis.cancel();
-            closeModalBtn.addEventListener('click', () => {
+        closeModalBtn.addEventListener('click', () => {
+            // Apagamos la voz de forma segura si está sonando
+            if (window.speechSynthesis) {
+                window.speechSynthesis.cancel();
+                const btn = document.getElementById('tts-button');
+                if (btn) {
+                    btn.classList.remove('playing');
+                    btn.innerHTML = '<i class="fas fa-volume-up"></i> Escuchar noticia';
+                }
+            }
+            
             document.getElementById('newsModal').classList.remove('open');
             document.body.style.overflow = 'auto';
         });
     }
 
-    // --- FILTRADO DE SECCIONES (CORREGIDO) ---
+    // --- FILTRADO DE SECCIONES ---
     window.filtrarNoticias = function(categoria) {
         const botones = document.querySelectorAll('.filter-btn');
         botones.forEach(btn => btn.classList.remove('active', 'active-filter'));
 
-        // Normalización para evitar errores por acentos (Farándula vs Farandula)
+        // Normalización para evitar errores por acentos
         const normalize = (s) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase();
         
         const catBusqueda = normalize(categoria);
@@ -228,7 +253,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (noticiasFiltradas.length === 0) showToast(`Sección ${categoria} sin noticias nuevas.`);
     };
 
-    // Búsqueda
+    // --- BÚSQUEDA ---
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
             const term = e.target.value.toLowerCase();
@@ -238,30 +263,44 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    let currentUtterance = null;
-const synth = window.speechSynthesis;
+    // --- MOTOR DE VOZ TEXT-TO-SPEECH (CORREGIDO) ---
+    window.toggleSpeech = function() {
+        const synth = window.speechSynthesis;
+        const btn = document.getElementById('tts-button');
+        
+        // Si ya está hablando, lo detiene
+        if (synth.speaking) {
+            synth.cancel();
+            if(btn) {
+                btn.classList.remove('playing');
+                btn.innerHTML = '<i class="fas fa-volume-up"></i> Escuchar noticia';
+            }
+            return;
+        }
 
-window.toggleSpeech = function() {
-    const btn = document.getElementById('tts-button');
-    if (synth.speaking) {
-        synth.cancel();
-        btn.classList.remove('playing');
-        btn.innerHTML = '<i class="fas fa-volume-up"></i> Escuchar noticia';
-        return;
-    }
-    const title = document.getElementById('modalTitle').innerText;
-    const description = document.getElementById('modalDesc').innerText;
-    const textToRead = `${title}. ${description}`;
+        // Si no está hablando, captura el texto y empieza
+        const title = document.getElementById('modalTitle').innerText;
+        const description = document.getElementById('modalDesc').innerText;
+        const textToRead = `${title}. ${description}`;
 
-    currentUtterance = new SpeechSynthesisUtterance(textToRead);
-    currentUtterance.lang = 'es-ES';
-    currentUtterance.onend = () => {
-        btn.classList.remove('playing');
-        btn.innerHTML = '<i class="fas fa-volume-up"></i> Escuchar noticia';
+        const currentUtterance = new SpeechSynthesisUtterance(textToRead);
+        currentUtterance.lang = 'es-ES'; // Idioma Español
+        
+        // Qué hacer cuando termina de leer sola
+        currentUtterance.onend = () => {
+            if(btn) {
+                btn.classList.remove('playing');
+                btn.innerHTML = '<i class="fas fa-volume-up"></i> Escuchar noticia';
+            }
+        };
+
+        // Cambios visuales al botón para que sepa que está leyendo
+        if(btn) {
+            btn.classList.add('playing');
+            btn.innerHTML = '<i class="fas fa-stop"></i> Detener lectura';
+        }
+        
+        synth.speak(currentUtterance);
     };
-    btn.classList.add('playing');
-    btn.innerHTML = '<i class="fas fa-stop"></i> Detener lectura';
-    synth.speak(currentUtterance);
-    
-    };
+
 });
