@@ -187,7 +187,15 @@ header.scrolled .logo-link img { height: 60px; }
     border-color: #FFEB3B; 
 }
 
-.news-card img { width: 100%; height: 200px; object-fit: cover; transition: transform 0.5s; }
+/* --- CAMBIO PARA IMÁGENES PERFECTAS --- */
+.news-card img { 
+    width: 100%; 
+    aspect-ratio: 16 / 9; /* Mantiene la proporción cinemática perfecta */
+    object-fit: cover;   /* Evita que la imagen se estire o se aplaste */
+    object-position: center; /* Centra la imagen automáticamente */
+    transition: transform 0.5s; 
+    display: block;
+}
 .news-card:hover img { transform: scale(1.05); }
 
 .category-tag {
@@ -318,6 +326,8 @@ header.scrolled .logo-link img { height: 60px; }
 .modal-buttons .btn-secondary { background: transparent; border: 2px solid #333; color: #aaa; }
 .modal-buttons .btn-secondary:hover { border-color: #fff; color: #fff; }
 
+
+
 /* =========================================
    5. EXTRAS (PUBLICIDAD, TOAST, ENCUESTAS)
    ========================================= */
@@ -440,6 +450,39 @@ footer { background: #050505; padding: 80px 5% 50px; margin-top: 100px; border-t
 .social-icons a { color: #fff; font-size: 2rem; margin: 0 15px; transition: .3s; }
 .social-icons a:hover { color: #FFEB3B; transform: scale(1.3); }
 
+/* --- PALETA DE COLORES GUNGO PREMIUM --- */
+
+/* 1. NOTICIAS: Rojo Carmesí (Serio y Elegante) */
+/* Usamos #E50914 (Similar a Netflix) en vez de rojo puro */
+.filter-btn.cat-noticia:hover,
+.filter-btn.cat-noticia.active-filter {
+    background-color: #E50914 !important; 
+    color: white !important;
+    border-color: #E50914 !important;
+    box-shadow: 0 0 10px rgba(229, 9, 20, 0.4); /* Resplandor suave */
+}
+
+/* 2. ENTRETENIMIENTO: Morado Cyberpunk (Moderno) */
+/* Reemplaza al azul aburrido. Representa Cine, Música, Tecnología */
+.filter-btn.cat-entretenimiento:hover,
+.filter-btn.cat-entretenimiento.active-filter {
+    background-color: #D500F9 !important; /* Morado Vibrante */
+    color: white !important;
+    border-color: #D500F9 !important;
+    box-shadow: 0 0 10px rgba(213, 0, 249, 0.4); /* Resplandor suave */
+}
+
+/* 3. FARÁNDULA: Amarillo Gungo (Tu Marca) */
+/* El protagonista. Texto negro para que se lea bien. */
+.filter-btn.cat-farandula:hover,
+.filter-btn.cat-farandula.active-filter {
+    background-color: #FFEB3B !important; /* TU AMARILLO */
+    color: #000000 !important; /* Texto negro obligatoriamente */
+    border-color: #FFEB3B !important;
+    font-weight: 800; /* Letra extra gruesa */
+    box-shadow: 0 0 15px rgba(255, 235, 59, 0.6); /* Resplandor más fuerte */
+}
+
 
 /* =========================================
    6. VERSIÓN MÓVIL (CORRECCIONES FINALES)
@@ -500,7 +543,9 @@ footer { background: #050505; padding: 80px 5% 50px; margin-top: 100px; border-t
 
     /* FILTROS */
     .category-filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
- .breaking-news-bar {
+
+    /* AJUSTE CINTILLO NOTICIAS MÓVIL */
+    .breaking-news-bar {
         height: 35px !important; /* Hacemos la barra un poco más fina */
         font-size: 0.8rem !important; /* Reducimos el tamaño general */
     }
@@ -515,6 +560,7 @@ footer { background: #050505; padding: 80px 5% 50px; margin-top: 100px; border-t
         font-size: 0.8rem !important; /* Texto de la noticia también más pequeño */
     }
 }
+
 
 
 
