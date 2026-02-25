@@ -1,5 +1,5 @@
 /* ========================================================
-   GUNGO 2026 - SCRIPT PRINCIPAL (SIN VIDEOS)
+   GUNGO 2026 - SCRIPT PRINCIPAL (NOTICIAS Y DEBATE)
    ======================================================== */
 
 /* --- FUNCIONES GLOBALES --- */
@@ -9,7 +9,6 @@ window.toggleSearch = function() {
     const overlay = document.getElementById('searchOverlay');
     const input = document.getElementById('searchInput');
     if (!overlay) return;
-    
     overlay.classList.toggle('active');
     if (overlay.classList.contains('active')) {
         setTimeout(() => input && input.focus(), 100);
@@ -18,7 +17,7 @@ window.toggleSearch = function() {
 
 // 2. Reacciones (Emoji Count)
 window.toggleReact = function(btn, e) {
-    e.stopPropagation(); // Evita que se abra el modal al dar like
+    e.stopPropagation(); 
     btn.classList.toggle('active');
     const span = btn.querySelector('span');
     if (span) {
@@ -39,8 +38,8 @@ window.shareNative = function(title, text) {
 };
 
 window.shareCurrentModal = function() {
-    const title = document.getElementById('modalTitle')?.innerText || "Chisme GUNGO";
-    window.shareNative(title, "¡Mira este escándalo en GUNGO!");
+    const title = document.getElementById('modalTitle')?.innerText || "Noticia GUNGO";
+    window.shareNative(title, "¡Mira esta información en GUNGO.tv!");
 };
 
 // 4. Sistema de Notificaciones Toast
@@ -52,14 +51,9 @@ function showToast(msg) {
         container.className = 'toast-container';
         document.body.appendChild(container);
     }
-
     const toast = document.createElement('div');
     toast.className = 'toast-msg';
-    toast.innerHTML = `
-        <div class="toast-header">NOTIFICACIÓN</div>
-        <div class="toast-body">${msg}</div>
-    `;
-    
+    toast.innerHTML = `<div class="toast-header">NOTIFICACIÓN</div><div class="toast-body">${msg}</div>`;
     container.appendChild(toast);
     requestAnimationFrame(() => toast.classList.add('show'));
     setTimeout(() => {
@@ -85,38 +79,24 @@ window.votePoll = function(id) {
     showToast("¡Gracias por tu voto!");
 };
 
-
 /* --- INICIALIZACIÓN DEL DOM --- */
 document.addEventListener("DOMContentLoaded", () => {
-    
     const newsGrid = document.querySelector('.news-grid');
     const searchInput = document.getElementById('searchInput');
 
-    // Cargar Data JSON (Solo para Noticias, Historias y Encuestas)
     if (newsGrid) {
         fetch('data.json')
             .then(r => r.ok ? r.json() : Promise.reject("Error de Red"))
             .then(data => {
-                
-                // 1. Lógica para Noticias
-                if (newsGrid) {
-                    window.allNewsData = [...(data.newsArticles || []), ...(data.loadMoreData || [])];
-                    renderNews(data.newsArticles || [], false); 
-                    setupLoadMore(data.loadMoreData || []);
-                }
-
-                // 2. Lógica Compartida (Historias, Ticker, Encuestas)
+                window.allNewsData = [...(data.newsArticles || []), ...(data.loadMoreData || [])];
+                renderNews(data.newsArticles || [], false); 
+                setupLoadMore(data.loadMoreData || []);
                 if (data.storiesData) renderStories(data.storiesData);
                 if (data.tickerNews) updateTicker(data.tickerNews);
                 if (data.pollData) initPoll(data.pollData);
             })
             .catch(err => {
                 console.warn("Modo Offline o Error:", err);
-                if(newsGrid && newsGrid.children.length === 0) {
-                     newsGrid.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:50px;">
-                        <h3>Cargando contenido...</h3>
-                     </div>`;
-                }
             });
     }
     
@@ -124,63 +104,36 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!newsGrid) return;
         if (!append) newsGrid.innerHTML = ''; 
         
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-                window.renderNews = renderNews;
-            });
-        }, { threshold: 0.1 });
-
         articles.forEach(news => {
             const card = document.createElement('div');
-            card.className = 'news-card';
-            card.dataset.id = news.id;
-            card.dataset.category = news.category;
-
-            const words = (news.longDescription || news.summary || "").split(" ").length;
-            const mins = Math.ceil(words / 200);
+            card.className = 'news-card visible';
             const fallbackImg = "https://placehold.co/600x400/111/E50914/png?text=GUNGO+NEWS";
 
             card.innerHTML = `
-                <span class="category-tag ${news.category === 'EXCLUSIVA' ? 'exclusiva' : ''}">${news.category}</span>
-                <img src="${news.image}" alt="${news.title}" loading="lazy" onerror="this.onerror=null;this.src='${fallbackImg}'">
+                <span class="category-tag">${news.category}</span>
+                <img src="${news.image}" alt="${news.title}" onerror="this.src='${fallbackImg}'">
                 <div class="card-content">
-                    <div class="reading-time"><i class="far fa-clock"></i> ${mins} min de lectura</div>
                     <h3>${news.title}</h3>
                     <p>${news.summary}</p>
                     <div class="reaction-bar">
                         <button class="reaction-btn" onclick="toggleReact(this, event)">🔥 <span>${Math.floor(Math.random()*100)+10}</span></button>
-                        <button class="reaction-btn" onclick="toggleReact(this, event)">😱 <span>${Math.floor(Math.random()*50)+5}</span></button>
-                        <button class="share-btn-card" onclick="event.stopPropagation(); shareNative('${news.title}', 'Mira esto en GUNGO')" title="Compartir">
-                            <i class="fas fa-share"></i>
-                        </button>
+                        <button class="share-btn-card" onclick="event.stopPropagation(); shareNative('${news.title}', 'Gungo.tv')"><i class="fas fa-share"></i></button>
                     </div>
                 </div>
             `;
-            
             card.addEventListener('click', (e) => {
                 if (!e.target.closest('button')) openModal(news);
             });
-
             newsGrid.appendChild(card);
-            observer.observe(card);
         });
     }
 
     function renderStories(stories) {
         const container = document.getElementById('storiesFeed');
         if (!container || !stories) return;
-        const avatarFallback = "https://placehold.co/150x150/222/FFFFFF/png?text=User";
-
         container.innerHTML = stories.map(s => `
             <div>
-                <div class="story-circle">
-                    <img src="${s.img}" alt="${s.name}" 
-                         onerror="this.onerror=null;this.src='${avatarFallback}'">
-                </div>
+                <div class="story-circle"><img src="${s.img}" alt="${s.name}" onerror="this.src='https://placehold.co/150x150/222/FFFFFF/png?text=User'"></div>
                 <p class="story-name">${s.name}</p>
             </div>
         `).join('');
@@ -188,27 +141,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function updateTicker(newsList) {
         const el = document.querySelector('.breaking-text');
-        
         if (el && newsList) {
-            const textArray = newsList.map(item => {
-                if (typeof item === 'object' && item !== null) {
-                    return item.title || item.text || item.summary || ""; 
-                }
-                return item;
-            });
-
-            el.innerText = textArray.join('   •   ') + '   •   ';
+            el.innerText = newsList.map(item => item.title || item.text || "").join('   •   ') + '   •   ';
         }
     }
 
     function initPoll(data) {
         const title = document.querySelector('.poll-title-text');
         const optsContainer = document.querySelector('.poll-options');
-        const footer = document.querySelector('.poll-footer');
-        
         if (title) title.innerText = data.question;
-        if (footer) footer.innerText = data.footerText;
-        
         if (optsContainer && data.options) {
             optsContainer.innerHTML = data.options.map(opt => `
                 <div class="poll-option" onclick="votePoll(${opt.id})">
@@ -224,119 +165,103 @@ document.addEventListener("DOMContentLoaded", () => {
         if (moreData.length === 0) return;
         const btnContainer = document.createElement('div');
         btnContainer.className = 'load-more-container';
-        btnContainer.innerHTML = '<button class="btn-secondary" id="loadMoreBtn">Ver más chismes <i class="fas fa-chevron-down"></i></button>';
+        btnContainer.innerHTML = '<button class="btn-secondary" id="loadMoreBtn">Ver más noticias <i class="fas fa-chevron-down"></i></button>';
         newsGrid.parentNode.insertBefore(btnContainer, newsGrid.nextSibling);
 
         const btn = document.getElementById('loadMoreBtn');
         btn.addEventListener('click', () => {
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Cargando...';
-            setTimeout(() => {
-                renderNews(moreData, true);
-                btn.remove();
-                showToast("¡Nuevas noticias cargadas!");
-            }, 800);
+            renderNews(moreData, true);
+            btn.remove();
         });
     }
 
-    // --- MODAL Y FILTROS ---
+    // --- MODAL Y FACEBOOK (CORREGIDO) ---
     function openModal(article) {
         const modal = document.getElementById('newsModal');
         if (!modal) return;
         
-        const imgEl = document.getElementById('modalImg');
-        imgEl.src = article.image;
-        imgEl.onerror = function() { 
-            this.onerror=null; 
-            this.src="https://placehold.co/800x600/111/E50914/png?text=Sin+Imagen"; 
-        };
-
+        document.getElementById('modalImg').src = article.image;
         document.getElementById('modalTitle').innerText = article.title;
         document.getElementById('modalCat').innerText = article.category;
         document.getElementById('modalDesc').innerText = article.longDescription || article.summary;
         
+        // BLOQUE FACEBOOK: Activación al abrir el modal
+        const fbBox = document.getElementById('fb-comment-box');
+        if (fbBox) {
+            fbBox.setAttribute('data-href', 'https://gungotv.vercel.app/noticia/' + article.id);
+            if (typeof FB !== 'undefined') {
+                FB.XFBML.parse(); 
+            }
+        }
+
         modal.classList.add('open');
         document.body.style.overflow = 'hidden';
     }
 
     const closeModalBtn = document.querySelector('.close-modal');
     if (closeModalBtn) {
-        closeModalBtn.addEventListener('click', () => {
+            if (window.speechSynthesis) window.speechSynthesis.cancel();
+            closeModalBtn.addEventListener('click', () => {
             document.getElementById('newsModal').classList.remove('open');
             document.body.style.overflow = 'auto';
         });
     }
 
-    /* ========================================================
-       LÓGICA DE FILTRADO (ESTRATEGIA 3 PILARES)
-       ======================================================== */
+    // --- FILTRADO DE SECCIONES (CORREGIDO) ---
     window.filtrarNoticias = function(categoria) {
-        const grid = document.querySelector('.news-grid');
         const botones = document.querySelectorAll('.filter-btn');
+        botones.forEach(btn => btn.classList.remove('active', 'active-filter'));
 
-        // Efecto Visual
-        botones.forEach(btn => {
-            btn.classList.remove('active', 'active-filter');
-        });
-
-        const botonActivo = Array.from(botones).find(b => 
-            b.textContent.toUpperCase().includes(categoria.toUpperCase()) || 
-            (categoria === 'todo' && b.textContent === 'INICIO')
-        );
+        // Normalización para evitar errores por acentos (Farándula vs Farandula)
+        const normalize = (s) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase();
         
-        if(botonActivo) {
-            botonActivo.classList.add('active', 'active-filter');
-        }
-
-        // Filtrado de Datos
-        if (!window.allNewsData || window.allNewsData.length === 0) {
-            console.warn("No hay noticias cargadas para filtrar");
-            return;
-        }
-
+        const catBusqueda = normalize(categoria);
         let noticiasFiltradas;
 
-        if (categoria === 'todo') {
-            noticiasFiltradas = window.allNewsData; // Mostrar todo
+        if (catBusqueda === 'TODO' || catBusqueda === 'INICIO') {
+            noticiasFiltradas = window.allNewsData;
         } else {
-            noticiasFiltradas = window.allNewsData.filter(item => item.category === categoria);
+            noticiasFiltradas = window.allNewsData.filter(item => normalize(item.category) === catBusqueda);
         }
 
         renderNews(noticiasFiltradas, false); 
-
-        // Scroll suave hacia arriba si está en móvil
-        if (window.innerWidth < 768) {
-            const yOffset = -120;
-            const y = grid.getBoundingClientRect().top + window.pageYOffset + yOffset;
-            window.scrollTo({top: y, behavior: 'smooth'});
-        }
-
-        if (noticiasFiltradas.length === 0) {
-            showToast(`No hay contenido en ${categoria} por ahora.`);
-        }
+        if (noticiasFiltradas.length === 0) showToast(`Sección ${categoria} sin noticias nuevas.`);
     };
 
     // Búsqueda
-    let timeout;
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
-            clearTimeout(timeout);
-            timeout = setTimeout(() => {
-                const term = e.target.value.toLowerCase();
-                document.querySelectorAll('.news-card').forEach(card => {
-                    const text = card.innerText.toLowerCase();
-                    card.classList.toggle('hidden', !text.includes(term));
-                });
-            }, 300);
+            const term = e.target.value.toLowerCase();
+            document.querySelectorAll('.news-card').forEach(card => {
+                card.classList.toggle('hidden', !card.innerText.toLowerCase().includes(term));
+            });
         });
     }
 
-    console.log("GUNGO Engine Cargado (Modo Noticias).");
+    let currentUtterance = null;
+const synth = window.speechSynthesis;
+
+window.toggleSpeech = function() {
+    const btn = document.getElementById('tts-button');
+    if (synth.speaking) {
+        synth.cancel();
+        btn.classList.remove('playing');
+        btn.innerHTML = '<i class="fas fa-volume-up"></i> Escuchar noticia';
+        return;
+    }
+    const title = document.getElementById('modalTitle').innerText;
+    const description = document.getElementById('modalDesc').innerText;
+    const textToRead = `${title}. ${description}`;
+
+    currentUtterance = new SpeechSynthesisUtterance(textToRead);
+    currentUtterance.lang = 'es-ES';
+    currentUtterance.onend = () => {
+        btn.classList.remove('playing');
+        btn.innerHTML = '<i class="fas fa-volume-up"></i> Escuchar noticia';
+    };
+    btn.classList.add('playing');
+    btn.innerHTML = '<i class="fas fa-stop"></i> Detener lectura';
+    synth.speak(currentUtterance);
     
-    // Efecto Scroll en Navbar
-    window.addEventListener('scroll', () => {
-        const header = document.querySelector('header');
-        if (header) {
-            header.classList.toggle('scrolled', window.scrollY > 50);
-        }
-    });
+    };
 });
