@@ -1,17 +1,85 @@
- /* =========================================
-   GUNGO 2025 - HOJA DE ESTILOS MAESTRA (YELLOW EDITION 2.0)
-   ========================================= */
+/* ========================================================
+   VARIABLES DE TEMA (MODO OSCURO / CLARO)
+   ======================================================== */
+:root {
+    /* MODO OSCURO (Tema por defecto de Gungo.tv) */
+    --bg-main: #0a0a0a;           /* Fondo general negro profundo */
+    --bg-card: #1a1a1a;           /* Fondo de las tarjetas de noticias */
+    --bg-modal: #111111;          /* Fondo de la ventana flotante */
+    --text-primary: #ffffff;      /* Texto principal blanco */
+    --text-secondary: #cccccc;    /* Texto secundario gris */
+    --border-color: #333333;      /* Líneas divisorias */
+    --brand-yellow: #FFEB3B;      /* Amarillo Gungo original */
+    --header-bg: rgba(0, 0, 0, 0.95);
+}
+
+[data-theme="light"] {
+    /* MODO CLARO */
+    --bg-main: #f4f4f9;           /* Fondo gris muy claro */
+    --bg-card: #ffffff;           /* Tarjetas blancas */
+    --bg-modal: #ffffff;          /* Ventana blanca */
+    --text-primary: #1a1a1a;      /* Texto casi negro para fácil lectura */
+    --text-secondary: #555555;    /* Texto gris oscuro */
+    --border-color: #dddddd;      /* Líneas divisorias suaves */
+    --brand-yellow: #e6c200;      /* Amarillo ligeramente más oscuro para contrastar en blanco */
+    --header-bg: rgba(255, 255, 255, 0.95);
+}
+
+/* ========================================================
+   APLICACIÓN DE LAS VARIABLES AL DISEÑO GLOBAL
+   ======================================================== */
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+    background-color: var(--header-bg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.news-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+}
+
+.news-card h3, .modal-text h2 {
+    color: var(--text-primary);
+}
+
+.news-card p, .modal-text p, .reading-time {
+    color: var(--text-secondary);
+}
+
+.modal-content {
+    background-color: var(--bg-modal);
+    border: 1px solid var(--border-color);
+}
+
+/* Estilo para el botón del Switch de Tema en el menú */
+.theme-switch-btn {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+.theme-switch-btn:hover {
+    background: var(--brand-yellow);
+    color: #000;
+}
 
 /* --- RESET BÁSICO --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 html, body { 
     font-family: 'Poppins', sans-serif; 
-    background: #000; 
-    color: #fff; 
     overflow-x: hidden; 
     scroll-behavior: smooth;
-    transition: background 0.3s, color 0.3s; 
 } 
 
 /* =========================================
@@ -20,18 +88,14 @@ html, body {
 header {
     position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
     padding: 0 5%; 
-    background: #000; 
     backdrop-filter: blur(10px);
     transition: all .4s;
-    border-bottom: 1px solid #222; 
     height: 100px; 
     display: flex;
     align-items: center;
 }
 
 header.scrolled { 
-    background: rgba(0, 0, 0, 0.95); 
-    /* CAMBIO: Sombra Nuevo Amarillo RGBA(255, 235, 59) */
     box-shadow: 0 5px 20px rgba(255, 235, 59, 0.2); 
     height: 80px;
 }
@@ -60,14 +124,13 @@ header.scrolled .logo-link img { height: 60px; }
 
 .nav-links { display: flex; align-items: center; gap: 20px; height: 100%; }
 .nav-links a {
-    color: #fff; text-decoration: none; margin: 0 10px; 
+    color: var(--text-primary); text-decoration: none; margin: 0 10px; 
     font-weight: 600; font-size: 1rem; position: relative;
     text-transform: uppercase; letter-spacing: 0.5px;
 }
 
 .nav-links a::after {
     content: ""; position: absolute; bottom: -6px; left: 0; width: 0; height: 3px;
-    /* CAMBIO: Gradiente con Nuevo Amarillo */
     background: linear-gradient(90deg, #FFEB3B, #FF6B00); transition: .3s;
 }
 .nav-links a:hover::after { width: 100%; }
@@ -91,7 +154,6 @@ header.scrolled .logo-link img { height: 60px; }
 .hero-content h1 {
     font-size: 5rem; 
     font-weight: 800; margin: 0;
-    /* CAMBIO: Texto Gradiente Nuevo Amarillo */
     background: linear-gradient(90deg, #FFEB3B, #FF6B00, #FFB800);
     -webkit-background-clip: text; background-clip: text;
     -webkit-text-fill-color: transparent; color: transparent;
@@ -100,11 +162,10 @@ header.scrolled .logo-link img { height: 60px; }
     position: relative; z-index: 2;
 }
 
-.hero-content p { font-size: 1.4rem; max-width: 800px; margin: 25px auto; opacity: 0.9; text-shadow: 0 2px 5px rgba(0,0,0,0.8); }
+.hero-content p { font-size: 1.4rem; max-width: 800px; margin: 25px auto; opacity: 0.9; text-shadow: 0 2px 5px rgba(0,0,0,0.8); color: #fff; }
 
 .btn-primary {
     padding: 15px 45px; 
-    /* CAMBIO: Fondo Nuevo Amarillo, Texto Negro */
     background: linear-gradient(90deg, #FFEB3B, #FF6B00); 
     color: #000; border: none; border-radius: 50px;
     font-size: 1.2rem; font-weight: 700; cursor: pointer; transition: .4s;
@@ -121,8 +182,8 @@ header.scrolled .logo-link img { height: 60px; }
    3. SECCIÓN NOTICIAS Y COMPONENTES
    ========================================= */
 .stories-container {
-    padding: 30px 5%; overflow-x: auto; background: #080808;
-    border-bottom: 1px solid #222; margin-bottom: 50px;
+    padding: 30px 5%; overflow-x: auto; background: var(--bg-card);
+    border-bottom: 1px solid var(--border-color); margin-bottom: 50px;
 }
 .stories-container::-webkit-scrollbar { height: 6px; }
 .stories-container::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
@@ -130,16 +191,15 @@ header.scrolled .logo-link img { height: 60px; }
 .stories-wrapper { display: flex; gap: 25px; min-width: max-content; padding-bottom: 10px; }
 .story-circle {
     width: 90px; height: 90px; border-radius: 50%; padding: 3px; 
-    /* CAMBIO: Borde Nuevo Amarillo */
     background: linear-gradient(45deg, #FFEB3B, #FF6B00, #FFB800);
     cursor: pointer; position: relative; transition: transform 0.3s;
 }
 .story-circle:hover { transform: scale(1.1) rotate(5deg); }
 .story-circle img {
-    width: 100%; height: 100%; border-radius: 50%; border: 4px solid #000; object-fit: cover;
+    width: 100%; height: 100%; border-radius: 50%; border: 4px solid var(--bg-main); object-fit: cover;
 }
 .story-name {
-    text-align: center; font-size: 0.8rem; margin-top: 8px; color: #ccc; font-weight: 600;
+    text-align: center; font-size: 0.8rem; margin-top: 8px; color: var(--text-secondary); font-weight: 600;
     max-width: 90px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 
@@ -150,7 +210,6 @@ header.scrolled .logo-link img { height: 60px; }
 .section-title::before {
     content: "Noticias";
     position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-    /* CAMBIO: Título Nuevo Amarillo */
     background: linear-gradient(45deg, #FFEB3B, #FF6B00, #FFB800);
     -webkit-background-clip: text; background-clip: text;
     -webkit-text-fill-color: transparent; color: transparent;
@@ -158,13 +217,12 @@ header.scrolled .logo-link img { height: 60px; }
 
 .category-filters { text-align: center; margin-bottom: 40px; padding: 0 5%; }
 .filter-btn {
-    padding: 10px 20px; margin: 5px; background: #111; color: #fff;
-    border: 1px solid #333; border-radius: 50px; font-size: 1rem;
+    padding: 10px 20px; margin: 5px; background: var(--bg-card); color: var(--text-primary);
+    border: 1px solid var(--border-color); border-radius: 50px; font-size: 1rem;
     font-weight: 600; cursor: pointer; transition: 0.3s; text-transform: uppercase;
 }
-.filter-btn:hover { background: #222; border-color: #FFEB3B; color: #FFEB3B; }
+.filter-btn:hover { border-color: #FFEB3B; color: #FFEB3B; }
 .filter-btn.active {
-    /* CAMBIO: Botón activo Nuevo Amarillo con texto Negro */
     background: #FFEB3B; border-color: #FFEB3B; color: #000;
     box-shadow: 0 5px 15px rgba(255, 235, 59, 0.4);
 }
@@ -174,10 +232,10 @@ header.scrolled .logo-link img { height: 60px; }
     gap: 40px; max-width: 1400px; margin: 0 auto; padding: 0 5%;
 }
 .news-card {
-    background: #111; border-radius: 20px; overflow: hidden; transition: .4s;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    border-radius: 20px; overflow: hidden; transition: .4s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     opacity: 0; transform: translateY(50px); transition: all 0.6s ease-out;
-    cursor: pointer; position: relative; border: 1px solid #222;
+    cursor: pointer; position: relative;
 }
 .news-card.visible { opacity: 1; transform: translateY(0); }
 .news-card.hidden { display: none; }
@@ -187,12 +245,11 @@ header.scrolled .logo-link img { height: 60px; }
     border-color: #FFEB3B; 
 }
 
-/* --- CAMBIO PARA IMÁGENES PERFECTAS --- */
 .news-card img { 
     width: 100%; 
-    aspect-ratio: 16 / 9; /* Mantiene la proporción cinemática perfecta */
-    object-fit: cover;   /* Evita que la imagen se estire o se aplaste */
-    object-position: center; /* Centra la imagen automáticamente */
+    aspect-ratio: 16 / 9; 
+    object-fit: cover;   
+    object-position: center; 
     transition: transform 0.5s; 
     display: block;
 }
@@ -200,7 +257,6 @@ header.scrolled .logo-link img { height: 60px; }
 
 .category-tag {
     position: absolute; top: 15px; left: 15px; 
-    /* CAMBIO: Etiqueta Nuevo Amarillo con texto Negro */
     background: linear-gradient(90deg, #FFEB3B, #FF6B00);
     color: #000;
     padding: 6px 15px; border-radius: 30px; font-size: 0.8rem; font-weight: 800; 
@@ -211,37 +267,37 @@ header.scrolled .logo-link img { height: 60px; }
 
 .card-content { padding: 25px; position: relative; }
 .card-content h3 { font-size: 1.3rem; margin: 10px 0; line-height: 1.3; }
-.card-content p { opacity: 0.8; line-height: 1.6; font-size: 0.9rem; margin-bottom: 15px; }
+.card-content p { line-height: 1.6; font-size: 0.9rem; margin-bottom: 15px; }
 
 .reading-time {
-    display: inline-block; font-size: 0.75rem; color: #888; margin-bottom: 8px;
+    display: inline-block; font-size: 0.75rem; margin-bottom: 8px;
     text-transform: uppercase; letter-spacing: 0.5px;
 }
 .reading-time i { margin-right: 5px; color: #FFEB3B; }
 
-.reaction-bar { display: flex; gap: 10px; padding-top: 15px; border-top: 1px solid #222; }
+.reaction-bar { display: flex; gap: 10px; padding-top: 15px; border-top: 1px solid var(--border-color); }
 .reaction-btn {
-    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff;
+    background: transparent; border: 1px solid var(--border-color); color: var(--text-primary);
     padding: 6px 12px; border-radius: 20px; cursor: pointer;
     display: flex; align-items: center; gap: 6px; font-size: 0.85rem; transition: 0.2s;
 }
-.reaction-btn:hover { background: rgba(255,255,255,0.15); transform: translateY(-2px); }
-.reaction-btn.active { color: #FFEB3B; border-color: #FFEB3B; background: rgba(255, 235, 59, 0.1); }
+.reaction-btn:hover { background: var(--border-color); transform: translateY(-2px); }
+.reaction-btn.active { color: #FFEB3B; border-color: #FFEB3B; }
 
 .share-btn-card {
-    background: transparent; border: 1px solid #444; color: #aaa;
+    background: transparent; border: 1px solid var(--border-color); color: var(--text-primary);
     width: 32px; height: 32px; border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     cursor: pointer; transition: 0.3s; margin-left: auto; 
 }
-.share-btn-card:hover { background: #fff; color: #000; }
+.share-btn-card:hover { background: var(--text-primary); color: var(--bg-card); }
 
 /* =========================================
    4. MODAL (ARREGLO PC - ESTILO REVISTA WIDE)
    ========================================= */
 .modal-overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.90); /* Un poco más oscuro para resaltar la noticia */
+    background: rgba(0,0,0,0.90); 
     z-index: 2000;
     display: flex; align-items: center; justify-content: center;
     opacity: 0; pointer-events: none; transition: 0.3s; backdrop-filter: blur(5px);
@@ -249,51 +305,41 @@ header.scrolled .logo-link img { height: 60px; }
 .modal-overlay.open { opacity: 1; pointer-events: all; }
 
 .modal-content {
-    background: #111; 
-    /* CAMBIO: Aumentamos el ancho máximo a 1100px (Antes era 800px) */
     max-width: 1100px; width: 90%; 
-    /* CAMBIO: Estilo "Revista". 45% Imagen | 55% Texto. Se ve mucho más elegante */
     display: grid; grid-template-columns: 45% 1fr;
-    /* CAMBIO: Aumentamos la altura al 80% de la pantalla para eliminar espacio negro */
     height: 80vh; min-height: 500px;
     border-radius: 20px; overflow: hidden; position: relative; 
     transform: translateY(30px); transition: 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-    /* Sombra amarilla intensa para resaltar */
-    box-shadow: 0 20px 60px rgba(255, 235, 59, 0.15); border: 1px solid #333;
+    box-shadow: 0 20px 60px rgba(255, 235, 59, 0.15); 
 }
 .modal-overlay.open .modal-content { transform: translateY(0); }
 
 .modal-content img { 
     width: 100%; height: 100%; 
-    /* CLAVE: object-fit: cover recorta la imagen perfectamente sin deformarla */
     object-fit: cover; 
     display: block;
-    background: #1a1a1a; /* Fondo gris por si la imagen tarda en cargar */
+    background: #1a1a1a;
 }
 
 .modal-text { 
-    padding: 40px; /* Más espacio interno para que el texto respire */
+    padding: 40px; 
     display: flex; flex-direction: column; 
     position: relative; overflow-y: auto; 
     word-wrap: break-word;
 }
 
-/* Títulos más grandes ahora que tenemos más espacio */
 .modal-text h2, .modal-text h3 {
     font-size: 2rem; 
     margin-bottom: 15px;
     line-height: 1.1;
-    color: #fff;
 }
 
 .modal-text p {
     font-size: 1rem; 
     line-height: 1.6;
-    color: #ccc;
     margin-bottom: 20px;
 }
 
-/* Etiqueta de categoría dentro de la noticia */
 .badge-modal {
     display: inline-block;
     background: #FFEB3B; color: #000;
@@ -303,37 +349,83 @@ header.scrolled .logo-link img { height: 60px; }
     width: fit-content;
 }
 
-/* Seguridad para imágenes/videos dentro del texto */
 .modal-text img, .modal-text video, .modal-text iframe {
     max-width: 100%; height: auto; border-radius: 8px; margin: 15px 0;
 }
 
 .close-modal {
     position: absolute; top: 15px; right: 20px; background: none; border: none;
-    color: #fff; font-size: 2.5rem; cursor: pointer; z-index: 10;
+    color: var(--text-primary); font-size: 2.5rem; cursor: pointer; z-index: 10;
     transition: 0.3s; 
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8));
 }
 .close-modal:hover { color: #FFEB3B; transform: rotate(90deg); }
 
-.modal-buttons { display: flex; gap: 15px; margin-top: auto; padding-top: 20px; border-top: 1px solid #222; }
+.modal-buttons { display: flex; gap: 15px; margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border-color); }
 .modal-buttons button { 
     padding: 12px 30px; 
     border-radius: 50px; border:none; cursor: pointer; font-weight: 800; font-size: 0.9rem; letter-spacing: 0.5px;
 }
 
 .modal-buttons .btn-primary { background: linear-gradient(90deg, #FFEB3B, #FF6B00); color: #000; }
-.modal-buttons .btn-secondary { background: transparent; border: 2px solid #333; color: #aaa; }
-.modal-buttons .btn-secondary:hover { border-color: #fff; color: #fff; }
-
-
+.modal-buttons .btn-secondary { background: transparent; border: 2px solid var(--border-color); color: var(--text-primary); }
+.modal-buttons .btn-secondary:hover { border-color: var(--text-primary); }
 
 /* =========================================
-   5. EXTRAS (PUBLICIDAD, TOAST, ENCUESTAS)
+   5. DISEÑO PREMIUM: BOTÓN LECTURA POR VOZ (TTS)
+   ========================================= */
+#tts-button {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    background: #111111 !important; 
+    color: #FFEB3B !important;      
+    border: 2px solid #FFEB3B !important;
+    padding: 14px 28px !important;
+    border-radius: 50px !important;
+    font-family: 'Poppins', sans-serif !important; 
+    font-weight: 800 !important;
+    font-size: 1rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.5px !important;
+    cursor: pointer !important;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    margin: 20px 0 !important;
+    width: fit-content !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5) !important;
+}
+
+#tts-button:hover {
+    background: #FFEB3B !important; 
+    color: #000000 !important;       
+    transform: translateY(-5px) scale(1.03) !important;
+    box-shadow: 0 10px 30px rgba(255, 235, 59, 0.4) !important;
+}
+
+#tts-button i {
+    font-size: 1.2rem !important;
+}
+
+#tts-button.playing {
+    background: #E50914 !important; 
+    color: #ffffff !important;
+    border-color: #E50914 !important;
+    animation: pulse-active 1.2s infinite !important;
+}
+
+@keyframes pulse-active {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(229, 9, 20, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(229, 9, 20, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(229, 9, 20, 0); }
+}
+
+/* =========================================
+   6. EXTRAS (PUBLICIDAD, TOAST, ENCUESTAS)
    ========================================= */
 .ad-container {
     display: flex; justify-content: center; align-items: center; margin: 30px auto;
-    background: #080808; border: 1px dashed #333; color: #444;
+    background: var(--bg-card); border: 1px dashed var(--border-color); color: var(--text-secondary);
     font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
     overflow: hidden;
 }
@@ -348,8 +440,6 @@ header.scrolled .logo-link img { height: 60px; }
     max-width: 300px !important;
     height: 250px !important;
     margin: 25px auto !important; 
-    background: #080808;
-    border: 1px dashed #333;
     flex-shrink: 0 !important; 
 }
 
@@ -363,7 +453,6 @@ header.scrolled .logo-link img { height: 60px; }
 
 .breaking-news-bar {
     position: fixed; bottom: 0; left: 0; width: 100%; height: 45px;
-    /* CAMBIO: Barra Nuevo Amarillo y Texto Negro */
     background: #FFEB3B; color: #000; 
     display: flex; align-items: center; 
     z-index: 1500; font-size: 0.95rem; border-top: 3px solid #FF6B00;
@@ -383,13 +472,13 @@ header.scrolled .logo-link img { height: 60px; }
 .poll-section { max-width: 800px; margin: 80px auto; padding: 0 5%; text-align: center; }
 .poll-title { font-size: 2.5rem; margin-bottom: 30px; color: #FFEB3B; font-weight: 800; }
 .poll-container {
-    background: #111; padding: 40px; border-radius: 20px; border: 1px solid #333;
+    background: var(--bg-card); padding: 40px; border-radius: 20px; border: 1px solid var(--border-color);
     box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
 .poll-options { margin-top: 30px; display: flex; flex-direction: column; gap: 15px; }
 .poll-option {
-    position: relative; background: #222; padding: 20px; border-radius: 10px;
-    cursor: pointer; overflow: hidden; border: 1px solid #444; transition: 0.2s;
+    position: relative; background: var(--bg-main); padding: 20px; border-radius: 10px;
+    cursor: pointer; overflow: hidden; border: 1px solid var(--border-color); transition: 0.2s;
     text-align: left;
 }
 .poll-option:hover { border-color: #FFEB3B; transform: scale(1.02); }
@@ -442,53 +531,44 @@ header.scrolled .logo-link img { height: 60px; }
 .close-search:hover { transform: rotate(90deg); color: #FFEB3B; }
 
 /* Footer */
-footer { background: #050505; padding: 80px 5% 50px; margin-top: 100px; border-top: 1px solid #222; }
+footer { background: var(--bg-main); padding: 80px 5% 50px; margin-top: 100px; border-top: 1px solid var(--border-color); }
 .footer-content {
     max-width: 1400px; margin: 0 auto;
     display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px;
 }
-.social-icons a { color: #fff; font-size: 2rem; margin: 0 15px; transition: .3s; }
+.social-icons a { color: var(--text-primary); font-size: 2rem; margin: 0 15px; transition: .3s; }
 .social-icons a:hover { color: #FFEB3B; transform: scale(1.3); }
 
 /* --- PALETA DE COLORES GUNGO PREMIUM --- */
-
-/* 1. NOTICIAS: Rojo Carmesí (Serio y Elegante) */
-/* Usamos #E50914 (Similar a Netflix) en vez de rojo puro */
-.filter-btn.cat-noticia:hover,
-.filter-btn.cat-noticia.active-filter {
+.filter-btn.cat-noticias:hover,
+.filter-btn.cat-noticias.active-filter {
     background-color: #E50914 !important; 
     color: white !important;
     border-color: #E50914 !important;
-    box-shadow: 0 0 10px rgba(229, 9, 20, 0.4); /* Resplandor suave */
+    box-shadow: 0 0 10px rgba(229, 9, 20, 0.4); 
 }
 
-/* 2. ENTRETENIMIENTO: Morado Cyberpunk (Moderno) */
-/* Reemplaza al azul aburrido. Representa Cine, Música, Tecnología */
 .filter-btn.cat-entretenimiento:hover,
 .filter-btn.cat-entretenimiento.active-filter {
-    background-color: #D500F9 !important; /* Morado Vibrante */
+    background-color: #D500F9 !important; 
     color: white !important;
     border-color: #D500F9 !important;
-    box-shadow: 0 0 10px rgba(213, 0, 249, 0.4); /* Resplandor suave */
+    box-shadow: 0 0 10px rgba(213, 0, 249, 0.4); 
 }
 
-/* 3. FARÁNDULA: Amarillo Gungo (Tu Marca) */
-/* El protagonista. Texto negro para que se lea bien. */
 .filter-btn.cat-farandula:hover,
 .filter-btn.cat-farandula.active-filter {
-    background-color: #FFEB3B !important; /* TU AMARILLO */
-    color: #000000 !important; /* Texto negro obligatoriamente */
+    background-color: #FFEB3B !important; 
+    color: #000000 !important; 
     border-color: #FFEB3B !important;
-    font-weight: 800; /* Letra extra gruesa */
-    box-shadow: 0 0 15px rgba(255, 235, 59, 0.6); /* Resplandor más fuerte */
+    font-weight: 800; 
+    box-shadow: 0 0 15px rgba(255, 235, 59, 0.6); 
 }
 
-
 /* =========================================
-   6. VERSIÓN MÓVIL (CORRECCIONES FINALES)
+   7. VERSIÓN MÓVIL (CORRECCIONES FINALES)
    ========================================= */
 @media only screen and (max-width: 768px) {
-
     /* HEADER Y MENÚ */
     header { height: 70px !important; padding: 0 15px !important; }
     header.scrolled { height: 60px !important; }
@@ -546,18 +626,18 @@ footer { background: #050505; padding: 80px 5% 50px; margin-top: 100px; border-t
 
     /* AJUSTE CINTILLO NOTICIAS MÓVIL */
     .breaking-news-bar {
-        height: 35px !important; /* Hacemos la barra un poco más fina */
-        font-size: 0.8rem !important; /* Reducimos el tamaño general */
+        height: 35px !important; 
+        font-size: 0.8rem !important; 
     }
 
     .breaking-label {
-        padding: 0 10px !important; /* Menos espacio a los lados */
-        font-size: 0.75rem !important; /* Letra "ÚLTIMA HORA" más pequeña */
-        width: auto !important; /* Que se ajuste al texto */
+        padding: 0 10px !important; 
+        font-size: 0.75rem !important; 
+        width: auto !important; 
     }
     
     .breaking-text {
-        font-size: 0.8rem !important; /* Texto de la noticia también más pequeño */
+        font-size: 0.8rem !important; 
     }
 }
 
