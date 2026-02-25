@@ -24,6 +24,11 @@
 </head>
 <body>
 
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" 
+        src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0">
+    </script>    
+
 <header>
     <div class="navbar" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
         <div class="logo-container">
@@ -65,6 +70,8 @@
     <button class="filter-btn cat-noticias" onclick="filtrarNoticias('Noticias')">NOTICIAS</button>
     <button class="filter-btn cat-entretenimiento" onclick="filtrarNoticias('Entretenimiento')">ENTRETENIMIENTO</button>
     <button class="filter-btn cat-farandula" onclick="filtrarNoticias('Farandula')">FARANDULA</button>
+
+    <button id="theme-toggle" class="theme-switch-btn"><i class="fas fa-moon"></i> Tema</button>
 </div>
     <div class="news-grid"></div>
 </section>
@@ -111,26 +118,42 @@
         </div>
     </div>
 </footer>
-
 <div id="newsModal" class="modal-overlay">
     <div class="modal-content">
         <button class="close-modal">&times;</button>
         <img id="modalImg" src="" alt="">
         <div class="modal-text">
-            <span id="modalCat" class="category-tag" style="position:relative; top:0; left:0; margin-bottom:15px; display:inline-block;"></span>
-            <h2 id="modalTitle" style="font-size: 2rem; margin-bottom: 20px;"></h2>
+        <span id="modalCat" class="category-tag" style="position:relative; top:0; left:0; margin-bottom:15px; display:inline-block;"></span>
+        <div class="tts-container" style="margin-bottom: 20px;">
+        <button id="tts-button" class="btn-tts">
+         <i class="fas fa-volume-up"></i> Escuchar noticia
+        </button>
+        </div>
+         <h2 id="modalTitle" style="font-size: 2rem; margin-bottom: 20px;"></h2>
             <p id="modalDesc" style="color: #ccc; line-height: 1.8; white-space: pre-wrap;"></p> 
+            
             <div class="ad-container ad-square" style="margin: 20px 0;">
               Publicidad Artículo
             </div>
-            <div class="modal-buttons" style="display:flex; gap:10px; margin-top:30px;">
-                <button class="btn-primary">Leer chisme completo</button>
+
+            <div class="modal-buttons" style="display:flex; gap:10px; margin-top:30px; margin-bottom: 30px;">
+                <button class="btn-primary">Leer noticia completa</button>
                 <button class="btn-secondary" onclick="shareCurrentModal()">Compartir <i class="fas fa-share-alt"></i></button>
+            </div>
+
+            <div style="background: #1a1a1a; padding: 15px; border-radius: 10px; margin-top: 20px;">
+                <h4 style="color: #FFEB3B; margin-bottom: 15px; text-transform: uppercase; font-size: 0.9rem;">Debate en Gungo.tv</h4>
+                <div class="fb-comments" 
+                     id="fb-comment-box"
+                     data-href="https://gungotv.vercel.app/" 
+                     data-width="100%" 
+                     data-numposts="5" 
+                     data-colorscheme="dark">
+                </div>
             </div>
         </div>
     </div>
 </div>
-
 <div id="searchOverlay" class="search-overlay">
     <button class="close-search" onclick="toggleSearch()">&times;</button>
     <input type="text" placeholder="¿A quién buscas? (ej. Shakira)..." id="searchInput">
@@ -198,22 +221,28 @@
     }
 </style>
 
-    <script>
-    // Bloquear Clic Derecho
-    document.addEventListener('contextmenu', event => event.preventDefault());
+ <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const themeBtn = document.getElementById('theme-toggle');
+        // Revisa si el usuario ya había elegido un tema antes
+        const currentTheme = localStorage.getItem('gungo_theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', currentTheme);
 
-    // Bloquear Atajos de Teclado (F12, Ctrl+U, Ctrl+Shift+I)
-    document.onkeydown = function(e) {
-        if (e.keyCode == 123) return false; // F12
-        if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) return false;
-        if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) return false;
-        if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) return false;
-        if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false;
-    };
-    </script>    
+        if (themeBtn) {
+            themeBtn.addEventListener('click', () => {
+                let theme = document.documentElement.getAttribute('data-theme');
+                let newTheme = theme === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('gungo_theme', newTheme);
+            });
+        }
+    });
+ </script>
 
 </body>
 </html>
+
+
 
 
 
