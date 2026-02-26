@@ -12,6 +12,7 @@
     { "text": "Yailin La Más Viral rompe el silencio sobre Premio Lo Nuestro 2026.", "url": "#", "time": "Hace 1h 45min" },
     { "text": "¡SIN EXCUSAS! Paliza advierte por apagón general del lunes en RD.", "url": "#", "time": "Hace 2h 30min" }
     { "text": "Guardacostas cubanos abatieron a 4 tripulantes de una lancha rápida que intentaba infiltrarse desde Florida.", "url": "#", "time": "Hace 25 min" },
+    { "text": "Creció 3.5 % en enero 2026 (datos del BCRD). El Banco Central mantiene la tasa de política monetaria en 5.25 %"} 
   ],
   "storiesData": [
     { "id": "s1", "name": "Karol G", "img": "logo-gungo7.png", "hasNew": true },
@@ -20,6 +21,7 @@
     { "id": "s4", "name": "El Alfa", "img": "logo-gungo6.png", "hasNew": false },
     { "id": "s5", "name": "Tekashi", "img": "logo-gungo10.png", "hasNew": true },
     { "id": "s6", "name": "Feid", "img": "logo-gungo3.png", "hasNew": true }
+    
   ],
   "pollData": {
     "id": "poll-feb-2026",
