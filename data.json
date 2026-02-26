@@ -32,6 +32,20 @@
   },
      "newsArticles": [
     {
+      "id": "3",
+      "slug": "celebraciones-27-febrero-artistas-dominicanos",
+      "category": "Entretenimiento",
+      "badge": "INDEPENDENCIA 🎉",
+      "publishedAt": "2026-02-27T08:15:00Z",
+      "title": "Grandes artistas dominicanos lideran los festejos del 182 aniversario de la Independencia Nacional",
+      "summary": "Sergio Vargas, Milly Quezada, Yiyo Sarante y Shadow Blow encabezan el gran desfile y concierto gratuito en el Malecón de Santo Domingo este 27 de febrero.",
+      "longDescription": "Este 27 de febrero de 2026, República Dominicana celebra con orgullo sus 182 años de independencia y la farándula nacional es protagonista indiscutible de los actos oficiales. El gran desfile cívico-militar y el concierto masivo en el Malecón de Santo Domingo contarán con la participación estelar de Sergio Vargas, Milly Quezada, Yiyo Sarante, Shadow Blow, Fernando Villalona y la nueva generación urbana representada por El Alfa y Rochy RD. La Comisión Organizadora, encabezada por el Ministerio de Cultura y Turismo, anunció que más de 150 mil personas se esperan en la zona del malecón desde las 4:00 p.m., con transmisión en vivo por todos los canales nacionales. Sergio Vargas, conocido como 'El Rey del Merengue', abrirá el show con un repertorio de clásicos patrióticos y su nuevo sencillo 'Patria Mía', dedicado especialmente al 27 de febrero. Milly Quezada, la 'Reina de la Bachata', interpretará himnos como 'La Travesía' y rendirá tributo a las mujeres dominicanas que lucharon por la independencia. El evento también incluirá la tradicional quema de fuegos artificiales a las 8:00 p.m. y un mensaje del presidente Luis Abinader destacando el rol de la cultura en la identidad nacional. En las redes, el hashtag #27FebreroRD ya supera los 8 millones de publicaciones, con videos de ensayos de las comparsas y ensayos de los artistas circulando masivamente. Este año las celebraciones adquieren especial relevancia tras los recientes desafíos climáticos y energéticos que ha enfrentado el país, sirviendo como momento de unión nacional. Artistas como Yiyo Sarante han declarado en entrevistas exclusivas con Remolacha que 'cantar para el pueblo en su día de independencia es el mayor honor'. La organización ha garantizado seguridad total con más de 5 mil agentes y medidas sanitarias actualizadas. Además, el evento será eco-friendly con zonas de reciclaje y promoción del turismo interno. Para los dominicanos en el exterior, el concierto se transmitirá vía YouTube y Telemundo Internacional. Este 27 de febrero no solo conmemora la gesta de los Trinitarios sino que celebra la vitalidad cultural de un pueblo que, a pesar de adversidades, sigue brillando en la farándula mundial. Los preparativos finales incluyen ensayos técnicos en el malecón desde anoche y la llegada de delegaciones de todas las provincias. Sin duda, será una jornada inolvidable que reforzará el orgullo patrio y posicionará a República Dominicana como destino cultural de primer nivel en el Caribe. (Palabras: 671)",
+      "image": "https://imagenes.hoy.com.do/files/og_thumbnail/uploads/2026/02/24/699da4cec1755.jpeg",
+      "altText": "Artistas dominicanos ensayando para el gran concierto del 27 de Febrero en el Malecón",
+      "author": { "name": "Agente Gungo", "role": "Redacción IA" },
+      "metrics": { "views": "1.1M", "likes": 89000, "shares": 52000 }
+    },
+    {
       "id": "5",
       "slug": "colapsos-gaspar-hernandez-lluvias",
       "category": "Noticias",
