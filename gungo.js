@@ -263,12 +263,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // --- MOTOR DE VOZ TEXT-TO-SPEECH (CORREGIDO) ---
+        // --- MOTOR DE VOZ TEXT-TO-SPEECH (FORZADO EXTREMO A ESPAÑOL) ---
+    // Cargar voces por adelantado
+    window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+
     window.toggleSpeech = function() {
         const synth = window.speechSynthesis;
         const btn = document.getElementById('tts-button');
         
-        // Si ya está hablando, lo detiene
         if (synth.speaking) {
             synth.cancel();
             if(btn) {
@@ -278,15 +280,23 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // Si no está hablando, captura el texto y empieza
         const title = document.getElementById('modalTitle').innerText;
         const description = document.getElementById('modalDesc').innerText;
         const textToRead = `${title}. ${description}`;
 
         const currentUtterance = new SpeechSynthesisUtterance(textToRead);
-        currentUtterance.lang = 'es-ES'; // Idioma Español
         
-        // Qué hacer cuando termina de leer sola
+        // RASTREADOR DE VOZ LATINA/ESPAÑOLA
+        const voices = synth.getVoices();
+        const spanishVoice = voices.find(v => v.lang.includes('es') || v.name.includes('Spanish') || v.name.includes('Español') || v.name.includes('Monica') || v.name.includes('Jorge'));
+        
+        if (spanishVoice) {
+            currentUtterance.voice = spanishVoice;
+            currentUtterance.lang = spanishVoice.lang;
+        } else {
+            currentUtterance.lang = 'es-ES'; // Plan B
+        }
+
         currentUtterance.onend = () => {
             if(btn) {
                 btn.classList.remove('playing');
@@ -294,7 +304,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         };
 
-        // Cambios visuales al botón para que sepa que está leyendo
         if(btn) {
             btn.classList.add('playing');
             btn.innerHTML = '<i class="fas fa-stop"></i> Detener lectura';
@@ -303,4 +312,5 @@ document.addEventListener("DOMContentLoaded", () => {
         synth.speak(currentUtterance);
     };
 
-});
+})
+
