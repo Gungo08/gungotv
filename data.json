@@ -31,6 +31,35 @@
     "footerText": "Más de 15k votos hoy."
   },
   "newsArticles": [
+     "newsArticles": [
+    {
+      "id": "3",
+      "slug": "ganadores-carnaval-distrito-nacional-2026",
+      "category": "Entretenimiento",
+      "badge": "CULTURA ",
+      "publishedAt": "2026-02-23T20:00:00Z",
+      "title": "Anuncian ganadores del Carnaval del Distrito Nacional 2026: desfile histórico por su orden y creatividad",
+      "summary": "La Comisión Organizadora reveló los premiados del desfile en el malecón que reunió a miles y destacó por su excelente organización.",
+      "longDescription": "La Comisión Organizadora del Carnaval del Distrito Nacional 2026 oficializó los ganadores basados en puntuaciones del desfile celebrado el domingo 22 de febrero en el malecón de Santo Domingo. El evento, que atrajo a decenas de miles de asistentes, se caracterizó por su orden impecable, creatividad en disfraces y coreografías, y el respeto a las tradiciones dominicanas. Categorías como 'Mejor Comparsa', 'Mejor Coreografía' y 'Reina del Carnaval' premiaron a grupos locales que fusionaron folklore con innovación moderna, incluyendo elementos de perico ripiao, merengue y diablos cojuelos actualizados. Medios como Remolacha y Hoy Digital destacaron la participación masiva y la seguridad sin incidentes. Este carnaval reafirma al Distrito Nacional como epicentro cultural del país, atrayendo turistas y proyectando la riqueza artística dominicana al mundo. Los ganadores recibirán premios en efectivo y reconocimiento en eventos futuros. En el contexto de la farándula, artistas como Eddy Herrera y Sergio Vargas enviaron felicitaciones vía redes, consolidando el carnaval como plataforma para talentos locales. La edición 2026 eleva el estándar para futuros desfiles y genera expectativa para el próximo año. Un éxito que une generaciones y fortalece la identidad nacional en un año electoral y turístico clave.",
+      "image": "https://resources.diariolibre.com/images/2026/02/23/carnaval-del-distrito-nacional-llena-de-alegria-color-y-tradicion-2ebe2aa7-focus-0-0-896-504.jpg",
+      "altText": "Comparsas y ganadores del Carnaval del Distrito Nacional 2026 en el malecón",
+      "author": { "name": "Agente Gungo", "role": "Redacción IA" },
+      "metrics": { "views": "650K", "likes": 48000, "shares": 22000 }
+    },
+    {
+      "id": "2",
+      "slug": "bad-bunny-gabriela-berlingeri-playa-sydney",
+      "category": "Farándula",
+      "badge": "EXCLUSIVA ",
+      "publishedAt": "2026-02-25T16:24:00Z",
+      "title": "Bad Bunny y Gabriela Berlingeri captados en escapada romántica en Tamarama Beach, Sídney",
+      "summary": "Tras su explosiva actuación en el Super Bowl, la pareja disfruta de un día de sol y mar en Australia, mostrando complicidad total.",
+      "longDescription": "El fenómeno mundial Bad Bunny (Benito Antonio Martínez Ocasio) y su pareja Gabriela Berlingeri fueron sorprendidos por paparazzis en un plan íntimo y relajado en Tamarama Beach, uno de los spots más exclusivos de Sídney, Australia. Las fotos, difundidas por TMZ y replicadas en Diario Libre, muestran a Gabriela luciendo un bikini negro minimalista que resalta su figura mientras camina hacia las olas, y a Bad Bunny con sudadera amarilla abierta, shorts y gorra, descansando sobre una toalla como cualquier turista. Lejos del bullicio de giras y premios, la pareja comparte risas y miradas cómplices tras el exitoso show del Super Bowl que rompió récords de audiencia. Este escape llega en plena agenda internacional del artista, quien regresará pronto a Australia para más fechas. En República Dominicana, fans en redes como Instagram y X celebran el equilibrio del puertorriqueño entre fama y amor, destacando que 'el Conejo Malo también sabe desconectar'. El momento genera tendencia #BadBunnyYGabriela con millones de interacciones. Expertos en farándula destacan cómo estos gestos humanos humanizan a las megaestrellas y fortalecen su conexión con el público latino, incluyendo el dominicano que sigue cada paso de Benito. Un respiro necesario antes de su próximo gran tour que promete pasar por Santo Domingo.",
+      "image": "https://hips.hearstapps.com/hmg-prod/images/blu-a122133965-1-69987fcf8d18d.jpg?crop=1xw:0.3620822622107969xh;0.0625xw,0.125xh",
+      "altText": "Bad Bunny y Gabriela Berlingeri relajados en Tamarama Beach, Sídney, Australia",
+      "author": { "name": "Agente Gungo", "role": "Redacción IA" },
+      "metrics": { "views": "920K", "likes": 71000, "shares": 35000 }
+    },
     {
       "id": "20260225004",
       "slug": "zoe-saldana-presentadora-oscar-2026",
