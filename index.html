@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" 
+      content="default-src 'self' *; 
+               img-src 'self' https: data: blob:; 
+               style-src 'self' 'unsafe-inline' https:; 
+               script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; 
+               font-src 'self' https: data:;
+               frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://www.tiktok.com;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUNGO • Noticias, Entretenimiento y Farandula</title>
+    <link rel="icon" type="image/png" href="logo-gungo3.png">
+    <meta name="description" content="Las últimas noticias de Politica, Entretenimiento y Farandula.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="gungo.css">
+</head>
+<body>
+
+<header>
+    <div class="navbar" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        <div class="logo-container">
+            <a href="index.html" class="logo-link" onclick="window.scrollTo(0,0)">
+                <img src="logo-gungo.png" alt="GUNGO">
+            </a>
+        </div>
+        <div>
+            <a href="internacional.html" style="background: #E50914; color: #fff; padding: 10px 20px; border-radius: 50px; text-decoration: none; font-weight: 800; text-transform: uppercase; font-size: 0.9rem; box-shadow: 0 4px 10px rgba(229, 9, 20, 0.4); transition: 0.3s;">
+                Mundo 🌍
+            </a>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Lo que Arde</h1> <p>El portal #1 de Noticias, Entretenimiento y Farandula. Aquí te informas siempre.</p>
+        <button class="btn-primary" onclick="document.querySelector('.stories-container').scrollIntoView({behavior: 'smooth'})">Entrar a la noticia</button>
+    </div>
+</section>
+
+<div class="breaking-news-bar">
+    <div class="breaking-label">ÚLTIMA HORA</div>
+    <div class="breaking-text-container">
+        <div class="breaking-text">Cargando últimas noticias...</div>
+    </div>
+</div>
+
+<section class="stories-container">
+    <div class="stories-wrapper" id="storiesFeed"></div>
+</section>
+
+<div class="ad-container ad-leaderboard">Publicidad Principal</div>
+
+<section>
+    <h2 class="section-title">Noticias</h2>
+    <div class="category-filters">
+        <button class="filter-btn active" onclick="filtrarNoticias('todo')">INICIO</button>
+        <button class="filter-btn cat-noticias" onclick="filtrarNoticias('Noticias')">NOTICIAS</button>
+        <button class="filter-btn cat-entretenimiento" onclick="filtrarNoticias('Entretenimiento')">ENTRETENIMIENTO</button>
+        <button class="filter-btn cat-farandula" onclick="filtrarNoticias('Farandula')">FARANDULA</button>
+        <button id="theme-toggle" class="theme-switch-btn"><i class="fas fa-moon"></i> Tema</button>
+    </div>
+    
+    <div class="news-grid"></div>
+</section>
+
+<div class="ad-container ad-leaderboard">Publicidad Secundaria</div>
+
+<section class="poll-section">
+    <h2 class="poll-title">La Polémica de la Semana</h2>
+    <div class="poll-container">
+        <h3 class="poll-title-text">Cargando encuesta...</h3>
+        <div class="poll-options"></div>
+        <p class="poll-footer"></p>
+    </div>
+</section>
+
+<section class="tiktok-section" style="max-width: 1400px; margin: 80px auto; padding: 0 5%; text-align: center;">
+    <h2 class="section-title">Zona Viral TikTok</h2>
+    <div id="tiktok-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(325px, 1fr)); gap: 30px; justify-items: center;">
+    </div>
+</section>
+<script async src="https://www.tiktok.com/embed.js"></script>
+
+<section class="gungo-chat-section" style="max-width: 800px; margin: 60px auto; padding: 0 5%;">
+    <h2 class="section-title" style="font-size: 2.5rem;">Debate Live 💬</h2>
+    <div style="background: #111; border: 1px solid #333; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        <div id="chat-display" style="height: 350px; overflow-y: auto; padding: 20px; display: flex; flex-direction: column; gap: 15px;">
+            <p style="color: #FFEB3B; text-align: center; font-size: 0.85rem; margin-bottom: 10px; font-weight: bold;">
+                Bienvenido al debate de Gungo.tv. El respeto es obligatorio.
+            </p>
+        </div>
+        <div style="display: flex; padding: 15px; background: #000; gap: 10px; border-top: 1px solid #222;">
+            <input type="text" id="chat-input" placeholder="Escribe tu opinión aquí..." maxlength="140" style="flex: 1; background: #1a1a1a; border: 1px solid #333; color: #fff; padding: 12px; border-radius: 8px; font-family: 'Poppins', sans-serif; outline: none;">
+            <button onclick="window.sendGungoMessage()" style="background: #FFEB3B; color: #000; border: none; padding: 12px 25px; font-weight: 800; cursor: pointer; border-radius: 8px; transition: 0.3s;">Enviar</button>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <div>
+            <div style="margin-bottom: 20px;">
+                <a href="#" onclick="window.scrollTo(0,0)" style="display: inline-block;">
+                    <img src="logo-gungo.png" alt="GUNGO" style="height: 100px; width: auto; filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));">
+                </a>
+            </div>
+            <p>Tu dosis diaria de Noticias, Entretenimiento y Farandula.</p>
+        </div>
+        <div>
+            <h3>Síguenos</h3>
+            <div class="social-icons">
+             <a href="https://www.instagram.com/gungotv/" target="_blank"><i class="fab fa-instagram"></i></a>
+             <a href="https://www.tiktok.com/@gungo_6" target="_blank"><i class="fab fa-tiktok"></i></a>
+             <a href="https://x.com/@gungotv" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div><p>© 2026 GUNGO • Todos los derechos reservados</p></div>
+    </div>
+</footer>
+
+<div id="newsModal" class="modal-overlay">
+    <div class="modal-content">
+        <button class="close-modal">&times;</button>
+        <img id="modalImg" src="" alt="">
+        <div class="modal-text">
+            <span id="modalCat" class="category-tag" style="position:relative; top:0; left:0; margin-bottom:15px; display:inline-block;"></span>
+            <div class="tts-container" style="margin-bottom: 20px;">
+                <button id="tts-button" class="btn-tts" onclick="window.toggleSpeech()">
+                    <i class="fas fa-volume-up"></i> Escuchar noticia
+                </button>
+            </div>
+            <h2 id="modalTitle" style="font-size: 2rem; margin-bottom: 20px;"></h2>
+            <p id="modalDesc" style="color: #ccc; line-height: 1.8; white-space: pre-wrap;"></p> 
+            
+            <div class="ad-container ad-square" style="margin: 20px 0;">Publicidad Artículo</div>
+
+            <div class="modal-buttons" style="display:flex; gap:10px; margin-top:30px; margin-bottom: 30px;">
+                <button class="btn-primary" onclick="document.querySelector('.close-modal').click(); document.querySelector('.gungo-chat-section').scrollIntoView({behavior: 'smooth'})">Ir al Debate</button>
+                <button class="btn-secondary" onclick="window.shareCurrentModal()">Compartir <i class="fas fa-share-alt"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="searchOverlay" class="search-overlay">
+    <button class="close-search" onclick="window.toggleSearch()">&times;</button>
+    <input type="text" placeholder="¿A quién buscas?..." id="searchInput">
+    <p style="margin-top: 20px; color: #666;">Presiona ENTER para buscar</p>
+</div>
+
+<div id="toast-container" class="toast-container"></div>
+<script src="gungo.js"></script>
+
+<a href="https://wa.me/18290000000?text=Hola%20Gungo,%20tengo%20una%20noticia..." target="_blank" class="gungo-whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
+<style>
+    .gungo-whatsapp-btn {
+        position: fixed; bottom: 60px; right: 20px; width: 65px; height: 65px;
+        background-color: #25D366; color: white; border-radius: 50%;
+        text-align: center; font-size: 38px; line-height: 65px; 
+        box-shadow: 0px 4px 20px rgba(0,0,0,0.6); z-index: 999999 !important; 
+        transition: transform 0.3s ease; text-decoration: none; border: 2px solid white; display: block; 
+    }
+    .gungo-whatsapp-btn:hover { transform: scale(1.1) rotate(10deg); background-color: #128C7E; }
+    @media (max-width: 768px) { .gungo-whatsapp-btn { bottom: 80px; width: 55px; height: 55px; font-size: 30px; line-height: 55px; } }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const themeBtn = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('gungo_theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        if (themeBtn) {
+            themeBtn.addEventListener('click', () => {
+                let theme = document.documentElement.getAttribute('data-theme');
+                let newTheme = theme === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('gungo_theme', newTheme);
+            });
+        }
+    });
+</script>
+</body>
+</html>
