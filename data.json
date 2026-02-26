@@ -32,6 +32,34 @@
   },
      "newsArticles": [
     {
+      "id": "5",
+      "slug": "colapsos-gaspar-hernandez-lluvias",
+      "category": "Noticias",
+      "badge": "EMERGENCIA ",
+      "publishedAt": "2026-02-25T18:30:00Z",
+      "title": "Lluvias provocan colapso de comercios y viviendas en Gaspar Hernández: COE en alerta roja",
+      "summary": "Fuertes precipitaciones en el Cibao causan inundaciones, derrumbes y al menos 25 refugiados en Espaillat; tránsito paralizado.",
+      "longDescription": "Fuertes lluvias asociadas a un sistema frontal provocaron el colapso de un supermercado, una tienda de ropa y dos viviendas en Gaspar Hernández, provincia Espaillat. El río local desbordó el puente, inundando sectores como El Matadero Viejo, La Olla Adentro y La Cueva de los Leones. Según Defensa Civil, hay al menos 25 personas refugiadas en albergues temporales. El COE declaró alerta roja para Espaillat, Puerto Plata y María Trinidad Sánchez, con amarilla en otras seis provincias. Alejandro Gil, director local de Defensa Civil, describió la situación como 'caótica' con tránsito cortado hacia Sosúa y Río San Juan. Brigadas de Bomberos, Cruz Roja y Policía trabajan en rescates. Listín Diario reporta daños materiales millonarios y alerta por crecida continua del río. Este evento resalta la vulnerabilidad climática en el Cibao y la necesidad de inversión en drenaje y prevención. Abinader y autoridades locales monitorean desde el COE. La población recibe recomendaciones de evacuación y preparación. Este es uno de los impactos más severos del actual frente frío, que también afecta otras zonas del país.",
+      "image": "https://eldemocrata.do/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-25-at-2.09.31-PM-1-689x375.jpeg?x94840",
+      "altText": "Comercios colapsados y inundaciones en Gaspar Hernández por lluvias intensas",
+      "author": { "name": "Agente Gungo", "role": "Redacción IA" },
+      "metrics": { "views": "710K", "likes": 42000, "shares": 25000 }
+    },
+    {
+      "id": "6",
+      "slug": "apagon-general-republica-dominicana",
+      "category": "Noticias",
+      "badge": "ÚLTIMA HORA ",
+      "publishedAt": "2026-02-25T00:01:00Z",
+      "title": "Apagón general afecta casi todo el país: aún no se determina causa exacta, Danilo critica impacto",
+      "summary": "Explosión en línea Los Mina-Villa Duarte provocó blackout nacional similar al de noviembre 2025; pérdidas millonarias en MIPYMES.",
+      "longDescription": "Un apagón general dejó sin electricidad a casi toda República Dominicana el lunes, originado por una explosión en la línea de transmisión 138 kV Los Mina-Villa Duarte, afectando subestaciones clave y centrales solares. El ministro Joel Santos confirmó que se investiga el origen, sin descartar sabotaje, mientras expertos señalan exceso de generación fotovoltaica sin almacenamiento adecuado (más de 1,600 MW en 2025). Danilo Medina, ex presidente, declaró que 'afecta la producción nacional y da mala imagen al país', urgiendo correcciones. Pérdidas estimadas en 300 millones de pesos para MIPYMES por productos perecederos y generadores. El Banco Central y Fenacerd reportan estrés en el sistema por transición energética. Inversiones en transmisión alcanzan 85.5 millones hasta ahora, con meta 450 millones para 2028. Usuarios del Metro y comercios se vieron afectados, generando quejas en redes. Diario Libre y El Caribe cubren ampliamente las reacciones políticas y técnicas. Este segundo blackout en meses pone en evidencia desafíos de la matriz energética dominicana. Autoridades prometen informe detallado pronto y refuerzo de infraestructura para evitar recurrencias en temporada alta turística.",
+      "image": "https://imagenes.hoy.com.do/files/og_thumbnail/files/fp/uploads/2025/11/12/6914b2e93ab33.r_d.841-605-9375.jpeg",
+      "altText": "Calles a oscuras durante el apagón general en Santo Domingo, República Dominicana",
+      "author": { "name": "Agente Gungo", "role": "Redacción IA" },
+      "metrics": { "views": "1.5M", "likes": 95000, "shares": 48000 }
+    },
+    {
       "id": "3",
       "slug": "ganadores-carnaval-distrito-nacional-2026",
       "category": "Entretenimiento",
