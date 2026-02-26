@@ -86,15 +86,15 @@
 </section>
 <script async src="https://www.tiktok.com/embed.js"></script>
 
-<section class="gungo-chat-section" style="max-width: 800px; margin: 60px auto; padding: 0 5%;">
+ <section class="gungo-chat-section" style="max-width: 800px; margin: 60px auto; padding: 0 5%;">
     <h2 class="section-title" style="font-size: 2.5rem;">Debate Live 💬</h2>
-    <div class="chat-input-box" style="display: flex; padding: 15px; background: #000; gap: 10px; border-top: 1px solid #222;">
+    <div style="background: #111; border: 1px solid #333; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
         <div id="chat-display" style="height: 350px; overflow-y: auto; padding: 20px; display: flex; flex-direction: column; gap: 15px;">
             <p style="color: #FFEB3B; text-align: center; font-size: 0.85rem; margin-bottom: 10px; font-weight: bold;">
                 Bienvenido al debate de Gungo.tv. El respeto es obligatorio.
             </p>
         </div>
-        <div style="display: flex; padding: 15px; background: #000; gap: 10px; border-top: 1px solid #222;">
+        <div class="chat-input-box" style="display: flex; padding: 15px; background: #000; gap: 10px; border-top: 1px solid #222;"></div>
             <input type="text" id="chat-input" placeholder="Escribe tu opinión aquí..." maxlength="140" style="flex: 1; background: #1a1a1a; border: 1px solid #333; color: #fff; padding: 12px; border-radius: 8px; font-family: 'Poppins', sans-serif; outline: none;">
             <button onclick="window.sendGungoMessage()" style="background: #FFEB3B; color: #000; border: none; padding: 12px 25px; font-weight: 800; cursor: pointer; border-radius: 8px; transition: 0.3s;">Enviar</button>
         </div>
@@ -187,3 +187,4 @@
 </body>
 
 </html>
+
