@@ -714,7 +714,7 @@ footer {
         font-size: 0.8rem !important; 
     }
 
-   /* AJUSTE CHAT MÓVIL: Botón debajo del texto */
+    /* AJUSTE CHAT MÓVIL: Botón debajo del texto */
     .chat-input-box {
         flex-direction: column !important; /* Pone los elementos uno debajo del otro */
     }
@@ -724,5 +724,5 @@ footer {
         padding: 15px !important; /* Lo hace más alto para que sea fácil de tocar */
         font-size: 1.1rem !important;
     }
-
 }
+
