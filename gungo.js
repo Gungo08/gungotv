@@ -207,10 +207,14 @@ document.addEventListener("DOMContentLoaded", () => {
 window.openModal = function(article) {
     const modal = document.getElementById('newsModal');
     if (!modal) return;
+    
     document.getElementById('modalImg').src = article.image;
     document.getElementById('modalTitle').innerText = article.title;
     document.getElementById('modalCat').innerText = article.category || 'Gungo';
-    document.getElementById('modalDesc').innerText = article.longDescription || article.summary;
+    
+    // CAMBIO CLAVE: Usamos .innerHTML para que los <br> se conviertan en saltos de línea reales
+    document.getElementById('modalDesc').innerHTML = article.longDescription || article.summary;
+
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
 };
@@ -312,4 +316,5 @@ window.toggleSpeech = function() {
     if(btn) { btn.classList.add('playing'); btn.innerHTML = '<i class="fas fa-stop"></i> Detener lectura'; }
     synth.speak(utterance);
 };
+
 
