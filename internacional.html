@@ -8,26 +8,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="gungo.css">
-    
     <style>
-        header.header-mundo { 
-            background: #000 !important; 
-            padding: 10px 5%; 
-            display: flex; 
-            align-items: center; 
-            justify-content: space-between; 
-            border-bottom: 2px solid #222; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            height: 80px;
-            width: 100%;
-        }
+        header.header-mundo { background: #000 !important; padding: 10px 5%; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #222; box-shadow: 0 4px 15px rgba(0,0,0,0.5); height: 80px; width: 100%;}
         .header-left { display: flex; align-items: center; gap: 15px; }
         .logo-header { height: 60px; width: auto; transition: 0.3s; }
-        .title-header { 
-            font-weight: 900; font-size: 1.4rem; letter-spacing: 1px; 
-            text-transform: uppercase; margin: 0; color: #fff;
-            display: flex; align-items: center; gap: 8px;
-        }
+        .title-header { font-weight: 900; font-size: 1.4rem; letter-spacing: 1px; text-transform: uppercase; margin: 0; color: #fff; display: flex; align-items: center; gap: 8px;}
         .container { max-width: 1200px; margin: 120px auto 40px; padding: 0 20px; }
         .card-mundo { background: var(--bg-card); border-radius: 10px; overflow: hidden; border-bottom: 5px solid #E50914; transition: transform 0.3s; cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
         .card-mundo:hover { transform: translateY(-10px); border-color: #FFEB3B;}
@@ -35,7 +20,6 @@
         .card-info { padding: 20px; }
         .card-info h3 { margin: 0 0 10px 0; font-size: 1.2rem; color: var(--text-primary); line-height: 1.3;}
         .tag-mundo { display: inline-block; background: var(--border-color); color: #FFEB3B; padding: 5px 10px; font-size: 0.8rem; font-weight: bold; border-radius: 5px; margin-bottom: 10px; }
-
         @media (max-width: 600px) {
             header.header-mundo { height: 70px; padding: 5px 3%; }
             .logo-header { height: 45px; }
@@ -47,7 +31,6 @@
     </style>
 </head>
 <body>
-
     <header class="header-mundo">
         <div class="header-left">
             <a href="index.html" title="Volver al Inicio">
@@ -56,9 +39,7 @@
             <h1 class="title-header"><span>MUNDO</span> GUNGO 🌍</h1>
         </div>
         <div>
-            <button id="theme-toggle" class="theme-switch-btn" style="border: 1px solid #333; color: #fff;">
-                <i class="fas fa-moon"></i>
-            </button>
+            <button id="theme-toggle" class="theme-switch-btn" style="border: 1px solid #333; color: #fff;"><i class="fas fa-moon"></i></button>
         </div>
     </header>
 
@@ -74,7 +55,6 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            // Lógica de modo oscuro
             const themeBtn = document.getElementById('theme-toggle');
             const currentTheme = localStorage.getItem('gungo_theme') || 'dark';
             document.documentElement.setAttribute('data-theme', currentTheme);
@@ -87,33 +67,35 @@
                 });
             }
 
-            // CONFIGURACIÓN DE FIREBASE (Usa los mismos datos que en gungo.js)
+            // MISMAS LLAVES QUE gungo.js
             const firebaseConfig = {
-               apiKey: "AIzaSyBv849w6NNk_4QhOnaY3x7LOE38apvc6o4",
-               authDomain: "gungo-tv.firebaseapp.com",
-               projectId: "gungo-tv",
-               storageBucket: "gungo-tv.firebasestorage.app",
-               messagingSenderId: "132166094948",
-               appId: "1:132166094948:web:0ca391d2dc20306e85cf71",
-               measurementId: "G-MFNZH83Y1X"
-                // ... completa con tus datos
+                apiKey: "AIzaSyBv849w6NNk_4QhOnaY3x7LOE38apvc6o4",
+                authDomain: "gungo-tv.firebaseapp.com",
+                projectId: "gungo-tv",
+                storageBucket: "gungo-tv.firebasestorage.app",
+                messagingSenderId: "132166094948",
+                appId: "1:132166094948:web:0ca391d2dc20306e85cf71",
+                measurementId: "G-MFNZH83Y1X"
             };
 
-            if (!firebase.apps.length) {
-                firebase.initializeApp(firebaseConfig);
-            }
+            if (!firebase.apps.length) { firebase.initializeApp(firebaseConfig); }
             const db = firebase.firestore();
 
-            // Fetch noticias desde Firestore
+            // FILTRO ESTRICTO: Solo trae "Mundo"
             db.collection("noticias")
+                .where("category", "==", "Mundo") 
                 .orderBy("publishedAt", "desc")
-                .limit(6) // Solo trae las 6 más recientes para la sección Internacional
+                .limit(6)
                 .get()
                 .then((snapshot) => {
                     const loadingText = document.getElementById('loading-text');
                     if(loadingText) loadingText.remove();
-                    
                     const grid = document.getElementById('gridInternacional');
+
+                    if(snapshot.empty) {
+                        grid.innerHTML = "<p style='color: var(--text-secondary);'>No hay noticias internacionales recientes.</p>";
+                        return;
+                    }
 
                     snapshot.forEach(doc => {
                         const noticia = doc.data();
@@ -124,15 +106,19 @@
                             <div class="card-info">
                                 <span class="tag-mundo">${noticia.category || 'Mundo'}</span>
                                 <h3>${noticia.title}</h3>
-                                <p style="font-size: 0.9rem; color: var(--text-secondary);">${noticia.summary.substring(0, 90)}...</p>
+                                <p style="font-size: 0.9rem; color: var(--text-secondary);">${(noticia.summary || "").substring(0, 90)}...</p>
                             </div>
                         `;
                         card.onclick = () => window.location.href = "index.html"; 
                         grid.appendChild(card);
                     });
                 })
-                .catch(error => console.error("Error cargando noticias:", error));
+                .catch(error => {
+                    console.error("Error cargando noticias:", error);
+                    document.getElementById('gridInternacional').innerHTML = "<p style='color:red;'>Atención: Presiona F12 y haz clic en el enlace para crear el índice en Firebase.</p>";
+                });
         });
     </script>
 </body>
 </html>
+
