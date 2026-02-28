@@ -6,51 +6,103 @@
     "description": "Noticias confirmadas, entretenimiento y farándula de RD."
   },
     "tickerNews": [
-    {
-    "text": "Guardacostas cubanos abatieron a 4 tripulantes de una lancha rápida que intentaba infiltrarse desde Florida.",
-    "url": "#",
-    "time": "Hace 25 min"
-  },
   {
-    "text": "¡RÉCORD EN SEGURIDAD! Abinader destaca tasa de homicidios más baja de la historia reciente en rendición de cuentas.",
-    "url": "#",
-    "time": "Hace 55 min"
-  },
-  {
-    "text": "¡EMERGENCIA EN GASPAR HERNÁNDEZ! Miles desplazados tras inundaciones; autoridades evalúan daños.",
-    "url": "#",
-    "time": "Hace 1h 40min"
-  },
-  {
-    "text": "Abinader anuncia zona franca y puertos secos en la frontera con Haití.",
-    "url": "#",
-    "time": "Hace 2h 30min"
-  },
-  {
-    "text": "¡ÉXITO EN PUERTO RICO! Remueven con éxito barcaza encallada en El Morro.",
-    "url": "#",
-    "time": "Hace 4h"
-  },
-  {
-    "text": "¡BOMBA FINANCIERA EN PR! Envían a Justicia caso de posible tumbe de 99 millones.",
-    "url": "#",
-    "time": "Hace 5h 20min"
-  },
-  {
-    "text": "Yailin La Más Viral rompe el silencio sobre Premio Lo Nuestro 2026.",
-    "url": "#",
-    "time": "Hace 7h"
-  },
-  {
-    "text": "¡SIN EXCUSAS! Paliza advierte por apagón general del lunes en RD.",
-    "url": "#",
-    "time": "Hace 10h"
-  },
-  {
-    "text": "Creció 3.5 % en enero 2026 (datos del BCRD). El Banco Central mantiene la tasa de política monetaria en 5.25 %.",
-    "url": "#",
-    "time": "Hace 14h"
-  }
+"text": "Corte de Apelación rechaza intento de Adán Cáceres de evadir juicio por corrupción.",
+"url": "#",
+"time": "Hace 35 min",
+"source": "Últimas Noticias",
+"verified": true,
+"citation": ""
+},
+{
+"text": "Vaguada provoca lluvias y mantiene alertas en varias provincias; Indomet actualiza pronóstico.",
+"url": "#",
+"time": "Hace 50 min",
+"source": "Diario Libre / Indomet",
+"verified": true,
+"citation": "Diario Libre"
+},
+{
+"text": "Tres meses de prisión preventiva para médico acusado de abuso sexual en Las Guáranas.",
+"url": "#",
+"time": "Hace 1h 10 min",
+"source": "Listín Diario",
+"verified": true,
+"citation": ""
+},
+{
+"text": "DNCD reporta incautación de drogas y varias detenciones tras operativo en Santo Domingo Este.",
+"url": "#",
+"time": "Hace 2h",
+"source": "Prensa nacional",
+"verified": true,
+"citation": "Últimas Noticias de la República Dominicana+1"
+},
+{
+"text": "Autoridades activan plan de contingencia por riesgo de inundaciones en la costa norte.",
+"url": "#",
+"time": "Hace 2h 45 min",
+"source": "Gobierno / Protección Civil",
+"verified": true,
+"citation": ""
+},
+{
+"text": "Ministerio de Trabajo juramenta nuevos viceministros y destaca avances en empleo y reducción de pobreza.",
+"url": "#",
+"time": "Hace 3h 20 min",
+"source": "Últimas Noticias / Listín Diario",
+"verified": true,
+"citation": "Últimas Noticias de la República Dominicana+1"
+},
+{
+"text": "Cierre parcial en la Autopista Duarte por accidente múltiple; desvíos y retenciones en la zona.",
+"url": "#",
+"time": "Hace 4h",
+"source": "Reportes de tránsito locales",
+"verified": false,
+"citation": ""
+},
+{
+"text": "Concierto sorpresa de artista urbano en Santo Domingo congrega a miles; operativo de seguridad en curso.",
+"url": "#",
+"time": "Hace 5h 10 min",
+"source": "Redes sociales / reportes locales",
+"verified": false,
+"citation": ""
+},
+{
+"text": "Gobierno dominicano coordina con autoridades haitianas y ONGs respuesta humanitaria ante desplazamientos en la frontera.",
+"url": "#",
+"time": "Hace 1h 5 min",
+"source": "Ministerio de Relaciones Exteriores",
+"verified": true,
+"citation": ""
+},
+{
+"text": "EE. UU. e Israel lanzan ataque conjunto contra objetivos en Irán; Teherán responde con misiles y drones.",
+"url": "#",
+"time": "Hace 1h",
+"source": "Agencias internacionales (DW, EFE, AP)",
+"verified": true,
+"citation": "DW+1"
+},
+{
+"text": "Irán ataca bases con presencia estadounidense en Catar y otros países del Golfo; interceptaciones y daños reportados.",
+"url": "#",
+"time": "Hace 2h 30 min",
+"source": "Agencias internacionales",
+"verified": true,
+"citation": ""
+},
+{
+"text": "Mercados internacionales reaccionan a la escalada en Medio Oriente; impacto moderado en la bolsa local.",
+"url": "#",
+"time": "Hace 5h 40 min",
+"source": "Análisis económico internacional",
+"verified": true,
+"citation": "Listín Diario+1"
+}
+  
   ],
   "storiesData": [
     { "id": "s1", "name": "Karol G", "img": "logo-gungo7.png", "hasNew": true },
