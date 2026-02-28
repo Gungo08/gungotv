@@ -8,11 +8,10 @@
                style-src 'self' 'unsafe-inline' https:; 
                script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; 
                font-src 'self' https: data:;
-               frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://www.tiktok.com;">
+               frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com;">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GUNGO • Noticias, Entretenimiento y Farandula</title>
     <link rel="icon" type="image/png" href="logo-gungo3.png">
-    <meta name="description" content="Las últimas noticias de Politica, Entretenimiento y Farandula.">
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -37,7 +36,7 @@
 
 <section class="hero">
     <div class="hero-content">
-        <h1>Lo que Arde</h1> <p>El portal #1 de Noticias, Entretenimiento y Farandula. Aquí te informas siempre.</p>
+        <h1>Lo que Arde</h1> <p>El portal #1 de Noticias, Entretenimiento y Farandula.</p>
         <button class="btn-primary" onclick="document.querySelector('.stories-container').scrollIntoView({behavior: 'smooth'})">Entrar a la noticia</button>
     </div>
 </section>
@@ -45,7 +44,7 @@
 <div class="breaking-news-bar">
     <div class="breaking-label">ÚLTIMA HORA</div>
     <div class="breaking-text-container">
-        <div class="breaking-text">Cargando últimas noticias...</div>
+        <div class="breaking-text">Conectando a los servidores de Gungo...</div>
     </div>
 </div>
 
@@ -79,24 +78,29 @@
     </div>
 </section>
 
-<section class="tiktok-section" style="max-width: 1400px; margin: 80px auto; padding: 0 5%; text-align: center;">
-    <h2 class="section-title">Zona Viral TikTok</h2>
-    <div id="tiktok-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(325px, 1fr)); gap: 30px; justify-items: center;">
-    </div>
-</section>
-<script async src="https://www.tiktok.com/embed.js"></script>
-
- <section class="gungo-chat-section" style="max-width: 800px; margin: 60px auto; padding: 0 5%;">
-    <h2 class="section-title" style="font-size: 2.5rem;">Debate Live 💬</h2>
-    <div style="background: #111; border: 1px solid #333; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-        <div id="chat-display" style="height: 350px; overflow-y: auto; padding: 20px; display: flex; flex-direction: column; gap: 15px;">
-            <p style="color: #FFEB3B; text-align: center; font-size: 0.85rem; margin-bottom: 10px; font-weight: bold;">
-                Bienvenido al debate de Gungo.tv. El respeto es obligatorio.
-            </p>
+<section class="zonatuber-section" style="max-width: 1400px; margin: 80px auto; padding: 0 5%; text-align: center;">
+    <h2 class="section-title">ZonaTuber 📺</h2>
+    <div id="youtube-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(325px, 1fr)); gap: 30px; justify-items: center;">
         </div>
-        <div class="chat-input-box" style="display: flex; padding: 15px; background: #000; gap: 10px; border-top: 1px solid #222;"></div>
-            <input type="text" id="chat-input" placeholder="Escribe tu opinión aquí..." maxlength="140" style="flex: 1; background: #1a1a1a; border: 1px solid #333; color: #fff; padding: 12px; border-radius: 8px; font-family: 'Poppins', sans-serif; outline: none;">
-            <button onclick="window.sendGungoMessage()" style="background: #FFEB3B; color: #000; border: none; padding: 12px 25px; font-weight: 800; cursor: pointer; border-radius: 8px; transition: 0.3s;">Enviar</button>
+</section>
+
+<section class="gungo-chat-section" style="max-width: 800px; margin: 60px auto; padding: 0 5%;">
+    <h2 class="section-title" style="font-size: 2.5rem;">Debate Live 💬</h2>
+    
+    <div style="background: linear-gradient(145deg, #111111, #0a0a0a); border: 1px solid #FFEB3B; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 40px rgba(255, 235, 59, 0.15); position: relative;">
+        <div style="background: #E50914; padding: 15px; text-align: center; color: white; font-weight: 800; text-transform: uppercase; letter-spacing: 2px;">
+            <i class="fas fa-circle" style="color: #FFEB3B; font-size: 0.7rem; animation: pulse-active 1.5s infinite;"></i> En Vivo
+        </div>
+        
+        <div id="chat-display" style="height: 400px; overflow-y: auto; padding: 25px; display: flex; flex-direction: column; gap: 15px; scroll-behavior: smooth;">
+            <div style="background: rgba(255, 235, 59, 0.1); border-left: 4px solid #FFEB3B; padding: 15px; border-radius: 10px; text-align: center; font-size: 0.9rem; color: #fff;">
+                <strong>🤖 Sistema:</strong> Bienvenido a Gungo Live. El respeto es obligatorio.
+            </div>
+        </div>
+        
+        <div class="chat-input-box" style="display: flex; padding: 20px; background: #050505; gap: 15px; border-top: 1px solid #333;">
+            <input type="text" id="chat-input" placeholder="Escribe tu opinión aquí..." maxlength="140" style="flex: 1; background: #1a1a1a; border: 1px solid #444; color: #fff; padding: 15px 25px; border-radius: 50px; font-family: 'Poppins', sans-serif; outline: none; transition: 0.3s;" onfocus="this.style.borderColor='#FFEB3B'" onblur="this.style.borderColor='#444'">
+            <button onclick="window.sendGungoMessage()" style="background: linear-gradient(90deg, #FFEB3B, #FF6B00); color: #000; border: none; padding: 15px 35px; font-weight: 800; cursor: pointer; border-radius: 50px; font-size: 1rem; transition: 0.3s; box-shadow: 0 4px 15px rgba(255, 235, 59, 0.3);">ENVIAR <i class="fas fa-paper-plane" style="margin-left: 5px;"></i></button>
         </div>
     </div>
 </section>
@@ -115,7 +119,7 @@
             <h3>Síguenos</h3>
             <div class="social-icons">
              <a href="https://www.instagram.com/gungotv/" target="_blank"><i class="fab fa-instagram"></i></a>
-             <a href="https://www.tiktok.com/@gungo_6" target="_blank"><i class="fab fa-tiktok"></i></a>
+             <a href="https://www.youtube.com/@gungotv" target="_blank"><i class="fab fa-youtube"></i></a>
              <a href="https://x.com/@gungotv" target="_blank"><i class="fab fa-twitter"></i></a>
             </div>
         </div>
@@ -150,10 +154,12 @@
 <div id="searchOverlay" class="search-overlay">
     <button class="close-search" onclick="window.toggleSearch()">&times;</button>
     <input type="text" placeholder="¿A quién buscas?..." id="searchInput">
-    <p style="margin-top: 20px; color: #666;">Presiona ENTER para buscar</p>
 </div>
 
 <div id="toast-container" class="toast-container"></div>
+
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
 <script src="gungo.js"></script>
 
 <a href="https://wa.me/18290000000?text=Hola%20Gungo,%20tengo%20una%20noticia..." target="_blank" class="gungo-whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
@@ -185,6 +191,6 @@
     });
 </script>
 </body>
-
 </html>
+
 
