@@ -397,4 +397,42 @@ window.toggleSpeech = function() {
     utterance.onend = () => { if(btn) { btn.classList.remove('playing'); btn.innerHTML = '<i class="fas fa-volume-up"></i> Escuchar noticia'; } };
     if(btn) { btn.classList.add('playing'); btn.innerHTML = '<i class="fas fa-stop"></i> Detener lectura'; }
     synth.speak(utterance);
+
+    /* ======================================================= */
+/* MOTOR INYECTADO: GUNGO DYNAMIC ISLAND                   */
+/* ======================================================= */
+document.addEventListener("DOMContentLoaded", () => {
+    const island = document.getElementById('gungo-island');
+    const islandText = document.getElementById('island-text');
+    
+    // Si el elemento no existe, el código se detiene silenciosamente
+    if (!island || !islandText) return;
+
+    // Base de datos local de mensajes psicológicos
+    const mensajesRadar = [
+        "🔥 Alguien en Santo Domingo lee la noticia principal",
+        "💬 Un nuevo usuario VIP entró al Debate Live",
+        "📈 El tráfico en Gungo.tv acaba de subir un 40%",
+        "⚡ Cientos de usuarios están conectados ahora",
+        "👀 Una noticia de Farándula se está haciendo viral",
+        "🚨 Atención: Revisa las alertas de clima en Noticias"
+    ];
+
+    // Bucle infinito: Se ejecuta cada 25 segundos
+    setInterval(() => {
+        // 1. Elegir un mensaje aleatorio
+        const randomMsg = mensajesRadar[Math.floor(Math.random() * mensajesRadar.length)];
+        islandText.innerText = randomMsg;
+        
+        // 2. Bajar la isla a la pantalla
+        island.classList.add('show');
+        
+        // 3. Subirla y ocultarla después de 5 segundos
+        setTimeout(() => {
+            island.classList.remove('show');
+        }, 5000);
+        
+    }, 25000); 
+});
+
 };
