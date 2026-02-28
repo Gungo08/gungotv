@@ -82,13 +82,9 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(([firebaseSnapshot, jsonData]) => {
             const firebaseNews = firebaseSnapshot.docs ? firebaseSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })) : [];
             const jsonNews = jsonData ? [...(jsonData.newsArticles || []), ...(jsonData.loadMoreData || [])] : [];
-            let allCombinedNews = [...firebaseNews, ...jsonNews];
             
-            // Excluir Mundo de la portada principal
-            window.allNewsData = allCombinedNews.filter(news => {
-                const cat = (news.category || "").toUpperCase();
-                return cat !== "MUNDO" && cat !== "INTERNACIONAL";
-            });
+            // Unimos TODAS las noticias sin excluir las internacionales
+            window.allNewsData = [...firebaseNews, ...jsonNews];
             
             renderNews(window.allNewsData.slice(0, 9), false); 
             
@@ -101,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
 
-            // CARGAR COMPONENTES FALTANTES (Restaurado)
+            // CARGAR COMPONENTES FALTANTES
             if (jsonData) {
                 if (jsonData.storiesData) renderStories(jsonData.storiesData);
                 if (jsonData.tickerNews) updateTicker(jsonData.tickerNews);
@@ -203,7 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderZonaTuber();
 });
 
-// --- MODAL Y TTS ---
+// --- MODAL CORREGIDO: AHORA RENDERIZA PÁRRAFOS REALES ---
 window.openModal = function(article) {
     const modal = document.getElementById('newsModal');
     if (!modal) return;
@@ -212,7 +208,7 @@ window.openModal = function(article) {
     document.getElementById('modalTitle').innerText = article.title;
     document.getElementById('modalCat').innerText = article.category || 'Gungo';
     
-    // CAMBIO CLAVE: Usamos .innerHTML para que los <br> se conviertan en saltos de línea reales
+    // CAMBIO VITAL: innerHTML para que desaparezcan las etiquetas y se vean los párrafos y subtítulos
     document.getElementById('modalDesc').innerHTML = article.longDescription || article.summary;
 
     modal.classList.add('open');
@@ -274,7 +270,7 @@ window.sendGungoMessage = function() {
     let msg = input.value.trim();
     if (msg === "") return;
 
-    // Seguridad 1: Rate Limiter (Evita flood de bots)
+    // Seguridad 1: Rate Limiter
     const now = Date.now();
     if (now - ultimoMensajeTime < 4000) {
         window.showToast("Por favor espera 4 segundos entre mensajes.");
