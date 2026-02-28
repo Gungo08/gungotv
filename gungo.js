@@ -1,8 +1,8 @@
 /* ========================================================
-   GUNGO 2026 - SCRIPT PRINCIPAL (FIREBASE, CHAT VIP, ZONATUBER, TTS)
+   GUNGO 2026 - SCRIPT PRINCIPAL HÍBRIDO PRO
    ======================================================== */
 
-// --- CONFIGURACIÓN DE FIREBASE (REEMPLAZA CON TUS DATOS) ---
+// --- CONFIGURACIÓN DE FIREBASE ---
 const firebaseConfig = {
     apiKey: "AIzaSyBv849w6NNk_4QhOnaY3x7LOE38apvc6o4",
     authDomain: "gungo-tv.firebaseapp.com",
@@ -13,10 +13,7 @@ const firebaseConfig = {
     measurementId: "G-MFNZH83Y1X"
 };
 
-// Inicializar Firebase
-if (!firebase.apps.length) {
-    firebase.initializeApp(firebaseConfig);
-}
+if (!firebase.apps.length) { firebase.initializeApp(firebaseConfig); }
 const db = firebase.firestore();
 
 // --- FUNCIONES GLOBALES ---
@@ -71,53 +68,57 @@ window.showToast = function(msg) {
     }, 3000);
 };
 
-/* --- CARGA INTELIGENTE DESDE FIREBASE --- */
+/* --- MOTOR HÍBRIDO (FIREBASE + JSON) --- */
 document.addEventListener("DOMContentLoaded", () => {
     const newsGrid = document.querySelector('.news-grid');
-    const searchInput = document.getElementById('searchInput');
 
     if (newsGrid) {
-        // LECTURA DIRECTA DE FIRESTORE (Ordenado por fecha)
-        db.collection("noticias")
-            .orderBy("publishedAt", "desc")
-            .get()
-            .then((snapshot) => {
-                const data = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-                window.allNewsData = data;
-                
-                // 1. CARGA INMEDIATA: Las primeras 9 noticias
-                const initialNews = window.allNewsData.slice(0, 9);
-                renderNews(initialNews, false); 
-                
-                // 2. CARGA DIFERIDA: El resto al hacer scroll
-                let scrollLoaded = false;
-                window.addEventListener('scroll', function loadRestOnScroll() {
-                    if (!scrollLoaded && window.scrollY > 300) {
-                        scrollLoaded = true;
-                        const remainingNews = window.allNewsData.slice(9);
-                        renderNews(remainingNews, true);
-                        window.removeEventListener('scroll', loadRestOnScroll);
-                    }
-                });
-            })
-            .catch(error => {
-                console.error("Error conectando a Firebase:", error);
-                newsGrid.innerHTML = "<p style='color:#fff;'>Error cargando noticias. Verifica la conexión.</p>";
+        Promise.all([
+            db.collection("noticias").orderBy("publishedAt", "desc").get()
+              .catch(e => { console.warn("Modo Offline Firebase", e); return { docs: [] }; }),
+            fetch('data.json').then(r => r.ok ? r.json() : null)
+              .catch(e => { console.warn("Sin JSON", e); return null; })
+        ])
+        .then(([firebaseSnapshot, jsonData]) => {
+            const firebaseNews = firebaseSnapshot.docs ? firebaseSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })) : [];
+            const jsonNews = jsonData ? [...(jsonData.newsArticles || []), ...(jsonData.loadMoreData || [])] : [];
+            let allCombinedNews = [...firebaseNews, ...jsonNews];
+            
+            // Excluir Mundo de la portada principal
+            window.allNewsData = allCombinedNews.filter(news => {
+                const cat = (news.category || "").toUpperCase();
+                return cat !== "MUNDO" && cat !== "INTERNACIONAL";
             });
+            
+            renderNews(window.allNewsData.slice(0, 9), false); 
+            
+            let scrollLoaded = false;
+            window.addEventListener('scroll', function loadRestOnScroll() {
+                if (!scrollLoaded && window.scrollY > 300) {
+                    scrollLoaded = true;
+                    renderNews(window.allNewsData.slice(9), true);
+                    window.removeEventListener('scroll', loadRestOnScroll);
+                }
+            });
+
+            // CARGAR COMPONENTES FALTANTES (Restaurado)
+            if (jsonData) {
+                if (jsonData.storiesData) renderStories(jsonData.storiesData);
+                if (jsonData.tickerNews) updateTicker(jsonData.tickerNews);
+                if (jsonData.pollData) initPoll(jsonData.pollData);
+            }
+        });
     }
     
     function renderNews(articles, append = false) {
         if (!newsGrid) return;
         if (!append) newsGrid.innerHTML = ''; 
-        
         articles.forEach(news => {
             const card = document.createElement('div');
             card.className = 'news-card visible';
-            const fallbackImg = "https://placehold.co/600x400/111/E50914/png?text=GUNGO+NEWS";
-
             card.innerHTML = `
                 <span class="category-tag">${news.category || 'Noticia'}</span>
-                <img src="${news.image}" alt="${news.title}" onerror="this.src='${fallbackImg}'" loading="lazy">
+                <img src="${news.image}" alt="${news.title}" onerror="this.src='https://placehold.co/600x400/111/E50914/png?text=GUNGO+NEWS'" loading="lazy">
                 <div class="card-content">
                     <h3>${news.title}</h3>
                     <p>${news.summary}</p>
@@ -134,44 +135,82 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // --- ZONATUBER (Reemplaza TikTok por 2 videos de YouTube) ---
+    /* --- FUNCIONES RESTAURADAS PARA QUE FUNCIONE EL JSON --- */
+    function renderStories(stories) {
+        const container = document.getElementById('storiesFeed');
+        if (!container) return;
+        container.innerHTML = stories.map(s => `
+            <div>
+                <div class="story-circle"><img src="${s.img}" alt="${s.name}" onerror="this.src='https://placehold.co/150x150/222/FFFFFF/png?text=User'"></div>
+                <p class="story-name">${s.name}</p>
+            </div>
+        `).join('');
+    }
+
+    function updateTicker(newsList) {
+        const el = document.querySelector('.breaking-text');
+        if (el) el.innerText = newsList.map(item => item.title || item.text || "").join('   •   ') + '   •   ';
+    }
+
+    function initPoll(data) {
+        const title = document.querySelector('.poll-title-text');
+        const optsContainer = document.querySelector('.poll-options');
+        if (title) title.innerText = data.question;
+        if (optsContainer && data.options) {
+            optsContainer.innerHTML = data.options.map(opt => `
+                <div class="poll-option" onclick="window.votePoll(${opt.id})">
+                    <span class="poll-text">${opt.text}</span>
+                    <div class="poll-bar" id="bar-${opt.id}"></div>
+                    <span class="poll-percent" id="percent-${opt.id}">0%</span>
+                </div>
+            `).join('');
+        }
+    }
+
+    window.votePoll = function(id) {
+        if (localStorage.getItem('gungo_poll_voted')) {
+            window.showToast("¡Ya votaste en esta encuesta!");
+            return;
+        }
+        const results = id === 0 ? [68, 32] : [41, 59];
+        ['0', '1'].forEach((idx) => {
+            const bar = document.getElementById(`bar-${idx}`);
+            const pct = document.getElementById(`percent-${idx}`);
+            if (bar) bar.style.width = results[idx] + '%';
+            if (pct) pct.innerText = results[idx] + '%';
+        });
+        localStorage.setItem('gungo_poll_voted', 'true');
+        window.showToast("¡Gracias por tu voto!");
+    };
+
+    // --- ZONATUBER ---
     function renderZonaTuber() {
         const ytGrid = document.getElementById('youtube-grid');
         if (!ytGrid) return;
-        
-        // Coloca aquí los IDs de los 2 videos de YouTube que quieras mostrar
         const videosYouTube = ["dQw4w9WgXcQ", "3JZ_D3ELwOQ"]; 
-        
         videosYouTube.forEach(videoId => {
             const iframe = document.createElement('iframe');
             iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}`);
             iframe.setAttribute('frameborder', '0');
             iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
             iframe.setAttribute('allowfullscreen', 'true');
-            // Estilos profesionales para el video
-            iframe.style.width = "100%";
-            iframe.style.height = "300px";
-            iframe.style.maxWidth = "600px";
-            iframe.style.borderRadius = "15px";
-            iframe.style.boxShadow = "0 10px 30px rgba(0,0,0,0.5)";
+            iframe.style.width = "100%"; iframe.style.height = "300px"; iframe.style.maxWidth = "600px";
+            iframe.style.borderRadius = "15px"; iframe.style.boxShadow = "0 10px 30px rgba(0,0,0,0.5)";
             iframe.style.border = "2px solid #333";
-            
             ytGrid.appendChild(iframe);
         });
     }
     renderZonaTuber();
 });
 
-// --- MODAL ---
+// --- MODAL Y TTS ---
 window.openModal = function(article) {
     const modal = document.getElementById('newsModal');
     if (!modal) return;
-    
     document.getElementById('modalImg').src = article.image;
     document.getElementById('modalTitle').innerText = article.title;
     document.getElementById('modalCat').innerText = article.category || 'Gungo';
     document.getElementById('modalDesc').innerText = article.longDescription || article.summary;
-
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
 };
@@ -179,37 +218,27 @@ window.openModal = function(article) {
 const closeModalBtn = document.querySelector('.close-modal');
 if (closeModalBtn) {
     closeModalBtn.addEventListener('click', () => {
-        if (window.speechSynthesis) {
-            window.speechSynthesis.cancel();
-            const btn = document.getElementById('tts-button');
-            if (btn) {
-                btn.classList.remove('playing');
-                btn.innerHTML = '<i class="fas fa-volume-up"></i> Escuchar noticia';
-            }
-        }
+        if (window.speechSynthesis) { window.speechSynthesis.cancel(); }
+        const btn = document.getElementById('tts-button');
+        if (btn) { btn.classList.remove('playing'); btn.innerHTML = '<i class="fas fa-volume-up"></i> Escuchar noticia'; }
         document.getElementById('newsModal').classList.remove('open');
         document.body.style.overflow = 'auto';
     });
 }
 
-// --- FILTROS DE CATEGORÍA ---
 window.filtrarNoticias = function(categoria) {
     const botones = document.querySelectorAll('.filter-btn');
     botones.forEach(btn => btn.classList.remove('active', 'active-filter'));
-
     const normalize = (s) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase();
     const catBusqueda = normalize(categoria);
-    let noticiasFiltradas;
-
-    if (catBusqueda === 'TODO' || catBusqueda === 'INICIO') {
-        noticiasFiltradas = window.allNewsData;
-    } else {
-        noticiasFiltradas = window.allNewsData.filter(item => item.category && normalize(item.category) === catBusqueda);
-    }
+    
+    let noticiasFiltradas = catBusqueda === 'TODO' || catBusqueda === 'INICIO' 
+        ? window.allNewsData 
+        : window.allNewsData.filter(item => item.category && normalize(item.category) === catBusqueda);
 
     const newsGrid = document.querySelector('.news-grid');
     newsGrid.innerHTML = ''; 
-    // Reutilizamos la lógica de renderizado
+    
     noticiasFiltradas.forEach(news => {
         const card = document.createElement('div');
         card.className = 'news-card visible';
@@ -220,19 +249,19 @@ window.filtrarNoticias = function(categoria) {
                 <h3>${news.title}</h3>
                 <p>${news.summary}</p>
                 <div class="reaction-bar">
-                    <button class="reaction-btn">🔥 <span>15</span></button>
-                    <button class="share-btn-card"><i class="fas fa-share"></i></button>
+                    <button class="reaction-btn" onclick="window.toggleReact(this, event)">🔥 <span>${Math.floor(Math.random()*100)+10}</span></button>
+                    <button class="share-btn-card" onclick="event.stopPropagation(); window.shareNative('${news.title}', 'Gungo.tv')"><i class="fas fa-share"></i></button>
                 </div>
             </div>
         `;
-        card.onclick = () => window.openModal(news);
+        card.addEventListener('click', (e) => { if (!e.target.closest('button')) window.openModal(news); });
         newsGrid.appendChild(card);
     });
-
     if (noticiasFiltradas.length === 0) window.showToast(`Sección ${categoria} sin noticias nuevas.`);
 };
 
-// --- CHAT INTERNO REDISEÑADO (MODERNO Y PROFESIONAL) ---
+// --- CHAT CON SEGURIDAD ANTI-SPAM (Rate Limit) ---
+let ultimoMensajeTime = 0;
 window.sendGungoMessage = function() {
     const input = document.getElementById('chat-input');
     const display = document.getElementById('chat-display');
@@ -241,72 +270,46 @@ window.sendGungoMessage = function() {
     let msg = input.value.trim();
     if (msg === "") return;
 
-    const prohibitedWords = ["http", ".com", "www", "spam", "puta", "mierda", "diablo", "estafa"]; 
-    const isSpam = prohibitedWords.some(word => msg.toLowerCase().includes(word));
+    // Seguridad 1: Rate Limiter (Evita flood de bots)
+    const now = Date.now();
+    if (now - ultimoMensajeTime < 4000) {
+        window.showToast("Por favor espera 4 segundos entre mensajes.");
+        return;
+    }
+    ultimoMensajeTime = now;
 
-    if (isSpam) {
+    // Seguridad 2: Filtro Anti-Groserías
+    const prohibitedWords = ["http", ".com", "www", "spam", "puta", "mierda", "diablo", "estafa"]; 
+    if (prohibitedWords.some(word => msg.toLowerCase().includes(word))) {
         window.showToast("Mensaje bloqueado: Sistema de seguridad activo.");
         input.value = "";
         return;
     }
 
-    // Diseño de Burbuja de Chat Premium
     const msgContainer = document.createElement('div');
-    msgContainer.style.background = "linear-gradient(145deg, #1a1a1a, #222)";
-    msgContainer.style.padding = "15px 20px";
-    msgContainer.style.borderRadius = "0px 20px 20px 20px"; // Efecto burbuja moderna
-    msgContainer.style.border = "1px solid #333";
-    msgContainer.style.borderLeft = "4px solid #FFEB3B";
-    msgContainer.style.fontSize = "0.95rem";
-    msgContainer.style.color = "#fff";
-    msgContainer.style.boxShadow = "0 5px 15px rgba(0,0,0,0.3)";
-    msgContainer.style.marginBottom = "5px";
+    msgContainer.style = "background: linear-gradient(145deg, #1a1a1a, #222); padding: 15px 20px; border-radius: 0px 20px 20px 20px; border: 1px solid #333; border-left: 4px solid #FFEB3B; font-size: 0.95rem; color: #fff; margin-bottom: 5px;";
+    msgContainer.innerHTML = `<strong style="color: #FFEB3B; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 5px;"><i class="fas fa-user-circle"></i> UsuarioVIP_${Math.floor(Math.random() * 999)}</strong> ${msg}`;
     
-    const randomUser = "UsuarioVIP_" + Math.floor(Math.random() * 999);
-    
-    msgContainer.innerHTML = `<strong style="color: #FFEB3B; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 5px;"><i class="fas fa-user-circle"></i> ${randomUser}</strong> ${msg}`;
     display.appendChild(msgContainer);
-    
     display.scrollTop = display.scrollHeight; 
     input.value = "";
 };
 
-// --- MOTOR DE VOZ TEXT-TO-SPEECH (ESPAÑOL) ---
-if (window.speechSynthesis) {
-    window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
-}
-
+// --- TTS ---
+if (window.speechSynthesis) window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
 window.toggleSpeech = function() {
     const synth = window.speechSynthesis;
     const btn = document.getElementById('tts-button');
     if (synth.speaking) {
         synth.cancel();
-        if(btn) {
-            btn.classList.remove('playing');
-            btn.innerHTML = '<i class="fas fa-volume-up"></i> Escuchar noticia';
-        }
+        if(btn) { btn.classList.remove('playing'); btn.innerHTML = '<i class="fas fa-volume-up"></i> Escuchar noticia'; }
         return;
     }
-    const title = document.getElementById('modalTitle').innerText;
-    const description = document.getElementById('modalDesc').innerText;
-    const currentUtterance = new SpeechSynthesisUtterance(`${title}. ${description}`);
-    const voices = synth.getVoices();
-    const spanishVoice = voices.find(v => v.lang.includes('es') || v.name.includes('Spanish') || v.name.includes('Español') || v.name.includes('Monica') || v.name.includes('Paulina'));
-    if (spanishVoice) {
-        currentUtterance.voice = spanishVoice;
-        currentUtterance.lang = spanishVoice.lang;
-    } else {
-        currentUtterance.lang = 'es-ES'; 
-    }
-    currentUtterance.onend = () => {
-        if(btn) {
-            btn.classList.remove('playing');
-            btn.innerHTML = '<i class="fas fa-volume-up"></i> Escuchar noticia';
-        }
-    };
-    if(btn) {
-        btn.classList.add('playing');
-        btn.innerHTML = '<i class="fas fa-stop"></i> Detener lectura';
-    }
-    synth.speak(currentUtterance);
+    const utterance = new SpeechSynthesisUtterance(`${document.getElementById('modalTitle').innerText}. ${document.getElementById('modalDesc').innerText}`);
+    const voice = synth.getVoices().find(v => v.lang.includes('es') || v.name.includes('Spanish') || v.name.includes('Monica'));
+    utterance.voice = voice || synth.getVoices()[0];
+    utterance.onend = () => { if(btn) { btn.classList.remove('playing'); btn.innerHTML = '<i class="fas fa-volume-up"></i> Escuchar noticia'; } };
+    if(btn) { btn.classList.add('playing'); btn.innerHTML = '<i class="fas fa-stop"></i> Detener lectura'; }
+    synth.speak(utterance);
 };
+
