@@ -55,6 +55,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            // Lógica de modo oscuro
             const themeBtn = document.getElementById('theme-toggle');
             const currentTheme = localStorage.getItem('gungo_theme') || 'dark';
             document.documentElement.setAttribute('data-theme', currentTheme);
@@ -67,21 +68,20 @@
                 });
             }
 
-            // MISMAS LLAVES QUE gungo.js
+            // --- CONEXIÓN A FIREBASE ---
             const firebaseConfig = {
-                apiKey: "AIzaSyBv849w6NNk_4QhOnaY3x7LOE38apvc6o4",
+                apiKey: "TU_API_KEY_REAL", // <--- PON TU LLAVE AQUÍ
                 authDomain: "gungo-tv.firebaseapp.com",
                 projectId: "gungo-tv",
                 storageBucket: "gungo-tv.firebasestorage.app",
                 messagingSenderId: "132166094948",
-                appId: "1:132166094948:web:0ca391d2dc20306e85cf71",
-                measurementId: "G-MFNZH83Y1X"
+                appId: "1:132166094948:web:0ca391d2dc20306e85cf71"
             };
 
             if (!firebase.apps.length) { firebase.initializeApp(firebaseConfig); }
             const db = firebase.firestore();
 
-            // FILTRO ESTRICTO: Solo trae "Mundo"
+            // FILTRO ESTRICTO: Solo trae noticias con categoría "Mundo"
             db.collection("noticias")
                 .where("category", "==", "Mundo") 
                 .orderBy("publishedAt", "desc")
@@ -104,21 +104,20 @@
                         card.innerHTML = `
                             <img src="${noticia.image}" alt="${noticia.title}">
                             <div class="card-info">
-                                <span class="tag-mundo">${noticia.category || 'Mundo'}</span>
+                                <span class="tag-mundo">${noticia.category}</span>
                                 <h3>${noticia.title}</h3>
                                 <p style="font-size: 0.9rem; color: var(--text-secondary);">${(noticia.summary || "").substring(0, 90)}...</p>
                             </div>
                         `;
+                        // Clic lleva al inicio
                         card.onclick = () => window.location.href = "index.html"; 
                         grid.appendChild(card);
                     });
                 })
-                .catch(error => {
-                    console.error("Error cargando noticias:", error);
-                    document.getElementById('gridInternacional').innerHTML = "<p style='color:red;'>Atención: Presiona F12 y haz clic en el enlace para crear el índice en Firebase.</p>";
-                });
+                .catch(error => console.error("Error cargando noticias de Mundo:", error));
         });
     </script>
 </body>
 </html>
+
 
