@@ -26,13 +26,18 @@
                 <img src="logo-gungo.png" alt="GUNGO">
             </a>
         </div>
-        <div></div>
+        <div class="nav-actions">
+            <button id="user-auth-btn" onclick="window.openAuthModal()" style="background:transparent; border:2px solid #FFEB3B; color:#FFEB3B; padding:8px 20px; border-radius:20px; font-weight:800; cursor:pointer; font-family:'Poppins', sans-serif; transition: 0.3s;">
+                <i class="fas fa-user"></i> Ingresar
+            </button>
+        </div>
     </div>
 </header>
 
 <section class="hero">
     <div class="hero-content">
-        <h1>Lo que Arde</h1> <p>El portal #1 de Noticias, Entretenimiento y Farandula.</p>
+        <h1>Lo que Arde</h1> 
+        <p>El portal #1 de Noticias, Entretenimiento y Farandula.</p>
         <button class="btn-primary" onclick="document.querySelector('.stories-container').scrollIntoView({behavior: 'smooth'})">Entrar a la noticia</button>
     </div>
 </section>
@@ -40,7 +45,7 @@
 <div class="breaking-news-bar">
     <div class="breaking-label">ÚLTIMA HORA</div>
     <div class="breaking-text-container">
-        <div class="breaking-text">Conectando a los servidores de Gungo...</div>
+        <div class="breaking-text" id="ticker-text">Conectando a los servidores de Gungo...</div>
     </div>
 </div>
 
@@ -80,10 +85,18 @@
     </div>
 </section>
 
-<section class="gungo-chat-section" style="max-width: 800px; margin: 60px auto; padding: 0 5%;">
+<section class="gungo-chat-section" style="max-width: 1200px; margin: 60px auto; padding: 0 5%;">
     <h2 class="section-title" style="font-size: 2.5rem;">Debate Live 💬</h2>
     
     <div style="background: linear-gradient(145deg, #111111, #0a0a0a); border: 1px solid #FFEB3B; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 40px rgba(255, 235, 59, 0.15); position: relative;">
+        
+        <div id="chat-auth-overlay" style="position: absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:10; display:flex; flex-direction:column; justify-content:center; align-items:center; backdrop-filter:blur(5px); text-align:center;">
+            <i class="fas fa-lock" style="font-size: 4rem; color: #FFEB3B; margin-bottom: 20px; text-shadow: 0 0 20px rgba(255,235,59,0.5);"></i>
+            <h3 style="color: #fff; font-size: 1.8rem; margin-bottom: 15px;">Chat Exclusivo</h3>
+            <p style="color: #ccc; margin-bottom: 25px; max-width: 400px;">Debes estar registrado en Gungo para participar en el Debate Live.</p>
+            <button onclick="window.openAuthModal()" class="btn-primary">CREAR CUENTA / INGRESAR</button>
+        </div>
+
         <div style="background: #E50914; padding: 15px; text-align: center; color: white; font-weight: 800; text-transform: uppercase; letter-spacing: 2px;">
             <i class="fas fa-circle" style="color: #FFEB3B; font-size: 0.7rem; animation: pulse-active 1.5s infinite;"></i> En Vivo
         </div>
@@ -95,8 +108,8 @@
         </div>
         
         <div class="chat-input-box" style="display: flex; padding: 20px; background: #050505; gap: 15px; border-top: 1px solid #333;">
-            <input type="text" id="chat-input" placeholder="Escribe tu opinión aquí..." maxlength="140" style="flex: 1; background: #1a1a1a; border: 1px solid #444; color: #fff; padding: 15px 25px; border-radius: 50px; font-family: 'Poppins', sans-serif; outline: none; transition: 0.3s;" onfocus="this.style.borderColor='#FFEB3B'" onblur="this.style.borderColor='#444'">
-            <button onclick="window.sendGungoMessage()" style="background: linear-gradient(90deg, #FFEB3B, #FF6B00); color: #000; border: none; padding: 15px 35px; font-weight: 800; cursor: pointer; border-radius: 50px; font-size: 1rem; transition: 0.3s; box-shadow: 0 4px 15px rgba(255, 235, 59, 0.3);">ENVIAR <i class="fas fa-paper-plane" style="margin-left: 5px;"></i></button>
+            <input type="text" id="chat-input" placeholder="Escribe tu opinión aquí..." maxlength="140" style="flex: 1; background: #1a1a1a; border: 1px solid #444; color: #fff; padding: 15px 25px; border-radius: 50px; font-family: 'Poppins', sans-serif; outline: none;">
+            <button onclick="window.sendGungoMessage()" style="background: linear-gradient(90deg, #FFEB3B, #FF6B00); color: #000; border: none; padding: 15px 35px; font-weight: 800; cursor: pointer; border-radius: 50px; font-size: 1rem;">ENVIAR <i class="fas fa-paper-plane" style="margin-left: 5px;"></i></button>
         </div>
     </div>
 </section>
@@ -128,13 +141,15 @@
         <button class="close-modal">&times;</button>
         <img id="modalImg" src="" alt="">
         <div class="modal-text">
-            <span id="modalCat" class="category-tag" style="position:relative; top:0; left:0; margin-bottom:15px; display:inline-block;"></span>
+            <h2 id="modalTitle" style="font-size: 2.2rem; margin-bottom: 15px; color: var(--brand-yellow); font-weight: 800;"></h2>
+            
+            <span id="modalCat" class="category-tag" style="position:static; display:inline-block; margin-bottom:15px;"></span>
+            
             <div class="tts-container" style="margin-bottom: 20px;">
                 <button id="tts-button" class="btn-tts" onclick="window.toggleSpeech()">
                     <i class="fas fa-volume-up"></i> Escuchar noticia
                 </button>
             </div>
-            <h2 id="modalTitle" style="font-size: 2rem; margin-bottom: 20px;"></h2>
             
             <div id="modalDesc" style="line-height: 1.8; font-size: 1.1rem; transition: color 0.3s ease;"></div>
             
@@ -145,6 +160,19 @@
                 <button class="btn-secondary" onclick="window.shareCurrentModal()">Compartir <i class="fas fa-share-alt"></i></button>
             </div>
         </div>
+    </div>
+</div>
+
+<div id="authModal" class="modal-overlay">
+    <div class="modal-content" style="max-width: 450px; display:block; height:auto; min-height:auto; padding:40px; background:var(--bg-modal); text-align:center;">
+        <button class="close-modal" onclick="window.closeAuthModal()">&times;</button>
+        <h2 style="color:var(--brand-yellow); margin-bottom:10px; font-size:2rem;">Acceso Gungo</h2>
+        <p style="color:var(--text-secondary); margin-bottom:25px; font-size:0.9rem;">Regístrate para comentar y ser VIP.</p>
+        
+        <input type="text" id="auth-username" placeholder="Tu Nombre o Alias (Ej: ElRey99)" style="width:100%; padding:15px; margin-bottom:20px; background:var(--bg-card); border:1px solid var(--border-color); color:var(--text-primary); border-radius:10px; font-family:'Poppins', sans-serif; outline: none;">
+        
+        <button onclick="window.processAuth()" class="btn-primary" style="width:100%; border-radius:10px;">INGRESAR AL SISTEMA</button>
+        <p style="color:#888; margin-top:20px; font-size:0.8rem;">Al continuar, aceptas las reglas de respeto de Gungo.tv</p>
     </div>
 </div>
 
@@ -172,16 +200,10 @@
     .gungo-whatsapp-btn:hover { transform: scale(1.1) rotate(10deg); background-color: #128C7E; }
     @media (max-width: 768px) { .gungo-whatsapp-btn { bottom: 80px; width: 55px; height: 55px; font-size: 30px; line-height: 55px; } }
 
-    /* VARIABLES DE COLOR PARA EL MODAL */
-    :root {
-        --text-modal: #ccc; /* Color para Modo Oscuro */
-    }
-
-    [data-theme='light'] {
-        --text-modal: #1a1a1a; /* Negro profesional para Modo Claro */
-    }
-
-    /* Corrección de sintaxis y color dinámico limpio */
+    /* VARIABLES DE COLOR PARA EL MODAL Y ELIMINACIÓN DE ERROR DE SINTAXIS */
+    :root { --text-modal: #ccc; }
+    [data-theme='light'] { --text-modal: #1a1a1a; }
+    
     #modalDesc {
         color: var(--text-modal) !important;
         line-height: 1.8;
