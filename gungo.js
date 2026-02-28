@@ -1,9 +1,9 @@
 /* ========================================================
-   GUNGO 2026 - SCRIPT PRINCIPAL HÍBRIDO PRO
+   GUNGO 2026 - SCRIPT PRINCIPAL HÍBRIDO PRO (FINAL)
    ======================================================== */
 
-// --- CONFIGURACIÓN DE FIREBASE ---
-const firebaseConfig = {
+// SOLUCIÓN AL ERROR FATAL: Usamos 'var' para evitar colisiones de redeclaración en recargas
+var firebaseConfig = {
     apiKey: "AIzaSyBv849w6NNk_4QhOnaY3x7LOE38apvc6o4",
     authDomain: "gungo-tv.firebaseapp.com",
     projectId: "gungo-tv",
@@ -13,10 +13,12 @@ const firebaseConfig = {
     measurementId: "G-MFNZH83Y1X"
 };
 
-if (!firebase.apps.length) { firebase.initializeApp(firebaseConfig); }
-const db = firebase.firestore();
+if (!firebase.apps.length) { 
+    firebase.initializeApp(firebaseConfig); 
+}
+var db = firebase.firestore();
 
-// --- FUNCIONES GLOBALES ---
+// --- FUNCIONES GLOBALES INTERACTIVAS ---
 window.toggleSearch = function() {
     const overlay = document.getElementById('searchOverlay');
     const input = document.getElementById('searchInput');
@@ -68,8 +70,44 @@ window.showToast = function(msg) {
     }, 3000);
 };
 
-/* --- MOTOR HÍBRIDO (FIREBASE + JSON) --- */
+/* --- SISTEMA DE REGISTRO VIP --- */
+window.openAuthModal = () => {
+    const modal = document.getElementById('authModal');
+    if(modal) modal.classList.add('open');
+};
+
+window.closeAuthModal = () => {
+    const modal = document.getElementById('authModal');
+    if(modal) modal.classList.remove('open');
+};
+
+window.processAuth = function() {
+    const user = document.getElementById('auth-username').value.trim();
+    if(user.length < 3) return window.showToast("Tu alias debe tener al menos 3 letras.");
+    
+    localStorage.setItem('gungo_user', user);
+    window.closeAuthModal();
+    window.checkAuthStatus();
+    window.showToast(`¡Bienvenido a la comunidad, ${user}!`);
+};
+
+window.checkAuthStatus = function() {
+    const user = localStorage.getItem('gungo_user');
+    const overlay = document.getElementById('chat-auth-overlay');
+    const btn = document.getElementById('user-auth-btn');
+    if(user) {
+        if(overlay) overlay.style.display = 'none';
+        if(btn) btn.innerHTML = `<i class="fas fa-user-check"></i> ${user}`;
+    } else {
+        if(overlay) overlay.style.display = 'flex';
+        if(btn) btn.innerHTML = `<i class="fas fa-user"></i> Ingresar`;
+    }
+};
+
+/* --- MOTOR HÍBRIDO RESTAURADO (FIREBASE + JSON) --- */
 document.addEventListener("DOMContentLoaded", () => {
+    window.checkAuthStatus();
+    
     const newsGrid = document.querySelector('.news-grid');
 
     if (newsGrid) {
@@ -83,147 +121,161 @@ document.addEventListener("DOMContentLoaded", () => {
             const firebaseNews = firebaseSnapshot.docs ? firebaseSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })) : [];
             const jsonNews = jsonData ? [...(jsonData.newsArticles || []), ...(jsonData.loadMoreData || [])] : [];
             
-            // Unimos TODAS las noticias sin excluir las internacionales
             window.allNewsData = [...firebaseNews, ...jsonNews];
             
+            // Apagar mensaje de "Conectando..." si hay datos
+            const breakingText = document.getElementById('ticker-text');
+            if (breakingText && window.allNewsData.length > 0) {
+                breakingText.innerText = "GUNGO.TV ACTUALIZADO EN TIEMPO REAL   •   ";
+            }
+
             renderNews(window.allNewsData.slice(0, 9), false); 
             
             let scrollLoaded = false;
             window.addEventListener('scroll', function loadRestOnScroll() {
                 if (!scrollLoaded && window.scrollY > 300) {
                     scrollLoaded = true;
-                    renderNews(window.allNewsData.slice(9), true);
+                    if (window.allNewsData.length > 9) {
+                        renderNews(window.allNewsData.slice(9), true);
+                    }
                     window.removeEventListener('scroll', loadRestOnScroll);
                 }
             });
 
-            // CARGAR COMPONENTES FALTANTES
+            // CARGAR COMPONENTES FALTANTES DEL JSON
             if (jsonData) {
                 if (jsonData.storiesData) renderStories(jsonData.storiesData);
                 if (jsonData.tickerNews) updateTicker(jsonData.tickerNews);
                 if (jsonData.pollData) initPoll(jsonData.pollData);
             }
-        });
+        }).catch(err => console.error("Error cargando noticias:", err));
     }
     
-    function renderNews(articles, append = false) {
-        if (!newsGrid) return;
-        if (!append) newsGrid.innerHTML = ''; 
-        
-        articles.forEach((news, index) => {
-            const card = document.createElement('div');
-            
-            // SOLO la primera noticia absoluta recibe el diseño gigante
-            if (index === 0 && !append) {
-                card.className = 'news-card featured-card visible';
-            } else {
-                card.className = 'news-card visible';
-            }
-            
-            const fallbackImg = "https://placehold.co/600x400/111/E50914/png?text=GUNGO+NEWS";
-
-            card.innerHTML = `
-                <span class="category-tag">${news.category || 'Noticia'}</span>
-                <img src="${news.image}" alt="${news.title}" onerror="this.src='${fallbackImg}'" loading="lazy">
-                <div class="card-content">
-                    <div class="reading-time"><i class="far fa-clock"></i> ${index === 0 && !append ? 'HISTORIA PRINCIPAL' : '3 min'}</div>
-                    <h3>${news.title}</h3>
-                    <p>${news.summary}</p>
-                    <button class="btn-read-more" style="background:transparent; color:#FFEB3B; border:none; font-weight:800; cursor:pointer; padding:0; text-align:left; margin-bottom:15px; display:inline-block;">LEER MÁS →</button>
-                    <div class="reaction-bar">
-                        <button class="reaction-btn" onclick="window.toggleReact(this, event)">🔥 <span>${Math.floor(Math.random()*100)+10}</span></button>
-                        <button class="share-btn-card" onclick="event.stopPropagation(); window.shareNative('${news.title}', 'Gungo.tv')"><i class="fas fa-share"></i></button>
-                    </div>
-                </div>
-            `;
-            card.addEventListener('click', (e) => {
-                if (!e.target.closest('button.reaction-btn') && !e.target.closest('button.share-btn-card')) {
-                    window.openModal(news);
-                }
-            });
-            newsGrid.appendChild(card);
-
-            // --- INYECCIÓN DEL BANNER PUBLICITARIO PREMIUM ---
-            if (index === 0 && !append) {
-                const adBanner = document.createElement('div');
-                adBanner.className = 'ad-container ad-leaderboard';
-                adBanner.style.gridColumn = '1 / -1'; 
-                adBanner.style.margin = '20px auto 40px';
-                adBanner.innerHTML = 'ESPACIO PUBLICITARIO PREMIUM (INSERTA TU CÓDIGO AQUÍ)';
-                newsGrid.appendChild(adBanner);
-            }
-        });
-    }
-
-    /* --- FUNCIONES RESTAURADAS PARA QUE FUNCIONE EL JSON --- */
-    function renderStories(stories) {
-        const container = document.getElementById('storiesFeed');
-        if (!container) return;
-        container.innerHTML = stories.map(s => `
-            <div>
-                <div class="story-circle"><img src="${s.img}" alt="${s.name}" onerror="this.src='https://placehold.co/150x150/222/FFFFFF/png?text=User'"></div>
-                <p class="story-name">${s.name}</p>
-            </div>
-        `).join('');
-    }
-
-    function updateTicker(newsList) {
-        const el = document.querySelector('.breaking-text');
-        if (el) el.innerText = newsList.map(item => item.title || item.text || "").join('   •   ') + '   •   ';
-    }
-
-    function initPoll(data) {
-        const title = document.querySelector('.poll-title-text');
-        const optsContainer = document.querySelector('.poll-options');
-        if (title) title.innerText = data.question;
-        if (optsContainer && data.options) {
-            optsContainer.innerHTML = data.options.map(opt => `
-                <div class="poll-option" onclick="window.votePoll(${opt.id})">
-                    <span class="poll-text">${opt.text}</span>
-                    <div class="poll-bar" id="bar-${opt.id}"></div>
-                    <span class="poll-percent" id="percent-${opt.id}">0%</span>
-                </div>
-            `).join('');
-        }
-    }
-
-    window.votePoll = function(id) {
-        if (localStorage.getItem('gungo_poll_voted')) {
-            window.showToast("¡Ya votaste en esta encuesta!");
-            return;
-        }
-        const results = id === 0 ? [68, 32] : [41, 59];
-        ['0', '1'].forEach((idx) => {
-            const bar = document.getElementById(`bar-${idx}`);
-            const pct = document.getElementById(`percent-${idx}`);
-            if (bar) bar.style.width = results[idx] + '%';
-            if (pct) pct.innerText = results[idx] + '%';
-        });
-        localStorage.setItem('gungo_poll_voted', 'true');
-        window.showToast("¡Gracias por tu voto!");
-    };
-
-    // --- ZONATUBER ---
-    function renderZonaTuber() {
-        const ytGrid = document.getElementById('youtube-grid');
-        if (!ytGrid) return;
-        const videosYouTube = ["I0K_Eorx7yY", "4cPlfn7WUPw"]; 
-        videosYouTube.forEach(videoId => {
-            const iframe = document.createElement('iframe');
-            iframe.setAttribute('src', `https://www.youtube-nocookie.com/embed/${videoId}`);
-            iframe.setAttribute('frameborder', '0');
-            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-            iframe.setAttribute('allowfullscreen', 'true');
-            iframe.style.width = "100%"; iframe.style.height = "300px"; iframe.style.maxWidth = "600px";
-            iframe.style.borderRadius = "15px"; iframe.style.boxShadow = "0 10px 30px rgba(0,0,0,0.5)";
-            iframe.style.border = "2px solid #333";
-            ytGrid.appendChild(iframe);
-        });
-    }
+    // Iniciar ZonaTuber
     renderZonaTuber();
 });
 
-// --- MODAL PREMIUM: GUNGO PULSE ---
+// --- RENDERIZADO VISUAL DE TARJETAS ---
+function renderNews(articles, append = false) {
+    const newsGrid = document.querySelector('.news-grid');
+    if (!newsGrid) return;
+    if (!append) newsGrid.innerHTML = ''; 
+    
+    articles.forEach((news, index) => {
+        const card = document.createElement('div');
+        
+        // CSS Blindado: Asignamos 'featured-card' SÓLO a la primera para mayor seguridad
+        if (index === 0 && !append) {
+            card.className = 'news-card featured-card visible';
+        } else {
+            card.className = 'news-card visible';
+        }
+        
+        const fallbackImg = "https://placehold.co/600x400/111/E50914/png?text=GUNGO+NEWS";
+
+        card.innerHTML = `
+            <span class="category-tag">${news.category || 'Noticia'}</span>
+            <img src="${news.image}" alt="${news.title}" onerror="this.src='${fallbackImg}'" loading="lazy">
+            <div class="card-content">
+                <div class="reading-time"><i class="far fa-clock"></i> ${index === 0 && !append ? 'HISTORIA PRINCIPAL' : '3 min'}</div>
+                <h3>${news.title}</h3>
+                <p>${news.summary}</p>
+                <button class="btn-read-more" style="background:transparent; color:#FFEB3B; border:none; font-weight:800; cursor:pointer; padding:0; text-align:left; margin-bottom:15px; display:inline-block;">LEER MÁS →</button>
+                <div class="reaction-bar">
+                    <button class="reaction-btn" onclick="window.toggleReact(this, event)">🔥 <span>${Math.floor(Math.random()*100)+10}</span></button>
+                    <button class="share-btn-card" onclick="event.stopPropagation(); window.shareNative('${news.title}', 'Gungo.tv')"><i class="fas fa-share"></i></button>
+                </div>
+            </div>
+        `;
+        
+        card.addEventListener('click', (e) => {
+            if (!e.target.closest('button.reaction-btn') && !e.target.closest('button.share-btn-card')) {
+                window.openModal(news);
+            }
+        });
+        newsGrid.appendChild(card);
+
+        // Inyección de Publicidad Premium
+        if (index === 0 && !append) {
+            const adBanner = document.createElement('div');
+            adBanner.className = 'ad-container ad-leaderboard';
+            adBanner.style.gridColumn = '1 / -1'; 
+            adBanner.style.margin = '20px auto 40px';
+            adBanner.innerHTML = 'ESPACIO PUBLICITARIO PREMIUM (INSERTA TU CÓDIGO AQUÍ)';
+            newsGrid.appendChild(adBanner);
+        }
+    });
+}
+
+// --- FUNCIONES SECUNDARIAS RESTAURADAS ---
+function renderStories(stories) {
+    const container = document.getElementById('storiesFeed');
+    if (!container) return;
+    container.innerHTML = stories.map(s => `
+        <div>
+            <div class="story-circle"><img src="${s.img}" alt="${s.name}" onerror="this.src='https://placehold.co/150x150/222/FFFFFF/png?text=User'"></div>
+            <p class="story-name">${s.name}</p>
+        </div>
+    `).join('');
+}
+
+function updateTicker(newsList) {
+    const el = document.querySelector('.breaking-text');
+    if (el && newsList.length > 0) {
+        el.innerText = newsList.map(item => item.title || item.text || "").join('   •   ') + '   •   ';
+    }
+}
+
+function initPoll(data) {
+    const title = document.querySelector('.poll-title-text');
+    const optsContainer = document.querySelector('.poll-options');
+    if (title) title.innerText = data.question;
+    if (optsContainer && data.options) {
+        optsContainer.innerHTML = data.options.map(opt => `
+            <div class="poll-option" onclick="window.votePoll(${opt.id})">
+                <span class="poll-text">${opt.text}</span>
+                <div class="poll-bar" id="bar-${opt.id}"></div>
+                <span class="poll-percent" id="percent-${opt.id}">0%</span>
+            </div>
+        `).join('');
+    }
+}
+
+window.votePoll = function(id) {
+    if (localStorage.getItem('gungo_poll_voted')) {
+        window.showToast("¡Ya votaste en esta encuesta!");
+        return;
+    }
+    const results = id === 0 ? [68, 32] : [41, 59];
+    ['0', '1'].forEach((idx) => {
+        const bar = document.getElementById(`bar-${idx}`);
+        const pct = document.getElementById(`percent-${idx}`);
+        if (bar) bar.style.width = results[idx] + '%';
+        if (pct) pct.innerText = results[idx] + '%';
+    });
+    localStorage.setItem('gungo_poll_voted', 'true');
+    window.showToast("¡Gracias por tu voto!");
+};
+
+// --- ZONATUBER (NO-COOKIE Y SIN ERRORES) ---
+function renderZonaTuber() {
+    const ytGrid = document.getElementById('youtube-grid');
+    if (!ytGrid) return;
+    const videosYouTube = ["I0K_Eorx7yY", "4cPlfn7WUPw"]; 
+    videosYouTube.forEach(videoId => {
+        const iframe = document.createElement('iframe');
+        iframe.setAttribute('src', `https://www.youtube-nocookie.com/embed/${videoId}`);
+        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+        iframe.setAttribute('allowfullscreen', 'true');
+        iframe.style.width = "100%"; iframe.style.height = "300px"; iframe.style.maxWidth = "600px";
+        iframe.style.borderRadius = "15px"; iframe.style.boxShadow = "0 10px 30px rgba(0,0,0,0.5)";
+        iframe.style.border = "2px solid #333";
+        ytGrid.appendChild(iframe);
+    });
+}
+
+// --- MODAL DE LECTURA PREMIUM (GUNGO PULSE) ---
 window.openModal = function(article) {
     const modal = document.getElementById('newsModal');
     if (!modal) return;
@@ -231,12 +283,9 @@ window.openModal = function(article) {
     document.getElementById('modalImg').src = article.image;
     document.getElementById('modalTitle').innerText = article.title;
     
-    // 1. CÁLCULO INTELIGENTE DEL TIEMPO DE LECTURA
     const textContent = article.longDescription || article.summary;
     const wordCount = textContent.split(/\s+/).length;
     const readingTime = Math.ceil(wordCount / 200);
-
-    // 2. GENERADOR DE "SOCIAL PROOF"
     const liveViewers = Math.floor(Math.random() * (120 - 35 + 1)) + 35;
 
     document.getElementById('modalCat').innerHTML = `
@@ -253,7 +302,6 @@ window.openModal = function(article) {
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
 
-    // 3. MOTOR DE LA BARRA DE PROGRESO DE LECTURA
     const modalTextContainer = document.querySelector('.modal-text');
     const progressBar = document.getElementById('reading-progress');
     
@@ -277,6 +325,7 @@ if (closeModalBtn) {
     });
 }
 
+// --- SISTEMA DE FILTRADO ---
 window.filtrarNoticias = function(categoria) {
     const botones = document.querySelectorAll('.filter-btn');
     botones.forEach(btn => btn.classList.remove('active', 'active-filter'));
@@ -287,35 +336,23 @@ window.filtrarNoticias = function(categoria) {
         ? window.allNewsData 
         : window.allNewsData.filter(item => item.category && normalize(item.category) === catBusqueda);
 
-    const newsGrid = document.querySelector('.news-grid');
-    newsGrid.innerHTML = ''; 
-    
-    noticiasFiltradas.forEach(news => {
-        const card = document.createElement('div');
-        card.className = 'news-card visible';
-        card.innerHTML = `
-            <span class="category-tag">${news.category}</span>
-            <img src="${news.image}" alt="${news.title}">
-            <div class="card-content">
-                <h3>${news.title}</h3>
-                <p>${news.summary}</p>
-                <div class="reaction-bar">
-                    <button class="reaction-btn" onclick="window.toggleReact(this, event)">🔥 <span>${Math.floor(Math.random()*100)+10}</span></button>
-                    <button class="share-btn-card" onclick="event.stopPropagation(); window.shareNative('${news.title}', 'Gungo.tv')"><i class="fas fa-share"></i></button>
-                </div>
-            </div>
-        `;
-        card.addEventListener('click', (e) => { if (!e.target.closest('button')) window.openModal(news); });
-        newsGrid.appendChild(card);
-    });
+    renderNews(noticiasFiltradas, false);
     if (noticiasFiltradas.length === 0) window.showToast(`Sección ${categoria} sin noticias nuevas.`);
 };
 
-// --- CHAT CON SEGURIDAD ANTI-SPAM ---
+// --- CHAT VIP Y SEGURIDAD ---
 let ultimoMensajeTime = 0;
 window.sendGungoMessage = function() {
     const input = document.getElementById('chat-input');
     const display = document.getElementById('chat-display');
+    const currentUser = localStorage.getItem('gungo_user');
+
+    if (!currentUser) {
+        window.showToast("Debes iniciar sesión para comentar.");
+        window.openAuthModal();
+        return;
+    }
+
     if(!input || !display) return;
     
     let msg = input.value.trim();
@@ -337,14 +374,15 @@ window.sendGungoMessage = function() {
 
     const msgContainer = document.createElement('div');
     msgContainer.style = "background: linear-gradient(145deg, #1a1a1a, #222); padding: 15px 20px; border-radius: 0px 20px 20px 20px; border: 1px solid #333; border-left: 4px solid #FFEB3B; font-size: 0.95rem; color: #fff; margin-bottom: 5px;";
-    msgContainer.innerHTML = `<strong style="color: #FFEB3B; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 5px;"><i class="fas fa-user-circle"></i> UsuarioVIP_${Math.floor(Math.random() * 999)}</strong> ${msg}`;
+    
+    msgContainer.innerHTML = `<strong style="color: #FFEB3B; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 5px;"><i class="fas fa-check-circle"></i> ${currentUser}</strong> ${msg}`;
     
     display.appendChild(msgContainer);
     display.scrollTop = display.scrollHeight; 
     input.value = "";
 };
 
-// --- TTS ---
+// --- SISTEMA DE VOZ (TTS) ---
 if (window.speechSynthesis) window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
 window.toggleSpeech = function() {
     const synth = window.speechSynthesis;
