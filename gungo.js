@@ -1,7 +1,8 @@
 /* ========================================================
-   GUNGO 2026 - SCRIPT PRINCIPAL HÍBRIDO PRO (FINAL GIT)
+   GUNGO 2026 - SCRIPT PRINCIPAL HÍBRIDO PRO (RESTAURADO AL 100%)
    ======================================================== */
 
+// SOLUCIÓN AL ERROR FATAL: Usamos 'var' para evitar colisiones en recargas
 var firebaseConfig = {
     apiKey: "AIzaSyBv849w6NNk_4QhOnaY3x7LOE38apvc6o4",
     authDomain: "gungo-tv.firebaseapp.com",
@@ -87,7 +88,7 @@ window.processAuth = function() {
     localStorage.setItem('gungo_user', user);
     window.closeAuthModal();
     window.checkAuthStatus();
-    window.showToast(`¡Bienvenido a la comunidad, ${user}!`);
+    window.showToast(`¡Bienvenido a la comunidad VIP, ${user}!`);
 };
 
 window.checkAuthStatus = function() {
@@ -103,7 +104,7 @@ window.checkAuthStatus = function() {
     }
 };
 
-/* --- MOTOR HÍBRIDO RESTAURADO --- */
+/* --- MOTOR HÍBRIDO RESTAURADO (FIREBASE + JSON) --- */
 document.addEventListener("DOMContentLoaded", () => {
     window.checkAuthStatus();
     
@@ -122,9 +123,10 @@ document.addEventListener("DOMContentLoaded", () => {
             
             window.allNewsData = [...firebaseNews, ...jsonNews];
             
-            const breakingText = document.getElementById('ticker-text');
+            // Apagar mensaje de "Conectando..." si hay datos
+            const breakingText = document.getElementById('ticker-text') || document.querySelector('.breaking-text');
             if (breakingText && window.allNewsData.length > 0) {
-                breakingText.innerText = "GUNGO.TV ACTUALIZADO EN TIEMPO REAL   •   ";
+                breakingText.innerText = "GUNGO.TV ACTUALIZADO EN TIEMPO REAL   •   " + window.allNewsData.map(item => item.title).slice(0,5).join('   •   ');
             }
 
             renderNews(window.allNewsData.slice(0, 9), false); 
@@ -140,18 +142,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
 
+            // RESTAURACIÓN DE COMPONENTES DEL JSON (Historias, Encuestas)
             if (jsonData) {
                 if (jsonData.storiesData) renderStories(jsonData.storiesData);
-                if (jsonData.tickerNews) updateTicker(jsonData.tickerNews);
                 if (jsonData.pollData) initPoll(jsonData.pollData);
             }
         }).catch(err => console.error("Error cargando noticias:", err));
     }
     
+    // Iniciar ZonaTuber
     renderZonaTuber();
 });
 
-// --- RENDERIZADO VISUAL DE TARJETAS (CON LIMPIEZA DE HTML) ---
+// --- RENDERIZADO VISUAL DE TARJETAS ---
 function renderNews(articles, append = false) {
     const newsGrid = document.querySelector('.news-grid');
     if (!newsGrid) return;
@@ -206,7 +209,7 @@ function renderNews(articles, append = false) {
     });
 }
 
-// --- FUNCIONES SECUNDARIAS ---
+// --- FUNCIONES SECUNDARIAS RESTAURADAS (Historias y Encuestas) ---
 function renderStories(stories) {
     const container = document.getElementById('storiesFeed');
     if (!container) return;
@@ -220,7 +223,7 @@ function renderStories(stories) {
 
 function updateTicker(newsList) {
     const el = document.querySelector('.breaking-text');
-    if (el && newsList.length > 0) {
+    if (el && newsList && newsList.length > 0) {
         el.innerText = newsList.map(item => item.title || item.text || "").join('   •   ') + '   •   ';
     }
 }
@@ -274,7 +277,7 @@ function renderZonaTuber() {
     });
 }
 
-// --- MODAL DE LECTURA PREMIUM (PULSE) ---
+// --- MODAL DE LECTURA PREMIUM (GUNGO PULSE) ---
 window.openModal = function(article) {
     const modal = document.getElementById('newsModal');
     if (!modal) return;
@@ -324,7 +327,7 @@ if (closeModalBtn) {
     });
 }
 
-// --- FILTRADO ---
+// --- FILTRADO DE CATEGORÍAS ---
 window.filtrarNoticias = function(categoria) {
     const botones = document.querySelectorAll('.filter-btn');
     botones.forEach(btn => btn.classList.remove('active', 'active-filter'));
@@ -339,7 +342,7 @@ window.filtrarNoticias = function(categoria) {
     if (noticiasFiltradas.length === 0) window.showToast(`Sección ${categoria} sin noticias nuevas.`);
 };
 
-// --- CHAT VIP ---
+// --- CHAT VIP Y SEGURIDAD ---
 let ultimoMensajeTime = 0;
 window.sendGungoMessage = function() {
     const input = document.getElementById('chat-input');
@@ -381,7 +384,7 @@ window.sendGungoMessage = function() {
     input.value = "";
 };
 
-// --- TTS ---
+// --- SISTEMA DE VOZ (TTS) ---
 if (window.speechSynthesis) window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
 window.toggleSpeech = function() {
     const synth = window.speechSynthesis;
@@ -397,18 +400,18 @@ window.toggleSpeech = function() {
     utterance.onend = () => { if(btn) { btn.classList.remove('playing'); btn.innerHTML = '<i class="fas fa-volume-up"></i> Escuchar noticia'; } };
     if(btn) { btn.classList.add('playing'); btn.innerHTML = '<i class="fas fa-stop"></i> Detener lectura'; }
     synth.speak(utterance);
+}; // AQUI CIERRA CORRECTAMENTE LA FUNCIÓN DE VOZ
 
-    /* ======================================================= */
+/* ======================================================= */
 /* MOTOR INYECTADO: GUNGO DYNAMIC ISLAND                   */
 /* ======================================================= */
+// AHORA ESTÁ TOTALMENTE SEPARADO Y PROTEGIDO
 document.addEventListener("DOMContentLoaded", () => {
     const island = document.getElementById('gungo-island');
     const islandText = document.getElementById('island-text');
     
-    // Si el elemento no existe, el código se detiene silenciosamente
     if (!island || !islandText) return;
 
-    // Base de datos local de mensajes psicológicos
     const mensajesRadar = [
         "🔥 Alguien en Santo Domingo lee la noticia principal",
         "💬 Un nuevo usuario VIP entró al Debate Live",
@@ -418,16 +421,12 @@ document.addEventListener("DOMContentLoaded", () => {
         "🚨 Atención: Revisa las alertas de clima en Noticias"
     ];
 
-    // Bucle infinito: Se ejecuta cada 25 segundos
     setInterval(() => {
-        // 1. Elegir un mensaje aleatorio
         const randomMsg = mensajesRadar[Math.floor(Math.random() * mensajesRadar.length)];
         islandText.innerText = randomMsg;
         
-        // 2. Bajar la isla a la pantalla
         island.classList.add('show');
         
-        // 3. Subirla y ocultarla después de 5 segundos
         setTimeout(() => {
             island.classList.remove('show');
         }, 5000);
@@ -435,4 +434,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 25000); 
 });
 
-};
