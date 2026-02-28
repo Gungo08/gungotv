@@ -168,6 +168,21 @@
     }
     .gungo-whatsapp-btn:hover { transform: scale(1.1) rotate(10deg); background-color: #128C7E; }
     @media (max-width: 768px) { .gungo-whatsapp-btn { bottom: 80px; width: 55px; height: 55px; font-size: 30px; line-height: 55px; } }
+     :root {
+    --text-modal: #ccc; /* Color para Modo Oscuro */
+}
+
+[data-theme='light'] {
+    --text-modal: #1a1a1a; /* Negro profesional para Modo Claro */
+}
+
+#modalDesc {
+    color: var(--text-modal) !important;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    font-size: 1.1rem;
+    transition: color 0.3s ease; /* Para que el cambio sea suave */
+}
 </style>
 
 <script>
@@ -187,6 +202,7 @@
 </script>
 </body>
 </html>
+
 
 
 
