@@ -371,5 +371,35 @@ footer { background-color: #000000 !important; color: #ffffff !important; paddin
     
     /* Ajuste botón whatsapp */
     .gungo-whatsapp-btn { bottom: 80px; width: 55px; height: 55px; font-size: 30px; line-height: 55px; }
+
+     /* FIX: Apagar tarjeta gigante en móviles y volverla tamaño normal */
+    .news-grid > .news-card.featured-card:first-child { 
+        display: block !important; 
+        flex-direction: column !important; 
+        max-height: none !important; 
+    }
+    .news-grid > .news-card.featured-card:first-child img { 
+        width: 100% !important; 
+        height: auto !important; 
+        aspect-ratio: 16/9 !important; 
+        object-position: center !important;
+    }
+    .news-grid > .news-card.featured-card:first-child .card-content { 
+        width: 100% !important; 
+        padding: 20px !important; 
+        display: block !important; 
+    }
+    .news-grid > .news-card.featured-card:first-child .card-title-fix { 
+        font-size: 1.4rem !important; /* Tamaño normal para el título en celular */
+        line-height: 1.3 !important; 
+        word-break: break-word !important; /* Obliga a que el texto no rompa la pantalla */
+        overflow-wrap: break-word !important;
+    }
+    .news-grid > .news-card.featured-card:first-child .summary-text { 
+        -webkit-line-clamp: 3 !important; /* En celular solo mostramos 3 líneas */
+        line-clamp: 3 !important; 
+        font-size: 0.95rem !important; 
+    }
 }
+
 
