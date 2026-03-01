@@ -106,6 +106,20 @@ window.checkAuthStatus = function() {
 
 /* --- MOTOR HÍBRIDO RESTAURADO (FIREBASE + JSON) --- */
 document.addEventListener("DOMContentLoaded", () => {
+    
+    // --- CAMBIO 3: Lógica del tema (Dark/Light mode) movida aquí ---
+    const themeBtn = document.getElementById('theme-toggle');
+    const currentTheme = localStorage.getItem('gungo_theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    if (themeBtn) {
+        themeBtn.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            let newTheme = theme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('gungo_theme', newTheme);
+        });
+    }
+
     window.checkAuthStatus();
     
     const newsGrid = document.querySelector('.news-grid');
@@ -123,7 +137,6 @@ document.addEventListener("DOMContentLoaded", () => {
             
             window.allNewsData = [...firebaseNews, ...jsonNews];
             
-            // Apagar mensaje de "Conectando..." si hay datos
             const breakingText = document.getElementById('ticker-text') || document.querySelector('.breaking-text');
             if (breakingText && window.allNewsData.length > 0) {
                 breakingText.innerText = "GUNGO.TV ACTUALIZADO EN TIEMPO REAL   •   " + window.allNewsData.map(item => item.title).slice(0,5).join('   •   ');
@@ -142,7 +155,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
 
-            // RESTAURACIÓN DE COMPONENTES DEL JSON (Historias, Encuestas)
             if (jsonData) {
                 if (jsonData.storiesData) renderStories(jsonData.storiesData);
                 if (jsonData.pollData) initPoll(jsonData.pollData);
@@ -150,11 +162,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }).catch(err => console.error("Error cargando noticias:", err));
     }
     
-    // Iniciar ZonaTuber
     renderZonaTuber();
 });
 
-// --- RENDERIZADO VISUAL DE TARJETAS ---
 function renderNews(articles, append = false) {
     const newsGrid = document.querySelector('.news-grid');
     if (!newsGrid) return;
@@ -163,7 +173,6 @@ function renderNews(articles, append = false) {
     articles.forEach((news, index) => {
         const card = document.createElement('div');
         
-        // Asignación de clase
         if (index === 0 && !append) {
             card.className = 'news-card featured-card visible';
         } else {
@@ -171,8 +180,6 @@ function renderNews(articles, append = false) {
         }
         
         const fallbackImg = "https://placehold.co/600x400/111/E50914/png?text=GUNGO+NEWS";
-
-        // EL FIX MAESTRO: Limpiar todo HTML del sumario para que el CSS funcione
         let textoLimpio = news.summary ? news.summary.replace(/<[^>]*>?/gm, '') : '';
 
         card.innerHTML = `
@@ -197,7 +204,6 @@ function renderNews(articles, append = false) {
         });
         newsGrid.appendChild(card);
 
-        // Inyección de Publicidad Premium
         if (index === 0 && !append) {
             const adBanner = document.createElement('div');
             adBanner.className = 'ad-container ad-leaderboard';
@@ -209,7 +215,6 @@ function renderNews(articles, append = false) {
     });
 }
 
-// --- FUNCIONES SECUNDARIAS RESTAURADAS (Historias y Encuestas) ---
 function renderStories(stories) {
     const container = document.getElementById('storiesFeed');
     if (!container) return;
@@ -270,9 +275,8 @@ function renderZonaTuber() {
         iframe.setAttribute('frameborder', '0');
         iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
         iframe.setAttribute('allowfullscreen', 'true');
-        iframe.style.width = "100%"; iframe.style.height = "300px"; iframe.style.maxWidth = "600px";
-        iframe.style.borderRadius = "15px"; iframe.style.boxShadow = "0 10px 30px rgba(0,0,0,0.5)";
-        iframe.style.border = "2px solid #333";
+        // --- CAMBIO 1: Se aplican los estilos vía clase CSS ---
+        iframe.classList.add('zonatuber-iframe'); 
         ytGrid.appendChild(iframe);
     });
 }
@@ -295,23 +299,27 @@ window.openModal = function(article) {
         <span class="live-readers"><i class="fas fa-circle"></i> ${liveViewers} leyendo ahora</span>
     `;
 
-    document.getElementById('modalDesc').innerHTML = `
-        <div id="progress-container"><div id="reading-progress"></div></div>
-        <div class="smart-read-time"><i class="far fa-clock"></i> Tiempo estimado: ${readingTime} min</div>
-        ${textContent}
-    `;
+    // --- CAMBIO 2: Inyección separada para no destruir contenedores HTML ---
+    const readTimeBadge = document.getElementById('read-time-badge');
+    if (readTimeBadge) {
+        readTimeBadge.innerHTML = `<div class="smart-read-time"><i class="far fa-clock"></i> Tiempo estimado: ${readingTime} min</div>`;
+    }
+    
+    document.getElementById('modalDesc').innerHTML = textContent;
+
+    const progressBar = document.getElementById('reading-progress');
+    if (progressBar) progressBar.style.width = '0%'; // Reset al abrir
 
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
 
     const modalTextContainer = document.querySelector('.modal-text');
-    const progressBar = document.getElementById('reading-progress');
     
     modalTextContainer.onscroll = null; 
     modalTextContainer.onscroll = function() {
         const scrollTop = modalTextContainer.scrollTop;
         const scrollHeight = modalTextContainer.scrollHeight - modalTextContainer.clientHeight;
-        const scrollPercentage = (scrollTop / scrollHeight) * 100;
+        const scrollPercentage = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
         if (progressBar) { progressBar.style.width = scrollPercentage + '%'; }
     };
 };
@@ -327,7 +335,6 @@ if (closeModalBtn) {
     });
 }
 
-// --- FILTRADO DE CATEGORÍAS ---
 window.filtrarNoticias = function(categoria) {
     const botones = document.querySelectorAll('.filter-btn');
     botones.forEach(btn => btn.classList.remove('active', 'active-filter'));
@@ -342,7 +349,6 @@ window.filtrarNoticias = function(categoria) {
     if (noticiasFiltradas.length === 0) window.showToast(`Sección ${categoria} sin noticias nuevas.`);
 };
 
-// --- CHAT VIP Y SEGURIDAD ---
 let ultimoMensajeTime = 0;
 window.sendGungoMessage = function() {
     const input = document.getElementById('chat-input');
@@ -384,7 +390,6 @@ window.sendGungoMessage = function() {
     input.value = "";
 };
 
-// --- SISTEMA DE VOZ (TTS) ---
 if (window.speechSynthesis) window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
 window.toggleSpeech = function() {
     const synth = window.speechSynthesis;
@@ -400,12 +405,8 @@ window.toggleSpeech = function() {
     utterance.onend = () => { if(btn) { btn.classList.remove('playing'); btn.innerHTML = '<i class="fas fa-volume-up"></i> Escuchar noticia'; } };
     if(btn) { btn.classList.add('playing'); btn.innerHTML = '<i class="fas fa-stop"></i> Detener lectura'; }
     synth.speak(utterance);
-}; // AQUI CIERRA CORRECTAMENTE LA FUNCIÓN DE VOZ
+}; 
 
-/* ======================================================= */
-/* MOTOR INYECTADO: GUNGO DYNAMIC ISLAND                   */
-/* ======================================================= */
-// AHORA ESTÁ TOTALMENTE SEPARADO Y PROTEGIDO
 document.addEventListener("DOMContentLoaded", () => {
     const island = document.getElementById('gungo-island');
     const islandText = document.getElementById('island-text');
