@@ -82,8 +82,8 @@
     </div>
 </section>
 
-<section class="stories-container-new">
-    <h3 class="stories-title">
+<section class="stories-container">
+    <h3 class="stories-title" style="color: var(--brand-yellow); margin-bottom: 15px; font-weight: 800;">
         <i class="fas fa-star"></i> VIP Stories
     </h3>
     <div class="stories-wrapper" id="storiesFeed"></div>
@@ -144,7 +144,10 @@
     <div class="modal-content">
         <button class="close-modal">&times;</button>
         <img id="modalImg" src="" alt="">
+        
         <div class="modal-text">
+            <div id="progress-container" style="margin: -40px -40px 20px -40px; width: calc(100% + 80px);"><div id="reading-progress"></div></div>
+            
             <h2 id="modalTitle" style="font-size: 2.2rem; margin-bottom: 15px; color: var(--brand-yellow); font-weight: 800;"></h2>
             
             <span id="modalCat" class="category-tag" style="position:static; display:inline-block; margin-bottom:15px;"></span>
@@ -155,7 +158,9 @@
                 </button>
             </div>
             
-            <div id="modalDesc" style="line-height: 1.8; font-size: 1.1rem; transition: color 0.3s ease;"></div>
+            <div id="read-time-badge"></div>
+            
+            <div id="modalDesc"></div>
             
             <div class="ad-container ad-square" style="margin: 20px 0;">Publicidad Artículo</div>
 
@@ -187,60 +192,24 @@
 
 <div id="toast-container" class="toast-container"></div>
 
-<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
-<script src="gungo.js"></script>
-
 <a href="https://wa.me/18290000000?text=Hola%20Gungo,%20tengo%20una%20noticia..." target="_blank" class="gungo-whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
-
-<style>
-    .gungo-whatsapp-btn {
-        position: fixed; bottom: 60px; right: 20px; width: 65px; height: 65px;
-        background-color: #25D366; color: white; border-radius: 50%;
-        text-align: center; font-size: 38px; line-height: 65px; 
-        box-shadow: 0px 4px 20px rgba(0,0,0,0.6); z-index: 999999 !important; 
-        transition: transform 0.3s ease; text-decoration: none; border: 2px solid white; display: block; 
-    }
-    .gungo-whatsapp-btn:hover { transform: scale(1.1) rotate(10deg); background-color: #128C7E; }
-    @media (max-width: 768px) { .gungo-whatsapp-btn { bottom: 80px; width: 55px; height: 55px; font-size: 30px; line-height: 55px; } }
-
-    :root { --text-modal: #ccc; }
-    [data-theme='light'] { --text-modal: #1a1a1a; }
-    
-    #modalDesc {
-        color: var(--text-modal) !important;
-        line-height: 1.8;
-        white-space: pre-wrap;
-    }
-</style>
-
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const themeBtn = document.getElementById('theme-toggle');
-        const currentTheme = localStorage.getItem('gungo_theme') || 'dark';
-        document.documentElement.setAttribute('data-theme', currentTheme);
-        if (themeBtn) {
-            themeBtn.addEventListener('click', () => {
-                let theme = document.documentElement.getAttribute('data-theme');
-                let newTheme = theme === 'dark' ? 'light' : 'dark';
-                document.documentElement.setAttribute('data-theme', newTheme);
-                localStorage.setItem('gungo_theme', newTheme);
-            });
-        }
-    });
-</script>
 
 <div id="gungo-island" class="gungo-island">
     <div class="island-icon"><i class="fas fa-bolt"></i></div>
     <div class="island-text" id="island-text">Conectando radar...</div>
 </div>
 
-<div class="side-social-floating">
-    <a href="https://www.instagram.com/gungotv/" target="_blank" class="s-btn insta"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.youtube.com/@gungotv" target="_blank" class="s-btn yt"><i class="fab fa-youtube"></i></a>
-    <a href="https://x.com/@gungotv" target="_blank" class="s-btn tw"><i class="fab fa-twitter"></i></a>
+<div class="side-social-bar">
+    <a href="https://www.instagram.com/gungotv/" target="_blank" class="s-link insta"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@gungotv" target="_blank" class="s-link youtube"><i class="fab fa-youtube"></i></a>
+    <a href="https://x.com/@gungotv" target="_blank" class="s-link twitter"><i class="fab fa-twitter"></i></a>
 </div>
+
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+<script src="gungo.js"></script>
 
 </body>
 </html>
+
 
