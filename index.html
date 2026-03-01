@@ -20,14 +20,15 @@
 <body>
 
 <header>
-    <div class="navbar" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-        <div class="logo-container">
+    <div class="navbar" style="display: flex; justify-content: space-between; align-items: center; width: 100%; position: relative;">
+        <div style="width: 120px;"></div> 
+        <div class="logo-container" style="position: absolute; left: 50%; transform: translateX(-50%);">
             <a href="index.html" class="logo-link" onclick="window.scrollTo(0,0)">
                 <img src="logo-gungo.png" alt="GUNGO">
             </a>
         </div>
-        <div class="nav-actions">
-            <button id="user-auth-btn" onclick="window.openAuthModal()" style="background:transparent; border:2px solid #FFEB3B; color:#FFEB3B; padding:8px 20px; border-radius:20px; font-weight:800; cursor:pointer; font-family:'Poppins', sans-serif; transition: 0.3s;">
+        <div class="nav-actions" style="width: 120px; display: flex; justify-content: flex-end;">
+            <button id="user-auth-btn" onclick="window.openAuthModal()" style="background:transparent; border:2px solid #FFEB3B; color:#FFEB3B; padding:8px 20px; border-radius:20px; font-weight:800; cursor:pointer;">
                 <i class="fas fa-user"></i> Ingresar
             </button>
         </div>
@@ -38,7 +39,7 @@
     <div class="hero-content">
         <h1>Lo que Arde</h1> 
         <p>El portal #1 de Noticias, Entretenimiento y Farandula.</p>
-        <button class="btn-primary" onclick="document.querySelector('.stories-container').scrollIntoView({behavior: 'smooth'})">Entrar a la noticia</button>
+        <button class="btn-primary" onclick="document.querySelector('.news-grid').scrollIntoView({behavior: 'smooth'})">Entrar a la noticia</button>
     </div>
 </section>
 
@@ -48,10 +49,6 @@
         <div class="breaking-text" id="ticker-text">Conectando a los servidores de Gungo...</div>
     </div>
 </div>
-
-<section class="stories-container">
-    <div class="stories-wrapper" id="storiesFeed"></div>
-</section>
 
 <div class="ad-container ad-leaderboard">Publicidad Principal</div>
 
@@ -83,6 +80,13 @@
     <h2 class="section-title">ZonaTuber 📺</h2>
     <div id="youtube-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(325px, 1fr)); gap: 30px; justify-items: center;">
     </div>
+</section>
+
+<section class="stories-container-new">
+    <h3 class="stories-title">
+        <i class="fas fa-star"></i> VIP Stories
+    </h3>
+    <div class="stories-wrapper" id="storiesFeed"></div>
 </section>
 
 <section class="gungo-chat-section" style="max-width: 1200px; margin: 60px auto; padding: 0 5%;">
@@ -200,7 +204,6 @@
     .gungo-whatsapp-btn:hover { transform: scale(1.1) rotate(10deg); background-color: #128C7E; }
     @media (max-width: 768px) { .gungo-whatsapp-btn { bottom: 80px; width: 55px; height: 55px; font-size: 30px; line-height: 55px; } }
 
-    /* VARIABLES DE COLOR PARA EL MODAL Y ELIMINACIÓN DE ERROR DE SINTAXIS */
     :root { --text-modal: #ccc; }
     [data-theme='light'] { --text-modal: #1a1a1a; }
     
@@ -226,11 +229,18 @@
         }
     });
 </script>
-   
-    <div id="gungo-island" class="gungo-island">
+
+<div id="gungo-island" class="gungo-island">
     <div class="island-icon"><i class="fas fa-bolt"></i></div>
     <div class="island-text" id="island-text">Conectando radar...</div>
 </div>
+
+<div class="side-social-floating">
+    <a href="https://www.instagram.com/gungotv/" target="_blank" class="s-btn insta"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@gungotv" target="_blank" class="s-btn yt"><i class="fab fa-youtube"></i></a>
+    <a href="https://x.com/@gungotv" target="_blank" class="s-btn tw"><i class="fab fa-twitter"></i></a>
+</div>
+
 </body>
 </html>
 
