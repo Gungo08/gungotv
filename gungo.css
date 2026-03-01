@@ -115,6 +115,19 @@ header.scrolled .logo-link img { height: 60px; }
     flex-direction: row !important;
     max-height: 500px !important;
 }
+
+ /* AJUSTES PARA QUE LA TARJETA GIGANTE NO SE VEA ENTRECORTADA */
+.news-grid > .news-card.featured-card:first-child .summary-text {
+    -webkit-line-clamp: 6 !important; /* Permite hasta 6 líneas de texto en vez de 3 */
+    line-clamp: 6 !important;
+    font-size: 1.05rem !important; /* Texto ligeramente más grande */
+    margin-bottom: 25px !important;
+}
+
+.news-grid > .news-card.featured-card:first-child img {
+    object-position: top center !important; /* Enfoca la imagen desde arriba, evita cortar cabezas */
+}
+
 .news-grid > .news-card.featured-card:first-child img { width: 60% !important; height: 100% !important; object-fit: cover !important; }
 .news-grid > .news-card.featured-card:first-child .card-content { width: 40% !important; padding: 40px !important; display: flex; flex-direction: column; justify-content: center; }
 .news-grid > .news-card.featured-card:first-child .card-title-fix { 
@@ -359,3 +372,4 @@ footer { background-color: #000000 !important; color: #ffffff !important; paddin
     /* Ajuste botón whatsapp */
     .gungo-whatsapp-btn { bottom: 80px; width: 55px; height: 55px; font-size: 30px; line-height: 55px; }
 }
+
