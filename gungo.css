@@ -318,6 +318,7 @@ footer { background-color: #000000 !important; color: #ffffff !important; paddin
 }
 
 .s-link.insta:hover { background: #E1306C; transform: translateX(-12px); }
+.s-link.tiktok:hover { background: #FE2C55; transform: translateX(-12px); }
 .s-link.youtube:hover { background: #FF0000; transform: translateX(-12px); }
 .s-link.twitter:hover { background: #1DA1F2; transform: translateX(-12px); }
 
@@ -401,5 +402,6 @@ footer { background-color: #000000 !important; color: #ffffff !important; paddin
         font-size: 0.95rem !important; 
     }
 }
+
 
 
