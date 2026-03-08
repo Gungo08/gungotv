@@ -103,15 +103,6 @@
 "citation": "Listín Diario+1"
 }
   
-  ],
-  "storiesData": [
-    { "id": "s1", "name": "Karol G", "img": "logo-gungo7.png", "hasNew": true },
-    { "id": "s2", "name": "Bad Bunny", "img": "logo-gungo8.png", "hasNew": true },
-    { "id": "s3", "name": "Yailin", "img": "logo-gungo9.png", "hasNew": true },
-    { "id": "s4", "name": "El Alfa", "img": "logo-gungo6.png", "hasNew": false },
-    { "id": "s5", "name": "Tekashi", "img": "logo-gungo10.png", "hasNew": true },
-    { "id": "s6", "name": "Feid", "img": "logo-gungo3.png", "hasNew": true }
-  ],
   "pollData": {
     "id": "poll-feb-2026",
     "question": "¿Crees que la relación de Feid y Karol G llegue al altar en 2026?",
@@ -123,3 +114,4 @@
     "footerText": "Más de 15k votos hoy."
   }
 }
+
