@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" 
+      content="default-src 'self' https: data: blob: 'unsafe-inline' 'unsafe-eval'; 
+               img-src * data: blob:; 
+               style-src * 'unsafe-inline'; 
+               script-src * 'unsafe-inline' 'unsafe-eval' https://www.instagram.com; 
+               frame-src 'self' https://www.instagram.com https://www.youtube.com https://www.youtube-nocookie.com; 
+               font-src * data:; 
+               connect-src *;">
+    <title>GUNGO • Urbano & Redes</title>
+    <link rel="icon" type="image/png" href="logo-gungo3.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="gungo.css">
+
+    <style>
+        /* ==================================================== */
+        /* 🔥 VIP STORIES: ANIMACIÓN NUEVA HISTORIA             */
+        /* ==================================================== */
+        .story-circle.new-story {
+            border: 3px solid #E1306C;
+            animation: pulse-story 1.5s infinite;
+        }
+        @keyframes pulse-story {
+            0% { box-shadow: 0 0 0 0 rgba(225, 48, 108, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(225, 48, 108, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(225, 48, 108, 0); }
+        }
+
+        /* ==================================================== */
+        /* 🔥 INSTAGRAM EMBED: OPTIMIZADO                       */
+        /* ==================================================== */
+        .instagram-wrapper {
+            width: 100% !important;
+            max-width: 600px !important;
+            margin: 0 auto !important;
+            padding: 0;
+            background: transparent;
+            border: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            border-radius: 15px;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+        }
+        
+        .instagram-wrapper blockquote.instagram-media,
+        .instagram-wrapper .instagram-media {
+            width: 100% !important;
+            max-width: 100% !important;
+            min-width: auto !important;
+            margin: 0 auto !important;
+            border: none !important;
+            border-radius: 15px;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .scroll-anim {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .scroll-anim.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .instagram-wrapper.is-visible:hover {
+            transform: scale(1.04) translateY(-10px);
+            box-shadow: 0 25px 50px rgba(255, 235, 59, 0.25);
+            z-index: 10;
+        }
+
+        @media (max-width: 768px) {
+            .instagram-wrapper { max-width: 100% !important; border-radius: 10px; }
+            .instagram-wrapper.is-visible:hover { transform: translateY(0) scale(1); box-shadow: 0 10px 30px rgba(0,0,0,0.6); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="gungo-island" id="gungo-island">
+    <div class="island-icon"><i class="fas fa-bolt"></i></div>
+    <div class="island-text" id="island-text">Urbano & Redes Live</div>
+</div>
+
+<div class="side-social-bar">
+    <a href="https://www.instagram.com/gungo.tv/" target="_blank" class="s-link insta"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.tiktok.com/@gungo.tv" target="_blank" class="s-link tiktok"><i class="fab fa-tiktok"></i></a>
+    <a href="https://www.youtube.com/@gungotv" target="_blank" class="s-link youtube"><i class="fab fa-youtube"></i></a>
+    <a href="https://x.com/@gungotv" target="_blank" class="s-link twitter"><i class="fab fa-twitter"></i></a>
+</div>
+
+<header>
+    <div class="navbar">
+        <div style="width: 120px;"></div> 
+        <div class="logo-container" style="position: absolute; left: 50%; transform: translateX(-50%);">
+            <a href="index.html" class="logo-link"><img src="logo-gungo.png" alt="GUNGO"></a>
+        </div>
+        <div class="nav-actions" style="width: 120px; display: flex; justify-content: flex-end;">
+            <a href="index.html" style="color: var(--brand-yellow); text-decoration: none; font-weight: 800;">← VOLVER</a>
+        </div>
+    </div>
+</header>
+
+<section class="hero" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1974') center/cover;">
+    <div class="hero-content">
+        <h1>Urbano & Redes</h1> 
+        <p>El pulso de la calle, el género y lo más viral del movimiento.</p>
+    </div>
+</section>
+
+<section class="stories-container">
+    <h3 class="stories-title" style="color: var(--brand-yellow); margin-bottom: 15px; font-weight: 800; text-align: center;">
+        <i class="fas fa-star"></i> VIP Stories
+    </h3>
+    <div class="stories-wrapper" id="storiesFeed"></div>
+</section>
+
+<section>
+    <h2 class="section-title">Lo más Trendy</h2>
+    <div class="news-grid" id="urbano-grid"></div>
+</section>
+
+<section style="padding: 20px 0 60px 0;">
+    <h2 class="section-title">En el Radar Social 🔥</h2>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 50px; padding: 0 20px;">
+        <div class="instagram-wrapper scroll-anim"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DVSFEYkDhjn/" data-instgrm-version="14"></blockquote></div>
+        <div class="instagram-wrapper scroll-anim"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DVelS23EiUp/" data-instgrm-version="14"></blockquote></div>
+        <div class="instagram-wrapper scroll-anim"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DVmNQfdj1tE/" data-instgrm-version="14"></blockquote></div>
+        <div class="instagram-wrapper scroll-anim"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DU843iGj_Oz/" data-instgrm-version="14"></blockquote></div>
+    </div>
+</section>
+
+<div id="newsModal" class="modal-overlay">
+    <div class="modal-content">
+        <button class="close-modal">&times;</button>
+        
+        <div class="modal-text">
+            <div id="progress-container" style="margin: -40px -40px 20px -40px; width: calc(100% + 80px);"><div id="reading-progress"></div></div>
+            <h2 id="modalTitle" style="font-size: 2.2rem; margin-bottom: 15px; color: var(--brand-yellow); font-weight: 800;"></h2>
+            <span id="modalCat" class="category-tag" style="position:static; display:inline-block; margin-bottom:15px;"></span>
+            
+            <div class="tts-container" style="margin-bottom: 20px;">
+                <button id="tts-button" class="btn-tts" onclick="window.toggleSpeech()">
+                    <i class="fas fa-volume-up"></i> Escuchar noticia
+                </button>
+            </div>
+            
+            <div id="read-time-badge"></div>
+            <div id="modalDesc"></div>
+            <div class="ad-container ad-square" style="margin: 20px 0;">Publicidad Artículo</div>
+
+            <div class="modal-buttons" style="display:flex; gap:10px; margin-top:30px; margin-bottom: 30px;">
+                <button class="btn-primary" onclick="document.querySelector('.close-modal').click(); window.showToast('El debate se encuentra en la página principal.')">Ir al Debate</button>
+                <button class="btn-secondary" onclick="window.shareCurrentModal()">Compartir <i class="fas fa-share-alt"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <div>
+            <div style="margin-bottom: 20px;">
+                <a href="#" onclick="window.scrollTo(0,0)" style="display: inline-block;">
+                    <img src="logo-gungo.png" alt="GUNGO" style="height: 100px; width: auto; filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));">
+                </a>
+            </div>
+            <p>Tu dosis diaria de Noticias, Entretenimiento y Farándula.</p>
+        </div>
+        <div>
+            <h3>Síguenos</h3>
+            <div class="social-icons">
+             <a href="https://www.instagram.com/gungotv/" target="_blank"><i class="fab fa-instagram"></i></a>
+             <a href="https://www.tiktok.com/@gungotv" target="_blank"><i class="fab fa-tiktok"></i></a>
+             <a href="https://www.youtube.com/@gungotv" target="_blank"><i class="fab fa-youtube"></i></a>
+             <a href="https://x.com/@gungotv" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div><p>© 2026 GUNGO • Todos los derechos reservados</p></div>
+    </div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+<script async src="//www.instagram.com/embed.js"></script>
+<script src="urbano.js"></script>
+
+</body>
+</html>

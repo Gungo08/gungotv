@@ -1,0 +1,32 @@
+{
+  "storiesData": [
+    {
+      "id": "u1",
+      "name": "Tokischa",
+      "img": "https://placehold.co/150x150/111/FFEB3B/png?text=Tokischa",
+      "hasNew": true
+    },
+    {
+      "id": "u2",
+      "name": "Alofoke",
+      "img": "https://placehold.co/150x150/111/E1306C/png?text=Alofoke",
+      "hasNew": true
+    },
+    {
+      "id": "u3",
+      "name": "Yailin",
+      "img": "logo-gungo9.png",
+      "hasNew": false
+    }
+  ],
+  "newsArticles": [
+    {
+      "id": 888123,
+      "category": "Urbano & Redes",
+      "title": "Noticia de Prueba JSON Urbano",
+      "summary": "Esta noticia viene exclusivamente del nuevo archivo JSON separado.",
+      "longDescription": "Si estás leyendo esto, significa que el sistema híbrido independiente está funcionando a la perfección.",
+      "image":"https://www.univision.com/_next/image?url=https%3A%2F%2Fst1.uvnimg.com%2Fdims4%2Fdefault%2F8bbfe42%2F2147483647%2Fthumbnail%2F1240x698%2Fquality%2F75%2F%3Furl%3Dhttp%253A%252F%252Fuvn-brightspot.s3.amazonaws.com%252Fc9%252F37%252Fe629a59448b28bb4f273a533adae%252F6e4bd26c228b4c0dacfa498882368da0&w=1280&q=75"
+    }
+  ]
+}
