@@ -63,7 +63,7 @@ jobs:
           run: npx playwright test || true
 
       - name: Deploy preview to Netlify (optional)
-        if: github.event_name == 'pull_request' && secrets.NETLIFY_AUTH_TOKEN
+        if: github.event_name == 'push' || github.event_name == 'pull_request'
         uses: nwtgck/actions-netlify@v1
         with:
           publish-dir: ./dist
