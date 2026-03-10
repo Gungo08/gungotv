@@ -8,10 +8,10 @@ const CANALES_OFICIALES = {
     mlb: "UC08mnbiC4FykqpHqbEWgFcg",      // MLB Oficial
     nba: "UCWJ2lWNubArHWmf3FIHbfcQ",      // NBA Oficial
     futbol: "UCpcTrCXblq78GZrTUTLWeBw",   // Fútbol (Tu canal elegido)
-    nhl: "UCe1MWsy0RHgxEM4kbsjLtbA",      // NHL Oficial
+    nhl: "UCqFMzb-4AUf6WAIbl132QKA",      // NHL Oficial
     voleibol: "UCGP7V-7K1xVb1eE3b2iNXXg", // Volleyball World
     tenis: "UC-2hhqBG5Su7s91_HmhaODQ",    // ATP Tour
-    golf: "UCU8C1n7XmH00mQG84H0s1GA",      // PGA TOUR
+    golf: "UC5igJFdBQVqg7hXFI7075OQ",      // PGA TOUR
     boxeo: "UC518BHmSjZ2R1UanxO9nHmg",    // Top Rank Boxing
     lacrosse: "UCvP1PWePZc24l_n4sX_R0Kw"  // Premier Lacrosse League
 };
@@ -120,3 +120,4 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(renderizarDeportes, 1000); 
 
 });
+
