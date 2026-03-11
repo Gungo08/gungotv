@@ -143,6 +143,22 @@
         .btn-text-hide { display: none; } 
         .btn-top-gungo { font-size: 0.65rem; padding: 10px 5px; }
     }
+    
+    /* 📱 AJUSTE RESPONSIVO PARA EL CHAT EN MÓVILES */
+@media (max-width: 480px) {
+    .chat-input-box {
+        padding: 10px !important; /* Reduce el espacio exterior */
+        gap: 8px !important;      /* Acerca el botón a la caja de texto */
+    }
+    .chat-input-box input {
+        padding: 12px 15px !important; /* Caja de texto más compacta */
+    }
+    .chat-input-box button {
+        padding: 12px 20px !important; /* Botón más estrecho para que quepa */
+        font-size: 0.85rem !important; /* Letra ligeramente más pequeña */
+        white-space: nowrap;           /* Evita que la palabra ENVIAR se rompa */
+    }
+}
 </style>
 </head>
 <body>
