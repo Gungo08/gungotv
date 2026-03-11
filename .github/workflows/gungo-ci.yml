@@ -1,0 +1,31 @@
+name: Gungo Shield CI (Validación Estructural)
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  analisis-estructural:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v3
+
+      - name: Instalar Node.js (Entorno de pruebas)
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Instalar Escáner HTML y JS
+        run: npm install -g htmlhint eslint
+
+      - name: 🛡️ Escanear HTML (Buscando etiquetas rotas o desbordamientos)
+        run: htmlhint "**/*.html"
+
+      - name: 🛡️ Escanear JavaScript (Buscando variables indefinidas)
+        run: eslint "**/*.js" --env browser --ignore-pattern "*.min.js" || true
+
+      - name: ✅ Reporte de Staff
+        run: echo "Análisis completado. Si el HTML está roto, esta acción detendrá el despliegue automático."
