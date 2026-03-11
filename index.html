@@ -10,27 +10,141 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="gungo.css">
+
+    <style>
+    /* ========================================================
+       🛡️ ESTRUCTURA DE CABECERA FLOTANTE PRO (PRODUCCIÓN)
+       ======================================================== */
+    
+    /* 1. Header transparente para mantener el efecto flotante */
+    header {
+        width: 100%;
+        display: block;
+        position: relative;
+        z-index: 1000;
+        background: transparent !important; /* Quita el cuadro negro sólido */
+        padding: 15px 5%;
+        box-sizing: border-box;
+    }
+
+    .top-navbar-gungo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .top-logo-zone {
+        display: flex;
+        align-items: center;
+    }
+
+    .top-logo-zone img {
+        max-height: 65px;
+        transition: 0.3s;
+        filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.8)); /* Resalta el logo sin usar fondos */
+    }
+
+    /* 2. Contenedor de botones sin fondo */
+    .top-btn-container {
+        display: flex;
+        gap: 15px;
+        background: transparent;
+    }
+
+    /* 3. Botones con efecto flotante real */
+    .btn-top-gungo {
+        font-size: 0.85rem;
+        padding: 10px 20px;
+        border: 2px solid #FFEB3B;
+        text-decoration: none;
+        color: #fff;
+        border-radius: 50px;
+        font-weight: 800;
+        background: rgba(10, 10, 10, 0.85); /* Fondo oscuro semitransparente solo en el botón */
+        backdrop-filter: blur(5px);
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.6); /* Sombra para que floten */
+        transition: 0.3s;
+    }
+
+    .btn-top-gungo:hover {
+        background: #FFEB3B;
+        color: #000;
+    }
+
+    /* 📱 MAGIA PARA DISPOSITIVOS MÓVILES */
+    @media (max-width: 768px) {
+        header {
+            padding: 15px 20px !important;
+        }
+
+        .top-navbar-gungo {
+            flex-direction: column; /* Apila de arriba hacia abajo */
+            align-items: center;
+            gap: 18px; /* Espacio perfecto entre el logo y los botones */
+        }
+
+        /* Logo centrado */
+        .top-logo-zone {
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* Botones: Uno a la izquierda, otro a la derecha */
+        .top-btn-container {
+            width: 100%;
+            flex-direction: row; 
+            justify-content: space-between; /* Empuja un botón a cada extremo */
+            gap: 10px;
+        }
+
+        .btn-top-gungo {
+            width: 48%; /* Cada botón toma casi la mitad, dejando un respiro en el medio */
+            justify-content: center; /* Centra el texto y el ícono dentro del botón */
+            padding: 12px 5px;
+            font-size: 0.75rem;
+            letter-spacing: -0.3px;
+        }
+    }
+
+    /* Celulares muy pequeños (Pantallas estrechas) */
+    @media (max-width: 380px) {
+        .btn-text-hide { display: none; } /* Oculta "& REDES" para evitar que el texto rompa el botón */
+        .btn-top-gungo { font-size: 0.65rem; padding: 10px 5px; }
+    }
+
+    /* 4. Sintillo de Criptomonedas obligado a bajar */
+    .market-ticker {
+        display: block;
+        position: relative;
+        z-index: 10;
+        margin-top: 15px; /* Separación con los botones flotantes */
+        clear: both; /* Asegura que no suba a los lados */
+    }
+</style>
 </head>
 <body>
 
 <header style="padding: 15px 5%; width: 100%; box-sizing: border-box;">
-    <div class="navbar" style="display: flex; justify-content: space-between; align-items: center; width: 100%; position: relative;">
+    <div class="top-navbar-gungo">
         
-        <div style="display: flex; justify-content: flex-start; flex: 1; z-index: 2;">
-            <a href="urbano.html" class="filter-btn" style="font-size: 0.9rem; padding: 10px 25px; border: 2px solid #FFEB3B; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; color: #fff; border-radius: 50px; font-weight: 800; background: #0a0a0a; transition: 0.3s; white-space: nowrap;">
-                <i class="fas fa-bolt" style="font-size: 0.9rem; color: #FFEB3B;"></i> URBANO & REDES
-            </a>
-        </div>
-
-        <div class="logo-container" style="position: absolute; left: 50%; transform: translateX(-50%); z-index: 1;">
+        <div class="top-logo-zone">
             <a href="index.html" class="logo-link" onclick="window.scrollTo(0,0)">
                 <img src="logo-gungo.png" alt="GUNGO" style="max-height: 70px;">
             </a>
         </div>
 
-        <div style="display: flex; justify-content: flex-end; flex: 1; z-index: 2;">
-            <a href="deportes.html" class="filter-btn" style="font-size: 0.9rem; padding: 10px 25px; border: 2px solid #FFEB3B; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; color: #fff; border-radius: 50px; font-weight: 800; background: #0a0a0a; transition: 0.3s; white-space: nowrap;">
-                🏆 GUNGO DEPORTES
+        <div class="top-btn-container">
+            <a href="urbano.html" class="btn-top-gungo">
+                <i class="fas fa-bolt" style="color: #FFEB3B;"></i> URBANO <span class="btn-text-hide">& REDES</span>
+            </a>
+            <a href="deportes.html" class="btn-top-gungo">
+                🏆 DEPORTES
             </a>
         </div>
 
