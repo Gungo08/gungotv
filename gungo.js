@@ -5,7 +5,7 @@
 
     // 1. INICIALIZACIÓN DE FIREBASE
     var firebaseConfig = {
-        apiKey: "AIzaSyCumX5UWoZEgxz7iOOOR9OXQGG2YWDX7ik" ,
+        apiKey: "AIzaSyBv849w6NNk_4QhOnaY3x7LOE38apvc6o4",
         authDomain: "gungo-tv.firebaseapp.com",
         projectId: "gungo-tv",
         storageBucket: "gungo-tv.firebasestorage.app",
@@ -276,7 +276,7 @@
                     <p class="summary-text">${textoLimpio}</p>
                     <button class="btn-read-more" style="background:transparent; color:#FFEB3B; border:none; font-weight:800; cursor:pointer; padding:0; text-align:left; margin-bottom:15px; display:inline-block;">LEER MÁS →</button>
                     <div class="reaction-bar">
-                        <button class="reaction-btn" onclick="window.darLikeGeneral('${uniqueId}', this, event)">🔥 <span>${initialLikes}</span></button>
+                        <button class="reaction-btn" onclick="window.darLikeGeneral('${uniqueId}', this, event)">🔥 <span id="contador-${uniqueId}">${initialLikes}</span></button>
                         <button class="share-btn-card" onclick="event.stopPropagation(); window.shareNative('${news.title}', 'Gungo.tv')"><i class="fas fa-share"></i></button>
                     </div>
                 </div>
@@ -893,5 +893,54 @@
         window.checkCookieConsent();
     });
 
-
 })(); // <-- CIERRE DEL ESCUDO DE SEGURIDAD IIFE
+
+/* ========================================================
+   🔥 MOTOR DE LECTURA EN TIEMPO REAL (Nivel Staff)
+   ======================================================== */
+
+window.sincronizarContadoresGungo = function(coleccion) {
+    // Verificamos que la base de datos (db) esté encendida
+    if (typeof db === 'undefined' || !db) {
+        console.warn("⏳ Esperando a Firebase para leer los contadores...");
+        return;
+    }
+
+    // onSnapshot es un radar: avisa inmediatamente si hay cambios en la base de datos
+    db.collection(coleccion).onSnapshot((snapshot) => {
+        snapshot.forEach((doc) => {
+            const datos = doc.data();
+            const cantidadLikes = datos.likes || 0; // Si no hay likes, es 0
+            
+            // Buscamos en el HTML un espacio que tenga el ID exacto del documento
+            const elementoContador = document.getElementById(`contador-${doc.id}`);
+            
+            // Si el espacio existe en la pantalla, le estampamos el número
+            if (elementoContador) {
+                // Animación sutil si el número cambia
+                if (elementoContador.innerText !== cantidadLikes.toString() && elementoContador.innerText !== "0") {
+                    elementoContador.style.transform = "scale(1.3)";
+                    elementoContador.style.color = "#FFEB3B";
+                    setTimeout(() => {
+                        elementoContador.style.transform = "scale(1)";
+                        elementoContador.style.color = ""; // Vuelve al color original
+                    }, 300);
+                }
+                
+                elementoContador.innerText = cantidadLikes;
+            }
+        });
+    }, (error) => {
+        console.error(`Error leyendo los contadores de ${coleccion}:`, error.message);
+    });
+};
+
+// Encendemos los radares automáticamente cuando el usuario entra a la página
+document.addEventListener('DOMContentLoaded', () => {
+    // Retrasamos medio segundo para asegurar que Firebase ya cargó
+    setTimeout(() => {
+        sincronizarContadoresGungo('interacciones_noticias');
+        sincronizarContadoresGungo('encuestas');
+        sincronizarContadoresGungo('interacciones_deportes');
+    }, 500);
+});
