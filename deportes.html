@@ -294,8 +294,8 @@ html, body {
         <div>
             <h3>Síguenos</h3>
             <div class="social-icons">
-             <a href="https://www.instagram.com/gungotv/" target="_blank"><i class="fab fa-instagram"></i></a>
-             <a href="https://www.tiktok.com/@gungotv" target="_blank"><i class="fab fa-tiktok"></i></a>
+             <a href="https://www.instagram.com/gungo.tv/" target="_blank"><i class="fab fa-instagram"></i></a>
+             <a href="https://www.tiktok.com/@gungo.tv" target="_blank"><i class="fab fa-tiktok"></i></a>
              <a href="https://www.youtube.com/@gungootv" target="_blank"><i class="fab fa-youtube"></i></a>
              <a href="https://x.com/@gungotv" target="_blank"><i class="fab fa-twitter"></i></a>
             </div>
@@ -453,7 +453,19 @@ html, body {
         });
       </script>
 
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
     <script src="deportes-api.js"></script>
-</body>
 
+    <div id="cookie-shield" style="display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 500px; background: rgba(10, 10, 10, 0.95); border: 1px solid #FFEB3B; border-radius: 15px; padding: 20px; z-index: 99999; box-shadow: 0 10px 40px rgba(0,0,0,0.8); backdrop-filter: blur(10px);">
+    <div style="display: flex; align-items: center; gap: 15px;">
+        <div style="font-size: 1.5rem;">🍪</div>
+        <div style="flex: 1;">
+            <h4 style="color: #FFEB3B; margin: 0 0 5px 0; font-family: 'Poppins', sans-serif;">Gungo Privacy Shield</h4>
+            <p style="color: #ccc; font-size: 0.8rem; margin: 0; line-height: 1.4;">Usamos cookies técnicas para asegurar que tus votos y likes sean reales y para mejorar tu experiencia con videos VIP.</p>
+        </div>
+        <button onclick="aceptarCookiesGungo()" style="background: #FFEB3B; color: #000; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 800; cursor: pointer; transition: 0.3s;">ACEPTAR</button>
+    </div>
+</div>
+
+</body>
 </html>
