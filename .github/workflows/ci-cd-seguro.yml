@@ -112,7 +112,7 @@ jobs:
           cat pylint.txt flake8.txt bandit.json npm-audit.json pip-audit.json >> reporte-final.md
 
       - name: 📤 Subir Reporte como Artifact
-        uses: actions/checkou@v6
+        uses: actions/checkout@v6
         with:
           name: 🔧 Setup Node.js 20
           path: actions/setup-node@v6
@@ -121,5 +121,6 @@ jobs:
       - name: 🚀 Despliegue (solo si pasa todo)
         if: success() && github.ref == 'refs/heads/main'
         run: echo "✅ Todo seguro según OWASP/NIST/PCI → Despliegue autorizado"
+
 
 
