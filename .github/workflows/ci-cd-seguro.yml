@@ -55,8 +55,8 @@ jobs:
           bandit -r . -f json > bandit.json
 
       # ==================== SEGURIDAD GLOBAL (OWASP + NIST + PCI) ====================
-      - name: 🔍 Escaneo de Secrets (NIST + PCI-DSS Req. 8.6.2)
-        uses: trufflesecurity/trufflehog@v3
+      - name: "🔍 Escaneo de Secrets (NIST + PCI-DSS Req. 8.6.2)"
+        uses: trufflesecurity/trufflehog@main
         with:
           path: ./
           extra_args: --only-verified --fail
@@ -121,3 +121,4 @@ jobs:
       - name: 🚀 Despliegue (solo si pasa todo)
         if: success() && github.ref == 'refs/heads/main'
         run: echo "✅ Todo seguro según OWASP/NIST/PCI → Despliegue autorizado"
+
