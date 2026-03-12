@@ -6,6 +6,10 @@ on:
   push:
     branches: [main]
 
+# Forzamos a GitHub a usar las herramientas actualizadas a Node 24
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   security-and-build:
     runs-on: ubuntu-latest
@@ -13,11 +17,11 @@ jobs:
       - name: Checkout código
         uses: actions/checkout@v4
 
-      # 1. Setup de Entorno Node.js (Exclusivo para tu arquitectura)
+      # 1. Setup de Entorno Node.js (Actualizado a la versión 24)
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
       
       - name: Instalar dependencias y plugins de seguridad
         run: |
@@ -25,18 +29,15 @@ jobs:
           npm install --save-dev eslint-plugin-security eslint-plugin-no-unsanitized npm-audit-ci
 
       # 2. Análisis Estático de Seguridad (SAST Avanzado para JS)
-      - name: Linting de Seguridad JS/Node (Detecta XSS y Sanitización)
+      - name: Linting de Seguridad JS/Node
         run: |
           npx eslint . --ext .js,.jsx --plugin security --plugin no-unsanitized --rule 'no-unsanitized/method: error, no-unsanitized/property: error' || true 
-          # Nota: Agregamos '|| true' temporalmente para que no rompa si no tienes reglas de ESLint configuradas aún.
 
-      # 3. Escaneo de Secretos (Evita fuga de credenciales)
+      # 3. Escaneo de Secrets (Corregido para evitar el error BASE/HEAD)
       - name: Escaneo de Secrets con TruffleHog
         uses: trufflesecurity/trufflehog@main
         with:
           path: ./
-          base: ${{ github.event.repository.default_branch }}
-          head: HEAD
           extra_args: --only-verified
 
       # 4. Semgrep Configurado para OWASP en Node/Express
@@ -46,12 +47,11 @@ jobs:
           config: "p/owasp-top-ten, p/javascript, p/expressjs, p/nodejs"
           generateSarif: true
 
-      # 5. Auditoría de Dependencias Estricta (Supply Chain Attacks)
+      # 5. Auditoría de Dependencias NPM
       - name: Auditoría de Dependencias NPM
         run: npx npm-audit-ci --moderate
 
       # 6. Verificación de Integridad de Código (SonarQube)
-      # Nota: Requiere configurar SONAR_TOKEN en los Secrets de GitHub
       - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@v2
         env:
@@ -59,7 +59,7 @@ jobs:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         with:
           projectBaseDir: ./
-        continue-on-error: true # Permite continuar si aún no configuras SonarQube
+        continue-on-error: true
 
       # 7. Análisis Dinámico (DAST) - Verificación de Cabeceras HTTP
       - name: Levantar servidor local para test DAST
@@ -72,8 +72,8 @@ jobs:
       - name: OWASP ZAP Baseline Scan (Verifica Headers, CSP)
         uses: zaproxy/action-baseline@v0.12.0
         with:
-          target: 'http://localhost:3000' # Asegúrate de que este sea el puerto de tu app
-          fail_action: false # Cambiar a true cuando las cabeceras estén perfectas
+          target: 'http://localhost:3000'
+          fail_action: false
           rules_file_name: '.zap/rules.tsv'
 
       # 8. Reportes y Bloqueos
@@ -90,14 +90,3 @@ jobs:
         with:
           name: reporte-seguridad
           path: reporte.md
-
-      # 9. Notificación de Brechas (Comentado temporalmente)
-      # Para activarlo, ve a Settings > Secrets and variables > Actions
-      # y crea un "New repository secret" llamado SLACK_WEBHOOK
-      # - name: Alerta en Slack de Vulnerabilidad Crítica
-      #   if: failure()
-      #   uses: slackapi/slack-github-action@v1.26.0
-      #   with:
-      #     payload: "{\"text\": \"🚨 ALERTA GITHUB ACTIONS: Pipeline falló. Revisar seguridad.\"}"
-      #   env:
-      #     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
