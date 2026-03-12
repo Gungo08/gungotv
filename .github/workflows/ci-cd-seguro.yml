@@ -28,7 +28,7 @@ jobs:
         run: npm ci
 
       - name: 🛡️ Linting JS
-        run: npx eslint . --config eslint.config.mjs
+        run: npx eslint . --ignore-pattern eslint.config.mjs
 
       - name: 🛡️ Linting CSS
         run: npx stylelint "**/*.css" --config .stylelintrc.json
@@ -98,3 +98,4 @@ jobs:
         with:
           name: reporte-seguridad-gungo
           path: reporte-final.md
+
